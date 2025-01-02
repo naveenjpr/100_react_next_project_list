@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
-
+import passwordimage from "../assets/passwordimage.jpg"
 import Header from "../Common page/Header"
 import {
   BigUppercase,
@@ -8,6 +8,7 @@ import {
   OtherSpecialChars,
   SmallLowercase,
 } from "../date"
+import Percentage from "./Marksheet/percentage"
 
 export default function Home() {
   const [passwordlenghth, setpasswordlenghth] = useState(10)
@@ -40,7 +41,7 @@ export default function Home() {
     setfpas(finalpassword)
   }
   let copypassword = () => {
-    if (fpas!=="") {
+    if (fpas !== "") {
       navigator.clipboard.writeText(fpas)
       toast.success("copy password")
     } else {
@@ -51,7 +52,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[url('https://files.oaiusercontent.com/file-HFdzrt4KUPSjbhebvn8SJF?se=2024-12-29T07%3A22%3A03Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da321a56c-403f-4914-8447-c3dcad844566.webp&sig=PDMRm2hStFc8i6gM4MY5D9as1mtb6pFcOEApAoMfwIE%3D')] bg-cover bg-center flex items-center justify-center">
+      <div
+        className="min-h-screen  bg-cover bg-center flex items-center justify-center mb-[100px] "
+        style={{ backgroundImage: `url(${passwordimage})` }}
+      >
         <div className="bg-[#8fbc8f] p-8 rounded-lg shadow-lg max-w-sm w-full">
           <h1 className="text-2xl font-bold text-center mb-6">
             Password Generator
@@ -163,6 +167,7 @@ export default function Home() {
           theme="light"
         />
       </div>
+      <Percentage />
     </>
   )
 }
