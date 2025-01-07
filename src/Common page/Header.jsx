@@ -3,7 +3,7 @@ import React from "react"
 export default function Header() {
   return (
    <>
-     <header className="bg-blue-600 text-white">
+     <header className="w-full bg-blue-600 text-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <div className="text-2xl font-bold">MyLogo</div>
