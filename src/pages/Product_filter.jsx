@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
+import prbackgroundimage from "../assets/prbackgroundimageProducts.webp"
 
 export default function ProductFilter() {
   const [categoryshow, setcategoryshow] = useState([]) // category show
@@ -46,9 +47,12 @@ export default function ProductFilter() {
   }, [catname])
 
   return (
-    <section className="w-full grid md:grid-cols-[20%_auto] grid-cols-[30%_auto] gap-4 p-4">
+    <section
+      className="w-full grid md:grid-cols-[20%_auto] grid-cols-[30%_auto] md:gap-4 gap-[2px] md:p-4 p-0"
+      style={{ backgroundImage: `url(${prbackgroundimage})` }}
+    >
       {/* Sidebar */}
-      <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 bg-[#ff7f50] sticky top-4 h-screen overflow-scroll">
+      <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow md:p-4 p-2 bg-[#ff7f50] sticky top-4 h-screen overflow-scroll">
         <h1 className="text-lg font-bold mb-4">Category</h1>
         <ul className="space-y-2">
           {categoryshow.length > 0 ? (
@@ -58,7 +62,12 @@ export default function ProductFilter() {
                   key={i}
                   className="cursor-pointer flex items-center space-x-2"
                 >
-                  <input type="checkbox" onClick={() => setcatname(v)} />
+                  <input
+                    type="radio"
+                    checked={catname === v}
+                    value={v}
+                    onClick={() => setcatname(v)}
+                  />
                   <span className="text-sm">{v}</span>
                 </li>
               </>
@@ -71,7 +80,9 @@ export default function ProductFilter() {
 
       {/* Products */}
       <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
-        <h2 className="text-center text-2xl font-bold mb-4">Products</h2>
+        <h2 className="text-center text-2xl font-bold mb-4 text-[white]">
+          Products search by category
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-screen overflow-y-auto">
           {productshow.length > 0 ? (
             productshow.map((v, i) => <ProductCart key={i} vale={v} />)
@@ -109,9 +120,9 @@ function ProductCart({ vale }) {
           )}
         </div>
         <p className="mt-2 text-xs text-gray-500">{`Category: ${vale.category}`}</p>
-        <button className="mt-4 w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded hover:bg-blue-600 transition">
+        {/* <button className="mt-4 w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded hover:bg-blue-600 transition">
           Add to Cart
-        </button>
+        </button> */}
       </div>
     </div>
   )
