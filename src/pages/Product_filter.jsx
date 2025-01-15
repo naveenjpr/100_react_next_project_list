@@ -55,19 +55,23 @@ export default function ProductFilter() {
       <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow md:p-4 p-2 bg-[#ff7f50] sticky top-4 h-screen overflow-scroll">
         <h1 className="text-lg font-bold mb-4">Category</h1>
         <ul className="space-y-2">
+          <li
+            className="cursor-pointer flex items-center space-x-2"
+            onClick={() => setcatname("")}
+          >
+            <input type="radio" checked={catname === ""} />
+            All products
+          </li>
+
           {categoryshow.length > 0 ? (
             categoryshow.map((v, i) => (
               <>
                 <li
                   key={i}
                   className="cursor-pointer flex items-center space-x-2"
+                  onClick={() => setcatname(v)}
                 >
-                  <input
-                    type="radio"
-                    checked={catname === v}
-                    value={v}
-                    onClick={() => setcatname(v)}
-                  />
+                  <input type="radio" checked={catname === v} value={v} />
                   <span className="text-sm">{v}</span>
                 </li>
               </>
@@ -75,6 +79,13 @@ export default function ProductFilter() {
           ) : (
             <li>No data found</li>
           )}
+          <li
+            className="cursor-pointer flex items-center space-x-2"
+            onClick={() => setcatname("")}
+          >
+            <input type="radio" checked={catname === ""} />
+            All products
+          </li>
         </ul>
       </div>
 
