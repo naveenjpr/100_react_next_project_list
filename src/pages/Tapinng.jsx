@@ -42,6 +42,7 @@ import childImage7 from "../assets/child7.jpg"
 import childImage8 from "../assets/child8.jpg"
 import childImage9 from "../assets/child9.jpg"
 import childImage10 from "../assets/child10.jpg"
+import tabingImage from "../assets/tabingImage.jpg"
 export default function Tapinng() {
   const [activButton, setactivButton] = useState("button1")
   // const [activButton, setactivButton] = useState("button1","button2","button3","button4")
@@ -49,14 +50,15 @@ export default function Tapinng() {
     dots: true,
     infinite: false,
     speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    
+    slidesToShow: 5,
+    slidesToScroll: 5,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
           infinite: true,
           dots: false,
         },
@@ -175,19 +177,22 @@ export default function Tapinng() {
   ]
   return (
     <>
-      <section className="w-full max-h-screen bg-black my-[100px]">
-        <h1 className="text-4xl font-bold text-white mb-6 text-center">
+      <section
+        className="w-full md:min-h-screen min-h-[34vh] bg-black mb-[10px] pb-[40px]"
+        style={{ backgroundImage: `url(${tabingImage})` }}
+      >
+        <h1 className="md:text-4xl text-3xl font-[500] text-[#a52a2a] py-[20px]  text-center">
           Tailwind Tab Logic
         </h1>
 
         {/* Tab Navigation */}
-        <div className="max-w-[95%] mx-auto border border-gray-300 p-4 grid sm:grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="max-w-[95%] mx-auto border border-gray-300 p-2 grid sm:grid-cols-1 lg:grid-cols-2 items-center">
           <div className="flex md:gap-5 gap-0 justify-center overflow-x-auto whitespace-nowrap">
             <button
               className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold ${
                 activButton === "button1"
-                  ? "text-red-500 border-b-4 border-black"
-                  : "text-white hover:text-gray-800"
+                  ? "text-blue-300 border-b-4 border-black"
+                  : "text-[#a52a2a] hover:text-gray-800"
               }`}
               onClick={() => setactivButton("button1")}
             >
@@ -196,8 +201,8 @@ export default function Tapinng() {
             <button
               className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold ${
                 activButton === "button2"
-                  ? "text-red-500 border-b-4 border-black"
-                  : "text-white hover:text-gray-800"
+                  ? "text-blue-300 border-b-4 border-black"
+                  : "text-[#a52a2a] hover:text-gray-800"
               }`}
               onClick={() => setactivButton("button2")}
             >
@@ -206,8 +211,8 @@ export default function Tapinng() {
             <button
               className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold ${
                 activButton === "button3"
-                  ? "text-red-500 border-b-4 border-black"
-                  : "text-white hover:text-gray-800"
+                  ? "text-blue-300 border-b-4 border-black"
+                  : "text-[#a52a2a] hover:text-gray-800"
               }`}
               onClick={() => setactivButton("button3")}
             >
@@ -216,8 +221,8 @@ export default function Tapinng() {
             <button
               className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold ${
                 activButton === "button4"
-                  ? "text-red-500 border-b-4 border-black"
-                  : "text-white hover:text-gray-800"
+                  ? "text-blue-300 border-b-4 border-black"
+                  : "text-[#a52a2a] hover:text-gray-800"
               }`}
               onClick={() => setactivButton("button4")}
             >
@@ -238,25 +243,25 @@ export default function Tapinng() {
                   <img
                     src={image.women}
                     alt={`Slide ${index + 1}`}
-                    className="w-full max-h-[300px] "
+                    className="w-full max-h-[350px] "
                   />
                 ) : activButton === "button2" ? (
                   <img
                     src={image.men}
                     alt={`Slide ${index + 1}`}
-                    className="w-full max-h-[300px] "
+                    className="w-full max-h-[350px] "
                   />
                 ) : activButton === "button3" ? (
                   <img
                     src={image.boys}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-auto max-h-[400px] "
+                    className="w-full h-auto max-h-[350px] "
                   />
                 ) : (
                   <img
                     src={image.child}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-auto max-h-[400px] "
+                    className="w-full h-auto max-h-[350px] "
                   />
                 )}
               </div>
