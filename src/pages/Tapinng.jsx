@@ -65,14 +65,14 @@ export default function Tapinng() {
         breakpoint: 600,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToScroll: 4,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
         },
       },
       // You can unslick at a given breakpoint now by adding:
@@ -182,7 +182,6 @@ export default function Tapinng() {
 
         {/* Tab Navigation */}
         <div className="max-w-[95%] mx-auto border border-gray-300 p-4 grid sm:grid-cols-1 lg:grid-cols-2 items-center">
-        
           <div className="flex md:gap-5 gap-0 justify-center overflow-x-auto whitespace-nowrap">
             <button
               className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold ${
