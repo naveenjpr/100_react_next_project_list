@@ -2,6 +2,7 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import prbackgroundimage from "../assets/prbackgroundimageProducts.webp"
+import loadingImg from "../assets/Spinning line.gif"
 
 export default function ProductFilter() {
   const [categoryshow, setcategoryshow] = useState([]) // category show
@@ -77,7 +78,10 @@ export default function ProductFilter() {
               </>
             ))
           ) : (
-            <li>No data found</li>
+            <li>
+              {" "}
+              <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />
+            </li>
           )}
           <li
             className="cursor-pointer flex items-center space-x-2"
@@ -94,11 +98,13 @@ export default function ProductFilter() {
         <h2 className="text-center text-2xl font-bold mb-4 text-[white]">
           Products search by category
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-screen overflow-y-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-screen overflow-y-auto relative">
           {productshow.length > 0 ? (
             productshow.map((v, i) => <ProductCart key={i} vale={v} />)
           ) : (
-            <div className="col-span-4 text-center">No products found</div>
+            <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
+              <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />
+            </div>
           )}
         </div>
       </div>
