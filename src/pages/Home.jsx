@@ -8,11 +8,14 @@ import Password from "./Password"
 import WeatherApp from "./Weather"
 import Product_filter from "./Product_filter"
 import Tapinng from "./Tapinng"
+import Product_find_price_filter from "./Product_find_price_filter.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
+      <Product_find_price_filter />
+
       <Tapinng />
       <Product_filter />
       <WeatherApp />

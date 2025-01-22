@@ -45,7 +45,6 @@ import childImage10 from "../assets/child10.jpg"
 import tabingImage from "../assets/tabingImage.jpg"
 export default function Tapinng() {
   const [activButton, setactivButton] = useState("button1")
-  // const [activButton, setactivButton] = useState("button1","button2","button3","button4")
   var settings = {
     dots: true,
     infinite: false,
