@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
 import ratingImage from "../assets/colorful-rating-icons-set_.jpg"
+import loadingImg from "../assets/Spinning line.gif"
 
 export default function Product_find_price_filter() {
   const [productshow, setproductshow] = useState([]) // All products
@@ -53,15 +54,15 @@ export default function Product_find_price_filter() {
 
   return (
     <>
-      <div className="w-full px-4 md:px-8 h-screen overflow-scroll">
-        <h1 className="text-center py-[10px] font-[500] text-[25px] text-[red]">
+      <div
+        className="w-full px-4 md:px-8 h-screen overflow-scroll"
+        style={{ backgroundImage: `url(${ratingImage})` }}
+      >
+        <h1 className="text-center p-[15px] font-[500] md:text-[25px] text-[15px] text-[red] bg-[#f0f8ff]  my-[5px] mx-auto">
           Product Finder with Price and Rating Filter
         </h1>
-        <div
-          className="grid grid-cols-1 md:grid-cols-[30%_auto] gap-4"
-          style={{ backgroundImage: `url(${ratingImage})` }}
-        >
-          <aside className="md:h-auto max-h-[calc(100vh-20px)] h-auto border-solid bg-[#00ced1] shadow-lg md:p-4 p-2 rounded-lg sticky top-0 overflow-y-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[30%_auto] gap-4">
+          <aside className="md:h-auto max-h-[calc(100vh-20px)] h-auto border-solid bg-[#f0f8ff] shadow-lg md:p-4 p-2 rounded-lg sticky top-0 overflow-y-auto">
             <div className="flex justify-between items-center">
               <h1 className="text-center font-bold text-sm md:text-base">
                 FILTERS
@@ -154,7 +155,7 @@ export default function Product_find_price_filter() {
               filteredProducts.map((v, i) => (
                 <div
                   key={i}
-                  className="border p-4 bg-[gold] shadow-lg rounded-lg w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)]"
+                  className="border p-4 bg-[#f0f8ff] shadow-lg rounded-lg w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)]"
                 >
                   <img
                     src={v.thumbnail}
@@ -167,9 +168,9 @@ export default function Product_find_price_filter() {
                 </div>
               ))
             ) : (
-              <p className="text-center text-gray-600">
-                No products available under the selected filters.
-              </p>
+              <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
+                <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />
+              </div>
             )}
           </div>
         </div>
