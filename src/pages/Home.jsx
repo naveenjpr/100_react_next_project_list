@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Product_find_price_filter />
+      <Product_find_price_filter  />
 
       <Tapinng />
       <Product_filter />
