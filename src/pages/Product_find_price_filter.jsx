@@ -55,7 +55,7 @@ export default function Product_find_price_filter() {
   return (
     <>
       <div
-        className="w-full px-4 md:px-8 h-screen overflow-scroll mb-[100px]"
+        className="w-full px-4 md:px-8 h-screen overflow-scroll mb-[100px] pb-[20px]"
         style={{ backgroundImage: `url(${ratingImage})` }}
       >
         <h1 className="text-center p-[15px] font-[500] md:text-[25px] text-[15px] text-[red] bg-[#f0f8ff]  my-[5px] mx-auto">
