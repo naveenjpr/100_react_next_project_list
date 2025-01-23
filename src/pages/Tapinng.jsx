@@ -177,7 +177,7 @@ export default function Tapinng() {
   return (
     <>
       <section
-        className="w-full md:min-h-screen min-h-[34vh] bg-black mb-[10px] pb-[40px]"
+        className="w-full md:min-h-screen min-h-[34vh] bg-black  pb-[40px] mb-[100px] "
         style={{ backgroundImage: `url(${tabingImage})` }}
       >
         <h1 className="md:text-4xl text-3xl font-[500] text-[#a52a2a] py-[20px]  text-center">
