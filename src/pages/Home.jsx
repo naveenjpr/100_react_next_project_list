@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <div>
       <Header />
+      <Product_find_price_filter />
 
       <Tapinng />
       <Product_filter />
@@ -23,7 +24,6 @@ export default function Home() {
       <Word_counter />
       <Percentage />
       <PrimeNumber />
-      <Product_find_price_filter />
     </div>
   )
 }
