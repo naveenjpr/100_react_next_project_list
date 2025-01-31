@@ -95,7 +95,7 @@ const Calculator = () => {
         className="w-full bg-[#5f9ea0] rounded-2xl shadow-lg p-5"
         onClick={handleData}
       >
-        <h1 className="text-center uppercase text-[25px] text-white">calculator</h1>
+        <h1 className="text-center uppercase sm:text-[25px] text-[10px] text-white">calculator</h1>
 
         <div className="md:mb-4 mb-1">
           <input
