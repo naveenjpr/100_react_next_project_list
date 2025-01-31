@@ -1,37 +1,42 @@
 import React, { useState } from "react"
 import Tesseract from "tesseract.js"
 
-const ImageToText = () => {
+export default function ImageToText() {
   const [image, setImage] = useState(null)
   const [text, setText] = useState("")
   const [loading, setLoading] = useState(false)
-  const [language, setLanguage] = useState("eng") // Default: English
+  const [language, setLanguage] = useState("eng")
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0]
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0]
     if (file) {
       setImage(URL.createObjectURL(file))
     }
   }
 
-  const convertImageToText = () => {
+  const handleConvert = async () => {
     if (!image) return
     setLoading(true)
+    setText("")
 
-    Tesseract.recognize(image, language)
-      .then(({ data: { text } }) => {
-        setText(text)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+    try {
+      const {
+        data: { text },
+      } = await Tesseract.recognize(image, language)
+      setText(text)
+    } catch (error) {
+      setText("Error in conversion")
+    }
+    setLoading(false)
   }
-let datareset=()=>{
+
+  const handleReset = () => {
     setImage(null)
     setText("")
     setLoading(false)
-    setLanguage(eng)
-}
+    setLanguage("eng")
+  }
+
   return (
     <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Image to Text Converter</h1>
@@ -44,6 +49,7 @@ let datareset=()=>{
       />
 
       <select
+        value={language}
         onChange={(e) => setLanguage(e.target.value)}
         className="mb-4 p-2 border rounded"
       >
@@ -61,13 +67,18 @@ let datareset=()=>{
       )}
       <div className="flex gap-5">
         <button
-          onClick={convertImageToText}
+          onClick={handleConvert}
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           disabled={loading}
         >
           {loading ? "Processing..." : "Convert to Text"}
         </button>
-        <button className="table  bg-red-600 text-white px-4" onClick={datareset}>reset</button>
+        <button
+          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </div>
 
       {text && (
@@ -79,5 +90,3 @@ let datareset=()=>{
     </div>
   )
 }
-
-export default ImageToText
