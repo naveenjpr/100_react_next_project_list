@@ -46,26 +46,39 @@ export default function Movie() {
 }
 
 function MovieData({ data }) {
+  // Construct a search URL for downloading (external source)
+  const downloadUrl = `https://www.google.com/search?q=${encodeURIComponent(
+    data.title + " movie download"
+  )}`
+
   return (
-    <>
-      <div className="bg-gray-800 p-2 sm:p-3 rounded-lg shadow-md">
-        <img
-          src={
-            data.poster_path
-              ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
-              : "https://via.placeholder.com/500x750?text=No+Image"
-          }
-          alt={data.title}
-          className="h-64 w-full rounded-lg object-cover"
-        />
-        <h2 className="mt-3 text-base sm:text-lg font-semibold text-ellipsis overflow-hidden whitespace-nowrap">
-          {data.title} ({data.release_date?.slice(0, 4) || "N/A"})
-        </h2>
-        <p className="text-xs sm:text-sm text-gray-300 mt-1">
-          Language: {data.original_language?.toUpperCase() || "Unknown"} <br />
-          Rating: {data.vote_average?.toFixed(1) || "N/A"}
-        </p>
-      </div>
-    </>
+    <div className="bg-gray-800 p-2 sm:p-3 rounded-lg shadow-md">
+      <img
+        src={
+          data.poster_path
+            ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
+            : "https://via.placeholder.com/500x750?text=No+Image"
+        }
+        alt={data.title}
+        className="h-64 w-full rounded-lg object-cover"
+      />
+      <h2 className="mt-3 text-base sm:text-lg font-semibold text-ellipsis overflow-hidden whitespace-nowrap">
+        {data.title} ({data.release_date?.slice(0, 4) || "N/A"})
+      </h2>
+      <p className="text-xs sm:text-sm text-gray-300 mt-1">
+        Language: {data.original_language?.toUpperCase() || "Unknown"} <br />
+        Rating: {data.vote_average?.toFixed(1) || "N/A"}
+      </p>
+
+      {/* Download Button */}
+      <a
+        href={downloadUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-3 inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-semibold py-2 px-4 rounded-lg transition duration-300"
+      >
+        Download Movie
+      </a>
+    </div>
   )
 }
