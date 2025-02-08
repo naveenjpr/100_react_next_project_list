@@ -30,7 +30,7 @@ export default function Movie() {
         type="text"
         placeholder="Search for a movie..."
         className="w-full max-w-md p-3 rounded-lg border border-gray-700 bg-[#fff8dc] text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-        onChange={(event) => getMovie(event.target.value)}
+        onInput={(event) => getMovie(event.target.value)}
       />
       <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 md:gap-6 gap-1 mt-6 w-full">
         {movieList.length > 0 ? (
@@ -56,15 +56,12 @@ function MovieData({ data }) {
         />
         <h2 className="mt-4 text-lg font-semibold ">
           {data.title.slice(0, 50)}
-          
           &nbsp;({data.release_date.slice(0, 4)})
         </h2>
         <p className=" text-sm">
-
-        language:&nbsp;({data.original_language})<br/>
-
-            Rating: &nbsp;
-            {data.vote_average.toFixed(1)}
+          language:&nbsp;({data.original_language})<br />
+          Rating: &nbsp;
+          {data.vote_average.toFixed(1)}
         </p>
       </div>
     </>
