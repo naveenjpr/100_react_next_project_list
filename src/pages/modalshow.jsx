@@ -10,7 +10,7 @@ export default function Modalshow() {
   return (
     <>
       <div
-        className="w-[100%]  h-screen relative"
+        className="w-full h-screen relative my-4"
         style={{ backgroundImage: `url(${clickbutton})` }}
       >
         {/* Navbar */}
@@ -32,7 +32,7 @@ export default function Modalshow() {
 
         <div
           className={`sm:w-[350px] w-[250px] bg-[gold] z-40 sm:h-[350px] h-[250px] border-[2px] shadow-lg border-[red] absolute  left-[50%] translate-x-[-50%] translate-y-[-50%] duration-500 ${
-            modalshow == true ? "top-[50%]" : "top-[-500px]"
+            modalshow == true ? "top-[50%]" : "top-[-500px] hidden"
           }`}
         >
           {/* Modal Header */}

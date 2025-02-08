@@ -13,16 +13,19 @@ import Calculator from "./Calculator.jsx"
 import Randomcolor from "./Randomcolor.jsx"
 import ImageToText from "./imageconverttotext.jsx"
 import Modalshow from "./modalshow.jsx"
+import Movie from "./Movie.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Modalshow/>
-      <ImageToText/>
-      <Randomcolor/>
-      <Calculator/>
-      <Product_find_price_filter  />
+      <Movie />
+
+      <Modalshow />
+      <ImageToText />
+      <Randomcolor />
+      <Calculator />
+      <Product_find_price_filter />
 
       <Tapinng />
       <Product_filter />
