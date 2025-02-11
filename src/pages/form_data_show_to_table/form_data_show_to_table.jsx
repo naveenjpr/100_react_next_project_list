@@ -51,7 +51,7 @@ export default function FormDataShowToTable() {
     <div className="w-full p-4">
       <div className="grid grid-cols-1">
         {/* Form */}
-        <div className="border border-solid md:w-[50%] w-[90%] mx-auto my-4 p-4 rounded-lg shadow-lg bg-white">
+        <div className="border border-solid md:w-[50%] w-[95%] mx-auto my-4 p-4 rounded-lg shadow-lg bg-white">
           <h3 className="text-center font-semibold text-lg mb-4">
             Personal Information
           </h3>
@@ -171,7 +171,7 @@ export default function FormDataShowToTable() {
                 user.map((v, i) => (
                   <tr
                     key={i}
-                    className="border-b hover:bg-gray-100 text-sm md:text-base"
+                    className="border-b hover:bg-gray-100 text-sm md:text-base "
                     ref={tableRef}
                   >
                     <td className="py-2 px-2 md:px-4 border">{i + 1}</td>
@@ -179,8 +179,12 @@ export default function FormDataShowToTable() {
                     <td className="py-2 px-2 md:px-4 border">{v.email}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.phone}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.gender}</td>
-                    <td className="py-2 px-2 md:px-4 border">{v.address}</td>
-                    <td className="py-2 px-2 md:px-4 border">{v.message}</td>
+                    <td className="py-2 px-2 md:px-4 border   ">
+                    <div className="max-h-[75px] max-w-[100%] overflow-auto p-1">{v.address}</div>
+                    </td>
+                    <td className="py-2 px-2 md:px-4 border   ">
+                      <div className="max-h-[75px] max-w-[100%] overflow-auto p-1">{v.message}</div>
+                    </td>
                     <td className="py-2 px-2 md:px-4 border">
                       <button onClick={() => delid(i)}>
                         <MdDelete />
