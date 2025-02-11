@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import clickbutton from "../assets/clickbutton.jpg"
+import clickbutton from "../../assets/clickbutton.jpg"
 
 export default function Modalshow() {
   const [modalshow, setmodalshow] = useState(false)

@@ -1,10 +1,9 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import backmovie from "../assets/popcorn-movie-time_23-2148470132.jpg"
+import backmovie from "../../assets/popcorn-movie-time_23-2148470132.jpg"
 
 export default function Movie() {
   let [movieList, setMovieList] = useState([])
-  console.log(movieList)
 
   let getMovie = (title = "") => {
     let apiUrl

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import calculatorset from "../assets/calculator.jpg"
+import calculatorset from "../../assets/calculator.jpg"
 
 const Calculator = () => {
   const [Calculator, setCalculator] = useState("")

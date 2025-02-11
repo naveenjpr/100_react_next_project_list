@@ -9,17 +9,19 @@ import WeatherApp from "./Weather"
 import Product_filter from "./Product_filter"
 import Tapinng from "./Tapinng"
 import Product_find_price_filter from "./Product_find_price_filter.jsx"
-import Calculator from "./Calculator.jsx"
+import Calculator from "./Calculator/Calculator.jsx"
 import Randomcolor from "./Randomcolor.jsx"
-import ImageToText from "./imageconverttotext.jsx"
-import Modalshow from "./modalshow.jsx"
-import Movie from "./Movie.jsx"
+import ImageToText from "./ImageToText/imageconverttotext.jsx"
+import Modalshow from "./Modalshow/modalshow.jsx"
+import Form_data_show_to_table from "./form_data_show_to_table/form_data_show_to_table.jsx"
+import Movie from "./Movie/Movie.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Movie />
+      <Form_data_show_to_table/>
+      <Movie/>
 
       <Modalshow />
       <ImageToText />
