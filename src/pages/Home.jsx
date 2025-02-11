@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Form_data_show_to_table/>
       <Movie/>
 
       <Modalshow />
@@ -37,6 +36,8 @@ export default function Home() {
       <Word_counter />
       <Percentage />
       <PrimeNumber />
+      <Form_data_show_to_table/>
+
     </div>
   )
 }

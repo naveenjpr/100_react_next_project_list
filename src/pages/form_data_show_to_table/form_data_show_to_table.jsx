@@ -1,7 +1,12 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useRef } from "react"
+import { MdDelete } from "react-icons/md"
+import { FaEdit } from "react-icons/fa"
 
 export default function FormDataShowToTable() {
   const [user, setUser] = useState([])
+  const tableRef = useRef(null)
+  console.log(tableRef)
 
   let getData = (event) => {
     event.preventDefault()
@@ -18,6 +23,29 @@ export default function FormDataShowToTable() {
     setUser([...user, userDetails])
     event.target.reset()
   }
+  // entery delete
+
+  let delid = (currentindex) => {
+    let delfilter = user.filter((value, index) => index != currentindex)
+
+    setUser(delfilter)
+
+    getData()
+  }
+  // Load data from localStorage when component mounts
+  useEffect(() => {
+    const savedUsers = JSON.parse(localStorage.getItem("users")) || []
+    setUser(savedUsers)
+  }, [])
+
+  // Save to localStorage whenever 'user' state updates
+  useEffect(() => {
+    if (user.length > 0) {
+      tableRef.current?.scrollIntoView({ behavior: "smooth" })
+
+      localStorage.setItem("users", JSON.stringify(user))
+    }
+  }, [user]) // Runs when 'user' state updates
 
   return (
     <div className="w-full p-4">
@@ -113,6 +141,7 @@ export default function FormDataShowToTable() {
             </label>
 
             {/* Submit Button */}
+
             <button
               type="submit"
               className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
@@ -127,12 +156,14 @@ export default function FormDataShowToTable() {
           <table className="w-full border-collapse bg-white shadow-lg rounded-lg">
             <thead>
               <tr className="bg-blue-500 text-white text-sm md:text-base">
+                <th className="py-2 px-2 md:px-4 border">No:</th>
                 <th className="py-2 px-2 md:px-4 border">Full Name</th>
                 <th className="py-2 px-2 md:px-4 border">Email</th>
                 <th className="py-2 px-2 md:px-4 border">Phone</th>
                 <th className="py-2 px-2 md:px-4 border">Gender</th>
                 <th className="py-2 px-2 md:px-4 border">Address</th>
                 <th className="py-2 px-2 md:px-4 border">Message</th>
+                <th className="py-2 px-2 md:px-4 border">del || edit</th>
               </tr>
             </thead>
             <tbody>
@@ -141,13 +172,23 @@ export default function FormDataShowToTable() {
                   <tr
                     key={i}
                     className="border-b hover:bg-gray-100 text-sm md:text-base"
+                    ref={tableRef}
                   >
+                    <td className="py-2 px-2 md:px-4 border">{i + 1}</td>
                     <td className="py-2 px-2 md:px-4 border">{`${v.first_name} ${v.last_name}`}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.email}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.phone}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.gender}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.address}</td>
                     <td className="py-2 px-2 md:px-4 border">{v.message}</td>
+                    <td className="py-2 px-2 md:px-4 border">
+                      <button onClick={() => delid(i)}>
+                        <MdDelete />
+                      </button>
+                      <button>
+                        <FaEdit />
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
