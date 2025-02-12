@@ -1,16 +1,16 @@
-import React, { useEffect, useState, useRef } from "react";
-import { MdDelete } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
+import React, { useEffect, useState, useRef } from "react"
+import { MdDelete } from "react-icons/md"
+import { FaEdit } from "react-icons/fa"
 
 export default function FormDataShowToTable() {
-  const [user, setUser] = useState([]);
-  const [filteredUser, setFilteredUser] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [editUser, setEditUser] = useState(null);
-  const tableRef = useRef(null);
+  const [user, setUser] = useState([])
+  const [filteredUser, setFilteredUser] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [editUser, setEditUser] = useState(null)
+  const tableRef = useRef(null)
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const userDetails = {
       first_name: event.target.first_name.value,
@@ -20,52 +20,52 @@ export default function FormDataShowToTable() {
       gender: event.target.gender.value,
       address: event.target.address.value,
       message: event.target.message.value,
-    };
+    }
 
     if (editUser !== null) {
       const updatedUsers = user.map((u, index) =>
         index === editUser ? userDetails : u
-      );
-      setUser(updatedUsers);
-      setEditUser(null);
+      )
+      setUser(updatedUsers)
+      setEditUser(null)
     } else {
-      setUser([...user, userDetails]);
+      setUser([...user, userDetails])
     }
 
-    event.target.reset();
-  };
+    event.target.reset()
+  }
 
   const handleDelete = (index) => {
     if (window.confirm("Are you sure you want to delete this?")) {
-      const updatedUsers = user.filter((_, i) => i !== index);
-      setUser(updatedUsers);
+      const updatedUsers = user.filter((_, i) => i !== index)
+      setUser(updatedUsers)
     }
-  };
+  }
 
   const handleEdit = (index) => {
-    setEditUser(index);
-  };
+    setEditUser(index)
+  }
 
   useEffect(() => {
-    const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
-    setUser(savedUsers);
-  }, []);
+    const savedUsers = JSON.parse(localStorage.getItem("users")) || []
+    setUser(savedUsers)
+  }, [])
 
   useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(user));
-  }, [user]);
+    localStorage.setItem("users", JSON.stringify(user))
+  }, [user])
 
   useEffect(() => {
     const filtered = user.filter((u) =>
       `${u.first_name} ${u.last_name}`
         .toLowerCase()
         .includes(searchTerm.toLowerCase())
-    );
-    setFilteredUser(filtered);
-  }, [searchTerm, user]);
+    )
+    setFilteredUser(filtered)
+  }, [searchTerm, user])
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 min-h-screen">
       <div className="grid grid-cols-1">
         <div className="border border-solid md:w-[50%] w-[95%] mx-auto my-4 p-4 rounded-lg shadow-lg bg-white">
           <h3 className="text-center font-semibold text-lg mb-4">
@@ -82,7 +82,9 @@ export default function FormDataShowToTable() {
                 <input
                   type="text"
                   name="first_name"
-                  defaultValue={editUser !== null ? user[editUser].first_name : ""}
+                  defaultValue={
+                    editUser !== null ? user[editUser].first_name : ""
+                  }
                   className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   placeholder="John"
                   required
@@ -93,7 +95,9 @@ export default function FormDataShowToTable() {
                 <input
                   type="text"
                   name="last_name"
-                  defaultValue={editUser !== null ? user[editUser].last_name : ""}
+                  defaultValue={
+                    editUser !== null ? user[editUser].last_name : ""
+                  }
                   className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   placeholder="Doe"
                   required
@@ -163,12 +167,12 @@ export default function FormDataShowToTable() {
             </button>
           </form>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-screen overflow-auto">
           <h1 className="text-lg font-semibold mb-2">Users</h1>
           <input
             type="text"
             placeholder="Search users..."
-            className="border p-2 rounded w-[30%] mb-4"
+            className="border border-[grey] p-2 rounded w-[30%] mb-4"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -200,8 +204,16 @@ export default function FormDataShowToTable() {
                     <td className="py-2 px-2 md:px-4 border">{u.email}</td>
                     <td className="py-2 px-2 md:px-4 border">{u.phone}</td>
                     <td className="py-2 px-2 md:px-4 border">{u.gender}</td>
-                    <td className="py-2 px-2 md:px-4 border">{u.address}</td>
-                    <td className="py-2 px-2 md:px-4 border">{u.message}</td>
+                    <td className="py-2 px-2 md:px-4 border">
+                      <div className="max-h-[100px] overflow-auto">
+                        {u.address}
+                      </div>
+                    </td>
+                    <td className="py-2 px-2 md:px-4 border">
+                      <div className="max-h-[100px] overflow-auto">
+                        {u.message}
+                      </div>
+                    </td>
                     <td className="py-2 px-2 md:px-4 border">
                       <button
                         onClick={() => handleDelete(i)}
@@ -232,5 +244,5 @@ export default function FormDataShowToTable() {
         </div>
       </div>
     </div>
-  );
+  )
 }
