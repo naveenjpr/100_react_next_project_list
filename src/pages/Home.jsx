@@ -21,9 +21,7 @@ export default function Home() {
     <div>
       <Header />
       <Form_data_show_to_table />
-
       <Movie />
-
       <Modalshow />
       <ImageToText />
       <Randomcolor />

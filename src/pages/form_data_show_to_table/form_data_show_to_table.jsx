@@ -3,11 +3,11 @@ import { MdDelete } from "react-icons/md"
 import { FaEdit } from "react-icons/fa"
 
 export default function FormDataShowToTable() {
-  const [user, setUser] = useState([])
-  const [filteredUser, setFilteredUser] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [editUser, setEditUser] = useState(null)
-  const tableRef = useRef(null)
+  const [user, setUser] = useState([]) // Stores all users
+  const [filteredUser, setFilteredUser] = useState([]) // Stores filtered users
+  const [searchTerm, setSearchTerm] = useState("") // Stores search term
+  const [editUser, setEditUser] = useState(null) // Tracks the user being edited
+  const tableRef = useRef(null) // Reference to the table body
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -29,21 +29,22 @@ export default function FormDataShowToTable() {
       setUser(updatedUsers)
       setEditUser(null)
     } else {
-      setUser([...user, userDetails])
+      setUser([userDetails, ...user]) // Add new entry to the top
     }
 
     event.target.reset()
   }
-
+  //Delete User
   const handleDelete = (index) => {
     if (window.confirm("Are you sure you want to delete this?")) {
       const updatedUsers = user.filter((_, i) => i !== index)
       setUser(updatedUsers)
     }
   }
-
+  // Edit User
   const handleEdit = (index) => {
     setEditUser(index)
+    // window.scrollTo({ top: 0, behavior: "smooth" }) // Scroll to the top of the page smoothly
   }
 
   useEffect(() => {
@@ -52,6 +53,14 @@ export default function FormDataShowToTable() {
   }, [])
 
   useEffect(() => {
+    if (tableRef.current) {
+      const lastRow = tableRef.current.querySelector("tr:last-child")
+      if (lastRow) {
+        lastRow.scrollIntoView({ behavior: "smooth", block: "start" })
+
+        // Add a highlight effect
+      }
+    }
     localStorage.setItem("users", JSON.stringify(user))
   }, [user])
 
@@ -66,16 +75,21 @@ export default function FormDataShowToTable() {
 
   return (
     <div className="w-full p-4 min-h-screen">
+      <h1 className="text-center font-medium text-[25px]">
+        "React Application: <span> add User Data </span>
+        <span className="font-medium text-[red]">"Create</span>,
+        <span className="font-medium text-[red]">Read</span>,
+        <span className="font-medium text-[red]">Update</span>,
+        <span className="font-medium text-[red]">edit</span>,
+        <span className="font-medium text-[red]">search</span>,
+        <span className="font-medium text-[red]">and Delete Operations"</span>
+      </h1>
       <div className="grid grid-cols-1">
         <div className="border border-solid md:w-[50%] w-[95%] mx-auto my-4 p-4 rounded-lg shadow-lg bg-white">
           <h3 className="text-center font-semibold text-lg mb-4">
             {editUser !== null ? "Edit User" : "Add User"}
           </h3>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-            autoComplete="off"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4" id="xyz">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <label>
                 <span className="text-gray-700">First Name</span>
@@ -120,6 +134,7 @@ export default function FormDataShowToTable() {
               <input
                 type="tel"
                 name="phone"
+                maxLength={10} // Limits input to 10 characters
                 defaultValue={editUser !== null ? user[editUser].phone : ""}
                 className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="+1234567890"
@@ -176,6 +191,9 @@ export default function FormDataShowToTable() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+
+          {/* Table to display users */}
+
           <table className="w-full border-collapse bg-white shadow-lg rounded-lg">
             <thead>
               <tr className="bg-blue-500 text-white text-sm md:text-base">
@@ -189,13 +207,12 @@ export default function FormDataShowToTable() {
                 <th className="py-2 px-2 md:px-4 border">Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody ref={tableRef}>
               {filteredUser.length > 0 ? (
                 filteredUser.map((u, i) => (
                   <tr
                     key={i}
                     className="border-b hover:bg-gray-100 text-sm md:text-base"
-                    ref={tableRef}
                   >
                     <td className="py-2 px-2 md:px-4 border">{i + 1}</td>
                     <td className="py-2 px-2 md:px-4 border">

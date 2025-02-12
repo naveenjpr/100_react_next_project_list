@@ -9,7 +9,6 @@ import { ToastContainer, toast } from "react-toastify"
 import passwordimage from "../assets/passwordimage.jpg"
 
 export default function Password() {
-  console.log(SmallLowercase)
   const [passwordlenghth, setpasswordlenghth] = useState(10)
   const [fpas, setfpas] = useState("")
 
