@@ -4,9 +4,9 @@ import {
   MathNumbers,
   OtherSpecialChars,
   SmallLowercase,
-} from "../data.jsx"
+} from "../../data.jsx"
 import { ToastContainer, toast } from "react-toastify"
-import passwordimage from "../assets/passwordimage.jpg"
+import passwordimage from "../../assets/passwordimage.jpg"
 
 export default function Password() {
   const [passwordlenghth, setpasswordlenghth] = useState(10)

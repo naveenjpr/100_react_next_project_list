@@ -134,7 +134,7 @@ export default function FormDataShowToTable() {
               <input
                 type="tel"
                 name="phone"
-                maxLength={10} // Limits input to 10 characters
+                maxLength={12} // Limits input to 10 characters
                 defaultValue={editUser !== null ? user[editUser].phone : ""}
                 className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="+1234567890"
