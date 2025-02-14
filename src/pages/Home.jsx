@@ -15,13 +15,13 @@ import ImageToText from "./ImageToText/imageconverttotext.jsx"
 import Modalshow from "./Modalshow/modalshow.jsx"
 import Form_data_show_to_table from "./form_data_show_to_table/form_data_show_to_table.jsx"
 import Movie from "./Movie/Movie.jsx"
-import TypingSpeedTest from "./typing_speed_check/typing_speed_check.jsx"
+// import TypingSpeedTest from "./typing_speed_check/typing_speed_check.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <TypingSpeedTest/>
+      {/* <TypingSpeedTest/> */}
       <Form_data_show_to_table />
       <Movie />
       <Modalshow />
