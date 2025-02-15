@@ -15,11 +15,13 @@ import ImageToText from "./ImageToText/imageconverttotext.jsx"
 import Modalshow from "./Modalshow/modalshow.jsx"
 import Form_data_show_to_table from "./form_data_show_to_table/form_data_show_to_table.jsx"
 import Movie from "./Movie/Movie.jsx"
+import Mega_Menu from "./Mega_Menu/Mega_Menu.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
+      <Mega_Menu />
       <Form_data_show_to_table />
       <Movie />
       <Modalshow />
