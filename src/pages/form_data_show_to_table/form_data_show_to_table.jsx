@@ -75,7 +75,7 @@ export default function FormDataShowToTable() {
 
   return (
     <div className="w-full p-4 min-h-screen">
-      <h1 className="text-center font-medium text-[25px]">
+      <h1 className="text-center font-medium md:text-[25px] text-[13px]">
         "React Application: <span> add User Data </span>
         <span className="font-medium text-[red]">"Create</span>,
         <span className="font-medium text-[red]">Read</span>,
