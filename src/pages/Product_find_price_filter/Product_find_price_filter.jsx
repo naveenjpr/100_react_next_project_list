@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
-import ratingImage from "../assets/colorful-rating-icons-set_.jpg"
-import loadingImg from "../assets/Spinning line.gif"
+import ratingImage from "../../assets/colorful-rating-icons-set_.jpg"
+import loadingImg from "../../assets/Spinning line.gif"
 
 export default function Product_find_price_filter() {
   const [productshow, setproductshow] = useState([]) // All products

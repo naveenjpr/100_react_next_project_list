@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import primeNumber from "../assets/primeNumber.jpg"
+import primeNumber from "../../assets/primeNumber.jpg"
 
 export default function PrimeNumber() {
   const [Input, setInput] = useState("")

@@ -15,9 +15,10 @@ const Calculator = () => {
         (e.target.innerText === "×" ||
           e.target.innerText === "÷" ||
           e.target.innerText === "." ||
+          e.target.innerText === "+" ||
           e.target.innerText === "=")
       ) {
-        console.log("First character cannot be ×, ÷, ., or =")
+        console.log("First character cannot be ×,+, ÷, ., or =")
         return
       }
 

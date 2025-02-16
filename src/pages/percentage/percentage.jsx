@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import marksheetImage from "../assets/marksheet.jpg"
+import marksheetImage from "../../assets/marksheet.jpg"
 import { ToastContainer, toast } from "react-toastify"
 
 export default function Percentage() {

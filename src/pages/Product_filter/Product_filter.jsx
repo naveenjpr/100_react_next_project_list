@@ -1,8 +1,8 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
-import prbackgroundimage from "../assets/prbackgroundimageProducts.webp"
-import loadingImg from "../assets/Spinning line.gif"
+import prbackgroundimage from "../../assets/prbackgroundimageProducts.webp"
+import loadingImg from "../../assets/Spinning line.gif"
 
 export default function ProductFilter() {
   const [categoryshow, setcategoryshow] = useState([]) // category show
