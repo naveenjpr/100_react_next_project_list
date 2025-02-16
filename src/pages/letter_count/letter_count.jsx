@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-export default function Word_count() {
+export default function Letter_count() {
   const [Wordcount, setWordcount] = useState("")
   const [singlwordshow, setsinglwordshow] = useState({})
   
