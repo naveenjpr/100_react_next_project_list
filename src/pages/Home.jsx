@@ -16,6 +16,7 @@ import Form_data_show_to_table from "./form_data_show_to_table/form_data_show_to
 import Movie from "./Movie/Movie.jsx"
 import Mega_Menu from "./Mega_Menu/Mega_Menu.jsx"
 import Letter_count from "./letter_count/letter_count.jsx"
+import Header_Menu_navbar from "./Header_Menu_navbar/Header_Menu_navbar.jsx"
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
       <Percentage />
       <PrimeNumber />
       <Form_data_show_to_table />
+      <Header_Menu_navbar/>
     </div>
   )
 }
