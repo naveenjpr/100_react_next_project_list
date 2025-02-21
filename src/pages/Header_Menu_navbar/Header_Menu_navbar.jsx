@@ -8,7 +8,7 @@ export default function Header_Menu_navbar() {
   return (
     <>
       {/* laptop start */}
-      <header className="w-[100%]  hidden md:block">
+      <header className="w-[100%] h-screen  hidden md:block">
         <nav className="bg-[#00008b] text-white w-[100%] flex justify-between p-[12px] items-center ">
           <div>
             <img src={logo} alt="" className="w-[50px] h-[50px]" />
@@ -51,16 +51,6 @@ export default function Header_Menu_navbar() {
       </header>
 
       {/* mobile navbar End*/}
-
-      <div>
-        <p className="text-center md:text-[35px] text-[17px] p-[12px]">
-          Responsive Navbar with separate designs for
-          <span className="text-[red] mx-3">"laptops"</span>
-          and
-          <span className="text-[red] mx-3">"mobile"</span>
-          devices using React,
-        </p>
-      </div>
     </>
   )
 }

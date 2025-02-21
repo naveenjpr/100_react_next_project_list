@@ -17,6 +17,7 @@ import Movie from "./Movie/Movie.jsx"
 import Mega_Menu from "./Mega_Menu/Mega_Menu.jsx"
 import Letter_count from "./letter_count/letter_count.jsx"
 import Header_Menu_navbar from "./Header_Menu_navbar/Header_Menu_navbar.jsx"
+import Light_box from "./Light_box/Light_box.jsx"
 
 export default function Home() {
   return (
@@ -34,12 +35,13 @@ export default function Home() {
       <Product_filter />
       <WeatherApp />
       <Password />
-      <Letter_count/>
+      <Letter_count />
       <Word_counter />
       <Percentage />
       <PrimeNumber />
+      <Header_Menu_navbar />
       <Form_data_show_to_table />
-      <Header_Menu_navbar/>
+      <Light_box />
     </div>
   )
 }
