@@ -35,7 +35,7 @@ export default function LightBox() {
 
         {/* CENTER OPTION सेंटर ऑप्शन */}
         <div
-          className={`absolute top-1/2 left-1/2 bg-black p-2 sm:p-3 w-[90%] sm:w-[60%] h-[60%] sm:h-[50%] transform -translate-x-1/2 -translate-y-1/2 z-50 ${
+          className={`absolute top-1/2 left-1/2 bg-black p-2 sm:p-3 w-[90%] sm:w-[60%] h-[50%] sm:h-[50%] transform -translate-x-1/2 -translate-y-1/2 z-50 ${
             isOpen == true ? "scale-100" : "scale-0"
           }`}
         >
