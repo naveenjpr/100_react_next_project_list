@@ -4,44 +4,45 @@ import "react-toastify/dist/ReactToastify.css" // ✅ Import styles
 import Tesseract from "tesseract.js"
 
 export default function ImageToText() {
-  const [image, setImage] = useState(null)
-  const [text, setText] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [language, setLanguage] = useState("eng")
+  const [image, setImage] = useState(null) // इमेज स्टोर करने के लिए
+  const [text, setText] = useState("") // इमेज से निकला हुआ टेक्स्ट स्टोर करने के लिए
+  const [loading, setLoading] = useState(false) // लोडिंग स्टेट को ट्रैक करने के लिए
+  const [language, setLanguage] = useState("eng") // डिफॉल्ट भाषा इंग्लिश सेट की गई है
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0]
     if (file) {
-      const imageUrl = URL.createObjectURL(file)
-      setImage(imageUrl)
+      const imageUrl = URL.createObjectURL(file) // इमेज का URL बनाना
+      setImage(imageUrl) // स्टेट में सेट करना
     }
   }
 
   const handleConvert = async () => {
-    if (!image) return
-    setLoading(true)
-    setText("")
+    if (!image) return // यदि इमेज नहीं है, तो फ़ंक्शन रोक दें
+    setLoading(true) // लोडिंग स्टेट को `true` करें
+    setText("") // पहले से मौजूद टेक्स्ट को क्लियर करें
 
     try {
       const {
         data: { text },
       } = await Tesseract.recognize(image, language, {
-        logger: (m) => console.log(m), // Optional: Log progress
+        logger: (m) => console.log(m), // प्रोसेस की प्रगति (progress) दिखाने के लिए
       })
-      setText(text)
+      setText(text) // टेक्स्ट को स्टेट में सेट करें
     } catch (error) {
       console.error("Error during OCR:", error)
-      setText("Error in conversion")
+      setText("Error in conversion") // यदि कोई एरर आए, तो यूज़र को बताएं
     } finally {
-      setLoading(false)
+      setLoading(false) // लोडिंग खत्म होने के बाद `false` कर दें
     }
   }
+
   const copypassword = () => {
     if (text.trim() !== "") {
-      navigator.clipboard.writeText(text)
-      toast.success("✅ Text copied to clipboard!")
+      navigator.clipboard.writeText(text) // टेक्स्ट क्लिपबोर्ड में कॉपी करें
+      toast.success("✅ Text copied to clipboard!") // सफल होने पर नोटिफिकेशन दिखाएं
     } else {
-      toast.error("❌ No text available to copy.")
+      toast.error("❌ No text available to copy.") // यदि कोई टेक्स्ट नहीं है, तो एरर दिखाएं
     }
   }
 
@@ -50,11 +51,10 @@ export default function ImageToText() {
     setText("")
     setLoading(false)
     setLanguage("eng")
-    // ✅ Reset file input manually
 
     const fileInput = document.getElementById("fileInput")
     if (fileInput) {
-      fileInput.value = ""
+      fileInput.value = "" // फाइल इनपुट को भी रीसेट करें
     }
   }
 

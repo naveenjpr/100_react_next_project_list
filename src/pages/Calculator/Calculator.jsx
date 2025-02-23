@@ -6,8 +6,8 @@ const Calculator = () => {
   let opr = ["+", "-", "×", "÷", "."]
 
   let handleData = (e) => {
-    let lastChar = Calculator[Calculator.length - 1]
-    let lastCharRemoveData = Calculator.slice(0, -1)
+    let lastChar = Calculator[Calculator.length - 1]  // आखिरी अक्षर प्राप्त करें
+    let lastCharRemoveData = Calculator.slice(0, -1)   // अंतिम अक्षर हटाने के लिए
 
     if (e.target.tagName === "BUTTON") {
       if (
@@ -35,7 +35,7 @@ const Calculator = () => {
           console.log("Cannot evaluate, expression ends with an operator.")
           return
         }
-        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/")
+        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/")  // गणना योग्य फॉर्मेट में बदलना
         try {
           let result = eval(data)
           if (isFinite(result)) {
@@ -51,12 +51,12 @@ const Calculator = () => {
       }
 
       if (e.target.innerText === "C") {
-        setCalculator("")
+        setCalculator("")    // इनपुट क्लियर करना
         return
       }
 
       if (e.target.innerText === "s") {
-        setCalculator(lastCharRemoveData)
+        setCalculator(lastCharRemoveData)   // एक अंक हटाना
         return
       }
 
