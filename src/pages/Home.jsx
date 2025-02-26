@@ -18,6 +18,7 @@ import Mega_Menu from "./Mega_Menu/Mega_Menu.jsx"
 import Letter_count from "./letter_count/letter_count.jsx"
 import Header_Menu_navbar from "./Header_Menu_navbar/Header_Menu_navbar.jsx"
 import Light_box from "./Light_box/Light_box.jsx"
+import Faq from "./Accordion/Faq.jsx"
 
 export default function Home() {
   return (
@@ -30,7 +31,6 @@ export default function Home() {
       <Randomcolor />
       <Calculator />
       <Product_find_price_filter />
-
       <Tapinng />
       <Product_filter />
       <WeatherApp />
@@ -42,6 +42,7 @@ export default function Home() {
       <Header_Menu_navbar />
       <Form_data_show_to_table />
       <Light_box />
+      <Faq/>
     </div>
   )
 }

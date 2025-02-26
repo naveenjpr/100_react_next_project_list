@@ -1,18 +1,26 @@
 import React, { useState } from "react"
+import Gallery1 from "../../assets/raining-smile-cartoon-vector-.avif"
+import Gallery2 from "../../assets/isolated_138676-6537.avif"
+import Gallery3 from "../../assets/people-silhouettes-gallery_1284-6401.avif"
+import Gallery4 from "../../assets/woman-art-exhibition_53876-14379.avif"
+import Gallery5 from "../../assets/art-gallery-antique-frame-concept_53876-31240.avif"
+import Gallery6 from "../../assets/white-squares_1160-683.avif"
+import Gallery7 from "../../assets/art-lover-concept-illustration_114360-1001.avif"
+import Gallery8 from "../../assets/empty-wall-frame-decoration-background_1017-17386.avif"
 
 export default function LightBox() {
   const [isOpen, setIsOpen] = useState(false) // यह ट्रैक करता है कि लाइटबॉक्स खुला है या बंद।
   const [photoIndex, setPhotoIndex] = useState(0) // photoIndex: यह ट्रैक करता है कि कौन-सी इमेज अभी प्रदर्शित हो रही है।
 
   const images = [
-    "https://img.freepik.com/free-vector/cute-cloud-raining-smile-cartoon-vector-icon-illustration-object-nature-icon-concept-isolated_138676-6538.jpg?ga=GA1.1.97809359.1737173852&semt=ais_hybrid",
-    "https://img.freepik.com/free-vector/cute-cat-wearing-hat-cartoon-vector-icon-illustration-animal-fashion-icon-concept-isolated_138676-6537.jpg",
-    "https://img.freepik.com/free-vector/cute-bunny-eating-carrot-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated_138676-6536.jpg",
-    "https://img.freepik.com/free-vector/cute-dog-bone-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated_138676-6535.jpg",
-    "https://img.freepik.com/free-vector/cute-dog-bone-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated_138676-6535.jpg",
-    "https://img.freepik.com/free-vector/weather-icons-collection_1234-53.jpg?ga=GA1.1.97809359.1737173852&semt=ais_hybrid",
-    "https://img.freepik.com/free-vector/weather-concept-illustration_114360-1189.jpg?ga=GA1.1.97809359.1737173852&semt=ais_hybrid",
-    "https://img.freepik.com/premium-vector/cartoon-weather-symbol_29190-115.jpg?ga=GA1.1.97809359.1737173852&semt=ais_hybrid",
+    Gallery1,
+    Gallery2,
+    Gallery3,
+    Gallery4,
+    Gallery5,
+    Gallery6,
+    Gallery7,
+    Gallery8,
   ]
 
   let imageclick = (image, index) => {
