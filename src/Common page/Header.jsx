@@ -26,8 +26,6 @@ export default function Header() {
           }`}
         >
           <ul className="flex flex-wrap gap-2 text-left w-full">
-            
-
             {/* Navigation Links */}
             {[
               { path: "/", label: "Home" },
@@ -54,6 +52,9 @@ export default function Header() {
               { path: "/Tapinng", label: "Tapinng" },
               { path: "/WeatherApp", label: "WeatherApp" },
               { path: "/Word_counter", label: "Word_counter" },
+              { path: "/Faq", label: "Faq" },
+
+              { path: "/Tooltip", label: "Tooltip" },
             ].map((item, index) => (
               <li
                 key={index}

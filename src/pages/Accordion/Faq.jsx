@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import { FaMinus, FaPlus } from "react-icons/fa"
 import faq from "../../assets/tiny-people.avif"
+import { Link, useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 
 export default function Faq() {
   const [currentId, setCurrentId] = useState(null) // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
+  const location = useLocation()
 
   const faqs = [
     {
@@ -37,6 +40,8 @@ export default function Faq() {
   }
   return (
     <>
+      <div>{location.pathname === "/Faq" ? <Header /> : null}</div>
+
       <div
         className="w-full h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${faq})` }} // बैकग्राउंड इमेज सेट कर रहे हैं

@@ -24,6 +24,7 @@ import Randomcolor from "./pages/Randomcolor/Randomcolor.jsx"
 import Tapinng from "./pages/Tapinng/Tapinng.jsx"
 import WeatherApp from "./pages/Weather_app/Weather.jsx"
 import Word_counter from "./pages/Word_counter/Word_counter.jsx"
+import Tooltip from "./pages/Tooltip/Tooltip.jsx"
 
 const router = createBrowserRouter([
   {
@@ -124,7 +125,7 @@ const router = createBrowserRouter([
 
   //Tapinng
   {
-    path: "/",
+    path: "/Tapinng",
     element: <Tapinng />,
   },
 
@@ -136,7 +137,17 @@ const router = createBrowserRouter([
   //Word_counter
   {
     path: "/Word_counter",
-    element: <Word_counter/>,
+    element: <Word_counter />,
+  },
+  //Faq
+  {
+    path: "/Faq",
+    element: <Faq />,
+  },
+  //Tooltip
+  {
+    path: "/Tooltip",
+    element: <Tooltip />,
   },
 ])
 createRoot(document.getElementById("root")).render(

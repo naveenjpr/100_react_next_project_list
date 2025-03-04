@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import primeNumber from "../../assets/primeNumber.jpg"
+import { useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 
 export default function PrimeNumber() {
+  const location = useLocation()
+
   const [Input, setInput] = useState("")
   const [Prime, setPrime] = useState("")
 
@@ -22,6 +26,8 @@ export default function PrimeNumber() {
   }
   return (
     <>
+      <div>{location.pathname === "/PrimeNumber" ? <Header /> : null}</div>
+
       <div
         className="min-h-screen bg-cover bg-center max-w-full flex flex-col items-center justify-center bg-gray-100 my-[20px] p-4"
         style={{ backgroundImage: `url(${primeNumber})` }}

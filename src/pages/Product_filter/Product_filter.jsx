@@ -3,8 +3,12 @@ import React, { useEffect, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import prbackgroundimage from "../../assets/prbackgroundimageProducts.webp"
 import loadingImg from "../../assets/Spinning line.gif"
+import { useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 
 export default function ProductFilter() {
+  const location = useLocation()
+
   const [categoryshow, setcategoryshow] = useState([]) // कैटेगरी की सूची को स्टोर करने के लिए।
   const [catname, setcatname] = useState("") // चुनी हुई कैटेगरी का नाम स्टोर करने के लिए।
   const [productshow, setproductshow] = useState([]) // उत्पादों की सूची को स्टोर करने के लिए।
@@ -50,66 +54,70 @@ export default function ProductFilter() {
   }, [catname]) // जब भी catname बदले, उत्पादों की सूची को अपडेट करें।
 
   return (
-    <section
-      className="w-full grid md:grid-cols-[20%_auto] grid-cols-[30%_auto] md:gap-4 gap-[2px] md:p-4 p-0"
-      style={{ backgroundImage: `url(${prbackgroundimage})` }} // बैकग्राउंड इमेज सेट करें।
-    >
-      {/* Sidebar */}
-      <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow md:p-4 p-2 bg-[#ff7f50] sticky top-4 h-screen overflow-scroll">
-        <h1 className="text-lg font-bold mb-4">Category</h1>
-        <ul className="space-y-2">
-          <li
-            className="cursor-pointer flex items-center space-x-2"
-            onClick={() => setcatname("")} // "All products" पर क्लिक करने पर catname को रीसेट करें।
-          >
-            <input type="radio" checked={catname === ""} />
-            All products
-          </li>
+    <>
+      <div>{location.pathname === "/ProductFilter" ? <Header /> : null}</div>
 
-          {categoryshow.length > 0 ? ( // अगर कैटेगरी डेटा उपलब्ध है, तो उसे दिखाएं।
-            categoryshow.map((v, i) => (
-              <>
-                <li
-                  key={i}
-                  className="cursor-pointer flex items-center space-x-2"
-                  onClick={() => setcatname(v)} // कैटेगरी पर क्लिक करने पर catname सेट करें।
-                >
-                  <input type="radio" checked={catname === v} value={v} />
-                  <span className="text-sm">{v}</span>
-                </li>
-              </>
-            ))
-          ) : (
-            <li>
-              {" "}
-              <img
-                src={loadingImg}
-                alt=""
-                className="w-[100%]  h-[100%]"
-              />{" "}
-              {/* लोडिंग इमेज दिखाएं। */}
+      <section
+        className="w-full grid md:grid-cols-[20%_auto] grid-cols-[30%_auto] md:gap-4 gap-[2px] md:p-4 p-0"
+        style={{ backgroundImage: `url(${prbackgroundimage})` }} // बैकग्राउंड इमेज सेट करें।
+      >
+        {/* Sidebar */}
+        <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow md:p-4 p-2 bg-[#ff7f50] sticky top-4 h-screen overflow-scroll">
+          <h1 className="text-lg font-bold mb-4">Category</h1>
+          <ul className="space-y-2">
+            <li
+              className="cursor-pointer flex items-center space-x-2"
+              onClick={() => setcatname("")} // "All products" पर क्लिक करने पर catname को रीसेट करें।
+            >
+              <input type="radio" checked={catname === ""} />
+              All products
             </li>
-          )}
-        </ul>
-      </div>
-      {/* Products */}
-      <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
-        <h2 className="text-center text-2xl font-bold mb-4 text-[white]">
-          Products search by category
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-screen overflow-y-auto relative">
-          {productshow.length > 0 ? ( // अगर उत्पाद डेटा उपलब्ध है, तो उसे दिखाएं।
-            productshow.map((v, i) => <ProductCart key={i} vale={v} />)
-          ) : (
-            <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
-              <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />{" "}
-              {/* लोडिंग इमेज दिखाएं। */}
-            </div>
-          )}
+
+            {categoryshow.length > 0 ? ( // अगर कैटेगरी डेटा उपलब्ध है, तो उसे दिखाएं।
+              categoryshow.map((v, i) => (
+                <>
+                  <li
+                    key={i}
+                    className="cursor-pointer flex items-center space-x-2"
+                    onClick={() => setcatname(v)} // कैटेगरी पर क्लिक करने पर catname सेट करें।
+                  >
+                    <input type="radio" checked={catname === v} value={v} />
+                    <span className="text-sm">{v}</span>
+                  </li>
+                </>
+              ))
+            ) : (
+              <li>
+                {" "}
+                <img
+                  src={loadingImg}
+                  alt=""
+                  className="w-[100%]  h-[100%]"
+                />{" "}
+                {/* लोडिंग इमेज दिखाएं। */}
+              </li>
+            )}
+          </ul>
         </div>
-      </div>
-      <ToastContainer /> {/* टोस्ट मैसेज दिखाने के लिए कंटेनर। */}
-    </section>
+        {/* Products */}
+        <div className="border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
+          <h2 className="text-center text-2xl font-bold mb-4 text-[white]">
+            Products search by category
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-screen overflow-y-auto relative">
+            {productshow.length > 0 ? ( // अगर उत्पाद डेटा उपलब्ध है, तो उसे दिखाएं।
+              productshow.map((v, i) => <ProductCart key={i} vale={v} />)
+            ) : (
+              <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
+                <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />{" "}
+                {/* लोडिंग इमेज दिखाएं। */}
+              </div>
+            )}
+          </div>
+        </div>
+        <ToastContainer /> {/* टोस्ट मैसेज दिखाने के लिए कंटेनर। */}
+      </section>
+    </>
   )
 }
 

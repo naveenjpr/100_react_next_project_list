@@ -20,6 +20,7 @@ import Header_Menu_navbar from "./Header_Menu_navbar/Header_Menu_navbar.jsx"
 import Light_box from "./Light_box/Light_box.jsx"
 import Faq from "./Accordion/Faq.jsx"
 import All_pdf_convert_one_pdf from "./All_pdf_convert_one_pdf/All_pdf_convert_one_pdf.jsx"
+import Tooltip from "./Tooltip/Tooltip.jsx"
 
 export default function Home() {
   return (
@@ -43,8 +44,9 @@ export default function Home() {
       <Header_Menu_navbar />
       <Light_box />
       <Faq />
-      <Form_data_show_to_table />
       <All_pdf_convert_one_pdf />
+      <Form_data_show_to_table />
+      <Tooltip />
     </div>
   )
 }

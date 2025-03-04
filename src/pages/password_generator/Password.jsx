@@ -7,8 +7,12 @@ import {
 } from "../../data.jsx"
 import { ToastContainer, toast } from "react-toastify"
 import passwordimage from "../../assets/passwordimage.jpg"
+import Header from "../../Common page/Header.jsx"
+import { useLocation } from "react-router-dom"
 
 export default function Password() {
+  const location = useLocation()
+
   const [passwordlenghth, setpasswordlenghth] = useState(10) // पासवर्ड की डिफॉल्ट लंबाई 10 सेट की गई है
   const [fpas, setfpas] = useState("") // जनरेट किया गया पासवर्ड स्टोर करने के लिए स्टेट
 
@@ -56,6 +60,8 @@ export default function Password() {
   }
   return (
     <>
+      <div>{location.pathname === "/Password" ? <Header /> : null}</div>
+
       <div
         className="min-h-screen bg-cover bg-center flex items-center justify-center my-[100px]"
         style={{ backgroundImage: `url(${passwordimage})` }} // बैकग्राउंड इमेज सेट कर रहे हैं

@@ -1,6 +1,10 @@
 import React from "react"
+import { Link, useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 
 export default function Mega_Menu() {
+  const location = useLocation()
+
   const Mens_mega_menu_categories = [
     {
       heading: "Topwear",
@@ -504,6 +508,8 @@ export default function Mega_Menu() {
 
   return (
     <>
+      <div>{location.pathname === "/Mega_Menu" ? <Header /> : null}</div>
+
       <header className="w-full shadow-lg py-5 h-screen ">
         <h1 className="text-center bg-black text-[35px] text-white py-[20px]">
           Mega menu

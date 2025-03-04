@@ -1,4 +1,7 @@
 import React, { useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
+
 import Gallery1 from "../../assets/raining-smile-cartoon-vector-.avif"
 import Gallery2 from "../../assets/isolated_138676-6537.avif"
 import Gallery3 from "../../assets/people-silhouettes-gallery_1284-6401.avif"
@@ -30,6 +33,8 @@ export default function LightBox() {
 
   return (
     <>
+      <div>{location.pathname === "/LightBox" ? <Header /> : null}</div>
+
       <div className="w-full min-h-screen relative">
         <h1 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mt-6 mb-6">
           LightBox Gallery <span className="text-blue-600">"इमेज गैलरी"</span>

@@ -3,8 +3,13 @@ import axios from "axios"
 import { toast } from "react-toastify"
 import ratingImage from "../../assets/colorful-rating-icons-set_.jpg"
 import loadingImg from "../../assets/Spinning line.gif"
+import { useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 
 export default function Product_find_price_filter() {
+
+  const location = useLocation()
+
   const [productshow, setproductshow] = useState([]) // All products
   const [filteredProducts, setFilteredProducts] = useState([]) // Filtered products
   const [minPrice, setMinPrice] = useState(100) // Minimum price filter
@@ -54,6 +59,8 @@ export default function Product_find_price_filter() {
 
   return (
     <>
+          <div>{location.pathname === "/Product_find_price_filter" ? <Header /> : null}</div>
+    
       <div
         className="w-full px-4 md:px-8 h-screen overflow-scroll mb-[100px] pb-[20px]"
         style={{ backgroundImage: `url(${ratingImage})` }}

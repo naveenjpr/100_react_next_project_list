@@ -1,9 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import backmovie from "../../assets/popcorn-movie-time_23-2148470132.jpg"
+import Header from "../../Common page/Header"
+import { useLocation } from "react-router-dom"
 
 export default function Movie() {
   let [movieList, setMovieList] = useState([]) //  // movieList state को एक खाली array से initialize किया गया है
+  const location = useLocation()
 
   // getMovie फ़ंक्शन: यह TMDb API से मूवी डेटा प्राप्त करता है
 
@@ -32,27 +35,31 @@ export default function Movie() {
     getMovie()
   }, [])
   return (
-    <div
-      className="h-screen overflow-scroll bg-gray-900 text-white flex flex-col items-center my-4 p-6 bg-repeat"
-      style={{ backgroundImage: `url(${backmovie})` }}
-    >
-      <h1 className="text-3xl font-bold mb-6 text-[#00008b]">Movie Search</h1>
-      <input
-        type="text"
-        placeholder="Search for a movie..."
-        className="w-full max-w-md p-3 rounded-lg border border-gray-700 bg-[#fff8dc] text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-        onInput={(event) => getMovie(event.target.value)}
-      />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 w-full">
-        {movieList.length > 0 ? (
-          movieList.map((movie, i) => <MovieData key={i} data={movie} />)
-        ) : (
-          <p className="text-red-500 bg-black text-lg sm:text-2xl text-center w-full py-4">
-            No movies found.
-          </p>
-        )}
+    <>
+      <div>{location.pathname === "/Movie" ? <Header /> : null}</div>
+
+      <div
+        className="h-screen overflow-scroll bg-gray-900 text-white flex flex-col items-center my-4 p-6 bg-repeat"
+        style={{ backgroundImage: `url(${backmovie})` }}
+      >
+        <h1 className="text-3xl font-bold mb-6 text-[#00008b]">Movie Search</h1>
+        <input
+          type="text"
+          placeholder="Search for a movie..."
+          className="w-full max-w-md p-3 rounded-lg border border-gray-700 bg-[#fff8dc] text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+          onInput={(event) => getMovie(event.target.value)}
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 w-full">
+          {movieList.length > 0 ? (
+            movieList.map((movie, i) => <MovieData key={i} data={movie} />)
+          ) : (
+            <p className="text-red-500 bg-black text-lg sm:text-2xl text-center w-full py-4">
+              No movies found.
+            </p>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

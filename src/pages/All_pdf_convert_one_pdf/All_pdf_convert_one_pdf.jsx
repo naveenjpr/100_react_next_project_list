@@ -1,9 +1,13 @@
 import React, { useRef, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 import { PDFDocument } from "pdf-lib"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 export default function All_pdf_convert_one_pdf() {
+  const location = useLocation()
+
   const [mergedPDF, setMergedPDF] = useState(null) // मर्ज की गई PDF फाइल का URL
   const [fileCount, setFileCount] = useState(0) // चुनी गई फाइलों की संख्या
 
@@ -52,54 +56,60 @@ export default function All_pdf_convert_one_pdf() {
   }
 
   return (
-    <div className=" bg-gray-100 min-h-screen">
-      <ToastContainer />
+    <>
+      <div>
+        {location.pathname === "/All_pdf_convert_one_pdf" ? <Header /> : null}
+      </div>
 
-      <h3 className="text-center py-[10px] font-medium text-[35px]">
-        Merge PDF
-      </h3>
-      <div className=" relative  flex flex-col items-center p-6 justify-center bg-[#87cefa] w-[90%] h-[300px] border-[4px] border-dotted border-black mx-auto">
-        <input
-          type="file"
-          ref={fileInputRef}
-          multiple
-          accept="application/pdf"
-          onChange={handleMergePDFs}
-          className="block w-full text-lg text-gray-900 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer bg-gray-50 p-3 transition duration-300 hover:border-blue-500 focus:outline-none"
-        />
+      <div className=" bg-gray-100 min-h-screen">
+        <ToastContainer />
 
-        {fileCount > 0 && fileCount < 2 && (
-          <span className="text-red-500 text-lg font-medium mt-2">
-            Please select at least two PDF files
-          </span>
-        )}
+        <h3 className="text-center py-[10px] font-medium text-[35px]">
+          Merge PDF
+        </h3>
+        <div className=" relative  flex flex-col items-center p-6 justify-center bg-[#87cefa] w-[90%] h-[300px] border-[4px] border-dotted border-black mx-auto">
+          <input
+            type="file"
+            ref={fileInputRef}
+            multiple
+            accept="application/pdf"
+            onChange={handleMergePDFs}
+            className="block w-full text-lg text-gray-900 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer bg-gray-50 p-3 transition duration-300 hover:border-blue-500 focus:outline-none"
+          />
 
-        {mergedPDF && (
-          <div className="flex  items-center gap-5">
-            <a
-              href={mergedPDF}
-              download="merged.pdf"
-              className="px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              Download Merged PDF
-            </a>
+          {fileCount > 0 && fileCount < 2 && (
+            <span className="text-red-500 text-lg font-medium mt-2">
+              Please select at least two PDF files
+            </span>
+          )}
 
-            <button
-              className="text-[25px] table  bg-black px-[8px] text-white border-2 border-white rounded-lg hover:bg-red-500 hover:text-black transition-all"
-              onClick={datareset}
-            >
-              Reset
-            </button>
+          {mergedPDF && (
+            <div className="flex  items-center gap-5">
+              <a
+                href={mergedPDF}
+                download="merged.pdf"
+                className="px-4 py-2 bg-blue-500 text-white rounded"
+              >
+                Download Merged PDF
+              </a>
+
+              <button
+                className="text-[25px] table  bg-black px-[8px] text-white border-2 border-white rounded-lg hover:bg-red-500 hover:text-black transition-all"
+                onClick={datareset}
+              >
+                Reset
+              </button>
+            </div>
+          )}
+
+          <div className="absolute top-[100%] left-0">
+            <ul className="list-disc list-inside space-y-1">
+              <li>Please select at least two PDFs</li>
+              <li>select only pdf files</li>
+            </ul>
           </div>
-        )}
-
-        <div className="absolute top-[100%] left-0">
-          <ul className="list-disc list-inside space-y-1">
-            <li>Please select at least two PDFs</li>
-            <li>select only pdf files</li>
-          </ul>
         </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 import calculatorset from "../../assets/calculator.jpg"
-
+import { Link, useLocation } from "react-router-dom"
+import Header from "../../Common page/Header"
 const Calculator = () => {
+  const location = useLocation()
+
   const [Calculator, setCalculator] = useState("")
   let opr = ["+", "-", "×", "÷", "."]
 
   let handleData = (e) => {
-    let lastChar = Calculator[Calculator.length - 1]  // आखिरी अक्षर प्राप्त करें
-    let lastCharRemoveData = Calculator.slice(0, -1)   // अंतिम अक्षर हटाने के लिए
+    let lastChar = Calculator[Calculator.length - 1] // आखिरी अक्षर प्राप्त करें
+    let lastCharRemoveData = Calculator.slice(0, -1) // अंतिम अक्षर हटाने के लिए
 
     if (e.target.tagName === "BUTTON") {
       if (
@@ -35,7 +38,7 @@ const Calculator = () => {
           console.log("Cannot evaluate, expression ends with an operator.")
           return
         }
-        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/")  // गणना योग्य फॉर्मेट में बदलना
+        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/") // गणना योग्य फॉर्मेट में बदलना
         try {
           let result = eval(data)
           if (isFinite(result)) {
@@ -51,12 +54,12 @@ const Calculator = () => {
       }
 
       if (e.target.innerText === "C") {
-        setCalculator("")    // इनपुट क्लियर करना
+        setCalculator("") // इनपुट क्लियर करना
         return
       }
 
       if (e.target.innerText === "s") {
-        setCalculator(lastCharRemoveData)   // एक अंक हटाना
+        setCalculator(lastCharRemoveData) // एक अंक हटाना
         return
       }
 
@@ -85,110 +88,113 @@ const Calculator = () => {
 
   return (
     <>
-  <div
-  className="w-full min-h-screen bg-slate-400 bg-cover bg-center"
-  style={{ backgroundImage: `url(${calculatorset})` }}
->
-  {/* Your content here */}
-  <div className="w-full sm:max-w-[100%] md:max-w-md mx-auto">
-    <div className="min-h-screen flex items-center justify-center">
+      <div>{location.pathname === "/Calculator" ? <Header /> : null}</div>
+
       <div
-        className="w-full bg-[#5f9ea0] rounded-2xl shadow-lg p-5"
-        onClick={handleData}
+        className="w-full min-h-screen bg-slate-400 bg-cover bg-center"
+        style={{ backgroundImage: `url(${calculatorset})` }}
       >
-        <h1 className="text-center uppercase sm:text-[25px] text-[10px] text-white">calculator</h1>
+        {/* Your content here */}
+        <div className="w-full sm:max-w-[100%] md:max-w-md mx-auto">
+          <div className="min-h-screen flex items-center justify-center">
+            <div
+              className="w-full bg-[#5f9ea0] rounded-2xl shadow-lg p-5"
+              onClick={handleData}
+            >
+              <h1 className="text-center uppercase sm:text-[25px] text-[10px] text-white">
+                calculator
+              </h1>
 
-        <div className="md:mb-4 mb-1">
-          <input
-            type="text"
-            className="w-full text-right bg-gray-50 text-2xl font-semibold rounded-md md:p-3 p-1 focus:outline-none"
-            value={Calculator}
-            readOnly
-          />
-        </div>
+              <div className="md:mb-4 mb-1">
+                <input
+                  type="text"
+                  className="w-full text-right bg-gray-50 text-2xl font-semibold rounded-md md:p-3 p-1 focus:outline-none"
+                  value={Calculator}
+                  readOnly
+                />
+              </div>
 
-        <div className="grid grid-cols-4 gap-2 sm:gap-3">
-          {/* Row 1 */}
-          <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
-            C
-          </button>
-          <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
-            s
-          </button>
-          <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
-            %
-          </button>
-          <button
-            className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600"
-            value="÷"
-          >
-            ÷
-          </button>
+              <div className="grid grid-cols-4 gap-2 sm:gap-3">
+                {/* Row 1 */}
+                <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
+                  C
+                </button>
+                <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
+                  s
+                </button>
+                <button className="bg-gray-200 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-300">
+                  %
+                </button>
+                <button
+                  className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600"
+                  value="÷"
+                >
+                  ÷
+                </button>
 
-          {/* Row 2 */}
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            7
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            8
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            9
-          </button>
-          <button
-            className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600"
-            value="x"
-          >
-            ×
-          </button>
+                {/* Row 2 */}
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  7
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  8
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  9
+                </button>
+                <button
+                  className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600"
+                  value="x"
+                >
+                  ×
+                </button>
 
-          {/* Row 3 */}
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            4
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            5
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            6
-          </button>
-          <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
-            -
-          </button>
+                {/* Row 3 */}
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  4
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  5
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  6
+                </button>
+                <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
+                  -
+                </button>
 
-          {/* Row 4 */}
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            1
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            2
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            3
-          </button>
-          <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
-            +
-          </button>
+                {/* Row 4 */}
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  1
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  2
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  3
+                </button>
+                <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
+                  +
+                </button>
 
-          {/* Row 5 */}
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            00
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            0
-          </button>
-          <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
-            .
-          </button>
-          <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
-            =
-          </button>
+                {/* Row 5 */}
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  00
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  0
+                </button>
+                <button className="bg-gray-100 text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-gray-200">
+                  .
+                </button>
+                <button className="bg-orange-500 text-white text-lg font-bold p-2 sm:p-3 rounded-lg hover:bg-orange-600">
+                  =
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
     </>
   )
 }

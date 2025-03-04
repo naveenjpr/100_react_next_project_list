@@ -43,13 +43,17 @@ import childImage8 from "../../assets/child8.jpg"
 import childImage9 from "../../assets/child9.jpg"
 import childImage10 from "../../assets/child10.jpg"
 import tabingImage from "../../assets/tabingImage.jpg"
+import Header from "../../Common page/Header"
+import { useLocation } from "react-router-dom"
 export default function Tapinng() {
   const [activButton, setactivButton] = useState("button1")
+  const location = useLocation()
+
   var settings = {
     dots: true,
     infinite: false,
     speed: 300,
-    
+
     slidesToShow: 5,
     slidesToScroll: 5,
     responsive: [
@@ -176,6 +180,8 @@ export default function Tapinng() {
   ]
   return (
     <>
+      <div>{location.pathname === "/Tapinng" ? <Header /> : null}</div>
+
       <section
         className="w-full md:min-h-screen min-h-[34vh] bg-black  pb-[40px] mb-[100px] "
         style={{ backgroundImage: `url(${tabingImage})` }}
