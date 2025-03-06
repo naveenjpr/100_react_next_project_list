@@ -25,6 +25,7 @@ import Tapinng from "./pages/Tapinng/Tapinng.jsx"
 import WeatherApp from "./pages/Weather_app/Weather.jsx"
 import Word_counter from "./pages/Word_counter/Word_counter.jsx"
 import Tooltip from "./pages/Tooltip/Tooltip.jsx"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
     element: <Home />,
   },
 
+  //NotFoundPage
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
   //Faq
   {
     path: "/Faq",

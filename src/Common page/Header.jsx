@@ -72,6 +72,10 @@ export default function Header() {
                   path: "/Product_find_price_filter",
                   label: "Product_find_price_filter",
                 },
+                {
+                  path: "/PrimeNumber",
+                  label: "PrimeNumber",
+                },
                 { path: "/Randomcolor", label: "Randomcolor" },
                 { path: "/Tapinng", label: "Tapinng" },
                 { path: "/WeatherApp", label: "WeatherApp" },

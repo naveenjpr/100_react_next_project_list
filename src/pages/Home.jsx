@@ -21,6 +21,7 @@ import Light_box from "./Light_box/Light_box.jsx"
 import Faq from "./Accordion/Faq.jsx"
 import All_pdf_convert_one_pdf from "./All_pdf_convert_one_pdf/All_pdf_convert_one_pdf.jsx"
 import Tooltip from "./Tooltip/Tooltip.jsx"
+import NotFoundPage from "./NotFoundPage/NotFoundPage.jsx"
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
       <All_pdf_convert_one_pdf />
       <Form_data_show_to_table />
       <Tooltip />
+      <NotFoundPage/>
     </div>
   )
 }
