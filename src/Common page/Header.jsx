@@ -83,6 +83,7 @@ export default function Header() {
                 { path: "/Faq", label: "Faq" },
 
                 { path: "/Tooltip", label: "Tooltip" },
+                { path: "/SliderType", label: "SliderType" },
               ].map((item, index) => (
                 <li
                   key={index}

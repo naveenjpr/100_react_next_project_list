@@ -1,7 +1,6 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import "./index.css"
-import App from "./App.jsx"
 import Home from "./pages/Home.jsx"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import All_pdf_convert_one_pdf from "./pages/All_pdf_convert_one_pdf/All_pdf_convert_one_pdf.jsx"
@@ -26,6 +25,7 @@ import WeatherApp from "./pages/Weather_app/Weather.jsx"
 import Word_counter from "./pages/Word_counter/Word_counter.jsx"
 import Tooltip from "./pages/Tooltip/Tooltip.jsx"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
+import SliderType from "./pages/SliderType/SliderType.jsx"
 
 const router = createBrowserRouter([
   {
@@ -154,6 +154,11 @@ const router = createBrowserRouter([
   {
     path: "/Tooltip",
     element: <Tooltip />,
+  },
+  //SliderType
+  {
+    path: "/SliderType",
+    element: <SliderType />,
   },
 ])
 createRoot(document.getElementById("root")).render(
