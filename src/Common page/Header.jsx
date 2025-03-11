@@ -84,6 +84,7 @@ export default function Header() {
 
                 { path: "/Tooltip", label: "Tooltip" },
                 { path: "/SliderType", label: "SliderType" },
+                { path: "/BgRemover", label: "BgRemover" },
               ].map((item, index) => (
                 <li
                   key={index}

@@ -26,6 +26,7 @@ import Word_counter from "./pages/Word_counter/Word_counter.jsx"
 import Tooltip from "./pages/Tooltip/Tooltip.jsx"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
 import SliderType from "./pages/SliderType/SliderType.jsx"
+import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
 
 const router = createBrowserRouter([
   {
@@ -159,6 +160,11 @@ const router = createBrowserRouter([
   {
     path: "/SliderType",
     element: <SliderType />,
+  },
+  //BgRemover
+  {
+    path: "/BgRemover",
+    element: <BgRemover/>,
   },
 ])
 createRoot(document.getElementById("root")).render(
