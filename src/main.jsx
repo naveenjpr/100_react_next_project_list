@@ -27,6 +27,7 @@ import Tooltip from "./pages/Tooltip/Tooltip.jsx"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
 import SliderType from "./pages/SliderType/SliderType.jsx"
 import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
+import HashtagGenerator from "./pages/Hastag_generaator/Hastag_generaator.jsx"
 
 const router = createBrowserRouter([
   {
@@ -165,6 +166,11 @@ const router = createBrowserRouter([
   {
     path: "/BgRemover",
     element: <BgRemover/>,
+  },
+  //HashtagGenerator
+  {
+    path: "/Hash-tag-Generator",
+    element: <HashtagGenerator/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

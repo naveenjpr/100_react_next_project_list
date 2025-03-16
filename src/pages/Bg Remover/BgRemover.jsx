@@ -138,7 +138,7 @@ const BgRemover = () => {
     <>
       <div>{location.pathname === "/BgRemover" ? <Header /> : null}</div>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        <h1 className="text-2xl font-bold mb-4">AI Background Remover</h1>
+        <h1 className="text-2xl font-bold mb-4">AI Background Remover for Image</h1>
 
         {/* Image Upload */}
         <label className="font-semibold">Upload Image:</label>

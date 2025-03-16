@@ -23,6 +23,7 @@ import All_pdf_convert_one_pdf from "./All_pdf_convert_one_pdf/All_pdf_convert_o
 import Tooltip from "./Tooltip/Tooltip.jsx"
 import SliderType from "./SliderType/SliderType.jsx"
 import BgRemover from "./Bg Remover/BgRemover.jsx"
+import HashtagGenerator from "./Hastag_generaator/Hastag_generaator.jsx"
 
 export default function Home() {
   return (
@@ -50,7 +51,8 @@ export default function Home() {
       <Form_data_show_to_table />
       <Tooltip />
       <SliderType />
-      <BgRemover/>
+      <BgRemover />
+      <HashtagGenerator/>
     </div>
   )
 }
