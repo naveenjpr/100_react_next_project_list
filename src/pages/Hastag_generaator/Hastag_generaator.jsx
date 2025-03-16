@@ -133,9 +133,7 @@ const HashtagGenerator = () => {
                 </button>
               )}
             <div className="mt-4">
-              <h2 className="text-lg font-semibold mb-2">
-                Popular Option Trading Hashtags
-              </h2>
+              <h2 className="text-lg font-semibold mb-2">Popular Hashtags</h2>
               <div className="flex flex-wrap gap-2">
                 {tradingHashtags.map((hashtag, index) => (
                   <span
