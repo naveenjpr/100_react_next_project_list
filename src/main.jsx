@@ -28,6 +28,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
 import SliderType from "./pages/SliderType/SliderType.jsx"
 import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./pages/Hastag_generaator/Hastag_generaator.jsx"
+import RssFeed from "./pages/Rss Feed/Rss-Feed.jsx"
 
 const router = createBrowserRouter([
   {
@@ -171,6 +172,10 @@ const router = createBrowserRouter([
   {
     path: "/Hash-tag-Generator",
     element: <HashtagGenerator/>,
+  },
+  {
+    path: "/Rss-Feed",
+    element: <RssFeed/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

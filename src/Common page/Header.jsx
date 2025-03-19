@@ -78,14 +78,15 @@ export default function Header() {
                 },
                 { path: "/Randomcolor", label: "Randomcolor" },
                 { path: "/Tapinng", label: "Tapinng" },
-                { path: "/WeatherApp", label: "WeatherApp" },
+                { path: "/WeatherApp", label: "Weather-App" },
                 { path: "/Word_counter", label: "Word_counter" },
                 { path: "/Faq", label: "Faq" },
 
                 { path: "/Tooltip", label: "Tooltip" },
                 { path: "/SliderType", label: "SliderType" },
-                { path: "/BgRemover", label: "BgRemover" },
-                { path: "/Hash-tag-Generator", label: "HashtagGenerator" },
+                { path: "/BgRemover", label: "Bg-Remover" },
+                { path: "/Hash-tag-Generator", label: "Hashtag-Generator" },
+                { path: "/Rss-Feed", label: "Rss-Feed" },
               ].map((item, index) => (
                 <li
                   key={index}

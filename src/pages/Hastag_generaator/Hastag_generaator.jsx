@@ -23,7 +23,8 @@ const HashtagGenerator = () => {
     "BackendDevelopment",
     "FullStack",
     "MVC",
-    "Model-View-Controller",
+    "ModelViewController",
+    "Tailwind",
   ])
 
   const generateHashtag = useCallback(() => {

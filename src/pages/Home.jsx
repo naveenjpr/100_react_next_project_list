@@ -24,6 +24,8 @@ import Tooltip from "./Tooltip/Tooltip.jsx"
 import SliderType from "./SliderType/SliderType.jsx"
 import BgRemover from "./Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./Hastag_generaator/Hastag_generaator.jsx"
+import Rss_Feed from "./Rss Feed/Rss-Feed.jsx"
+import RssFeed from "./Rss Feed/Rss-Feed.jsx"
 
 export default function Home() {
   return (
@@ -52,7 +54,8 @@ export default function Home() {
       <Tooltip />
       <SliderType />
       <BgRemover />
-      <HashtagGenerator/>
+      <HashtagGenerator />
+      <RssFeed />
     </div>
   )
 }
