@@ -13,7 +13,7 @@ const RSSFeed = () => {
   useEffect(() => {
     const fetchRSS = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/rss")
+        const response = await axios.get("https://rss-feed-node-js.onrender.com/rss")
         console.log("RSS Data:", response.data) // ✅ Debugging
 
         setRssData(response.data.items)
