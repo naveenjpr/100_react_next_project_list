@@ -19,7 +19,7 @@ export default function Header_Menu_navbar() {
       <header className="w-[100%] h-screen  hidden md:block">
         <nav className="bg-[#00008b] text-white w-[100%] flex justify-between p-[12px] items-center ">
           <div>
-            <img src={logo} alt="" className="w-[50px] h-[50px]" />
+            <img src={logo} alt="test" className="w-[50px] h-[50px]" />
           </div>
           <ul className="text-left flex">
             <li className="p-4 hover:bg-gray-700 cursor-pointer">Home</li>
@@ -33,7 +33,7 @@ export default function Header_Menu_navbar() {
       {/* mobile navbar start */}
       <header className="w-[100%] justify-between  bg-[#00008b]  z-[999] relative md:hidden flex">
         <div>
-          <img src={logo} alt="" className="w-[50px] h-[50px]" />
+          <img src={logo} alt="test" className="w-[50px] h-[50px]" />
         </div>
         <button
           className="absolute right-[0px] text-[45px] text-white"
@@ -48,7 +48,7 @@ export default function Header_Menu_navbar() {
         >
           <ul className="text-left">
             <li className="p-4">
-              <img src={logo} alt="" className="w-[50px] h-[50px]" />
+              <img src={logo} alt="test" className="w-[50px] h-[50px]" />
             </li>
             <li className="p-4 hover:bg-gray-700 cursor-pointer">Home</li>
             <li className="p-4 hover:bg-gray-700 cursor-pointer">About</li>

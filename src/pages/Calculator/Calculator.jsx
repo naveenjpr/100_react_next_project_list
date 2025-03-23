@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import calculatorset from "../../assets/calculator.jpg"
 import { Link, useLocation } from "react-router-dom"
 import Header from "../../Common page/Header"
 const Calculator = () => {
@@ -92,7 +91,6 @@ const Calculator = () => {
 
       <div
         className="w-full min-h-screen bg-slate-400 bg-cover bg-center"
-        style={{ backgroundImage: `url(${calculatorset})` }}
       >
         {/* Your content here */}
         <div className="w-full sm:max-w-[100%] md:max-w-md mx-auto">

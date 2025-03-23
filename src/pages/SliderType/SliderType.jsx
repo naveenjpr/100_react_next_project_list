@@ -728,7 +728,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/0a5e7bca-6a98-4925-ac7f-296d43c9d21d.jpg?token=exp=1741369997~hmac=6c32b667af1ab03792e61af0b98e116a5e64615135369a6b6d2b8f00fe53f00c"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -737,7 +737,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/6a2b6af1-f3c9-4dcb-adec-f7c0fa6fbf0b.jpg?token=exp=1741369997~hmac=891eb8ed40cbe5f57f943945de971a9866abc0ef382acdbfb56353e21e066eec"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -746,7 +746,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/dddb88ce-ba92-4409-bb39-c27c7deebc38.jpg?token=exp=1741369997~hmac=bb40581348b432d729b4a6d18410f7e53238230d91cf8e238c572595ed5370bf"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -755,7 +755,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/fc7f08e0-1a88-474b-903c-27d18d38ad43.jpg?token=exp=1741369997~hmac=70130db815a757341c5235e3e7991c791715ac60fab48c1d1473fdc0a6bd5078"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -764,7 +764,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/ebfdb5a6-47e5-4983-b71f-479824ef4cc5.jpg?token=exp=1741369997~hmac=3addf4a9adc94425ad8b748857725745dccbbff57ae55864bbc4f2aec3da7baa"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -773,7 +773,7 @@ export default function SliderType() {
               <div className="p-3">
                 <img
                   src="https://cdn-cm.freepik.com/previews/32f13ec4-6edc-46d1-8de2-fe5f2031fd4b.jpg?token=exp=1741369997~hmac=eca81522316e814e274c22cbbaaa94e92323c8a89748f536fbc57fe94e711895"
-                  alt=""
+                  alt="test"
                   className="h-[50vh] w-[100%]"
                 />
               </div>

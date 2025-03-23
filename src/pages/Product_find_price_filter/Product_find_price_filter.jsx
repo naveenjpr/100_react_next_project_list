@@ -176,7 +176,7 @@ export default function Product_find_price_filter() {
               ))
             ) : (
               <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
-                <img src={loadingImg} alt="" className="w-[100%]  h-[100%]" />
+                <img src={loadingImg} alt="test" className="w-[100%]  h-[100%]" />
               </div>
             )}
           </div>
