@@ -29,6 +29,7 @@ import SliderType from "./pages/SliderType/SliderType.jsx"
 import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./pages/Hastag_generaator/Hastag_generaator.jsx"
 import RssFeed from "./pages/Rss Feed/Rss-Feed.jsx"
+import ImagetoWebPConverte from "./pages/Image-to-WebP-Converter/Image-to-WebP-Converte.jsx"
 
 const router = createBrowserRouter([
   {
@@ -176,6 +177,11 @@ const router = createBrowserRouter([
   {
     path: "/Rss-Feed",
     element: <RssFeed/>,
+  },
+  //Image-to-WebP-Converte
+  {
+    path: "/Image-to-WebP-Converte",
+    element: <ImagetoWebPConverte/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

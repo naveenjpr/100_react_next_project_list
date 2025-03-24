@@ -40,6 +40,7 @@ export default function Header() {
           </div>
           <button
             className="absolute top-0 right-0 text-[45px] text-white"
+            aria-label="बंद करें"
             onClick={() => setshowmenu(!showmenu)}
           >
             {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
@@ -49,16 +50,19 @@ export default function Header() {
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
-            <ul className="flex flex-wrap gap-2 text-left w-full">
+            <ul className="flex flex-wrap gap-[2px] text-left text-[13px] w-full">
               {/* Navigation Links */}
               {[
                 { path: "/", label: "Home" },
                 {
                   path: "/All_pdf_convert_one_pdf",
-                  label: "All PDF Convert One PDF",
+                  label: "All-PDF-Convert-One-PDF",
                 },
                 { path: "/Calculator", label: "Calculator" },
-                { path: "/FormDataShowToTable", label: "Form-DataShow-To-Table" },
+                {
+                  path: "/FormDataShowToTable",
+                  label: "Form-DataShow-To-Table",
+                },
                 { path: "/Header_Menu_navbar", label: "Header_Menu_navbar" },
                 { path: "/ImageToText", label: "Image-To-Text" },
                 { path: "/Letter_count", label: "Letter-count" },
@@ -87,12 +91,16 @@ export default function Header() {
                 { path: "/BgRemover", label: "Bg-Remover" },
                 { path: "/Hash-tag-Generator", label: "Hashtag-Generator" },
                 { path: "/Rss-Feed", label: "Rss-Feed" },
+                {
+                  path: "/Image-to-WebP-Converte",
+                  label: "Image-to-WebP-Converte",
+                },
               ].map((item, index) => (
                 <li
                   key={index}
                   className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
                 >
-                  <Link to={item.path} className="w-full block px-4 py-2">
+                  <Link to={item.path} className="w-full block p-[12px]">
                     {item.label}
                   </Link>
                 </li>

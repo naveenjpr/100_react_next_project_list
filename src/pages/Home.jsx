@@ -26,6 +26,7 @@ import BgRemover from "./Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./Hastag_generaator/Hastag_generaator.jsx"
 import Rss_Feed from "./Rss Feed/Rss-Feed.jsx"
 import RssFeed from "./Rss Feed/Rss-Feed.jsx"
+import ImageToWebPConverter from "./Image-to-WebP-Converter/Image-to-WebP-Converte.jsx"
 
 export default function Home() {
   return (
@@ -50,12 +51,13 @@ export default function Home() {
       <Light_box />
       <Faq />
       <All_pdf_convert_one_pdf />
-      <Form_data_show_to_table />
+      {/* <Form_data_show_to_table /> */}
       <Tooltip />
       <SliderType />
       <BgRemover />
       <HashtagGenerator />
       <RssFeed />
+      <ImageToWebPConverter/>
     </div>
   )
 }

@@ -454,7 +454,9 @@ export default function SliderType() {
         <a>
           <img
             src={imagesCustomPaging[i]} // Ensure thumbnails match slides
-            className="w-[100px] h-[50px] object-cover rounded-md border border-gray-300"
+            width="100"
+            height="50"
+            className="  object-cover rounded-md border border-gray-300"
             alt={`Thumbnail ${i + 1}`}
           />
         </a>
@@ -729,6 +731,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/0a5e7bca-6a98-4925-ac7f-296d43c9d21d.jpg?token=exp=1741369997~hmac=6c32b667af1ab03792e61af0b98e116a5e64615135369a6b6d2b8f00fe53f00c"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -738,6 +743,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/6a2b6af1-f3c9-4dcb-adec-f7c0fa6fbf0b.jpg?token=exp=1741369997~hmac=891eb8ed40cbe5f57f943945de971a9866abc0ef382acdbfb56353e21e066eec"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -747,6 +755,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/dddb88ce-ba92-4409-bb39-c27c7deebc38.jpg?token=exp=1741369997~hmac=bb40581348b432d729b4a6d18410f7e53238230d91cf8e238c572595ed5370bf"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -756,6 +767,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/fc7f08e0-1a88-474b-903c-27d18d38ad43.jpg?token=exp=1741369997~hmac=70130db815a757341c5235e3e7991c791715ac60fab48c1d1473fdc0a6bd5078"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -765,6 +779,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/ebfdb5a6-47e5-4983-b71f-479824ef4cc5.jpg?token=exp=1741369997~hmac=3addf4a9adc94425ad8b748857725745dccbbff57ae55864bbc4f2aec3da7baa"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -774,6 +791,9 @@ export default function SliderType() {
                 <img
                   src="https://cdn-cm.freepik.com/previews/32f13ec4-6edc-46d1-8de2-fe5f2031fd4b.jpg?token=exp=1741369997~hmac=eca81522316e814e274c22cbbaaa94e92323c8a89748f536fbc57fe94e711895"
                   alt="test"
+                  width="100"
+                  height="50"
+                  loading="lazy"
                   className="h-[50vh] w-[100%]"
                 />
               </div>
@@ -803,6 +823,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg object-cover"
                   />
                 </div>
@@ -830,6 +853,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />
                 </div>
@@ -888,6 +914,9 @@ export default function SliderType() {
                     <img
                       src={src}
                       alt={`Slide ${index + 1}`}
+                      width="100"
+                      height="50"
+                      loading="lazy"
                       className="h-[50vh] w-full rounded-lg shadow-lg"
                     />
                   </div>
@@ -923,6 +952,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />
                 </div>
@@ -956,6 +988,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />
                 </div>
@@ -987,6 +1022,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg cover"
                   />
                 </div>
@@ -1020,6 +1058,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />
                 </div>
@@ -1038,6 +1079,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/media/tti-examples/14.jpg"
                 alt="https://pikaso.cdnpk.net/public/media/tti-examples/43.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1045,6 +1089,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/media/tti-examples/43.jpg"
                 alt="https://pikaso.cdnpk.net/public/media/tti-examples/43.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1052,6 +1099,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/production/prompt-templates/121.jpeg"
                 alt="https://pikaso.cdnpk.net/public/production/prompt-templates/121.jpeg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1059,6 +1109,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/media/tti-examples/20.jpg"
                 alt="https://pikaso.cdnpk.net/public/media/tti-examples/20.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1066,6 +1119,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/media/illustration-examples/6.jpg"
                 alt="https://pikaso.cdnpk.net/public/media/illustration-examples/6.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1073,6 +1129,9 @@ export default function SliderType() {
               <img
                 src="https://pikaso.cdnpk.net/public/media/tti-examples/45.jpg"
                 alt="https://pikaso.cdnpk.net/public/media/tti-examples/45.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
                 className="h-[50vh]"
               />{" "}
             </div>
@@ -1090,6 +1149,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/3d-examples/1.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />
               </div>
@@ -1098,6 +1161,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/production/prompt-templates/116.jpeg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />{" "}
                 <p>
@@ -1112,6 +1179,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/production/prompt-templates/118.jpeg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />{" "}
                 <p>See ....</p>
@@ -1127,6 +1198,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/production/prompt-templates/117.jpeg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />
               </div>
@@ -1135,6 +1210,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/3d-examples/3.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />
               </div>
@@ -1143,6 +1222,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/3d-examples/2.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]"
                 />
               </div>
@@ -1168,6 +1251,10 @@ export default function SliderType() {
                 <div className="p-3">
                   <img
                     src={src}
+                    width="100"
+                    height="50"
+                    loading="lazy"
+                    alt="test"
                     alt={`Slide ${index + 1}`}
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />
@@ -1199,6 +1286,9 @@ export default function SliderType() {
                 <div className="p-3 overflow-hidden">
                   <img
                     src={src}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     alt={`Slide ${index + 1}`}
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                   />
@@ -1219,6 +1309,10 @@ export default function SliderType() {
                 <div key={index} className="p-2">
                   <img
                     src={src}
+                    width="100"
+                    height="50"
+                    loading="lazy"
+                    alt="test"
                     className="w-full h-[50vh] object-cover rounded-lg shadow-lg"
                   />
                 </div>
@@ -1249,6 +1343,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/92c7b2d0-0242-4eb2-b699-223833ebb6b8.jpg?token=exp=1741367223~hmac=0cd0fb6d0658e17698acf465dfe9035b6f992d3cddab05d9c101c8181de97c8a"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1257,6 +1355,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/bccecf37-559c-4b0d-97b5-b03e24728e1d.jpg?token=exp=1741367223~hmac=1e978b45377a9f2db625561bc88149a1dd7020819eda7a545530faf2b1dc7444"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1266,6 +1368,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/552c4bb1-48f9-4899-b4b9-3d8a0eaa4aec.jpg?token=exp=1741367223~hmac=3d9c50764b58792c636a6284707e5de8ea944956abb09cf0aff59bc3d45396be"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1273,6 +1379,10 @@ export default function SliderType() {
             <div>
               <img
                 src="https://cdn-cm.freepik.com/previews/92c7b2d0-0242-4eb2-b699-223833ebb6b8.jpg?token=exp=1741367223~hmac=0cd0fb6d0658e17698acf465dfe9035b6f992d3cddab05d9c101c8181de97c8a"
+                width="100"
+                height="50"
+                loading="lazy"
+                alt="test"
                 className="w-full h-[50vh]  object-cover"
               />
             </div>
@@ -1280,6 +1390,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/tti-examples/29.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1288,6 +1402,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/tti-examples/04.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1304,6 +1422,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/92c7b2d0-0242-4eb2-b699-223833ebb6b8.jpg?token=exp=1741367223~hmac=0cd0fb6d0658e17698acf465dfe9035b6f992d3cddab05d9c101c8181de97c8a"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1312,6 +1434,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/bccecf37-559c-4b0d-97b5-b03e24728e1d.jpg?token=exp=1741367223~hmac=1e978b45377a9f2db625561bc88149a1dd7020819eda7a545530faf2b1dc7444"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1319,6 +1445,10 @@ export default function SliderType() {
             <div>
               <img
                 src="https://cdn-cm.freepik.com/previews/552c4bb1-48f9-4899-b4b9-3d8a0eaa4aec.jpg?token=exp=1741367223~hmac=3d9c50764b58792c636a6284707e5de8ea944956abb09cf0aff59bc3d45396be"
+                width="100"
+                height="50"
+                loading="lazy"
+                alt="test"
                 className="w-full h-[50vh]  object-cover"
               />
             </div>
@@ -1326,6 +1456,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://cdn-cm.freepik.com/previews/92c7b2d0-0242-4eb2-b699-223833ebb6b8.jpg?token=exp=1741367223~hmac=0cd0fb6d0658e17698acf465dfe9035b6f992d3cddab05d9c101c8181de97c8a"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1333,6 +1467,10 @@ export default function SliderType() {
             <div>
               <img
                 src="https://pikaso.cdnpk.net/public/media/tti-examples/29.jpg"
+                width="100"
+                height="50"
+                loading="lazy"
+                alt="test"
                 className="w-full h-[50vh]  object-cover"
               />
             </div>
@@ -1340,6 +1478,10 @@ export default function SliderType() {
               <div className="p-2">
                 <img
                   src="https://pikaso.cdnpk.net/public/media/tti-examples/04.jpg"
+                  width="100"
+                  height="50"
+                  loading="lazy"
+                  alt="test"
                   className="w-full h-[50vh]  object-cover"
                 />
               </div>
@@ -1364,6 +1506,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg object-cover transform scale-105 transition-all duration-300 ease-in-out hover:scale-110"
                   />
                 </div>
@@ -1384,6 +1529,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[80vh] w-full rounded-lg shadow-lg object-cover transform scale-105 transition-all duration-300 ease-in-out hover:scale-110"
                   />
                 </div>
@@ -1419,6 +1567,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                   />
                 </div>
@@ -1452,6 +1603,9 @@ export default function SliderType() {
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                   />
                 </div>
@@ -1498,6 +1652,9 @@ export default function SliderType() {
                 <div className="p-3 overflow-hidden">
                   <img
                     src={src}
+                    width="100"
+                    height="50"
+                    loading="lazy"
                     alt={`Slide ${index + 1}`}
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                   />
@@ -1526,6 +1683,10 @@ export default function SliderType() {
                     <div className="m-3">
                       <img
                         src={slide}
+                        width="100"
+                        height="50"
+                        loading="lazy"
+                        alt="test"
                         className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                       />
                     </div>
@@ -1562,6 +1723,8 @@ export default function SliderType() {
                 <div className="p-3 overflow-hidden">
                   <img
                     src={src}
+                    width="100"
+                    height="50"
                     alt={`Slide ${index + 1}`}
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
                   />
@@ -1597,6 +1760,8 @@ export default function SliderType() {
                   <img
                     src={num}
                     alt={index + 1}
+                    width="100"
+                    height="50"
                     className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 "
                   />
                 </div>
@@ -1644,7 +1809,9 @@ export default function SliderType() {
                   <img
                     src={num}
                     alt={index + 1}
-                    className="h-[50vh] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 "
+                    width="100"
+                    height="50"
+                    className=" rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 "
                   />
                 </div>
               </div>
