@@ -30,6 +30,9 @@ import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./pages/Hastag_generaator/Hastag_generaator.jsx"
 import RssFeed from "./pages/Rss Feed/Rss-Feed.jsx"
 import ImagetoWebPConverte from "./pages/Image-to-WebP-Converter/Image-to-WebP-Converte.jsx"
+import Count_Down from "./pages/digital-clock/Digital-clock.jsx"
+import To_do_list from "./pages/To_do_List/To_do_list.jsx"
+import QuizApp from "./pages/Quiz_app/Quiz.jsx"
 
 const router = createBrowserRouter([
   {
@@ -182,6 +185,18 @@ const router = createBrowserRouter([
   {
     path: "/Image-to-WebP-Converte",
     element: <ImagetoWebPConverte/>,
+  },
+  {
+    path: "/Count_Down",
+    element: <Count_Down/>,
+  },
+  {
+    path: "/To_do_list",
+    element: <To_do_list/>,
+  },
+  {
+    path: "/QuizApp",
+    element: <QuizApp/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

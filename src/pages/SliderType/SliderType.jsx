@@ -1254,7 +1254,6 @@ export default function SliderType() {
                     width="100"
                     height="50"
                     loading="lazy"
-                    alt="test"
                     alt={`Slide ${index + 1}`}
                     className="h-[50vh] w-full rounded-lg shadow-lg"
                   />

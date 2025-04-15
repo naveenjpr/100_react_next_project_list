@@ -27,24 +27,28 @@ import HashtagGenerator from "./Hastag_generaator/Hastag_generaator.jsx"
 import Rss_Feed from "./Rss Feed/Rss-Feed.jsx"
 import RssFeed from "./Rss Feed/Rss-Feed.jsx"
 import ImageToWebPConverter from "./Image-to-WebP-Converter/Image-to-WebP-Converte.jsx"
+import Count_Down from "./digital-clock/Digital-clock.jsx"
+import To_do_list from "./To_do_List/To_do_list.jsx"
+import QuizApp from "./Quiz_app/Quiz.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Mega_Menu />
+      <QuizApp/>
       <Movie />
+      <Randomcolor />
+      <Product_find_price_filter />
+      <Product_filter />
+      <Password />
+      <WeatherApp />
+      <Tapinng />
+      <Word_counter />
+      <Mega_Menu />
       <Modalshow />
       <ImageToText />
-      <Randomcolor />
       <Calculator />
-      <Product_find_price_filter />
-      <Tapinng />
-      <Product_filter />
-      <WeatherApp />
-      <Password />
       <Letter_count />
-      <Word_counter />
       <Percentage />
       <PrimeNumber />
       <Header_Menu_navbar />
@@ -58,6 +62,8 @@ export default function Home() {
       <HashtagGenerator />
       <RssFeed />
       <ImageToWebPConverter/>
+      <Count_Down/>
+      <To_do_list/>
     </div>
   )
 }

@@ -95,6 +95,18 @@ export default function Header() {
                   path: "/Image-to-WebP-Converte",
                   label: "Image-to-WebP-Converte",
                 },
+                {
+                  path: "/Count_Down",
+                  label: "Count_Down",
+                },
+                {
+                  path: "/To_do_list",
+                  label: "To_do_list",
+                },
+                {
+                  path: "/QuizApp",
+                  label: "QuizApp",
+                },
               ].map((item, index) => (
                 <li
                   key={index}
