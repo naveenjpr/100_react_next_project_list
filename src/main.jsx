@@ -33,6 +33,7 @@ import ImagetoWebPConverte from "./pages/Image-to-WebP-Converter/Image-to-WebP-C
 import Count_Down from "./pages/digital-clock/Digital-clock.jsx"
 import To_do_list from "./pages/To_do_List/To_do_list.jsx"
 import QuizApp from "./pages/Quiz_app/Quiz.jsx"
+import Reserved_Keywords from "./pages/Reserved_Keywords/Reserved_Keywords.jsx"
 
 const router = createBrowserRouter([
   {
@@ -197,6 +198,10 @@ const router = createBrowserRouter([
   {
     path: "/QuizApp",
     element: <QuizApp/>,
+  },
+  {
+    path: "/Reserved_Keywords",
+    element: <Reserved_Keywords/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

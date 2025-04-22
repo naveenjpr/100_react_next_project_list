@@ -66,6 +66,7 @@ export default function Header() {
                 { path: "/Header_Menu_navbar", label: "Header_Menu_navbar" },
                 { path: "/ImageToText", label: "Image-To-Text" },
                 { path: "/Letter_count", label: "Letter-count" },
+                { path: "/Reserved_Keywords", label: "Reserved_Keywords" },
                 { path: "/LightBox", label: "LightBox" },
                 { path: "/Mega_Menu", label: "Mega-Menu" },
                 { path: "/Movie", label: "Movie" },
