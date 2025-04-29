@@ -31,11 +31,13 @@ import Count_Down from "./digital-clock/Digital-clock.jsx"
 import To_do_list from "./To_do_List/To_do_list.jsx"
 import QuizApp from "./Quiz_app/Quiz.jsx"
 import Reserved_Keywords from "./Reserved_Keywords/Reserved_Keywords.jsx"
+import SpineTheWheel from "./SpineTheWheel/SpineTheWheel.jsx"
 
 export default function Home() {
   return (
     <div>
       <Header />
+      <SpineTheWheel/>
       <QuizApp/>
       <Reserved_Keywords/>
       <Movie />

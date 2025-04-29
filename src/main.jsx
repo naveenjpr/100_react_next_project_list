@@ -34,6 +34,7 @@ import Count_Down from "./pages/digital-clock/Digital-clock.jsx"
 import To_do_list from "./pages/To_do_List/To_do_list.jsx"
 import QuizApp from "./pages/Quiz_app/Quiz.jsx"
 import Reserved_Keywords from "./pages/Reserved_Keywords/Reserved_Keywords.jsx"
+import Wordpress from "./pages/wordpress/Wordpress.jsx"
 
 const router = createBrowserRouter([
   {
@@ -202,6 +203,10 @@ const router = createBrowserRouter([
   {
     path: "/Reserved_Keywords",
     element: <Reserved_Keywords/>,
+  },
+  {
+    path: "/Wordpress",
+    element: <Wordpress/>,
   },
 ])
 createRoot(document.getElementById("root")).render(

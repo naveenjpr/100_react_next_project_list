@@ -108,6 +108,10 @@ export default function Header() {
                   path: "/QuizApp",
                   label: "QuizApp",
                 },
+                {
+                  path: "/Wordpress",
+                  label: "Wordpress-Notes",
+                },
               ].map((item, index) => (
                 <li
                   key={index}
