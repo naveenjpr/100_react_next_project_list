@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../Common page/Header";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Appearcance from "../../assets/Screenshot 2025-04-29 223126.png";
+import { HiH3 } from "react-icons/hi2";
 
 export default function Wordpress() {
   return (
@@ -17,6 +18,15 @@ export default function Wordpress() {
           <CustomizesidebarchangeWidgets />
           <Customize />
           <Sidebar />
+          <Insidethemeinstall />
+          <Logochange />
+          <Logositeiconsiteidentiny />
+          <OnePageWebsiteRules />
+          <Paidtheme />
+          <Passwordlostpasswordchnage />
+          <Plugin_name />
+          <Post_add />
+          <Slider_apply_pc_full_width/>
         </div>
         {/* customize, sidebar change,Widgets start */}
       </div>
@@ -557,8 +567,8 @@ function CustomizesidebarchangeWidgets() {
 }
 function Customize() {
   return (
-    <div className="bg-gray-50 min-h-screen p-6 font-sans">
-      <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md p-6">
+    <div className="bg-gray-50 min-h-screen p-1 font-sans">
+      <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
         <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">
           (Appearance → Customize)
         </h1>
@@ -788,7 +798,7 @@ function Sidebar() {
   return (
     <>
       <div className="bg-gray-50 p-4 md:p-6 font-sans">
-        <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md p-6">
+        <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
           <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-4">
             WordPress में Sidebar की Position कैसे बदलें?
           </h1>
@@ -867,3 +877,838 @@ function Sidebar() {
     </>
   );
 }
+
+function Insidethemeinstall() {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold text-center text-[red] mb-4">
+        WordPress Theme Installation
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">
+            WAMP Server me Astra Theme install kare:
+          </h2>
+          <ol className="list-decimal pl-5 space-y-1">
+            <li>https://wordpress.org/themes/ open karo</li>
+            <li>wamserver folder open,</li>
+            <li>www folder ke aandhar, // wapserver ke liye</li>
+            <li>blog_website mere folder ka name hai,</li>
+            <li>wp-content folder ke andhar,</li>
+            <li>themes name ka folder hai,</li>
+            <li>
+              folder me paste karna hai jo mene (astra theme) download kiya hai,
+            </li>
+          </ol>
+        </div>
+
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">
+            XAMPP ke andar Astra Theme install karne ka tarika:
+          </h2>
+          <ol className="list-decimal pl-5 space-y-1">
+            <li>https://wordpress.org/themes/ open karo</li>
+            <li>Astra theme download karo (zip file me)</li>
+            <li>XAMPP ka folder open karo</li>
+            <li>htdocs folder ke andar jao</li>
+            <li>
+              blog_website naam ka folder open karo (ye aapki WordPress site
+              hai)
+            </li>
+            <li>Uske andar wp-content folder open karo</li>
+            <li>Uske andar themes naam ka folder open karo</li>
+            <li>Astra theme ka zip file extract karo</li>
+            <li>
+              Extract hone ke baad jo astra folder milega, usse copy/paste karo:
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="text-xl font-semibold mb-2">
+          paid them download karne ke liye:
+        </h2>
+        <p>https://themelock.com/eng/</p>
+      </div>
+    </div>
+  );
+}
+
+function Logochange() {
+  return (
+    <div className="p-4 bg-white rounded-lg shadow-sm">
+      <h1 className="text-2xl font-bold mb-4 text-red-600 text-center">
+        WordPress me Logo Kaise Change Kare
+      </h1>
+
+      <div className="space-y-4">
+        <div className="border-l-4 border-blue-500 pl-4">
+          <h2 className="text-xl font-semibold text-gray-700">
+            Method 1: Customizer se
+          </h2>
+          <ol className="list-decimal pl-5 mt-2 space-y-2 text-gray-600">
+            <li>WordPress admin panel me jao</li>
+            <li>
+              Left sidebar me{" "}
+              <span className="bg-gray-100 px-2 py-1 rounded">Appearance</span>{" "}
+              par click karo
+            </li>
+            <li>
+              <span className="bg-gray-100 px-2 py-1 rounded">Customize</span>{" "}
+              option par click karo
+            </li>
+            <li>
+              <span className="bg-gray-100 px-2 py-1 rounded">Header</span> ya{" "}
+              <span className="bg-gray-100 px-2 py-1 rounded">
+                Site Identity
+              </span>{" "}
+              ka option dhundo (theme ke hisaab se wording thoda alag ho sakta
+              hai)
+            </li>
+            <li>Logo upload karne ka option dikhega</li>
+            <li>Apna logo select karo aur save changes karo</li>
+          </ol>
+        </div>
+
+        <div className="border-l-4 border-green-500 pl-4">
+          <h2 className="text-xl font-semibold text-gray-700">
+            Method 2: Theme Options se
+          </h2>
+          <ol className="list-decimal pl-5 mt-2 space-y-2 text-gray-600">
+            <li>WordPress admin panel me jao</li>
+            <li>
+              <span className="bg-gray-100 px-2 py-1 rounded">Appearance</span>{" "}
+              >{" "}
+              <span className="bg-gray-100 px-2 py-1 rounded">
+                Theme Options
+              </span>{" "}
+              par jao
+            </li>
+            <li>
+              <span className="bg-gray-100 px-2 py-1 rounded">
+                Header Settings
+              </span>{" "}
+              ya{" "}
+              <span className="bg-gray-100 px-2 py-1 rounded">
+                Logo Settings
+              </span>{" "}
+              dhundo
+            </li>
+            <li>Logo upload ka option use karo</li>
+          </ol>
+        </div>
+
+        <div className="bg-yellow-50 p-3 rounded border border-yellow-200">
+          <h3 className="font-medium text-yellow-800">Important Notes:</h3>
+          <ul className="list-disc pl-5 mt-1 space-y-1 text-yellow-700">
+            <li>Kuch themes me logo size adjust karne ka option milta hai</li>
+            <li>
+              Logo ke liye recommended size: 350x100 pixels (theme ke hisaab se
+              alag ho sakta hai)
+            </li>
+            <li>
+              Logo transparent background me PNG format me best dikhta hai
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Logositeiconsiteidentiny() {
+  return (
+    <div className=" w-[100%] p-4 bg-white rounded-lg shadow-sm  mx-auto">
+      <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
+        WordPress me Site Title, Tagline aur Site Icon Kaise Set Kare
+      </h1>
+
+      <div className="space-y-6">
+        {/* First Method */}
+        <div className="grid md:grid-cols-2 grid-cols-1">
+          <div className="border-l-4 border-blue-500 pl-4">
+            <h2 className="text-xl font-semibold text-gray-700 mb-3">
+              Pehla Tarika (Customizer se):
+            </h2>
+            <ol className="list-decimal pl-5 space-y-2 text-gray-600">
+              <li>WordPress admin panel me jao</li>
+              <li>
+                Left sidebar me{" "}
+                <span className="bg-gray-100 px-2 py-1 rounded font-medium">
+                  Appearance
+                </span>{" "}
+                par click karo
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded font-medium">
+                  Customize
+                </span>{" "}
+                option par click karo
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded font-medium">
+                  Site Identity
+                </span>{" "}
+                section me jao
+              </li>
+              <li>
+                Yahan aapko teen options milenge:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>
+                    <span className="font-medium">Site Title</span> - Apne
+                    website ka naam
+                  </li>
+                  <li>
+                    <span className="font-medium">Tagline</span> - Website ka
+                    short description
+                  </li>
+                  <li>
+                    <span className="font-medium">Site Icon</span> - Favicon
+                    (browser tab me dikhne wala chota icon)
+                  </li>
+                </ul>
+              </li>
+              <li>Changes save karo</li>
+            </ol>
+          </div>
+
+          {/* Second Method */}
+          <div className="border-l-4 border-green-500 pl-4">
+            <h2 className="text-xl font-semibold text-gray-700 mb-3">
+              Dusra Tarika (Settings se):
+            </h2>
+            <ol className="list-decimal pl-5 space-y-2 text-gray-600">
+              <li>WordPress admin panel me jao</li>
+              <li>
+                Left sidebar me{" "}
+                <span className="bg-gray-100 px-2 py-1 rounded font-medium">
+                  Settings
+                </span>{" "}
+                par click karo
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded font-medium">
+                  General
+                </span>{" "}
+                option par click karo
+              </li>
+              <li>
+                Yahan aapko milenge:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>
+                    <span className="font-medium">Site Title</span>
+                  </li>
+                  <li>
+                    <span className="font-medium">Tagline</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Site Icon ke liye aapko pehle tarike (Customizer) ka use karna
+                hoga
+              </li>
+              <li>Changes save karo</li>
+            </ol>
+          </div>
+        </div>
+
+        {/* Important Notes */}
+        <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+          <h3 className="font-semibold text-yellow-800 mb-2">
+            Important Notes:
+          </h3>
+          <ul className="list-disc pl-5 space-y-1 text-yellow-700">
+            <li>
+              Site Icon (Favicon) ke liye recommended size: 512x512 pixels
+            </li>
+            <li>
+              Site Title SEO ke liye important hai, isme keywords shamil karein
+            </li>
+            <li>Tagline typically 10-12 words me hona chahiye</li>
+            <li>
+              Changes save karne ke baad cache clear karein agar changes
+              immediately na dikhe
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OnePageWebsiteRules() {
+  return (
+    <div className="p-4 bg-white rounded-lg shadow-sm w-[98%] mx-auto">
+      <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
+        One Page Website Setup Guide
+      </h1>
+
+      <div className="space-y-6">
+        {/* Notes Section */}
+        <div className="space-y-4">
+          <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+            <h3 className="font-semibold text-blue-800">Note-1:</h3>
+            <p className="text-blue-700">
+              One page ke website (Portfolio, Freelancers / Personal Branding,
+              Product Launch / App Promo, Event / Conference Website, Small
+              Business / Startup, Resume / CV Website, Coming Soon / Under
+              Construction Page)
+            </p>
+          </div>
+
+          <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+            <h3 className="font-semibold text-red-800">Note-2:</h3>
+            <p className="text-red-700">
+              Bloging ke website kabhi bhi one page ke liye nahi hoti hai
+            </p>
+          </div>
+
+          <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+            <h3 className="font-semibold text-yellow-800">Note-3:</h3>
+            <p className="text-yellow-700">
+              Upper ke site ake bhi page call nahi hoga. One page me custom link
+              banane te hai
+            </p>
+          </div>
+        </div>
+
+        {/* Step 1 */}
+        <div className="border-l-4 border-green-500 pl-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-3">
+            1) Home Page Setup
+          </h2>
+          <p className="text-gray-600 mb-2">
+            Home page ko main page banana hai:
+          </p>
+          <div className="ml-4">
+            <h3 className="font-medium text-gray-700">Method 1:</h3>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-600">
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded">Settings</span>{" "}
+                → <span className="bg-gray-100 px-2 py-1 rounded">Reading</span>{" "}
+                par jao
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded">
+                  A static page (select below)
+                </span>{" "}
+                ko select karo
+              </li>
+              <li>"Home" page ko select karo</li>
+            </ol>
+
+            <h3 className="font-medium text-gray-700 mt-3">Method 2:</h3>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-600">
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded">
+                  Appearance
+                </span>{" "}
+                →{" "}
+                <span className="bg-gray-100 px-2 py-1 rounded">Customize</span>{" "}
+                par jao
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded">
+                  Homepage Settings
+                </span>{" "}
+                par jao
+              </li>
+              <li>
+                <span className="bg-gray-100 px-2 py-1 rounded">Homepage</span>{" "}
+                → "home" select karo
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        {/* Step 2 */}
+        <div className="border-l-4 border-blue-500 pl-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-3">
+            2) Menu Setup
+          </h2>
+          <p className="text-gray-600 mb-2">
+            Appearance → Menu → Custom Links:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
+            <div className="bg-gray-50 p-2 rounded">
+              <p>
+                <span className="font-medium">URL:</span> #home
+              </p>
+              <p>
+                <span className="font-medium">Link Text:</span> Home
+              </p>
+              <p className="text-sm text-gray-500">
+                (Ye page Home page wala page nahi hai, custom link wala home
+                page hai)
+              </p>
+            </div>
+            <div className="bg-gray-50 p-2 rounded">
+              <p>
+                <span className="font-medium">URL:</span> #about
+              </p>
+              <p>
+                <span className="font-medium">Link Text:</span> About
+              </p>
+            </div>
+            <div className="bg-gray-50 p-2 rounded">
+              <p>
+                <span className="font-medium">URL:</span> #price
+              </p>
+              <p>
+                <span className="font-medium">Link Text:</span> Price
+              </p>
+            </div>
+            <div className="bg-gray-50 p-2 rounded">
+              <p>
+                <span className="font-medium">URL:</span> #faq
+              </p>
+              <p>
+                <span className="font-medium">Link Text:</span> Faq
+              </p>
+            </div>
+            <div className="bg-gray-50 p-2 rounded">
+              <p>
+                <span className="font-medium">URL:</span> #testimonial
+              </p>
+              <p>
+                <span className="font-medium">Link Text:</span> Testimonial
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Step 3 */}
+        <div className="border-l-4 border-purple-500 pl-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-3">
+            3) Elementor Section Setup
+          </h2>
+          <ol className="list-decimal pl-5 space-y-2 text-gray-600">
+            <li>Elementor ke andhar three dots per click karo</li>
+            <li>Layout, Style, Advanced options open honge</li>
+            <li>Advanced option me jana hai</li>
+            <li>
+              CSS ID dena hai (har section ke liye alag):
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                <div className="bg-gray-50 p-2 rounded">
+                  <p>
+                    <span className="font-medium">Advanced → CSS ID:</span> home
+                  </p>
+                  <p className="text-sm text-gray-500">(# ka use nahi karna)</p>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <p>
+                    <span className="font-medium">Advanced → CSS ID:</span>{" "}
+                    about
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <p>
+                    <span className="font-medium">Advanced → CSS ID:</span>{" "}
+                    price
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <p>
+                    <span className="font-medium">Advanced → CSS ID:</span> faq
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-2 rounded">
+                  <p>
+                    <span className="font-medium">Advanced → CSS ID:</span>{" "}
+                    testimonial
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Paidtheme() {
+  return (
+    <div className="w-[95%] mx-auto p-4 text-[16px] text-gray-800 leading-relaxed">
+      <h1 className="text-2xl font-bold text-center text-red-600 mb-6">
+        Paid Theme Install Inside Folder
+      </h1>
+
+      <p className="mb-4">
+        <strong>wamserver → www → travel</strong> (is name folder datebase hai)
+        → <strong>wp-content → themes → parent or child theme</strong> ko{" "}
+        <strong>unzip</strong> karno
+      </p>
+
+      <p className="mb-4">
+        Ab jao <strong>WordPress admin</strong> me:
+      </p>
+
+      <p className="mb-4">
+        <strong>Appearance &gt; Themes</strong>
+      </p>
+
+      <p className="mb-4">
+        Aapko <strong>Traveltour</strong> aur <strong>Traveltour Child</strong>{" "}
+        dono dikhai denge.
+      </p>
+
+      <p className="mb-4">
+        Aap{" "}
+        <span className="font-semibold text-green-600">
+          Child Theme (traveltour-child)
+        </span>{" "}
+        ko <strong>Activate</strong> karo{" "}
+        <span className="font-semibold">(recommended)</span>.
+      </p>
+
+      <div className="border-l-4 border-yellow-500 bg-yellow-50 p-4 mt-4">
+        <p className="mb-2 font-semibold text-yellow-700">📌 Note:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            Child theme active karge koi child me kabhi bhi update nahi aata
+          </li>
+          <li>Isse future updates ke baad aapke changes safe rahenge</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Passwordlostpasswordchnage() {
+  return (
+    <div className="w-full p-4 md:p-10 bg-gray-50 text-gray-800">
+      <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
+        WordPress User Password Reset (phpMyAdmin)
+      </h1>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Step 1 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 1: phpMyAdmin Open Karo
+          </h2>
+          <p>
+            Browser me jao:{" "}
+            <span className="text-blue-600 font-medium">
+              http://localhost/phpmyadmin
+            </span>
+          </p>
+        </div>
+
+        {/* Step 2 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 2: Database Select Karo
+          </h2>
+          <p>
+            Left sidebar me apne WordPress wale <strong>database</strong> ko
+            select karo (example: <code>travel</code>).
+          </p>
+        </div>
+
+        {/* Step 3 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 3: Table - <code>wp_users</code>
+          </h2>
+          <p>
+            <code>wp_users</code> table pe click karo, phir{" "}
+            <strong>Browse</strong> tab pe click karo.
+          </p>
+        </div>
+
+        {/* Step 4 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 4: Row Edit Karo
+          </h2>
+          <p>
+            Jis user ka password change karna hai uske{" "}
+            <strong>Edit (✏️)</strong> icon pe click karo.
+          </p>
+        </div>
+
+        {/* Step 5 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 5: Username & Password Set Karo
+          </h2>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              <strong>user_login:</strong> demo
+            </li>
+            <li>
+              <strong>user_pass:</strong> demo
+            </li>
+            <li>
+              <strong>Function:</strong> MD5 select karo
+            </li>
+          </ul>
+        </div>
+
+        {/* Step 6 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 6: Save Karo
+          </h2>
+          <p>
+            Scroll down karke <strong>Go</strong> ya <strong>Save</strong>{" "}
+            button dabao.
+          </p>
+        </div>
+
+        {/* Step 7 */}
+        <div className="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            Step 7: Login Page
+          </h2>
+          <p>
+            Browser me open karo:{" "}
+            <span className="text-blue-600">http://localhost/wp-login.php</span>
+          </p>
+          <p className="mt-2">
+            Username: <strong>demo</strong>
+            <br />
+            Password: <strong>demo</strong>
+          </p>
+        </div>
+      </div>
+
+      {/* Note Section */}
+      <div className="mt-10 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+        <p className="text-yellow-700">
+          <strong>Note:</strong> Dashboard se password change karne ke liye:{" "}
+          <br />
+          Users → All Users → Edit → Set New Password → Update Profile
+        </p>
+        <p className="mt-2 text-red-600 font-medium">
+          ⚠️ WordPress Address (URL) aur Site Address (URL) mat change karo —
+          site down ho sakti hai.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Plugin_name() {
+  const plugins = [
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+    {
+      name: "Smush",
+      author: "WPMU DEV",
+      purpose: "Automatically compress and optimize images.",
+    },
+    {
+      name: "Recent Posts Widget With Thumbnails",
+      author: "Unknown",
+      purpose: "Display recent posts with thumbnails in the sidebar.",
+    },
+    {
+      name: "WP News and Scrolling Widgets",
+      author: "WP OnlineSupport",
+      purpose: "Show scrolling news tickers or post lists.",
+    },
+    {
+      name: "Elementor Pro",
+      author: "Elementor",
+      purpose: "Advanced drag-and-drop page builder.",
+    },
+    {
+      name: "Under Construction",
+      author: "WebFactory",
+      purpose: "Display 'Under Construction' notice during development.",
+    },
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+    {
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations.",
+    },
+  ];
+  return (
+    <div>
+      <h2 className="text-3xl font-bold text-center text-red-600 mb-6">
+        {" "}
+        wordpress Plugin_name
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        {plugins.map((plugin, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-2xl p-4 border border-gray-200"
+          >
+            <h2 className="text-xl font-bold text-gray-800">{plugin.name}</h2>
+            <p className="text-sm text-gray-500 mb-2">By {plugin.author}</p>
+            <p className="text-gray-600">{plugin.purpose}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Post_add() {
+  return (
+    <div className="w-[100%]  mx-auto p-6 bg-white rounded-xl shadow-md">
+      <h2 className="text-3xl font-bold text-center text-red-600 mb-6">
+        {" "}
+        post add or blog create
+      </h2>
+      <div className="w-[95%] grid grid-cols-2 mx-auto p-6 bg-white rounded-xl shadow-md">
+        <div>
+          <h3 className="text-2xl font-bold mb-4">
+            Step 1: WordPress Admin Mein Login Kare
+          </h3>
+          <p className="mb-4">
+            Apni website ke URL ke aage{" "}
+            <code className="bg-gray-100 px-2 py-1 rounded">/wp-admin</code> add
+            kare (example:{" "}
+            <code className="bg-gray-100 px-2 py-1 rounded">
+              yourwebsite.com/wp-admin
+            </code>
+            )
+          </p>
+          <p className="mb-6">Apna username aur password daalkar login kare</p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 2: Posts Section Mein Jaaye
+          </h2>
+          <p className="mb-4">Left sidebar menu se:</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>➡️ "Posts" par click kare</li>
+            <li>➡️ "Add New" button par click kare</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 3: Post Ka Content Add Kare
+          </h2>
+          <p className="mb-2">
+            ✔ <strong>Title (Heading):</strong>
+          </p>
+          <p className="mb-4">Upar wale box mein apne post ka title likhe</p>
+
+          <p className="mb-2">
+            ✔ <strong>Main Content:</strong>
+          </p>
+          <p className="mb-4">Neeche wale editor mein apna content likhe</p>
+
+          <p className="mb-2">Formatting ke liye:</p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Bold/Italic karne ke liye toolbar use kare</li>
+            <li>Heading (H2, H3) add kar sake hai</li>
+          </ul>
+
+          <p className="mb-4">Media add karne ke liye:</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>"+" button ya "Add Media" button par click kare</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 4: Category aur Tags Set Kare
+          </h2>
+          <p className="mb-2">Right sidebar mein:</p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>
+              🔹 <strong>Categories:</strong>
+              <br />
+              Existing categories select kare
+              <br />
+              Ya "Add New Category" se nayi category banae
+            </li>
+            <li>
+              🔹 <strong>Tags:</strong>
+              <br />
+              Related tags comma se separate karke enter kare
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 5: Featured Image Set Kare
+          </h2>
+          <p className="mb-2">Right sidebar mein:</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>"Featured Image" section dhundhe</li>
+            <li>"Set featured image" par click kare</li>
+            <li>
+              Media library se image select kare ya nayi image upload kare
+            </li>
+            <li>"Set featured image" button par click kare</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 6: Preview Dekhe (Optional)
+          </h2>
+          <p className="mb-2">Right sidebar mein "Publish" section mein:</p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>
+              👀 "Preview" button par click karke post kaise dikhega dekh sakte
+              hai
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">
+            Step 7: Post Publish Kare
+          </h2>
+
+          <ul className="list-disc pl-6 mb-6">
+            <li>✅ "Publish" button par click karke post live kare</li>
+            <li>
+              ✅ Ya "Save Draft" par click karke baad mein publish kar sake hai
+            </li>
+          </ul>
+
+          <hr className="my-8" />
+
+          <p className="text-lg font-medium mb-2">
+            blog wale page ko folder ke andhar se change karne ke liye
+          </p>
+          <code className="block bg-gray-100 p-4 rounded">
+            wamserver → www → travel → (ye mere database ka name hai) →
+            wp-content → themes → index.php
+          </code>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Slider_apply_pc_full_width(){
+return(
+  <>
+  </>
+)
+}
+
