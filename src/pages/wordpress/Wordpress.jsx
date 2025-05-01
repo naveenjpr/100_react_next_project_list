@@ -2,6 +2,13 @@ import React from "react";
 import Header from "../../Common page/Header";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Appearcance from "../../assets/Screenshot 2025-04-29 223126.png";
+import note1 from "../../assets/wordpress/Screenshot 2025-05-01 191537.png";
+import note2 from "../../assets/wordpress/Screenshot 2025-05-01 192111.png";
+import note3 from "../../assets/wordpress/Screenshot 2025-05-01 192546.png";
+import note4 from "../../assets/wordpress/Screenshot 2025-05-01 193333.png";
+import note5 from "../../assets/wordpress/Screenshot 2025-05-01 213149.png";
+import note6 from "../../assets/wordpress/Screenshot 2025-05-01 213647.png";
+import note7 from "../../assets/wordpress/Screenshot 2025-05-01 214232.png";
 import { HiH3 } from "react-icons/hi2";
 
 export default function Wordpress() {
@@ -26,7 +33,12 @@ export default function Wordpress() {
           <Passwordlostpasswordchnage />
           <Plugin_name />
           <Post_add />
-          <Slider_apply_pc_full_width/>
+          <Slider_apply_pc_full_width />
+          <Sticky_page />
+          <Upload_file_size_change />
+          <Username_databasename />
+          <Contact7form />
+          <AdvancedContactform7DB />
         </div>
         {/* customize, sidebar change,Widgets start */}
       </div>
@@ -37,7 +49,7 @@ export default function Wordpress() {
 function Appearance() {
   return (
     <>
-      <div class="mb-12 border-[2px]">
+      <div class="mb-12  border-[2px] border-[black] my-[10px]">
         <h2 class="text-2xl font-semibold text-center text-[red] mb-4 ">
           Appearance Menu Options
           <img src={Appearcance} className="" />
@@ -283,7 +295,7 @@ function Appearance() {
 function CustomizesidebarchangeWidgets() {
   return (
     <>
-      <div class="bg-gray-50 text-gray-800 font-sans p-4 md:p-6">
+      <div class="bg-gray-50 text-gray-800 font-sans p-4 md:p-6 border-[2px] border-[black] my-[10px]">
         <div class="max-w-6xl mx-auto">
           <header class="mb-8 text-center">
             <h1 class="text-3xl md:text-4xl font-bold  mb-2 text-[red]">
@@ -567,7 +579,7 @@ function CustomizesidebarchangeWidgets() {
 }
 function Customize() {
   return (
-    <div className="bg-gray-50 min-h-screen p-1 font-sans">
+    <div className="bg-gray-50 min-h-screen p-1 font-sans border-[2px] border-[black] my-[10px]">
       <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
         <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">
           (Appearance → Customize)
@@ -797,7 +809,7 @@ function Customize() {
 function Sidebar() {
   return (
     <>
-      <div className="bg-gray-50 p-4 md:p-6 font-sans">
+      <div className="bg-gray-50 p-4 md:p-6 font-sans border-[2px] border-[black] my-[10px]">
         <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
           <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-4">
             WordPress में Sidebar की Position कैसे बदलें?
@@ -880,7 +892,7 @@ function Sidebar() {
 
 function Insidethemeinstall() {
   return (
-    <div className="p-4">
+    <div className="p-4 border-[2px] border-[black] my-[10px]">
       <h1 className="text-2xl font-bold text-center text-[red] mb-4">
         WordPress Theme Installation
       </h1>
@@ -938,7 +950,7 @@ function Insidethemeinstall() {
 
 function Logochange() {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-sm">
+    <div className="p-4 bg-white rounded-lg shadow-sm border-[2px] border-[black] my-[10px]">
       <h1 className="text-2xl font-bold mb-4 text-red-600 text-center">
         WordPress me Logo Kaise Change Kare
       </h1>
@@ -979,8 +991,7 @@ function Logochange() {
           <ol className="list-decimal pl-5 mt-2 space-y-2 text-gray-600">
             <li>WordPress admin panel me jao</li>
             <li>
-              <span className="bg-gray-100 px-2 py-1 rounded">Appearance</span>{" "}
-              >{" "}
+              <span className="bg-gray-100 px-2 py-1 rounded">Appearance</span>
               <span className="bg-gray-100 px-2 py-1 rounded">
                 Theme Options
               </span>{" "}
@@ -1020,7 +1031,7 @@ function Logochange() {
 
 function Logositeiconsiteidentiny() {
   return (
-    <div className=" w-[100%] p-4 bg-white rounded-lg shadow-sm  mx-auto">
+    <div className=" w-[100%] p-4 bg-white rounded-lg shadow-sm  mx-auto border-[2px] border-[black] my-[10px]">
       <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
         WordPress me Site Title, Tagline aur Site Icon Kaise Set Kare
       </h1>
@@ -1140,7 +1151,7 @@ function Logositeiconsiteidentiny() {
 
 function OnePageWebsiteRules() {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-sm w-[98%] mx-auto">
+    <div className="p-4 bg-white rounded-lg shadow-sm w-[98%] mx-auto border-[2px] border-[black] my-[10px]">
       <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
         One Page Website Setup Guide
       </h1>
@@ -1331,8 +1342,8 @@ function OnePageWebsiteRules() {
 
 function Paidtheme() {
   return (
-    <div className="w-[95%] mx-auto p-4 text-[16px] text-gray-800 leading-relaxed">
-      <h1 className="text-2xl font-bold text-center text-red-600 mb-6">
+    <div className="w-[95%] mx-auto p-4 text-[16px] text-gray-800 leading-relaxed border-[2px] border-[black] my-[10px]">
+      <h1 className="text-2xl font-bold text-center text-red-600 mb-6"> 
         Paid Theme Install Inside Folder
       </h1>
 
@@ -1379,7 +1390,7 @@ function Paidtheme() {
 
 function Passwordlostpasswordchnage() {
   return (
-    <div className="w-full p-4 md:p-10 bg-gray-50 text-gray-800">
+    <div className="w-full p-4 md:p-10 bg-gray-50 text-gray-800 border-[2px] border-[black] my-[10px]">
       <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
         WordPress User Password Reset (phpMyAdmin)
       </h1>
@@ -1526,19 +1537,19 @@ function Plugin_name() {
       purpose: "Display 'Under Construction' notice during development.",
     },
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      name: "Contact Form 7 ",
+      author: "Takayuki Miyoshi",
+      purpose: "mail send karne ke liye",
     },
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      name: "Advanced Contact form 7 DB",
+      author: "By Vsourz Digital ",
+      purpose: "mail ka data website me dekh ne ke liye",
     },
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      name: "Popup Maker – Boost Sales, Conversions, Optins, Subscribers with the Ultimate WP Popups Builder",
+      author: "By Daniel Iser",
+      purpose: "popup,lightbox or contact form ko popup open karne ke liye",
     },
     {
       name: "Smart Slider 3",
@@ -1552,7 +1563,7 @@ function Plugin_name() {
     },
   ];
   return (
-    <div>
+    <div className="border-[2px] border-[black] my-[10px]">
       <h2 className="text-3xl font-bold text-center text-red-600 mb-6">
         {" "}
         wordpress Plugin_name
@@ -1575,11 +1586,8 @@ function Plugin_name() {
 
 function Post_add() {
   return (
-    <div className="w-[100%]  mx-auto p-6 bg-white rounded-xl shadow-md">
-      <h2 className="text-3xl font-bold text-center text-red-600 mb-6">
-        {" "}
-        post add or blog create
-      </h2>
+    <div className="w-[100%]  mx-auto p-6 bg-white rounded-xl shadow-md border-[2px] border-[black] my-[10px]">
+      <h2 className="text-3xl font-bold text-center text-red-600 mb-6"></h2>
       <div className="w-[95%] grid grid-cols-2 mx-auto p-6 bg-white rounded-xl shadow-md">
         <div>
           <h3 className="text-2xl font-bold mb-4">
@@ -1702,13 +1710,414 @@ function Post_add() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-function Slider_apply_pc_full_width(){
-return(
-  <>
-  </>
-)
+function Slider_apply_pc_full_width() {
+  return (
+    <div className=" border-[2px] border-[black] my-[10px]">
+      <h2
+        className="
+      text-3xl font-bold text-center text-red-600 mb-6
+      "
+      >
+        slider apply pc full width
+      </h2>
+      <div>
+        <h1>WampServer me</h1>
+        <p>1. www wale folder me</p>
+        <p>
+          2. Apni website folder me (meri website ka naam:{" "}
+          <strong>blog_website</strong>)
+        </p>
+        <p>3. wp-content</p>
+        <p>4. themes</p>
+        <p>5. Zita (abhi Zita theme use kar raha hu)</p>
+        <p>6. header.php (isko VS Code me open karenge)</p>
+
+        <div>
+          <img src={note4} />
+        </div>
+
+        <div>
+          <p>
+            <strong>Note 1:</strong> Ye slider sabhi pages (Home, About, Course,
+            Blog) par dikhai dega. Abhi ye code ka use liya hai:
+          </p>
+          <img src={note1} alt="Slider on all pages" />
+        </div>
+
+        <div>
+          <p>
+            <strong>Note 2:</strong> Agar sirf ek page (Home page) par dikhana
+            hai to <code>if</code> condition lagani padegi.
+          </p>
+          <img src={note2} alt="Slider on home page only" />
+        </div>
+
+        <div>
+          <p>
+            <strong>Note 3:</strong> Agar sirf do pages (Home aur About Us) par
+            dikhana hai to About Us page edit karo. URL dekhne par page ID milti
+            hai (e.g., <code>post=9</code>), to us ID ke hisaab se condition
+            lagakar code paste karenge.
+          </p>
+          <img src={note3} alt="Slider on home and about us pages" />
+        </div>
+      </div>
+    </div>
+  );
 }
 
+function Sticky_page() {
+  return (
+    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+      <h3 className="text-2xl font-bold text-red-600 mb-6 text-center">
+        How to Set a Static Homepage in WordPress
+      </h3>
+      <div className=" mx-auto p-6 bg-white rounded-lg shadow-md  ">
+        {/* Method 1 */}
+        <div className="grid md:grid-cols-2 grid-cols-1">
+          <div className="mb-8 p-4 border border-gray-200 rounded-lg">
+            <h4 className="text-xl font-semibold text-gray-700 mb-3">
+              Method 1: Via WordPress Dashboard
+            </h4>
+            <ol className="list-decimal pl-5 space-y-2 text-gray-600">
+              <li>
+                Go to{" "}
+                <strong className="text-gray-800">
+                  WordPress Dashboard → Settings → Reading
+                </strong>
+                .
+              </li>
+              <li>
+                Under{" "}
+                <strong className="text-gray-800">
+                  "Your homepage displays"
+                </strong>
+                , select{" "}
+                <strong className="text-gray-800">"A static page"</strong>.
+              </li>
+              <li>
+                <strong className="text-gray-800">Homepage dropdown:</strong>{" "}
+                Select your desired page (e.g., "Home").
+              </li>
+              <li>
+                <strong className="text-gray-800">Posts page dropdown:</strong>{" "}
+                Select "Blog".
+              </li>
+              <li>
+                Click <strong className="text-gray-800">"Save Changes"</strong>.
+              </li>
+            </ol>
+          </div>
+
+          {/* Method 2 */}
+          <div className="p-4 border border-gray-200 rounded-lg">
+            <h4 className="text-xl font-semibold text-gray-700 mb-3">
+              Method 2: Via Customizer
+            </h4>
+            <ol className="list-decimal pl-5 space-y-2 text-gray-600">
+              <li>
+                Go to{" "}
+                <strong className="text-gray-800">
+                  Appearance → Customize → Homepage Settings
+                </strong>
+                .
+              </li>
+              <li>
+                Select{" "}
+                <strong className="text-gray-800">"A static page"</strong>.
+              </li>
+              <li>
+                Choose your <strong className="text-gray-800">Homepage</strong>{" "}
+                (e.g., "Home").
+              </li>
+              <li>
+                Choose a <strong className="text-gray-800">Posts page</strong>{" "}
+                (e.g., "Blog").
+              </li>
+              <li>
+                Click <strong className="text-gray-800">"Publish"</strong>.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Upload_file_size_change() {
+  return (
+    <div className="bg-gray-50 p-6 rounded-lg shadow-md w-[98%] mx-auto border-[2px] border-[black] my-[10px]">
+      <h2 className="text-2xl text-center font-bold text-red-600 mb-4  pb-2">
+        PHP Configuration Settings upload file size change
+      </h2>
+
+      <div className="w-[100%]">
+        <h3 className="text-[35px] font-medium">
+          php.ini <span>file me change karna padga</span>
+        </h3>
+        {/* max_execution_time */}
+        <div className="bg-white p-4 rounded-md border border-gray-200 w-[100%]">
+          <h3 className="font-semibold text-lg text-blue-600">
+            max_execution_time
+          </h3>
+          <p>
+            max_execution_time = 600 ; pehal 120 tha 600 mene kiya hai matlab ab
+            PHP script 10 minutes (600 seconds) tak run kar sakti hai bina
+            timeout ke.
+          </p>
+          <p className="text-gray-700">
+            <span className="font-medium">पहले:</span> 120 (2 मिनट) <br />
+            <span className="font-medium">अब:</span> 600 (10 मिनट) <br />
+            <span className="text-green-600">मतलब:</span> PHP स्क्रिप्ट अब 10
+            मिनट तक चल सकती है।
+          </p>
+        </div>
+
+        {/* max_input_time */}
+        <div className="bg-white p-4 rounded-md border border-gray-200 w-[100%]">
+          <h3 className="font-semibold text-lg text-blue-600">
+            max_input_time
+          </h3>
+          <p>
+            max_input_time = 300 ; pehal 60 tha 300 mene kiya hai matlab ab PHP
+            script 5 minutes (600 seconds) tak run kar sakti hai bina timeout
+            ke.
+          </p>
+          <p className="text-gray-700">
+            <span className="font-medium">पहले:</span> 60 (1 मिनट) <br />
+            <span className="font-medium">अब:</span> 300 (5 मिनट) <br />
+            <span className="text-green-600">मतलब:</span> PHP को इनपुट प्रोसेस
+            करने के लिए 5 मिनट मिलेंगे।
+          </p>
+        </div>
+
+        {/* upload_max_filesize */}
+        <div className="bg-white p-4 rounded-md border border-gray-200 w-[100%]">
+          <h3 className="font-semibold text-lg text-blue-600">
+            upload_max_filesize
+          </h3>
+          <p>
+            upload_max_filesize = 300M ; pehle 2M tha, maine ise 300M kiya hai —
+            iska matlab ab ek single file ka maximum upload size 300MB ho gaya
+            hai.
+          </p>
+
+          <p className="text-gray-700">
+            <span className="font-medium">पहले:</span> 2M (2MB) <br />
+            <span className="font-medium">अब:</span> 300M (300MB) <br />
+            <span className="text-green-600">मतलब:</span> अब 300MB तक की फाइल्स
+            अपलोड कर सकते हैं।
+          </p>
+        </div>
+
+        {/* max_file_uploads */}
+        <div className="bg-white p-4 rounded-md border border-gray-200 w-[100%]">
+          <h3 className="font-semibold text-lg text-blue-600">
+            max_file_uploads
+          </h3>
+          <p>
+            max_file_uploads = 200 ; pehle 20 tha, maine ise 200 kiya hai — iska
+            matlab hai ab ek single request me maximum 200 files upload ki ja
+            sakti hain.
+          </p>
+
+          <p className="text-gray-700">
+            <span className="font-medium">पहले:</span> 20 <br />
+            <span className="font-medium">अब:</span> 200 <br />
+            <span className="text-green-600">मतलब:</span> एक बार में 200 फाइल्स
+            अपलोड कर सकते हैं।
+          </p>
+        </div>
+
+        {/* post_max_size */}
+        <div className="bg-white p-4 rounded-md border border-gray-200 w-[100%]">
+          <h3 className="font-semibold text-lg text-blue-600">post_max_size</h3>
+          <p>
+            post_max_size = 200M ; pehle 8M tha, maine ise 200M kiya hai — iska
+            matlab hai ab ek POST request me maximum 200MB tak ka data (jaise
+            form data ya file uploads) bheja ja sakta hai.
+          </p>
+
+          <p className="text-gray-700">
+            <span className="font-medium">पहले:</span> 8M (8MB) <br />
+            <span className="font-medium">अब:</span> 200M (200MB) <br />
+            <span className="text-green-600">मतलब:</span> POST रिक्वेस्ट में अब
+            200MB डेटा भेज सकते हैं।
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Username_databasename() {
+  return (
+    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+      <h1 className="py-[10px] text-[30px] text-blue-600">
+        wp-config.php me change karna padga
+      </h1>
+      <h3>define( 'DB_NAME', 'ws_blog' ); // DATA BASE KA NAME HAI</h3>
+
+      <h3>
+        define( 'DB_USER', 'root' ); //USERNAME HAI // Ye database ka username
+        hai. Normally localhost pe 'root' hota hai.
+      </h3>
+
+      <h3>
+        define( 'DB_PASSWORD', '' ); //PASSWORD HAI // Ye password hai jo upar
+        wale username ke sath use hota hai. Yahan blank hai, yani koi password
+        nahi diya gaya.
+      </h3>
+
+      <h3>
+        define( 'DB_HOST', 'localhost' ); //SERVERNAME HAI // Ye server ka naam
+        hai jahan database host kiya gaya hai. 'localhost' ka matlab hai ki
+        database usi system pe hai jahan WordPress install hai.
+      </h3>
+    </div>
+  );
+}
+
+function Contact7form() {
+  return (
+    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+      <h1 className="text-[red] font-medium text-[30px] text-center">
+        Contact Form 7 //By Takayuki Miyoshi
+      </h1>
+      <div className="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500">
+        <p className="font-semibold">
+          Note: Local pe Contact Form 7 work nahi karta hai
+        </p>
+      </div>
+      <p>conact Form 7 me add karne ke liye</p>
+
+      <div className="bg-white p-4 rounded-lg shadow">
+        <h2 className="text-xl font-bold mb-2 text-blue-800">Step 1</h2>
+        <p className="mb-3">
+          <label>Address</label> (label tag open/close karein)
+        </p>
+        <img
+          src={note5}
+          alt="Step 1 illustration"
+          className="border rounded-lg w-full h-[50px]"
+        />
+      </div>
+      <div className="bg-white p-4 rounded-lg shadow">
+        <h2 className="text-xl font-bold mb-2 text-blue-800">Step 2</h2>
+        <p className="mb-3">
+          (text, email, URL, tel, date, textarea, dropdown, checkbox, radio,
+          file, submit) - Address field ke liye textarea select karein
+        </p>
+      </div>
+      <div className="bg-white p-4 rounded-lg shadow">
+        <h2 className="text-xl font-bold mb-2 text-blue-800">Step 3</h2>
+        <p>Form ko save karein aur generated shortcode ka use karein</p>
+      </div>
+      <div className="bg-white p-4 rounded-lg shadow">
+        <h3 className="font-bold text-lg mb-2">Banaye Gaye Fields:</h3>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Address</li>
+          <li>Mobile Number</li>
+          <li>Date of Birth</li>
+          <li>File Upload</li>
+        </ul>
+        <img
+          src={note6}
+          alt="Form fields example"
+          className="mt-3 border rounded-lg w-[100%]"
+        />
+      </div>
+
+      <div className="bg-white p-4 rounded-lg shadow">
+        <h2 className="text-xl font-bold mb-2 text-blue-800">
+          Email Configuration
+        </h2>
+        <div className="space-y-2 pl-2">
+          <p>
+            <span className="font-semibold">To:</span> Kahan mail jayega
+          </p>
+          <p>
+            <span className="font-semibold">From:</span> Kisse mail aa raha hai
+          </p>
+          <p>
+            <span className="font-semibold">Subject:</span> Enquiry Mail
+          </p>
+          <p>
+            <span className="font-semibold">Additional Headers:</span> Blank
+            chhod dein
+          </p>
+        </div>
+        <img
+          src={note7}
+          alt="Email configuration"
+          className="mt-3 border rounded-lg w-full max-w-md"
+        />
+      </div>
+
+      <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+        <h3 className="font-bold mb-2">Important Note:</h3>
+
+        <p>
+          Left side ke fields kude se lekh he custom , right side ke fields
+          upper se add kiya hai:
+          <code className="block bg-gray-100 p-2 rounded mt-2 overflow-x-auto">
+            [your-name][your-email][your-subject][your-message][Address][mobilenumber][calender][file-566]
+          </code>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function AdvancedContactform7DB() {
+  return (
+    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]">
+      <h1 className="text-3xl font-bold text-center text-red-600 mb-6">
+        Advanced Contact Form 7 DB
+      </h1>
+      
+      <div className="space-y-4 bg-gray-50 p-4 rounded-lg">
+        <p className="text-lg font-semibold text-blue-800">Advanced Contact form 7 DB</p>
+        
+        <div className="space-y-3 pl-4 border-l-4 border-blue-500">
+          <p className="flex items-start">
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">1</span>
+            Contact Form 7 se related hai
+          </p>
+          
+          <p className="flex items-start">
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">2</span>
+            "Advanced CF7 DB" ke option par click karo
+          </p>
+          
+          <p className="flex items-start">
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">3</span>
+            <span>
+              Select Form name → (Contact Form 1) select kiya hai
+            </span>
+          </p>
+        </div>
+        
+        <div className="mt-4 p-4 bg-white rounded border border-gray-200">
+          <h3 className="font-bold text-gray-700 mb-2">All Data Fields Show Hoga:</h3>
+          <div className="bg-gray-100 p-3 rounded overflow-x-auto">
+            <code className="text-sm text-gray-800">
+              your-name, your-email, your-subject, your-message, Address, mobilenumber, 
+              calender, file-566, submit_time, submit_ip
+            </code>
+          </div>
+        </div>
+        
+        <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+          <p className="text-green-700 font-medium">
+            Note: Data Excel (.xlsx) aur CSV format me export kar sakte hain
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
