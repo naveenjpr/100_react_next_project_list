@@ -176,6 +176,10 @@ export default function Reserved_Keywords() {
     {
       title: " Node.js Reserved Keywords",
       items: [
+        "data = new coursesModel({name: request.body.name, })",
+        "await coursesModel.findById(request.params.id)",
+        "await courseModel.updatOne({_id:request.body.id},{$set:data})",
+        "process.env.xyz",
         "populate('author')",
         "Schema({})",
         "module.exports",

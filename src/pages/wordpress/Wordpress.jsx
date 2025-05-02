@@ -12,9 +12,47 @@ import note7 from "../../assets/wordpress/Screenshot 2025-05-01 214232.png";
 import { HiH3 } from "react-icons/hi2";
 
 export default function Wordpress() {
+  const navItems = [
+    { id: "Appearance", text: "Appearance" },
+    {
+      id: "Customize-sidebar-change-Widgets",
+      text: "Customize-sidebar-change-Widgets",
+    },
+    { id: "Customize", text: "Customize" },
+    { id: "Sidebar", text: "Sidebar" },
+    { id: "Inside-theme-install", text: "Inside-theme-install" },
+    { id: "Logochange", text: "Logo-change" },
+    { id: "Logositeiconsiteidentiny", text: "Logo-site-icons-iteidentiny" },
+    { id: "One-Page-Website-Rules", text: "One-Page-Website-Rules" },
+    { id: "Paidtheme", text: "Paid-theme" },
+    { id: "Passwordlostpasswordchnage", text: "Password-lost password-change" },
+    { id: "Plugin_name", text: "Plugin_name" },
+    { id: "Post_add", text: "Post_add" },
+    { id: "Slider_apply_pc_full_width", text: "Slider_apply_pc_full_width" },
+    { id: "Sticky_page", text: "Sticky_page" },
+    { id: "Upload_file_size_change", text: "Upload_file_size_change" },
+    { id: "Username_databasename", text: "Username_databasename" },
+    { id: "Contact7form", text: "Contact7form" },
+    { id: "AdvancedContactform7DB", text: "AdvancedContactform7DB" },
+    { id: "Contact7form-2", text: "Contact7form" },
+    { id: "Contact7form-3", text: "Contact7form" },
+  ];
   return (
     <>
       <Header />
+      <div className="w-[100%] bg-white border-b-2 border-[grey] sticky top-[50px] left-0">
+        <ul className="flex max-w-[95%] mx-auto lg:flex-wrap overflow-auto md:gap-[10px] gap-[4px] justify-start items-center">
+          {navItems.map((item) => (
+            <li
+              key={item.id}
+              className="bg-gray-200 hover:text-[blue] cursor-pointer p-2 text-[red] font-medium"
+            >
+              <a href={`#${item.id}`}>{item.text}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div class="w-[100%] ">
         <h1 class="text-3xl text-center py-[10px] font-bold mb-8 text-blue-700">
           WordPress notes
@@ -49,7 +87,7 @@ export default function Wordpress() {
 function Appearance() {
   return (
     <>
-      <div class="mb-12  border-[2px] border-[black] my-[10px]">
+      <div class="mb-12  border-[2px] border-[black] my-[10px]" id="Appearance">
         <h2 class="text-2xl font-semibold text-center text-[red] mb-4 ">
           Appearance Menu Options
           <img src={Appearcance} className="" />
@@ -295,7 +333,10 @@ function Appearance() {
 function CustomizesidebarchangeWidgets() {
   return (
     <>
-      <div class="bg-gray-50 text-gray-800 font-sans p-4 md:p-6 border-[2px] border-[black] my-[10px]">
+      <div
+        class="bg-gray-50 text-gray-800 font-sans p-4 md:p-6 border-[2px] border-[black] my-[10px]"
+        id="Customize-sidebar-change-Widgets"
+      >
         <div class="max-w-6xl mx-auto">
           <header class="mb-8 text-center">
             <h1 class="text-3xl md:text-4xl font-bold  mb-2 text-[red]">
@@ -579,7 +620,10 @@ function CustomizesidebarchangeWidgets() {
 }
 function Customize() {
   return (
-    <div className="bg-gray-50 min-h-screen p-1 font-sans border-[2px] border-[black] my-[10px]">
+    <div
+      className="bg-gray-50 min-h-screen p-1 font-sans border-[2px] border-[black] my-[10px]"
+      id="Customize"
+    >
       <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
         <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">
           (Appearance → Customize)
@@ -809,7 +853,10 @@ function Customize() {
 function Sidebar() {
   return (
     <>
-      <div className="bg-gray-50 p-4 md:p-6 font-sans border-[2px] border-[black] my-[10px]">
+      <div
+        className="bg-gray-50 p-4 md:p-6 font-sans border-[2px] border-[black] my-[10px]"
+        id="Sidebar"
+      >
         <div className="max-w-[90%] mx-auto bg-white rounded-lg shadow-md ">
           <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center mb-4">
             WordPress में Sidebar की Position कैसे बदलें?
@@ -892,7 +939,10 @@ function Sidebar() {
 
 function Insidethemeinstall() {
   return (
-    <div className="p-4 border-[2px] border-[black] my-[10px]">
+    <div
+      className="p-4 border-[2px] border-[black] my-[10px]"
+      id="Inside-theme-install"
+    >
       <h1 className="text-2xl font-bold text-center text-[red] mb-4">
         WordPress Theme Installation
       </h1>
@@ -950,7 +1000,10 @@ function Insidethemeinstall() {
 
 function Logochange() {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-sm border-[2px] border-[black] my-[10px]">
+    <div
+      className="p-4 bg-white rounded-lg shadow-sm border-[2px] border-[black] my-[10px]"
+      id="Logochange"
+    >
       <h1 className="text-2xl font-bold mb-4 text-red-600 text-center">
         WordPress me Logo Kaise Change Kare
       </h1>
@@ -1031,7 +1084,10 @@ function Logochange() {
 
 function Logositeiconsiteidentiny() {
   return (
-    <div className=" w-[100%] p-4 bg-white rounded-lg shadow-sm  mx-auto border-[2px] border-[black] my-[10px]">
+    <div
+      className=" w-[100%] p-4 bg-white rounded-lg shadow-sm  mx-auto border-[2px] border-[black] my-[10px]"
+      id="Logositeiconsiteidentiny"
+    >
       <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
         WordPress me Site Title, Tagline aur Site Icon Kaise Set Kare
       </h1>
@@ -1151,7 +1207,10 @@ function Logositeiconsiteidentiny() {
 
 function OnePageWebsiteRules() {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-sm w-[98%] mx-auto border-[2px] border-[black] my-[10px]">
+    <div
+      className="p-4 bg-white rounded-lg shadow-sm w-[98%] mx-auto border-[2px] border-[black] my-[10px]"
+      id="One-Page-Website-Rules"
+    >
       <h1 className="text-2xl font-bold mb-6 text-red-600 text-center border-b pb-2">
         One Page Website Setup Guide
       </h1>
@@ -1342,8 +1401,11 @@ function OnePageWebsiteRules() {
 
 function Paidtheme() {
   return (
-    <div className="w-[95%] mx-auto p-4 text-[16px] text-gray-800 leading-relaxed border-[2px] border-[black] my-[10px]">
-      <h1 className="text-2xl font-bold text-center text-red-600 mb-6"> 
+    <div
+      className="w-[95%] mx-auto p-4 text-[16px] text-gray-800 leading-relaxed border-[2px] border-[black] my-[10px]"
+      id="Paidtheme"
+    >
+      <h1 className="text-2xl font-bold text-center text-red-600 mb-6">
         Paid Theme Install Inside Folder
       </h1>
 
@@ -1390,7 +1452,10 @@ function Paidtheme() {
 
 function Passwordlostpasswordchnage() {
   return (
-    <div className="w-full p-4 md:p-10 bg-gray-50 text-gray-800 border-[2px] border-[black] my-[10px]">
+    <div
+      className="w-full p-4 md:p-10 bg-gray-50 text-gray-800 border-[2px] border-[black] my-[10px]"
+      id="Passwordlostpasswordchnage"
+    >
       <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
         WordPress User Password Reset (phpMyAdmin)
       </h1>
@@ -1563,7 +1628,7 @@ function Plugin_name() {
     },
   ];
   return (
-    <div className="border-[2px] border-[black] my-[10px]">
+    <div className="border-[2px] border-[black] my-[10px]" id="Plugin_name">
       <h2 className="text-3xl font-bold text-center text-red-600 mb-6">
         {" "}
         wordpress Plugin_name
@@ -1586,7 +1651,10 @@ function Plugin_name() {
 
 function Post_add() {
   return (
-    <div className="w-[100%]  mx-auto p-6 bg-white rounded-xl shadow-md border-[2px] border-[black] my-[10px]">
+    <div
+      className="w-[100%]  mx-auto p-6 bg-white rounded-xl shadow-md border-[2px] border-[black] my-[10px]"
+      id="Post_add"
+    >
       <h2 className="text-3xl font-bold text-center text-red-600 mb-6"></h2>
       <div className="w-[95%] grid grid-cols-2 mx-auto p-6 bg-white rounded-xl shadow-md">
         <div>
@@ -1715,7 +1783,10 @@ function Post_add() {
 
 function Slider_apply_pc_full_width() {
   return (
-    <div className=" border-[2px] border-[black] my-[10px]">
+    <div
+      className=" border-[2px] border-[black] my-[10px]"
+      id="Slider_apply_pc_full_width"
+    >
       <h2
         className="
       text-3xl font-bold text-center text-red-600 mb-6
@@ -1771,7 +1842,10 @@ function Slider_apply_pc_full_width() {
 
 function Sticky_page() {
   return (
-    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+    <div
+      className="w-[100%] border-[2px] border-[black] my-[10px]"
+      id="Sticky_page"
+    >
       <h3 className="text-2xl font-bold text-red-600 mb-6 text-center">
         How to Set a Static Homepage in WordPress
       </h3>
@@ -1850,7 +1924,10 @@ function Sticky_page() {
 
 function Upload_file_size_change() {
   return (
-    <div className="bg-gray-50 p-6 rounded-lg shadow-md w-[98%] mx-auto border-[2px] border-[black] my-[10px]">
+    <div
+      className="bg-gray-50 p-6 rounded-lg shadow-md w-[98%] mx-auto border-[2px] border-[black] my-[10px]"
+      id="Upload_file_size_change"
+    >
       <h2 className="text-2xl text-center font-bold text-red-600 mb-4  pb-2">
         PHP Configuration Settings upload file size change
       </h2>
@@ -1956,7 +2033,10 @@ function Upload_file_size_change() {
 
 function Username_databasename() {
   return (
-    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+    <div
+      className="w-[100%] border-[2px] border-[black] my-[10px]"
+      id="Username_databasename"
+    >
       <h1 className="py-[10px] text-[30px] text-blue-600">
         wp-config.php me change karna padga
       </h1>
@@ -1984,7 +2064,10 @@ function Username_databasename() {
 
 function Contact7form() {
   return (
-    <div className="w-[100%] border-[2px] border-[black] my-[10px]">
+    <div
+      className="w-[100%] border-[2px] border-[black] my-[10px]"
+      id="Contact7form"
+    >
       <h1 className="text-[red] font-medium text-[30px] text-center">
         Contact Form 7 //By Takayuki Miyoshi
       </h1>
@@ -2075,43 +2158,54 @@ function Contact7form() {
 
 function AdvancedContactform7DB() {
   return (
-    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]">
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="AdvancedContactform7DB"
+    >
       <h1 className="text-3xl font-bold text-center text-red-600 mb-6">
         Advanced Contact Form 7 DB
       </h1>
-      
+
       <div className="space-y-4 bg-gray-50 p-4 rounded-lg">
-        <p className="text-lg font-semibold text-blue-800">Advanced Contact form 7 DB</p>
-        
+        <p className="text-lg font-semibold text-blue-800">
+          Advanced Contact form 7 DB
+        </p>
+
         <div className="space-y-3 pl-4 border-l-4 border-blue-500">
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">1</span>
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+              1
+            </span>
             Contact Form 7 se related hai
           </p>
-          
+
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">2</span>
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+              2
+            </span>
             "Advanced CF7 DB" ke option par click karo
           </p>
-          
+
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">3</span>
-            <span>
-              Select Form name → (Contact Form 1) select kiya hai
+            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+              3
             </span>
+            <span>Select Form name → (Contact Form 1) select kiya hai</span>
           </p>
         </div>
-        
+
         <div className="mt-4 p-4 bg-white rounded border border-gray-200">
-          <h3 className="font-bold text-gray-700 mb-2">All Data Fields Show Hoga:</h3>
+          <h3 className="font-bold text-gray-700 mb-2">
+            All Data Fields Show Hoga:
+          </h3>
           <div className="bg-gray-100 p-3 rounded overflow-x-auto">
             <code className="text-sm text-gray-800">
-              your-name, your-email, your-subject, your-message, Address, mobilenumber, 
-              calender, file-566, submit_time, submit_ip
+              your-name, your-email, your-subject, your-message, Address,
+              mobilenumber, calender, file-566, submit_time, submit_ip
             </code>
           </div>
         </div>
-        
+
         <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-700 font-medium">
             Note: Data Excel (.xlsx) aur CSV format me export kar sakte hain
