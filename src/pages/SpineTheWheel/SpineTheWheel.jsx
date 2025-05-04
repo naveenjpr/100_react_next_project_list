@@ -1,83 +1,55 @@
 import React, { useState } from "react";
 
-const wheelSegments = [
-  { icon: "⭐", color: "#f57c00", degree: 0 },
-  { icon: "💡", color: "#d32f2f", degree: 60 },
-  { icon: "🔔", color: "#388e3c", degree: 120 },
-  { icon: "🍑", color: "#1976d2", degree: 180 },
-  { icon: "🧡", color: "#fbc02d", degree: 240 },
-  { icon: "😎", color: "#263238", degree: 300 },
-];
-
 export default function SpinTheWheel() {
-  const [rotate, setRotate] = useState(0);
-  const [spinning, setSpinning] = useState(false);
-
-  const letsSpin = () => {
-    if (spinning) return;
-    setSpinning(true);
-    const randomDeg = Math.floor(3000 + Math.random() * 3000);
-    setRotate(prev => prev + randomDeg);
-    setTimeout(() => setSpinning(false), 4000);
-  };
-
-  const wheelBackground = `conic-gradient(
-    ${wheelSegments.map((seg, idx) => 
-      `${seg.color} ${idx * 60}deg ${(idx + 1) * 60}deg`
-    ).join(", ")}
-  )`;
-
   return (
     <div className="flex justify-center items-center h-screen bg-gray-200">
-      <div className="relative w-[500px] h-[500px]">
-        {/* Arrow Pointer */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[25px] border-l-transparent border-r-transparent border-b-red-600" />
+      <div className="relative w-[500px] h-[500px] bg-gray-600 rounded-[50%] ">
+        {/* middle circle start */}
+        <div className="w-[50px] h-[50px] rounded-[50%] bg-white absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[999]">
+          
+        </div>
+        {/* middle circle End */}
+        {/* slice start */}
+        {/* Slice 1 (0°) */}
+        <div className="w-full h-[100px] absolute top-1/2 left-0 transform -translate-y-1/2 rotate-0">
+          <div className="absolute left-0 w-1/2 h-[50%] bg-blue-100 flex items-center justify-start pl-2">
+            <span className="text-sm text-black">hello 1</span>
+          </div>
+          <div className="absolute right-0 w-1/2 h-[50%] bg-sky-500 flex items-center justify-end pr-2">
+            <span className="text-sm text-white">hello 2</span>
+          </div>
         </div>
 
-        {/* Wheel */}
-        <div
-          className="w-full h-full rounded-full border-8 border-white shadow-lg transition-all duration-[4000ms] ease-out relative overflow-hidden"
-          style={{
-            transform: `rotate(${rotate}deg)`,
-            background: wheelBackground,
-          }}
-        >
-          {/* Segments and Icons */}
-          {wheelSegments.map((seg, idx) => {
-            const angle = idx * 60 + 30; // Center of each segment
-            return (
-              <div 
-                key={idx}
-                className="absolute top-1/2 left-1/2 origin-bottom h-1/2 flex flex-col items-center"
-                style={{
-                  transform: `rotate(${angle}deg) translateY(-20px)`,
-                  width: '40px'
-                }}
-              >
-                <div className="text-4xl transform -rotate-[${angle}deg] mb-1">
-                  {seg.icon}
-                </div>
-                <div className="text-xs font-bold text-white bg-black/30 px-1 rounded transform -rotate-[${angle}deg]">
-                  {seg.degree}°
-                </div>
-              </div>
-            );
-          })}
+        {/* Slice 2 (45°) */}
+        <div className="w-full absolute top-1/2 left-0 transform -translate-y-1/2 rotate-45">
+          <div className="absolute left-0 w-1/2 h-[2px] bg-blue-200 flex items-center justify-start pl-2">
+            <span className="text-sm text-black">hello 3</span>
+          </div>
+          <div className="absolute right-0 w-1/2 h-[2px] bg-red-900 flex items-center justify-end pr-2">
+            <span className="text-sm text-white">hello 4</span>
+          </div>
         </div>
 
-        {/* Center Button */}
-        <button
-          onClick={letsSpin}
-          disabled={spinning}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-white border-2 border-gray-300 shadow-md hover:scale-105 active:scale-95 transition-all font-bold text-gray-800 flex items-center justify-center"
-        >
-          {spinning ? '...' : 'SPIN'}
-        </button>
+        {/* Slice 3 (90°) */}
+        <div className="w-full absolute top-1/2 left-0 transform -translate-y-1/2 rotate-90">
+          <div className="absolute left-0 w-1/2 h-[2px] bg-blue-300 flex items-center justify-start pl-2">
+            <span className="text-sm text-black">hello 5</span>
+          </div>
+          <div className="absolute right-0 w-1/2 h-[2px] bg-red-500 flex items-center justify-end pr-2">
+            <span className="text-sm text-white">hello 6</span>
+          </div>
+        </div>
 
-        {/* Center Circle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-20 h-20 rounded-full bg-white border-4 border-gray-300" />
+        {/* slice end */}
       </div>
     </div>
   );
 }
+// { color: '#ffcc00', text: 'Gift', rotate: 0 },
+// { color: '#2c3e50', text: 'No Prize', rotate: 45 },
+// { color: '#00ff73', text: 'YES Prize', rotate: 90 },
+// { color: '#e74c3c', text: 'No Prize', rotate: 135 },
+// { color: '#f1c40f', text: 'Gift', rotate: 180 },
+// { color: '#2ecc71', text: 'YES Prize', rotate: 225 },
+// { color: '#1abc9c', text: 'Come back', rotate: 270 },
+// { color: '#3498db', text: 'No Prize', rotate: 315 },

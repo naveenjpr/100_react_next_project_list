@@ -129,6 +129,7 @@ export default function Reserved_Keywords() {
     {
       title: "React.js Keywords/Components",
       items: [
+        "event.preventDefault()",
         "Component",
         "PureComponent",
         "Fragment",
@@ -156,6 +157,7 @@ export default function Reserved_Keywords() {
     {
       title: "Next.js Keywords/APIs",
       items: [
+        "event.preventDefault()",
         "getStaticProps",
         "getStaticPaths",
         "getServerSideProps",
@@ -176,16 +178,24 @@ export default function Reserved_Keywords() {
     {
       title: " Node.js Reserved Keywords",
       items: [
-        "data = new coursesModel({name: request.body.name, })",
-        "await coursesModel.findById(request.params.id)",
-        "await courseModel.updatOne({_id:request.body.id},{$set:data})",
+        "exports.create = async (request, response) => {}",
+        "exports.view = async (request, response) => {}",
+        "exports.details = async (request, response) => {}",
+        "exports.update = async (request, response) => {}",
+        "exports.changeStatus = async (request, response) => {}",
+        "exports.delete = async (request, response) => {}",
+        "exports.multipleDelete = async (request, response) => {}",
+        "data = new coursesModel({name: request.body.name, })<- create ",
+        "await coursesModel.findById(request.params.id) <-details",
+        "await courseModel.updatOne({_id:request.body.id},{$set:data}) <-updateOne",
         "process.env.xyz",
         "populate('author')",
         "Schema({})",
         "module.exports",
         "async",
         "select('')",
-        "await coursesModel.find()",
+        "await coursesModel.find() <- view",
+        "await coursesModel.find({condition}) <- view",
         "$gt",
         "$lt",
         "type: mongoose.Types.ObjectId",
@@ -196,7 +206,7 @@ export default function Reserved_Keywords() {
         "Model.findByIdAndDelete()",
         "Model.findByIdAndRemove()",
         "Model.findByIdAndUpdate()",
-        "Model.findOne()",
+        "Model.findOne() <-changeStatus",
         "Model.findOneAndDelete()",
         "Model.findOneAndReplace()",
         "Model.findOneAndUpdate()",
