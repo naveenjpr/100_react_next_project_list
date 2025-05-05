@@ -35,6 +35,7 @@ import To_do_list from "./pages/To_do_List/To_do_list.jsx"
 import QuizApp from "./pages/Quiz_app/Quiz.jsx"
 import Reserved_Keywords from "./pages/Reserved_Keywords/Reserved_Keywords.jsx"
 import Wordpress from "./pages/wordpress/Wordpress.jsx"
+import Practics_notes_daily from "./pages/Practics_notes_daily/Practics_notes_daily.jsx"
 
 const router = createBrowserRouter([
   {
@@ -208,6 +209,10 @@ const router = createBrowserRouter([
     path: "/Wordpress",
     element: <Wordpress/>,
   },
+  {
+    path:"Practics_notes_daily",
+    element:<Practics_notes_daily/>
+  }
 ])
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />

@@ -112,6 +112,10 @@ export default function Header() {
                   path: "/Wordpress",
                   label: "Wordpress-Notes",
                 },
+                {
+                  path:"/Practics_notes_daily",
+                  label:"Practics_notes_daily"
+                }
               ].map((item, index) => (
                 <li
                   key={index}
