@@ -123,8 +123,7 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    
                     className="w-full block p-[12px]"
                   >
                     {item.label}
