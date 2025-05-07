@@ -1,20 +1,20 @@
-import React, { useState } from "react"
-import naveenlogo from "../assets/naveenlogo.jpg"
-import { RxCross2 } from "react-icons/rx"
-import { IoReorderThree, IoReorderThreeOutline } from "react-icons/io5"
-import { Link, useLocation } from "react-router-dom"
-import { FaArrowUp } from "react-icons/fa"
+import React, { useState } from "react";
+import naveenlogo from "../assets/naveenlogo.jpg";
+import { RxCross2 } from "react-icons/rx";
+import { IoReorderThree, IoReorderThreeOutline } from "react-icons/io5";
+import { Link, useLocation } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function Header() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [showmenu, setshowmenu] = useState(false)
+  const [showmenu, setshowmenu] = useState(false);
 
   // Scroll to top function
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       {/* mobile header start */}
@@ -113,17 +113,22 @@ export default function Header() {
                   label: "Wordpress-Notes",
                 },
                 {
-                  path:"/Practics_notes_daily",
-                  label:"Practics_notes_daily"
-                }
+                  path: "/Practics_notes_daily",
+                  label: "Practics_notes_daily",
+                },
               ].map((item, index) => (
                 <li
                   key={index}
                   className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
                 >
-                  <Link to={item.path} className="w-full block p-[12px]">
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block p-[12px]"
+                  >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -133,5 +138,5 @@ export default function Header() {
 
       {/* mobile header End */}
     </>
-  )
+  );
 }

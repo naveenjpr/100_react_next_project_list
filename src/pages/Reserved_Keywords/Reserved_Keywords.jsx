@@ -129,7 +129,14 @@ export default function Reserved_Keywords() {
     {
       title: "React.js Keywords/Components",
       items: [
+        "const formData = new FormData(event.target)",
+        "let navigation = useNavigate()",
+        "let parmas=useParams()",
+        "path:<- addcourse/:id?",
+        " const [first, setfirst] = useState()",
+        "useEffect(() => {}, [])",
         "event.preventDefault()",
+        "<Link to=></Link>",
         "Component",
         "PureComponent",
         "Fragment",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../Common page/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
@@ -146,6 +146,7 @@ function Node_js() {
     console.log("javascript", id);
     setnodejsId(nodejsId === id ? null : id); // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
   };
+
 
   return (
     <div>
