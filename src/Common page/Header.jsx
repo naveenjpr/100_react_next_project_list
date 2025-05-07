@@ -121,14 +121,14 @@ export default function Header() {
                   key={index}
                   className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
                 >
-                  <a
-                    href={item.path}
+                  <Link
+                    to={item.path}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full block p-[12px]"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
