@@ -108,7 +108,7 @@ function Javascript() {
                     </span>
                   </button>
                   <p
-                    className={`p-4 bg-[red] text-white font-medium transition-all duration-1000 ease-in-out 
+                    className={`p-3 bg-[black] text-white font-bold  transition-all duration-1000 ease-in-out 
     ${v._id === currentId ? "block opacity-100" : "hidden opacity-0"}
   `}
                   >
@@ -163,7 +163,7 @@ function Reactnotes() {
                     </span>
                   </button>
                   <p
-                    className={`p-4 bg-[red] text-white font-medium transition-all duration-1000 ease-in-out 
+                    className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === ReactcurrentId ? "block opacity-100" : "hidden opacity-0"}
     `}
                   >
@@ -221,7 +221,7 @@ function Node_js() {
                     </span>
                   </button>
                   <p
-                    className={`p-4 bg-[red] text-white font-medium transition-all duration-1000 ease-in-out 
+                    className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === nodejsId ? "block opacity-100" : "hidden opacity-0"}
     `}
                   >
