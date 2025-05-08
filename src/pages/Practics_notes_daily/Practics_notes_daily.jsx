@@ -7,15 +7,62 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 export default function Practics_notes_daily() {
   const location = useLocation();
 
+  const [activButton, setactivButton] = useState("button1");
+
   return (
     <>
       <div>
         {location.pathname === "/Practics_notes_daily" ? <Header /> : null}
       </div>
+
+      {/* tabs start */}
+      <div className="flex space-x-4 bg-gray-100 p-3 rounded-lg shadow-md">
+        <button
+          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
+            activButton === "button1"
+              ? "text-blue-600 border-b-4 border-black"
+              : "text-[#a52a2a] hover:text-gray-800"
+          }`}
+          onClick={() => setactivButton("button1")}
+        >
+          JavaScript
+        </button>
+
+        <button
+          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
+            activButton === "button2"
+              ? "text-blue-600 border-b-4 border-black"
+              : "text-[#a52a2a] hover:text-gray-800"
+          }`}
+          onClick={() => setactivButton("button2")}
+        >
+          React
+        </button>
+
+        <button
+          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
+            activButton === "button3"
+              ? "text-blue-600 border-b-4 border-black"
+              : "text-[#a52a2a] hover:text-gray-800"
+          }`}
+          onClick={() => setactivButton("button3")}
+        >
+          Node.js
+        </button>
+      </div>
+
+      {/* tabs end */}
+
       <div className="bg-slate-400 ">
-        <Javascript />
-        <Reactnotes />
-        <Node_js />
+        {activButton === "button1" ? (
+          <Javascript />
+        ) : activButton === "button2" ? (
+          <Reactnotes />
+        ) : activButton === "button3" ? (
+          <Node_js />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
@@ -27,7 +74,7 @@ function Javascript() {
 
   useEffect(() => {
     axios
-    
+
       .post("https://rss-feed-node-js.onrender.com/api/backend/javascript/view")
       .then((result) => {
         setjavascriptdatashow(result.data.data);
@@ -55,9 +102,9 @@ function Javascript() {
                     className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
                     onClick={() => toggleFAQ(v._id)}
                   >
-                 <span className="mx-2">{i+1}</span>   {v.Question}
+                    <span className="mx-2">{i + 1}</span> {v.Question}
                     <span className="absolute right-[0px] top-[10px]">
-                      {v._id === currentId ? <FaMinus  /> : <FaPlus />}
+                      {v._id === currentId ? <FaMinus /> : <FaPlus />}
                     </span>
                   </button>
                   <p
@@ -65,7 +112,9 @@ function Javascript() {
     ${v._id === currentId ? "block opacity-100" : "hidden opacity-0"}
   `}
                   >
-                    {v.Answers}
+                    <pre className="whitespace-pre-wrap break-words">
+                      {v.Answers}
+                    </pre>
                   </p>
                 </div>
               </div>
@@ -108,7 +157,7 @@ function Reactnotes() {
                     className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
                     onClick={() => toggleFAQ(v._id)}
                   >
-                 <span className="mx-2">{i+1}</span>   {v.Question}
+                    <span className="mx-2">{i + 1}</span> {v.Question}
                     <span className="absolute right-[10px] top-[10px]">
                       {v._id === ReactcurrentId ? <FaMinus /> : <FaPlus />}
                     </span>
@@ -118,7 +167,9 @@ function Reactnotes() {
       ${v._id === ReactcurrentId ? "block opacity-100" : "hidden opacity-0"}
     `}
                   >
-                    {v.Answers}
+                    <pre className="whitespace-pre-wrap break-words">
+                      {v.Answers}
+                    </pre>
                   </p>
                 </div>
               </div>
@@ -134,7 +185,9 @@ function Node_js() {
 
   useEffect(() => {
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/backend/node-js-Notes/view")
+      .post(
+        "https://rss-feed-node-js.onrender.com/api/backend/node-js-Notes/view"
+      )
       .then((result) => {
         setNode_jsdatashow(result.data.data);
       })
@@ -146,7 +199,6 @@ function Node_js() {
     console.log("javascript", id);
     setnodejsId(nodejsId === id ? null : id); // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
   };
-
 
   return (
     <div>
@@ -162,7 +214,8 @@ function Node_js() {
                     className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
                     onClick={() => toggleFAQ(v._id)}
                   >
-                    <span className="mx-2">{i+1}</span>{v.Question}
+                    <span className="mx-2">{i + 1}</span>
+                    {v.Question}
                     <span className="absolute right-[10px] top-[10px]">
                       {v._id === nodejsId ? <FaMinus /> : <FaPlus />}
                     </span>
@@ -172,7 +225,9 @@ function Node_js() {
       ${v._id === nodejsId ? "block opacity-100" : "hidden opacity-0"}
     `}
                   >
-                    {v.Answers}
+                    <pre className="whitespace-pre-wrap break-words">
+                      {v.Answers}
+                    </pre>
                   </p>
                 </div>
               </div>
