@@ -414,6 +414,12 @@ export default function Reserved_Keywords() {
     },
   ];
 
+  const images = [
+    { id: 1, src: "/singleimage.png" },
+    { id: 2, src: "/multipleimsge.png" },
+    { id: 3, src: "/Screenshot 2025-05-12 220014.png" },
+    // Add more images as needed
+  ];
   return (
     <>
       <div>
@@ -453,6 +459,17 @@ export default function Reserved_Keywords() {
                 </p>
               )}
             </div>
+          ))}
+        </div>
+
+        <div className="grid lg:grid-cols-3 grid-cols-1 justify-center items-center gap-3">
+          {images.map((image) => (
+            <img
+              key={image.id}
+              src={image.src}
+              alt={`Screenshot ${image.id}`}
+              className="w-full rounded "
+            />
           ))}
         </div>
       </div>
