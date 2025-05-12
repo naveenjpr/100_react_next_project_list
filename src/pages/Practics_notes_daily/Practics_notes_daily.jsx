@@ -3,6 +3,7 @@ import Header from "../../Common page/Header";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { Colors, Lodingspinnerwithimageinside } from "../Loading/Loading";
 
 export default function Practics_notes_daily() {
   const location = useLocation();
@@ -103,34 +104,40 @@ function Javascript() {
       <h2 className="text-3xl font-bold text-blue-600 text-center py-[20px]">
         JavaScript
       </h2>
-      {javascriptdatashow.length > 0
-        ? javascriptdatashow.map((v, i) => {
-            return (
-              <div key={i}>
-                <div className="border rounded-xl p-4 shadow-md">
-                  <button
-                    className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
-                    onClick={() => toggleFAQ(v._id)}
-                  >
-                    <span className="mx-2">{i + 1}</span> {v.Question}
-                    <span className="absolute right-[0px] top-[10px]">
-                      {v._id === currentId ? <FaMinus /> : <FaPlus />}
-                    </span>
-                  </button>
-                  <p
-                    className={`p-3 bg-[black] text-white font-bold  transition-all duration-1000 ease-in-out 
+      {javascriptdatashow.length > 0 ? (
+        javascriptdatashow.map((v, i) => {
+          return (
+            <div key={i}>
+              <div className="border rounded-xl p-4 shadow-md">
+                <button
+                  className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
+                  onClick={() => toggleFAQ(v._id)}
+                >
+                  <span className="mx-2">{i + 1}</span> {v.Question}
+                  <span className="absolute right-[0px] top-[10px]">
+                    {v._id === currentId ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </button>
+                <p
+                  className={`p-3 bg-[black] text-white font-bold  transition-all duration-1000 ease-in-out 
     ${v._id === currentId ? "block opacity-100" : "hidden opacity-0"}
   `}
-                  >
-                    <pre className="whitespace-pre-wrap break-words">
-                      {v.Answers}
-                    </pre>
-                  </p>
-                </div>
+                >
+                  <pre className="whitespace-pre-wrap break-words">
+                    {v.Answers}
+                  </pre>
+                </p>
               </div>
-            );
-          })
-        : "no data show"}
+            </div>
+          );
+        })
+      ) : (
+        <div className="relative h-screen">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Lodingspinnerwithimageinside />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -158,34 +165,40 @@ function Reactnotes() {
       <h2 className="text-3xl font-bold text-blue-600 text-center py-[20px]">
         React
       </h2>
-      {reactdatashow.length > 0
-        ? reactdatashow.map((v, i) => {
-            return (
-              <div key={i}>
-                <div className="border rounded-xl p-4 shadow-md">
-                  <button
-                    className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
-                    onClick={() => toggleFAQ(v._id)}
-                  >
-                    <span className="mx-2">{i + 1}</span> {v.Question}
-                    <span className="absolute right-[10px] top-[10px]">
-                      {v._id === ReactcurrentId ? <FaMinus /> : <FaPlus />}
-                    </span>
-                  </button>
-                  <p
-                    className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
+      {reactdatashow.length > 0 ? (
+        reactdatashow.map((v, i) => {
+          return (
+            <div key={i}>
+              <div className="border rounded-xl p-4 shadow-md">
+                <button
+                  className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
+                  onClick={() => toggleFAQ(v._id)}
+                >
+                  <span className="mx-2">{i + 1}</span> {v.Question}
+                  <span className="absolute right-[10px] top-[10px]">
+                    {v._id === ReactcurrentId ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </button>
+                <p
+                  className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === ReactcurrentId ? "block opacity-100" : "hidden opacity-0"}
     `}
-                  >
-                    <pre className="whitespace-pre-wrap break-words">
-                      {v.Answers}
-                    </pre>
-                  </p>
-                </div>
+                >
+                  <pre className="whitespace-pre-wrap break-words">
+                    {v.Answers}
+                  </pre>
+                </p>
               </div>
-            );
-          })
-        : "no data show"}
+            </div>
+          );
+        })
+      ) : (
+        <div className="relative h-screen">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Lodingspinnerwithimageinside />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -215,35 +228,41 @@ function Node_js() {
       <h2 className="text-3xl font-bold text-blue-600 text-center py-[20px]">
         Node.js
       </h2>
-      {Node_jsdatashow.length > 0
-        ? Node_jsdatashow.map((v, i) => {
-            return (
-              <div key={i}>
-                <div className="border rounded-xl p-4 shadow-md">
-                  <button
-                    className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
-                    onClick={() => toggleFAQ(v._id)}
-                  >
-                    <span className="mx-2">{i + 1}</span>
-                    {v.Question}
-                    <span className="absolute right-[10px] top-[10px]">
-                      {v._id === nodejsId ? <FaMinus /> : <FaPlus />}
-                    </span>
-                  </button>
-                  <p
-                    className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
+      {Node_jsdatashow.length > 0 ? (
+        Node_jsdatashow.map((v, i) => {
+          return (
+            <div key={i}>
+              <div className="border rounded-xl p-4 shadow-md">
+                <button
+                  className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
+                  onClick={() => toggleFAQ(v._id)}
+                >
+                  <span className="mx-2">{i + 1}</span>
+                  {v.Question}
+                  <span className="absolute right-[10px] top-[10px]">
+                    {v._id === nodejsId ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </button>
+                <p
+                  className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === nodejsId ? "block opacity-100" : "hidden opacity-0"}
     `}
-                  >
-                    <pre className="whitespace-pre-wrap break-words">
-                      {v.Answers}
-                    </pre>
-                  </p>
-                </div>
+                >
+                  <pre className="whitespace-pre-wrap break-words">
+                    {v.Answers}
+                  </pre>
+                </p>
               </div>
-            );
-          })
-        : "no data show"}
+            </div>
+          );
+        })
+      ) : (
+        <div className="relative h-screen">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Lodingspinnerwithimageinside />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -271,35 +290,41 @@ function Wordpress() {
       <h2 className="text-3xl font-bold text-blue-600 text-center py-[20px]">
         WordPress
       </h2>
-      {wordpressshow.length > 0
-        ? wordpressshow.map((v, i) => {
-            return (
-              <div key={i}>
-                <div className="border rounded-xl p-4 shadow-md">
-                  <button
-                    className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
-                    onClick={() => toggleFAQ(v._id)}
-                  >
-                    <span className="mx-2">{i + 1}</span>
-                    {v.Question}
-                    <span className="absolute right-[10px] top-[10px]">
-                      {v._id === wordpressId ? <FaMinus /> : <FaPlus />}
-                    </span>
-                  </button>
-                  <p
-                    className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
+      {wordpressshow.length > 0 ? (
+        wordpressshow.map((v, i) => {
+          return (
+            <div key={i}>
+              <div className="border rounded-xl p-4 shadow-md">
+                <button
+                  className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
+                  onClick={() => toggleFAQ(v._id)}
+                >
+                  <span className="mx-2">{i + 1}</span>
+                  {v.Question}
+                  <span className="absolute right-[10px] top-[10px]">
+                    {v._id === wordpressId ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </button>
+                <p
+                  className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === wordpressId ? "block opacity-100" : "hidden opacity-0"}
     `}
-                  >
-                    <pre className="whitespace-pre-wrap break-words">
-                      {v.Answers}
-                    </pre>
-                  </p>
-                </div>
+                >
+                  <pre className="whitespace-pre-wrap break-words">
+                    {v.Answers}
+                  </pre>
+                </p>
               </div>
-            );
-          })
-        : "no data show"}
+            </div>
+          );
+        })
+      ) : (
+        <div className="relative h-screen">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Lodingspinnerwithimageinside />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

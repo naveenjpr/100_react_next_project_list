@@ -36,6 +36,7 @@ import QuizApp from "./pages/Quiz_app/Quiz.jsx"
 import Reserved_Keywords from "./pages/Reserved_Keywords/Reserved_Keywords.jsx"
 import Wordpress from "./pages/wordpress/Wordpress.jsx"
 import Practics_notes_daily from "./pages/Practics_notes_daily/Practics_notes_daily.jsx"
+import Loading from "./pages/Loading/Loading.jsx"
 
 const router = createBrowserRouter([
   {
@@ -212,6 +213,10 @@ const router = createBrowserRouter([
   {
     path:"Practics_notes_daily",
     element:<Practics_notes_daily/>
+  },
+  {
+    path:"Loading",
+    element:<Loading/>
   }
 ])
 createRoot(document.getElementById("root")).render(

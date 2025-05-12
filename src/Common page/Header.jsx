@@ -65,7 +65,6 @@ export default function Header() {
                 },
                 { path: "/Header_Menu_navbar", label: "Header_Menu_navbar" },
                 { path: "/ImageToText", label: "Image-To-Text" },
-                { path: "/Letter_count", label: "Letter-count" },
                 { path: "/Reserved_Keywords", label: "Reserved_Keywords" },
                 { path: "/LightBox", label: "LightBox" },
                 { path: "/Mega_Menu", label: "Mega-Menu" },
@@ -113,9 +112,16 @@ export default function Header() {
                   label: "Wordpress-Notes",
                 },
                 {
+                  path: "/Loading",
+                  label: "Loading",
+                },
+                {
                   path: "/Practics_notes_daily",
                   label: "Practics_notes_daily",
                 },
+                { path: "/Letter_count", label: "Letter-count" },
+
+              
               ].map((item, index) => (
                 <li
                   key={index}
