@@ -86,7 +86,7 @@ function Javascript() {
   useEffect(() => {
     axios
 
-      .post("https://rss-feed-node-js.onrender.com/api/backend/javascript/view")
+      .post("https://rss-feed-node-js.onrender.com/api/frontend/javascript/view")
       .then((result) => {
         setjavascriptdatashow(result.data.data);
       })
@@ -148,7 +148,7 @@ function Reactnotes() {
 
   useEffect(() => {
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/backend/ReactNotes/view")
+      .post("https://rss-feed-node-js.onrender.com/api/frontend/ReactNotes/view")
       .then((result) => {
         setreactdatashow(result.data.data);
       })
@@ -209,7 +209,7 @@ function Node_js() {
   useEffect(() => {
     axios
       .post(
-        "https://rss-feed-node-js.onrender.com/api/backend/node-js-Notes/view"
+        "https://rss-feed-node-js.onrender.com/api/frontend/node-js-Notes/view"
       )
       .then((result) => {
         setNode_jsdatashow(result.data.data);
@@ -273,7 +273,7 @@ function Wordpress() {
 
   useEffect(() => {
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/backend/WordPress/view")
+      .post("https://rss-feed-node-js.onrender.com/api/frontend/WordPress/view")
       .then((result) => {
         setwordpressshow(result.data.data);
       })
