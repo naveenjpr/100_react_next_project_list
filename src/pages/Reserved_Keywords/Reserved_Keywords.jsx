@@ -181,10 +181,33 @@ export default function Reserved_Keywords() {
       ],
       color: "indigo",
     },
+    {
+      title: "node.js packages",
+      items: [
+        "npm i bcryptjs",
+        "npm i cors",
+        "npm i express",
+        "npm i jsonwebtoken",
+        "npm i mongoose",
+        "npm i multer",
+        "npm i nodemailer",
+      ],
+      color: "indigo",
+    },
 
     {
       title: " Node.js Reserved Keywords",
       items: [
+        "exports.register = async (request, response) => {}",
+        "exports.login = async (request, response) => {}",
+        "exports.profile = async (request, response) => {}",
+        "const bcrypt = require()", 
+        "var jwt = require()",
+        "var secretKey = Gionee " ,
+        "exports.confirmOrder = async (request, response) => {}",
+        "exports.placeOrder = async (request, response) => {}",
+        "exports.sendMail = async (request, response) => {}",
+        "npm install nodemailer",
         "exports.create = async (request, response) => {}",
         "exports.view = async (request, response) => {}",
         "exports.details = async (request, response) => {}",
