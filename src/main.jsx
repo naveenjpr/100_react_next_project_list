@@ -38,6 +38,7 @@ import Wordpress from "./pages/wordpress/Wordpress.jsx"
 import Practics_notes_daily from "./pages/Practics_notes_daily/Practics_notes_daily.jsx"
 import Loading from "./pages/Loading/Loading.jsx"
 import UseRef from "./pages/useRef/useRef.jsx"
+import React_pagination from "./pages/React_pagination/React_pagination.jsx"
 
 const router = createBrowserRouter([
   {
@@ -222,6 +223,10 @@ const router = createBrowserRouter([
   {
     path:"UseRef",
     element:<UseRef/>
+  },
+  {
+    path:"React_pagination",
+    element:<React_pagination/>
   }
 ])
 createRoot(document.getElementById("root")).render(

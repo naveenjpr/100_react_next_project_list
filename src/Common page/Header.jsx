@@ -119,6 +119,10 @@ export default function Header() {
                   label: "UseRef",
                 },
                 {
+                  path: "/React_pagination",
+                  label: "React_pagination",
+                },
+                {
                   path: "/Practics_notes_daily",
                   label: "Practics_notes_daily",
                 },
