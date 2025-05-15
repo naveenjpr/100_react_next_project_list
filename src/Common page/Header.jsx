@@ -115,6 +115,10 @@ export default function Header() {
                   label: "Loading",
                 },
                 {
+                  path: "/UseRef",
+                  label: "UseRef",
+                },
+                {
                   path: "/Practics_notes_daily",
                   label: "Practics_notes_daily",
                 },

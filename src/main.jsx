@@ -37,6 +37,7 @@ import Reserved_Keywords from "./pages/Reserved_Keywords/Reserved_Keywords.jsx"
 import Wordpress from "./pages/wordpress/Wordpress.jsx"
 import Practics_notes_daily from "./pages/Practics_notes_daily/Practics_notes_daily.jsx"
 import Loading from "./pages/Loading/Loading.jsx"
+import UseRef from "./pages/useRef/useRef.jsx"
 
 const router = createBrowserRouter([
   {
@@ -217,6 +218,10 @@ const router = createBrowserRouter([
   {
     path:"Loading",
     element:<Loading/>
+  },
+  {
+    path:"UseRef",
+    element:<UseRef/>
   }
 ])
 createRoot(document.getElementById("root")).render(
