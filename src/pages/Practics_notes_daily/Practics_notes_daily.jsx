@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../Common page/Header";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Colors, Lodingspinnerwithimageinside } from "../Loading/Loading";
@@ -15,6 +15,20 @@ export default function Practics_notes_daily() {
       <div>
         {location.pathname === "/Practics_notes_daily" ? <Header /> : null}
       </div>
+      {/* login register button start */}
+      <div className="flex justify-center items-center gap-4 py-4">
+        <Link to="/Register">
+          <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+            Register
+          </button>
+        </Link>
+        <Link to="/Login">
+          <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
+            Login
+          </button>
+        </Link>
+      </div>
+      {/* login register button End*/}
 
       {/* tabs start */}
       <div className="flex space-x-2 bg-gray-100 p-3 rounded-lg shadow-md">
@@ -86,7 +100,9 @@ function Javascript() {
   useEffect(() => {
     axios
 
-      .post("https://rss-feed-node-js.onrender.com/api/frontend/javascript/view")
+      .post(
+        "https://rss-feed-node-js.onrender.com/api/frontend/javascript/view"
+      )
       .then((result) => {
         setjavascriptdatashow(result.data.data);
       })
@@ -148,7 +164,9 @@ function Reactnotes() {
 
   useEffect(() => {
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/frontend/ReactNotes/view")
+      .post(
+        "https://rss-feed-node-js.onrender.com/api/frontend/ReactNotes/view"
+      )
       .then((result) => {
         setreactdatashow(result.data.data);
       })

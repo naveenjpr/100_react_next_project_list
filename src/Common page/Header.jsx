@@ -37,7 +37,9 @@ export default function Header() {
             <Link to="/">
               <img src={naveenlogo} className="w-12 h-auto" alt="Logo" />
             </Link>
+
           </div>
+
           <button
             className="absolute top-0 right-0 text-[45px] text-white"
             aria-label="बंद करें"
@@ -146,7 +148,7 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-        </header>
+x        </header>
       </div>
 
       {/* mobile header End */}

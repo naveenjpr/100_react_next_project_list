@@ -39,6 +39,8 @@ import Practics_notes_daily from "./pages/Practics_notes_daily/Practics_notes_da
 import Loading from "./pages/Loading/Loading.jsx"
 import UseRef from "./pages/useRef/useRef.jsx"
 import React_pagination from "./pages/React_pagination/React_pagination.jsx"
+import Login from "./pages/Authentication/Login.jsx"
+import Register from "./pages/Authentication/Register.jsx"
 
 const router = createBrowserRouter([
   {
@@ -227,6 +229,14 @@ const router = createBrowserRouter([
   {
     path:"React_pagination",
     element:<React_pagination/>
+  },
+  {
+    path:"Login",
+    element:<Login/>
+  },
+  {
+    path:"Register",
+    element:<Register/>
   }
 ])
 createRoot(document.getElementById("root")).render(
