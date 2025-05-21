@@ -255,6 +255,7 @@ export default function Reserved_Keywords() {
       title: " Node.js Reserved Keywords:    Find/Query Operations",
       items: [
         "find()",
+        "find({name:request.body.name})",
         "findOne()",
         "findById()",
         "findAndModify()",
@@ -262,7 +263,7 @@ export default function Reserved_Keywords() {
         "search()",
         "filter()",
         "where()",
-        "select()",
+        "select('name image order')",
         "$lookup",
     
       ],

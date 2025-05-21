@@ -34,8 +34,13 @@ export default function Wordpress() {
     { id: "Username_databasename", text: "Username_databasename" },
     { id: "Contact7form", text: "Contact7form" },
     { id: "AdvancedContactform7DB", text: "AdvancedContactform7DB" },
-    { id: "Contact7form-2", text: "Contact7form" },
-    { id: "Contact7form-3", text: "Contact7form" },
+    { id: "WPForms_Contact_Form", text: "WPForms_Contact_Form" },
+    { id: "SMTP_configure-3", text: "SMTP_configure" },
+    { id: "Elementor_details", text: "Elementor_details" },
+    { id: "Preloader_use", text: "Preloader_use" },
+    { id: "Recapha", text: "Recapha" },
+    { id: "Seo", text: "Seo" },
+    { id: "Website_role", text: "Website_role" },
   ];
   return (
     <>
@@ -53,12 +58,12 @@ export default function Wordpress() {
         </ul>
       </div>
 
-      <div class="w-[100%] ">
-        <h1 class="text-3xl text-center py-[10px] font-bold mb-8 text-blue-700">
+      <div className="w-[100%] ">
+        <h1 className="text-3xl text-center py-[10px] font-bold mb-8 text-blue-700">
           WordPress notes
         </h1>
         {/* Appearance Menu Options start */}
-        <div class="w-[95%] grid grid-cols-1 mx-auto">
+        <div className="w-[95%] grid grid-cols-1 mx-auto">
           <Appearance />
           <CustomizesidebarchangeWidgets />
           <Customize />
@@ -77,6 +82,13 @@ export default function Wordpress() {
           <Username_databasename />
           <Contact7form />
           <AdvancedContactform7DB />
+          <WPForms_Contact_Form />
+          <SMTP_configure />
+          <Elementor_details />
+          <Preloader_use />
+          <Recapha />
+          <Seo />
+          <Website_role />
         </div>
         {/* customize, sidebar change,Widgets start */}
       </div>
@@ -87,22 +99,29 @@ export default function Wordpress() {
 function Appearance() {
   return (
     <>
-      <div class="mb-12  border-[2px] border-[black] my-[10px]" id="Appearance">
-        <h2 class="text-2xl font-semibold text-center text-[red] mb-4 ">
+      <div
+        className="mb-12  border-[2px] border-[black] my-[10px]"
+        id="Appearance"
+      >
+        <h2 className="text-2xl font-semibold text-center text-[red] mb-4 ">
           Appearance Menu Options
           <img src={Appearcance} className="" />
         </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">1) Themes</h3>
-            <p class="text-gray-700">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
+              1) Themes
+            </h3>
+            <p className="text-gray-700">
               Manage and change your WordPress themes.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">2) Customize</h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
+              2) Customize
+            </h3>
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>Site Identity (Logo, Site Title, Tagline, Favicon)</li>
               <li>Colors</li>
               <li>Menus</li>
@@ -112,201 +131,208 @@ function Appearance() {
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">3) Widgets</h3>
-            <p class="text-gray-700 mb-2">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
+              3) Widgets
+            </h3>
+            <p className="text-gray-700 mb-2">
               Sidebar, footer, or any widget area to add content (text, images,
               menus, etc.).
             </p>
-            <p class="text-gray-700">Drag and drop interface.</p>
+            <p className="text-gray-700">Drag and drop interface.</p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">4) Menus</h3>
-            <p class="text-gray-700 mb-2">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">4) Menus</h3>
+            <p className="text-gray-700 mb-2">
               Create and manage navigation menus.
             </p>
-            <p class="text-gray-700">
+            <p className="text-gray-700">
               Add custom links, pages, posts to menus.
             </p>
-            <p class="text-gray-700">
+            <p className="text-gray-700">
               Assign menu locations (e.g., header, footer).
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               5) Theme File Editor
             </h3>
-            <p class="text-gray-700 mb-2">
+            <p className="text-gray-700 mb-2">
               Edit theme files directly (PHP, CSS files like style.css,
               functions.php).
             </p>
-            <p class="text-red-600 font-medium">
+            <p className="text-red-600 font-medium">
               Note: Risky - mistakes can take down your site.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               6) Background/Header Image
             </h3>
-            <p class="text-gray-700">
+            <p className="text-gray-700">
               Theme-specific options to customize background/header images.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               7) Templates/Patterns
             </h3>
-            <p class="text-gray-700">
+            <p className="text-gray-700">
               In Gutenberg themes, customize or create templates and patterns.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="mb-12">
-        <h2 class="text-2xl font-semibold mb-4 text-blue-600">
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4 text-blue-600">
           Settings Options
         </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               1. General Settings
             </h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>
-                <span class="font-medium">Site Title</span> - Your website name
+                <span className="font-medium">Site Title</span> - Your website
+                name
               </li>
               <li>
-                <span class="font-medium">Tagline</span> - Short description
+                <span className="font-medium">Tagline</span> - Short description
               </li>
               <li>
-                <span class="font-medium">WordPress Address (URL)</span> - Site
-                root URL
+                <span className="font-medium">WordPress Address (URL)</span> -
+                Site root URL
               </li>
               <li>
-                <span class="font-medium">Site Address (URL)</span> - Access URL
+                <span className="font-medium">Site Address (URL)</span> - Access
+                URL
               </li>
               <li>
-                <span class="font-medium">Admin Email Address</span> - For
+                <span className="font-medium">Admin Email Address</span> - For
                 notifications
               </li>
               <li>
-                <span class="font-medium">Membership</span> - User registration
+                <span className="font-medium">Membership</span> - User
+                registration
               </li>
               <li>
-                <span class="font-medium">New User Default Role</span> -
+                <span className="font-medium">New User Default Role</span> -
                 Subscriber, Editor etc.
               </li>
               <li>Timezone, Date Format, Time Format settings</li>
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               2. Writing Settings
             </h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>
-                <span class="font-medium">Default Post Category</span>
+                <span className="font-medium">Default Post Category</span>
               </li>
               <li>
-                <span class="font-medium">Default Post Format</span> - Standard,
-                Video etc.
+                <span className="font-medium">Default Post Format</span> -
+                Standard, Video etc.
               </li>
               <li>
-                <span class="font-medium">Post via Email</span> (rarely used)
+                <span className="font-medium">Post via Email</span> (rarely
+                used)
               </li>
               <li>
-                <span class="font-medium">Update Services</span> - Ping services
-                on new posts
+                <span className="font-medium">Update Services</span> - Ping
+                services on new posts
               </li>
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               3. Reading Settings
             </h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>
-                <span class="font-medium">Your homepage displays</span> - Latest
-                posts or static page
+                <span className="font-medium">Your homepage displays</span> -
+                Latest posts or static page
               </li>
               <li>
-                <span class="font-medium">Blog pages show at most</span> - Posts
-                per page
+                <span className="font-medium">Blog pages show at most</span> -
+                Posts per page
               </li>
               <li>
-                <span class="font-medium">Syndication feeds</span> - Items in
-                RSS feed
+                <span className="font-medium">Syndication feeds</span> - Items
+                in RSS feed
               </li>
               <li>
-                <span class="font-medium">For each article in a feed</span> -
-                Full text or summary
+                <span className="font-medium">For each article in a feed</span>{" "}
+                - Full text or summary
               </li>
               <li>
-                <span class="font-medium">Search engine visibility</span> -
+                <span className="font-medium">Search engine visibility</span> -
                 Block search engines
               </li>
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               4. Discussion Settings
             </h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>
-                <span class="font-medium">Default post settings</span> - Allow
-                comments
+                <span className="font-medium">Default post settings</span> -
+                Allow comments
               </li>
               <li>
-                <span class="font-medium">Other comment settings</span> -
+                <span className="font-medium">Other comment settings</span> -
                 Required fields
               </li>
               <li>
-                <span class="font-medium">Email notifications</span> for
+                <span className="font-medium">Email notifications</span> for
                 comments
               </li>
               <li>
-                <span class="font-medium">Comment moderation</span> rules
+                <span className="font-medium">Comment moderation</span> rules
               </li>
               <li>
-                <span class="font-medium">Blacklist</span> - Block words/IPs
+                <span className="font-medium">Blacklist</span> - Block words/IPs
               </li>
               <li>
-                <span class="font-medium">Avatars</span> display settings
+                <span className="font-medium">Avatars</span> display settings
               </li>
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               5. Media Settings
             </h3>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>
-                <span class="font-medium">Image sizes</span> - Thumbnail,
+                <span className="font-medium">Image sizes</span> - Thumbnail,
                 Medium, Large
               </li>
               <li>
-                <span class="font-medium">Uploading files</span> - Save location
+                <span className="font-medium">Uploading files</span> - Save
+                location
               </li>
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               6. Permalinks Settings
             </h3>
-            <p class="text-gray-700 mb-2">
+            <p className="text-gray-700 mb-2">
               Define URL structure (SEO-friendly options):
             </p>
-            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
               <li>Plain</li>
               <li>Day and name</li>
               <li>Month and name</li>
@@ -316,11 +342,11 @@ function Appearance() {
             </ul>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-medium mb-3 text-blue-500">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium mb-3 text-blue-500">
               7. Privacy Settings
             </h3>
-            <p class="text-gray-700">
+            <p className="text-gray-700">
               Set a Privacy Policy page (required if collecting user data).
             </p>
           </div>
@@ -334,23 +360,23 @@ function CustomizesidebarchangeWidgets() {
   return (
     <>
       <div
-        class="bg-gray-50 text-gray-800 font-sans p-4 md:p-6 border-[2px] border-[black] my-[10px]"
+        className="bg-gray-50 text-gray-800 font-sans p-4 md:p-6 border-[2px] border-[black] my-[10px]"
         id="Customize-sidebar-change-Widgets"
       >
-        <div class="max-w-6xl mx-auto">
-          <header class="mb-8 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold  mb-2 text-[red]">
+        <div className="max-w-6xl mx-auto">
+          <header className="mb-8 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold  mb-2 text-[red]">
               WordPress Widgets{" "}
             </h1>
           </header>
 
           {/* <!-- Core Widgets Section --> */}
-          <section class="mb-12">
-            <div class="flex items-center mb-4">
-              <div class="bg-blue-100 p-2 rounded-lg mr-3">
+          <section className="mb-12">
+            <div className="flex items-center mb-4">
+              <div className="bg-blue-100 p-2 rounded-lg mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-blue-600"
+                  className="h-6 w-6 text-blue-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -363,101 +389,109 @@ function CustomizesidebarchangeWidgets() {
                   />
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl font-bold text-gray-800">
                 Core WordPress Widgets
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {/* <!-- Widget Cards --> */}
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Text/HTML</h3>
-                <p class="text-gray-600 text-sm">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Text/HTML</h3>
+                <p className="text-gray-600 text-sm">
                   Add custom text, HTML or shortcodes
                 </p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Search</h3>
-                <p class="text-gray-600 text-sm">Adds a search box</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Search</h3>
+                <p className="text-gray-600 text-sm">Adds a search box</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Recent Posts</h3>
-                <p class="text-gray-600 text-sm">Shows most recent articles</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Recent Posts</h3>
+                <p className="text-gray-600 text-sm">
+                  Shows most recent articles
+                </p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Recent Comments</h3>
-                <p class="text-gray-600 text-sm">Displays latest comments</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">
+                  Recent Comments
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Displays latest comments
+                </p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Archives</h3>
-                <p class="text-gray-600 text-sm">Monthly post archives</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Archives</h3>
+                <p className="text-gray-600 text-sm">Monthly post archives</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Categories</h3>
-                <p class="text-gray-600 text-sm">List of all categories</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Categories</h3>
+                <p className="text-gray-600 text-sm">List of all categories</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Tag Cloud</h3>
-                <p class="text-gray-600 text-sm">Visual display of tags</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Tag Cloud</h3>
+                <p className="text-gray-600 text-sm">Visual display of tags</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Calendar</h3>
-                <p class="text-gray-600 text-sm">Post calendar</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Calendar</h3>
+                <p className="text-gray-600 text-sm">Post calendar</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Image</h3>
-                <p class="text-gray-600 text-sm">Insert an image</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Image</h3>
+                <p className="text-gray-600 text-sm">Insert an image</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Gallery</h3>
-                <p class="text-gray-600 text-sm">Display image gallery</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Gallery</h3>
+                <p className="text-gray-600 text-sm">Display image gallery</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Audio/Video</h3>
-                <p class="text-gray-600 text-sm">Media players</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Audio/Video</h3>
+                <p className="text-gray-600 text-sm">Media players</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Custom Menu</h3>
-                <p class="text-gray-600 text-sm">Display navigation menus</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Custom Menu</h3>
+                <p className="text-gray-600 text-sm">
+                  Display navigation menus
+                </p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Meta</h3>
-                <p class="text-gray-600 text-sm">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Meta</h3>
+                <p className="text-gray-600 text-sm">
                   Login, RSS, WordPress.org links
                 </p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">Pages</h3>
-                <p class="text-gray-600 text-sm">List of all pages</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">Pages</h3>
+                <p className="text-gray-600 text-sm">List of all pages</p>
               </div>
 
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-blue-600 mb-1">RSS</h3>
-                <p class="text-gray-600 text-sm">Display RSS feeds</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-blue-600 mb-1">RSS</h3>
+                <p className="text-gray-600 text-sm">Display RSS feeds</p>
               </div>
             </div>
           </section>
 
           {/* <!-- eCommerce Widgets --> */}
-          <section class="mb-12">
-            <div class="flex items-center mb-4">
-              <div class="bg-green-100 p-2 rounded-lg mr-3">
+          <section className="mb-12">
+            <div className="flex items-center mb-4">
+              <div className="bg-green-100 p-2 rounded-lg mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-green-600"
+                  className="h-6 w-6 text-green-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -470,51 +504,55 @@ function CustomizesidebarchangeWidgets() {
                   />
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl font-bold text-gray-800">
                 🛒 eCommerce Widgets (WooCommerce)
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Product Search</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">
+                  Product Search
+                </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">
                   Product Categories
                 </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Cart</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">Cart</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Product Tags</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">Product Tags</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">
                   Top Rated Products
                 </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Recently Viewed</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">
+                  Recently Viewed
+                </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Price Filter</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">Price Filter</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-green-600 mb-1">Layered Nav</h3>
-                <p class="text-gray-600 text-sm">(filtering)</p>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-green-600 mb-1">Layered Nav</h3>
+                <p className="text-gray-600 text-sm">(filtering)</p>
               </div>
             </div>
           </section>
 
           {/* <!-- Social Media Widgets --> */}
-          <section class="mb-12">
-            <div class="flex items-center mb-4">
-              <div class="bg-purple-100 p-2 rounded-lg mr-3">
+          <section className="mb-12">
+            <div className="flex items-center mb-4">
+              <div className="bg-purple-100 p-2 rounded-lg mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-purple-600"
+                  className="h-6 w-6 text-purple-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -527,37 +565,41 @@ function CustomizesidebarchangeWidgets() {
                   />
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl font-bold text-gray-800">
                 📱 Social Media Widgets
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-purple-600 mb-1">Social Icons</h3>
-                <p class="text-gray-600 text-sm">(by many plugins)</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-purple-600 mb-1">Social Icons</h3>
+                <p className="text-gray-600 text-sm">(by many plugins)</p>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-purple-600 mb-1">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-purple-600 mb-1">
                   Facebook Like Box
                 </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-purple-600 mb-1">Instagram Feed</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-purple-600 mb-1">
+                  Instagram Feed
+                </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-purple-600 mb-1">Twitter Timeline</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-purple-600 mb-1">
+                  Twitter Timeline
+                </h3>
               </div>
             </div>
           </section>
 
           {/* <!-- Advanced Plugin Widgets --> */}
-          <section class="mb-12">
-            <div class="flex items-center mb-4">
-              <div class="bg-orange-100 p-2 rounded-lg mr-3">
+          <section className="mb-12">
+            <div className="flex items-center mb-4">
+              <div className="bg-orange-100 p-2 rounded-lg mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-orange-600"
+                  className="h-6 w-6 text-orange-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -570,46 +612,54 @@ function CustomizesidebarchangeWidgets() {
                   />
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl font-bold text-gray-800">
                 📊 Advanced Plugin Widgets
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Contact Forms</h3>
-                <p class="text-gray-600 text-sm">(Contact Form 7)</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
+                  Contact Forms
+                </h3>
+                <p className="text-gray-600 text-sm">(Contact Form 7)</p>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Testimonials</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">Testimonials</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Google Maps</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">Google Maps</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
                   Newsletter Signup
                 </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
                   Table of Contents
                 </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Weather</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">Weather</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Polls/Surveys</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
+                  Polls/Surveys
+                </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Events Calendar</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
+                  Events Calendar
+                </h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Team Members</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">Team Members</h3>
               </div>
-              <div class="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <h3 class="font-bold text-orange-600 mb-1">Countdown Timer</h3>
+              <div className="widget-card bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-orange-600 mb-1">
+                  Countdown Timer
+                </h3>
               </div>
             </div>
           </section>
@@ -1572,60 +1622,125 @@ function Passwordlostpasswordchnage() {
 function Plugin_name() {
   const plugins = [
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      "name": "Smart Slider 3",
+      "author": "Nextendweb",
+      "purpose": "Create modern, responsive sliders with animations"
     },
     {
-      name: "Smush",
-      author: "WPMU DEV",
-      purpose: "Automatically compress and optimize images.",
+      "name": "Smush",
+      "author": "WPMU DEV",
+      "purpose": "Image optimization and compression"
     },
     {
-      name: "Recent Posts Widget With Thumbnails",
-      author: "Unknown",
-      purpose: "Display recent posts with thumbnails in the sidebar.",
+      "name": "Recent Posts Widget With Thumbnails",
+      "author": "Unknown",
+      "purpose": "Display recent posts with thumbnails in sidebar"
     },
     {
-      name: "WP News and Scrolling Widgets",
-      author: "WP OnlineSupport",
-      purpose: "Show scrolling news tickers or post lists.",
+      "name": "WP News and Scrolling Widgets",
+      "author": "Essential Plugins by WP OnlineSupport",
+      "purpose": "Auto-playing news ticker functionality"
     },
     {
-      name: "Elementor Pro",
-      author: "Elementor",
-      purpose: "Advanced drag-and-drop page builder.",
+      "name": "Elementor Pro",
+      "author": "Elementor",
+      "purpose": "Advanced page building functionality"
     },
     {
-      name: "Under Construction",
-      author: "WebFactory",
-      purpose: "Display 'Under Construction' notice during development.",
+      "name": "Under Construction",
+      "author": "WebFactory",
+      "purpose": "Show under construction page during development"
     },
     {
-      name: "Contact Form 7 ",
-      author: "Takayuki Miyoshi",
-      purpose: "mail send karne ke liye",
+      "name": "Contact Form 7",
+      "author": "Takayuki Miyoshi",
+      "purpose": "Create and manage contact forms for sending emails"
     },
     {
-      name: "Advanced Contact form 7 DB",
-      author: "By Vsourz Digital ",
-      purpose: "mail ka data website me dekh ne ke liye",
+      "name": "Advanced Contact form 7 DB",
+      "author": "Vsourz Digital",
+      "purpose": "Store and view contact form submissions in dashboard"
     },
     {
-      name: "Popup Maker – Boost Sales, Conversions, Optins, Subscribers with the Ultimate WP Popups Builder",
-      author: "By Daniel Iser",
-      purpose: "popup,lightbox or contact form ko popup open karne ke liye",
+      "name": "Popup Maker",
+      "author": "Daniel Iser",
+      "purpose": "Create popups, lightboxes and popup contact forms"
     },
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      "name": "WPForms",
+      "author": "Syed Balkhi",
+      "purpose": "Form builder for contact forms, payments and surveys"
     },
     {
-      name: "Smart Slider 3",
-      author: "Nextendweb",
-      purpose: "Create modern, responsive sliders with animations.",
+      "name": "Yoast SEO",
+      "author": "Yoast",
+      "purpose": "Search engine optimization tools"
     },
+    {
+      "name": "Rank Math SEO",
+      "author": "Rank Math",
+      "purpose": "Alternative SEO plugin with AI features"
+    },
+    {
+      "name": "WP Rocket",
+      "author": "WP Media",
+      "purpose": "Premium caching and performance optimization"
+    },
+    {
+      "name": "RSS Feed Widget",
+      "author": "Fahad Mahmood",
+      "purpose": "Display RSS feeds in widgets"
+    },
+    {
+      "name": "Visual Portfolio, Photo Gallery & Post Grid",
+      "author": "Nikita",
+      "purpose": "Create portfolios and galleries"
+    },
+    {
+      "name": "Preloader",
+      "author": "Alobaidi",
+      "purpose": "Add loading animation while page loads"
+    },
+    {
+      "name": "Accordion FAQ",
+      "author": "wpshopmart",
+      "purpose": "Create FAQ accordions compatible with page builders"
+    },
+    {
+      "name": "GTranslate",
+      "author": "edo888",
+      "purpose": "Multilingual translation for website"
+    },
+    {
+      "name": "Responsive Menu",
+      "author": "ExpressTech Systems",
+      "purpose": "Create mobile-friendly menus"
+    },
+    {
+      "name": "WP User Frontend",
+      "author": "Tareq Hasan",
+      "purpose": "Frontend user profiles, memberships and content restriction"
+    },
+    {
+      "name": "WooCommerce",
+      "author": "Automattic",
+      "purpose": "Ecommerce functionality"
+    },
+    {
+      "name": "YITH Request a Quote for WooCommerce",
+      "author": "YITHEMES",
+      "purpose": "Add quote request functionality to WooCommerce"
+    },
+    {
+      "name": "Smush Image Optimization",
+      "author": "WPMU DEV",
+      "purpose": "Image optimization, WebP conversion and lazy loading"
+    },
+    {
+      "name": "Autoptimize",
+      "author": "Optimizing Matters",
+      "purpose": "Optimize JS, CSS, HTML and fonts for performance"
+    }
   ];
   return (
     <div className="border-[2px] border-[black] my-[10px]" id="Plugin_name">
@@ -2173,21 +2288,21 @@ function AdvancedContactform7DB() {
 
         <div className="space-y-3 pl-4 border-l-4 border-blue-500">
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+            <span className=" bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
               1
             </span>
             Contact Form 7 se related hai
           </p>
 
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+            <span className=" bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
               2
             </span>
             "Advanced CF7 DB" ke option par click karo
           </p>
 
           <p className="flex items-start">
-            <span className="inline-block bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
+            <span className=" bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
               3
             </span>
             <span>Select Form name → (Contact Form 1) select kiya hai</span>
@@ -2215,3 +2330,708 @@ function AdvancedContactform7DB() {
     </div>
   );
 }
+
+function WPForms_Contact_Form() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="WPForms_Contact_Form"
+    >
+      <h1 className="text-2xl font-bold mb-4 text-blue-600 text-center">
+        WPForms Setup Guide
+      </h1>
+
+      {/* <!-- Step 1 --> */}
+      <div className="grid lg:grid-cols-2 grid-cols-1 ">
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 1: Add New Form
+          </h2>
+          <p>
+            Dashboard →{" "}
+            <span className="font-medium text-blue-500">WPForms Add New</span>{" "}
+            par click karein.
+          </p>
+        </div>
+
+        {/* <!-- Step 2 --> */}
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 2: Name Your Form
+          </h2>
+          <p>
+            Form ka naam de:{" "}
+            <span className="bg-gray-100 px-2 py-1 rounded text-green-700 font-medium">
+              Contact Form New
+            </span>
+          </p>
+        </div>
+
+        {/* <!-- Step 3 --> */}
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 3: Choose Template
+          </h2>
+          <p>
+            <span className="font-medium text-blue-500">
+              Simple Contact Form
+            </span>{" "}
+            template choose karo.
+          </p>
+        </div>
+
+        {/* <!-- Step 4 --> */}
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 4: Name Field Format
+          </h2>
+          <p>
+            Name field par click karo, fir dropdown se yeh format choose karo:
+          </p>
+          <ul className="list-disc list-inside ml-4 text-gray-700">
+            <li>Simple</li>
+            <li>First Last</li>
+            <li>First Middle Last</li>
+          </ul>
+        </div>
+
+        {/* <!-- Step 5 --> */}
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 5: Notification Settings
+          </h2>
+          <ul className="list-disc list-inside ml-4 text-gray-700">
+            <li>
+              <strong>Send To Email Address:</strong>{" "}
+              <span className="text-green-700">naveensainijpr@gmail.com</span>
+            </li>
+            <li>
+              <strong>Email Subject Line:</strong> New Entry: Contact Form New
+            </li>
+            <li>
+              <strong>From Name:</strong> trave (ya jo bhi aap chahein)
+            </li>
+          </ul>
+          <p className="mt-2 text-sm text-gray-500">
+            Ye settings aapko milengi: <strong>Settings > Notifications</strong>{" "}
+            ke andar.
+          </p>
+        </div>
+
+        {/* <!-- Step 6 --> */}
+        <div className="mb-4">
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 6: Save Form
+          </h2>
+          <p>
+            Top right corner me{" "}
+            <span className="font-medium text-blue-500">Save</span> button par
+            click karein.
+          </p>
+        </div>
+
+        {/* <!-- Step 7 --> */}
+        <div>
+          <h2 className="font-semibold text-lg text-gray-800">
+            Step 7: Embed the Form
+          </h2>
+          <p>Shortcode ko page/post me paste karein:</p>
+          <code className="block bg-gray-100 text-gray-800 px-3 py-2 rounded mt-2">
+            [wpforms id="142"]
+          </code>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SMTP_configure() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="SMTP_configure"
+    >
+      <h1 className="text-2xl font-bold mb-4 text-purple-700">
+        SMTP Configuration Guide (Gmail)
+      </h1>
+
+      {/* <!-- Step 1 --> */}
+      <div className="mb-4">
+        <h2 className="font-semibold text-lg text-gray-800">
+          Step 1 of 6: Choose Your SMTP Mailer
+        </h2>
+        <p>
+          Select:{" "}
+          <span className="bg-gray-100 px-2 py-1 rounded text-green-700 font-medium">
+            Other SMTP
+          </span>
+        </p>
+      </div>
+
+      {/* <!-- Step 2 --> */}
+      <div className="mb-4">
+        <h2 className="font-semibold text-lg text-gray-800">
+          Step 2: SMTP Settings
+        </h2>
+        <ul className="list-disc list-inside ml-4 text-gray-700">
+          <li>
+            <strong>SMTP Host:</strong> smtp.gmail.com
+          </li>
+          <li>
+            <strong>Encryption:</strong> SSL
+          </li>
+          <li>
+            <strong>SMTP Port:</strong> 465
+          </li>
+          <li>
+            <strong>SMTP Username:</strong> naveensainijpr@gmail.com
+          </li>
+          <li>
+            <strong>SMTP Password:</strong>{" "}
+            <span className="italic text-red-600">[App Password required]</span>
+          </li>
+        </ul>
+        <p className="mt-2 text-sm text-gray-500">
+          ⚠️ Gmail me agar 2-step verification enabled hai, to aapko{" "}
+          <a
+            href="https://myaccount.google.com/apppasswords"
+            target="_blank"
+            className="text-blue-600 underline"
+          >
+            App Password
+          </a>{" "}
+          generate karna padega. Regular Gmail password yaha kaam nahi karega.
+        </p>
+      </div>
+
+      {/* <!-- Step 3 --> */}
+      <div>
+        <h2 className="font-semibold text-lg text-gray-800">
+          Step 3: Save & Test
+        </h2>
+        <p>
+          Sab settings fill karne ke baad{" "}
+          <span className="text-green-700 font-medium">Save Settings</span>{" "}
+          button par click karein.
+        </p>
+        <p className="mt-1">
+          Phir ek test email bhejne ke liye{" "}
+          <strong>WP Mail SMTP Email Test</strong> option use karein.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Elementor_details() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="Elementor_details"
+    >
+      <h1 className="text-2xl text-center font-bold text-indigo-600 mb-4">
+        Elementor Important Details
+      </h1>
+
+      {/* <!-- Point 1 --> */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold text-gray-800">
+          1) Elementor Canvas Setting
+        </h2>
+        <p className="text-gray-700 mt-1">
+          Agar aap{" "}
+          <span className="font-medium text-blue-600">
+            Elementor Page Settings
+          </span>{" "}
+          me
+          <span className="bg-gray-100 px-2 py-1 rounded text-green-700 font-semibold">
+            Elementor Canvas
+          </span>{" "}
+          choose karte hain to:
+        </p>
+        <ul className="list-disc list-inside ml-5 mt-2 text-gray-700">
+          <li>Header aur Footer dono remove ho jate hain.</li>
+          <li>Pura blank page milta hai for custom layout/design.</li>
+          <li>
+            Multiple page website me ise normally use nahi karte kyunki
+            consistent header/footer chahiye hota hai.
+          </li>
+        </ul>
+      </div>
+
+      {/* <!-- Point 2 --> */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold text-gray-800">
+          2) Smart Slider 3 Integration
+        </h2>
+        <p className="text-gray-700 mt-1">
+          Jab aap{" "}
+          <span className="font-medium text-blue-600">Smart Slider 3</span>{" "}
+          plugin install kar lete hain:
+        </p>
+        <ul className="list-disc list-inside ml-5 mt-2 text-gray-700">
+          <li>
+            Smart Slider Elementor ke andar widget ke roop me available ho jata
+            hai.
+          </li>
+          <li>
+            Elementor me search bar me{" "}
+            <span className="font-medium">"Smart Slider"</span> likhne par
+            widget show ho jata hai.
+          </li>
+          <li>Drag and drop karke directly page par use kar sakte hain.</li>
+        </ul>
+      </div>
+
+      {/* <!-- Point 3 --> */}
+      <div>
+        <h2 className="text-lg font-semibold text-gray-800">
+          3) Motion Effects Kab Lagayein?
+        </h2>
+        <p className="text-gray-700 mt-1">
+          <span className="font-medium text-red-600">Motion Effects</span>{" "}
+          (jaise: fade-in, slide-up, zoom, etc.) ko
+          <strong>website complete hone ke baad</strong> apply karna chahiye.
+        </p>
+        <ul className="list-disc list-inside ml-5 mt-2 text-gray-700">
+          <li>
+            Isse aapko poori layout aur animation timing ka clear idea milta
+            hai.
+          </li>
+          <li>Performance aur user experience pe control rehta hai.</li>
+          <li>
+            Har section par zarurat ke mutabiq effect lagaya ja sakta hai, bina
+            overuse ke.
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Preloader_use() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="Preloader_use"
+    >
+      <h1 className="text-2xl font-bold text-red-600 mb-6 text-center">
+        Preloader Setup Guide (WordPress)
+      </h1>
+
+      {/* Method 1 */}
+      <div className="mb-8 ">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🔹 Method 1: Using Plugin (Preloader by Alobaidi)
+        </h2>
+
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <li>
+            Go to <strong>Plugins &gt; Add New</strong>, search for{" "}
+            <span className="text-blue-600 font-medium">
+              Preloader // By Alobaidi
+            </span>{" "}
+            and install it.
+          </li>
+          <li>
+            Plugin activate hone ke baad settings ya left menu me option nahi
+            dikhega.
+            <br />
+            Plugin dekhne ke liye{" "}
+            <strong>Plugins &gt; Installed Plugins</strong> me scroll karke
+            dekhein.
+          </li>
+          <li>
+            Code ko manually add karna padega:
+            <div className="bg-gray-100 p-3 rounded mt-2 text-sm font-mono">
+              &lt;div id="wptime-plugin-preloader"&gt;&lt;/div&gt;
+            </div>
+          </li>
+          <li>
+            <strong>header.php</strong> me ye code paste karna hoga{" "}
+            <strong>&lt;body&gt;</strong> ke just niche.
+          </li>
+          <li>
+            header.php edit karne ke liye:
+            <ul className="list-disc list-inside ml-4 mt-2">
+              <li>
+                Go to <strong>Appearance &gt; Theme File Editor</strong>
+              </li>
+              <li>
+                Agar file nahi dikhti to child theme select hai. Change it to{" "}
+                <strong>parent theme</strong>
+              </li>
+              <li>
+                Wahan <code>header.php</code> file mil jayegi
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      {/* Method 2 */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🔹 Method 2: Manual File Access (WampServer)
+        </h2>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <li>
+            Go to this path in your system:
+            <code className="bg-gray-100 p-1 rounded block mt-1">
+              wamserver &gt; www &gt; travel &gt; wp-content &gt; themes &gt;
+              traveltour (parent theme) &gt; header.php
+            </code>
+          </li>
+          <li>
+            <code>&lt;body&gt;</code> ke just niche ye code paste karo:
+            <div className="bg-gray-100 p-3 rounded mt-2 text-sm font-mono">
+              &lt;div id="wptime-plugin-preloader"&gt;&lt;/div&gt;
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      {/* Notes */}
+      <div>
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">📝 Notes:</h2>
+        <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
+          <li>
+            <strong>Note 1:</strong> Preloader background color pehle{" "}
+            <span className="font-medium text-blue-700">white</span> tha, ab{" "}
+            <span className="font-medium text-red-600">red</span> kar diya gaya
+            hai (settings me change kiya).
+          </li>
+          <li>
+            <strong>Note 2:</strong> Preloader image change karni hai:
+            <ul className="list-disc list-inside ml-6">
+              <li>
+                Go to:{" "}
+                <span className="inline">
+                  wampserver &gt; travel &gt; wp-content &gt; plugins &gt;
+                  the-preloader &gt; images
+                </span>
+              </li>
+              <li>
+                Yahan <code>preloader.GIF</code> ko apni image se replace karo
+              </li>
+              <li>
+                Image ka naam same hi rakho: <strong>preloader.GIF</strong>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Recapha() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="Recapha"
+    >
+      <h1 className="text-2xl font-bold text-blue-600 mb-6 text-center">
+        reCAPTCHA v3 Setup Guide (WordPress)
+      </h1>
+
+      {/* Why Use */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🔒 क्यों ज़रूरी है?
+        </h2>
+        <p className="text-gray-700">
+          WordPress में स्पैम रोकने के लिए Google reCAPTCHA का उपयोग होता है। यह
+          बॉट्स को फॉर्म भरने से रोकता है।
+        </p>
+      </div>
+      <div className="grid lg:grid-cols-2 grid-cols-1">
+        {/* Step 1 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 1: Integration Setup
+          </h2>
+          <ol className="list-decimal list-inside space-y-2 text-gray-700">
+            <li>
+              WordPress Dashboard ➝ <strong>Contact ➝ Integration</strong>
+            </li>
+            <li>
+              reCAPTCHA option दिखेगा ➝ नीचे दिए गए लिंक पर क्लिक करें:
+              <div className="mt-2">
+                <a
+                  href="https://www.google.com/recaptcha/admin/create"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  https://www.google.com/recaptcha/admin/create
+                </a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        {/* Step 2 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 2: Google reCAPTCHA Settings
+          </h2>
+          <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
+            <li>
+              <strong>Label:</strong> My Website reCAPTCHA
+            </li>
+            <li>
+              <strong>reCAPTCHA Type:</strong> v3
+            </li>
+            <li>
+              <strong>Domains:</strong> naveen.lovestoblog.com
+            </li>
+            <li>Terms checkbox पर tick करें और Submit करें</li>
+          </ul>
+        </div>
+
+        {/* Step 3 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 3: Keys Copy करें
+          </h2>
+          <div className="bg-gray-100 p-4 rounded-md text-sm font-mono text-gray-800 space-y-2">
+            <div>
+              <strong>Site Key:</strong>{" "}
+              6LeIuC8rAAAAABhBXD4ADz4Nuex00-tvdFVqeTgD
+            </div>
+            <div>
+              <strong>Secret Key:</strong>{" "}
+              6LeIuC8rAAAAAP19JKHAfW3CcckkNXwiujbE4NQf
+            </div>
+          </div>
+        </div>
+
+        {/* Step 4 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 4: WordPress में Key Paste करें
+          </h2>
+          <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
+            <li>
+              Dashboard ➝ <strong>Contact > Integration</strong>
+            </li>
+            <li>Setup Integration पर क्लिक करें</li>
+            <li>Site Key और Secret Key को वहाँ paste करें</li>
+          </ul>
+        </div>
+
+        {/* Step 5 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 5: Form में reCAPTCHA जोड़ें
+          </h2>
+          <p className="text-gray-700 mb-2">
+            अपने फॉर्म में नीचे वाला shortcode जोड़ें:
+          </p>
+          <div className="bg-gray-100 p-3 rounded font-mono text-sm">
+            &nbsp;[recaptcha]
+          </div>
+        </div>
+
+        {/* Step 6 */}
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            ✅ Step 6: Check करें
+          </h2>
+          <p className="text-gray-700">
+            Form में Google reCAPTCHA badge दिखेगा (usually bottom-right
+            corner)। यह v3 होने के कारण invisible रहता है।
+          </p>
+        </div>
+      </div>
+
+      {/* Notes */}
+      <div>
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          📝 Extra Tips
+        </h2>
+        <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
+          <li>Badge को CSS से hide करना Google की policy के खिलाफ है।</li>
+          <li>
+            अगर आप WPForms इस्तेमाल कर रहे हैं, तो WPForms ➝ Settings ➝ CAPTCHA
+            से same key सेट करें।
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+function Seo() {
+  return (
+    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"id="Seo">
+      <h1 className="text-2xl font-bold text-green-600 mb-6 text-center">
+        Yoast SEO Sitemap Setup Guide
+      </h1>
+
+      {/* Plugin Installation */}
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🔧 Step 1: Yoast SEO Plugin Install
+        </h2>
+        <ol className="list-decimal list-inside text-gray-700 space-y-2">
+          <li>
+            WordPress Dashboard ➝ <strong>Plugins ➝ Add New</strong>
+          </li>
+          <li>
+            Search for <strong>Yoast SEO</strong> and click{" "}
+            <strong>Install ➝ Activate</strong>
+          </li>
+        </ol>
+      </div>
+
+      {/* Enable Sitemap */}
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🌐 Step 2: Enable Sitemap
+        </h2>
+        <p className="text-gray-700">
+          Yoast SEO sitemap by default enabled होता है। आप settings में जाकर
+          verify कर सकते हैं:
+        </p>
+        <ul className="list-disc list-inside ml-4 text-gray-700 mt-2">
+          <li>SEO ➝ General ➝ Features Tab</li>
+          <li>
+            XML sitemaps ➝{" "}
+            <span className="text-green-600 font-medium">On</span> होना चाहिए
+          </li>
+        </ul>
+      </div>
+
+      {/* View Sitemap */}
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          📄 Step 3: View Sitemap
+        </h2>
+        <p className="text-gray-700">
+          अपने sitemap को ब्राउज़र में देखने के लिए नीचे दिए गए URL पर जाएं:
+        </p>
+        <div className="bg-gray-100 p-3 mt-2 rounded text-[8px] font-mono text-gray-800">
+          http://localhost/blog_website/sitemap_index.xml
+        </div>
+        <p className="text-gray-700 mt-2">
+          यह sitemap आपके सभी पोस्ट, पेज, categories आदि की indexing Google को
+          आसानी से करवाता है।
+        </p>
+      </div>
+
+      {/* Troubleshooting */}
+      <div>
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          🛠️ Extra Tip (अगर Sitemap 404 दे):
+        </h2>
+        <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
+          <li>
+            Permalinks को refresh करें:{" "}
+            <strong>Settings ➝ Permalinks ➝ Save Changes</strong>
+          </li>
+          <li>
+            Ensure `.htaccess` file Apache में rewrite rules allow कर रहा है
+            (WAMPの場合)
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Website_role(){
+  return(
+    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]" id="Website_role">
+    <h1 className="text-3xl font-bold text-blue-700 mb-8 text-center">
+      WordPress User Creation & Roles Guide
+    </h1>
+
+    {/* User Creation Form Info */}
+    <section className="mb-10">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        User Creation Steps (Add New User)
+      </h2>
+      <ul className="list-disc list-inside space-y-2 text-gray-700">
+        <li>
+          Left side Dashboard में <strong>User</strong> menu आएगा। वहाँ जाएँ और{" "}
+          <strong>Add New</strong> पर क्लिक करें।
+        </li>
+        <li>
+          फॉर्म भरें:
+          <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-gray-600">
+            <li><strong>Username (required):</strong> जैसे demo</li>
+            <li><strong>Email (required):</strong> जैसे menkasaini1990@gmail.com</li>
+            <li><strong>First Name:</strong> menka</li>
+            <li><strong>Last Name:</strong> saini</li>
+            <li><strong>Website:</strong> (optional)</li>
+            <li><strong>Password:</strong> Generate password या खुद लिखें</li>
+            <li><strong>Confirm Password:</strong> Confirm use of weak password (अगर कमजोर पासवर्ड इस्तेमाल करना हो)</li>
+            <li><strong>Send User Notification:</strong> नई यूजर को ईमेल भेजने के लिए चेक करें</li>
+            <li>
+              <strong>Role:</strong> यहाँ यूजर का रोल चुनें - उदाहरण के लिए Administrator, Contributor आदि
+            </li>
+          </ul>
+        </li>
+        <li>फॉर्म सबमिट करें और नया यूजर बन जाएगा।</li>
+      </ul>
+    </section>
+
+    {/* User Roles Explanation */}
+    <section>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        WordPress के मुख्य User Roles:
+      </h2>
+
+      <div className="grid lg:grid-cols-3 grid-cols-1 space-y-6 text-gray-700">
+        <div>
+          <h3 className="text-xl font-semibold text-indigo-600">Administrator</h3>
+          <p>
+            Full control होता है site पर।<br />
+            Themes, plugins install/update/delete कर सकता है।<br />
+            Users को manage कर सकता है।<br />
+            Content लिख, edit, publish और delete कर सकता है (दूसरों का भी)।
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-indigo-600">Editor</h3>
+          <p>
+            खुद और दूसरे authors के posts को publish, edit, delete कर सकता है।<br />
+            Pages और comments को manage कर सकता है।<br />
+            Users या site settings access नहीं कर सकता।
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-indigo-600">Author</h3>
+          <p>
+            केवल अपने posts लिख, edit, publish और delete कर सकता है।<br />
+            Media files upload कर सकता है।
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-indigo-600">Contributor</h3>
+          <p>
+            Posts लिख सकता है लेकिन publish नहीं कर सकता।<br />
+            Media upload नहीं कर सकता।<br />
+            Editor या Administrator के approval के बाद post publish होता है।
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-indigo-600">Subscriber</h3>
+          <p>
+            केवल login कर सकता है और अपनी profile manage कर सकता है।<br />
+            आमतौर पर membership या commenting purposes के लिए उपयोग होता है।
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  )
+}
+
+
