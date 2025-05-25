@@ -41,6 +41,7 @@ import UseRef from "./pages/useRef/useRef.jsx"
 import React_pagination from "./pages/React_pagination/React_pagination.jsx"
 import Login from "./pages/Authentication/Login.jsx"
 import Register from "./pages/Authentication/Register.jsx"
+import MainContext from "./pages/context_api/MainContext.jsx"
 
 const router = createBrowserRouter([
   {
@@ -240,5 +241,7 @@ const router = createBrowserRouter([
   }
 ])
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <MainContext>
+    <RouterProvider router={router} />
+  </MainContext>
 )

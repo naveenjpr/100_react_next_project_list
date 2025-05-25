@@ -1,9 +1,13 @@
 import React from "react";
 import Header from "../../Common page/Header";
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../context_api/MainContext";
 
 export default function Register() {
   const location = useLocation();
+  const { userinfo, setuserinfo } = useContext(LoginContext);
+  console.log("userinfo", userinfo);
 
   return (
     <>
@@ -72,11 +76,14 @@ export default function Register() {
           </form>
           <Link to="/Login">
             <button className="w-full bg-blue-600 text-white py-2 my-[10px] rounded-lg hover:bg-blue-700 transition duration-300">
-            Login
+              Login
             </button>
           </Link>
         </div>
       </div>
+
+    
+      <button onClick={()=>setuserinfo(userinfo+1)} className="w-[100px] bg-blue-600 text-white py-2 my-[10px] rounded-lg hover:bg-blue-700 transition duration-300">hello:{userinfo}</button>
     </>
   );
 }
