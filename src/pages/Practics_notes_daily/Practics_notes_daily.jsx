@@ -1,14 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../../Common page/Header";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Colors, Lodingspinnerwithimageinside } from "../Loading/Loading";
+import { LoginContext } from "../context_api/MainContext";
 
 export default function Practics_notes_daily() {
   const location = useLocation();
+  let navigate=useNavigate()
 
   const [activButton, setactivButton] = useState("button1");
+  const { userinfo, setuserinfo } = useContext(LoginContext);
+  // Logout function
+const logoutHandler = () => {
+  // Cookies.remove("token");
+  setuserinfo(null);
+  navigate("/Login");
+};
+
 
   return (
     <>
@@ -22,11 +32,20 @@ export default function Practics_notes_daily() {
             Register
           </button>
         </Link>
-        <Link to="/Login">
-          <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
-            Login
+        {userinfo ? (
+          <button
+            className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300"
+            onClick={() => logoutHandler()}
+          >
+            Log out
           </button>
-        </Link>
+        ) : (
+          <Link to="/Login">
+            <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
       {/* login register button End*/}
 
@@ -96,12 +115,17 @@ export default function Practics_notes_daily() {
 function Javascript() {
   const [currentId, setCurrentId] = useState(null); // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
   const [javascriptdatashow, setjavascriptdatashow] = useState([]); // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
+  const { userinfo, setuserinfo } = useContext(LoginContext);
 
   useEffect(() => {
     axios
 
       .post(
-        "https://rss-feed-node-js.onrender.com/api/frontend/javascript/view"
+        "https://rss-feed-node-js.onrender.com/api/frontend/javascript/view",{}, {
+          headers: {
+            Authorization: `Bearer ${userinfo}`,
+          },
+        }
       )
       .then((result) => {
         setjavascriptdatashow(result.data.data);

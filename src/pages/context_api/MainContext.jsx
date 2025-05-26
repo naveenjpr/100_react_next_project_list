@@ -8,7 +8,7 @@ export default function MainContext({children}) {
 // localStorage.getItem("key");
 
     let [userinfo, setuserinfo] =  useState(
-        JSON.parse(localStorage.getItem("NAVEEN")) ?? null
+        JSON.parse(localStorage.getItem("token")) ?? null
       );
 
    let obj={
@@ -16,7 +16,7 @@ export default function MainContext({children}) {
         setuserinfo
     }
     useEffect(()=>{
-        localStorage.setItem("NAVEEN", JSON.stringify(userinfo));
+        localStorage.setItem("token", JSON.stringify(userinfo));
  
     },[userinfo])
     return (
