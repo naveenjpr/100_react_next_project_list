@@ -28,7 +28,6 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx"
 import SliderType from "./pages/SliderType/SliderType.jsx"
 import BgRemover from "./pages/Bg Remover/BgRemover.jsx"
 import HashtagGenerator from "./pages/Hastag_generaator/Hastag_generaator.jsx"
-import RssFeed from "./pages/Rss Feed/Rss-Feed.jsx"
 import ImagetoWebPConverte from "./pages/Image-to-WebP-Converter/Image-to-WebP-Converte.jsx"
 import Count_Down from "./pages/digital-clock/Digital-clock.jsx"
 import To_do_list from "./pages/To_do_List/To_do_list.jsx"
@@ -186,10 +185,7 @@ const router = createBrowserRouter([
     path: "/Hash-tag-Generator",
     element: <HashtagGenerator/>,
   },
-  {
-    path: "/Rss-Feed",
-    element: <RssFeed/>,
-  },
+ 
   //Image-to-WebP-Converte
   {
     path: "/Image-to-WebP-Converte",

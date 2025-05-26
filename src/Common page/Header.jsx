@@ -91,7 +91,6 @@ export default function Header() {
                 { path: "/SliderType", label: "All-Type-Slider" },
                 { path: "/BgRemover", label: "Bg-Remover" },
                 { path: "/Hash-tag-Generator", label: "Hashtag-Generator" },
-                { path: "/Rss-Feed", label: "Rss-Feed" },
                 {
                   path: "/Image-to-WebP-Converte",
                   label: "Image-to-WebP-Converte",

@@ -24,8 +24,6 @@ import Tooltip from "./Tooltip/Tooltip.jsx";
 import SliderType from "./SliderType/SliderType.jsx";
 import BgRemover from "./Bg Remover/BgRemover.jsx";
 import HashtagGenerator from "./Hastag_generaator/Hastag_generaator.jsx";
-import Rss_Feed from "./Rss Feed/Rss-Feed.jsx";
-import RssFeed from "./Rss Feed/Rss-Feed.jsx";
 import ImageToWebPConverter from "./Image-to-WebP-Converter/Image-to-WebP-Converte.jsx";
 import Count_Down from "./digital-clock/Digital-clock.jsx";
 import To_do_list from "./To_do_List/To_do_list.jsx";
@@ -68,7 +66,6 @@ export default function Home() {
       <SliderType />
       <BgRemover />
       <HashtagGenerator />
-      <RssFeed />
       <ImageToWebPConverter />
       <Count_Down />
       <To_do_list />
