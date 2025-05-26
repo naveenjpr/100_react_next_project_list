@@ -118,6 +118,8 @@ function Javascript() {
   const { userinfo, setuserinfo } = useContext(LoginContext);
 
   useEffect(() => {
+    if (!userinfo) return; // अगर user login नहीं है तो कुछ भी fetch न करो
+
     axios
 
       .post(
@@ -134,6 +136,7 @@ function Javascript() {
         console.log(error);
       });
   }, []);
+
   const toggleFAQ = (id) => {
     console.log("javascript", id);
     setCurrentId(currentId === id ? null : id); // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
