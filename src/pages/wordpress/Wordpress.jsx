@@ -1985,7 +1985,7 @@ function Sticky_page() {
                   "Your homepage displays"
                 </strong>
                 , select{" "}
-                <strong className="text-gray-800">"A static page"</strong>.
+                <strong className="text-gray-800">A static page</strong>.
               </li>
               <li>
                 <strong className="text-gray-800">Homepage dropdown:</strong>{" "}
@@ -1996,7 +1996,7 @@ function Sticky_page() {
                 Select "Blog".
               </li>
               <li>
-                Click <strong className="text-gray-800">"Save Changes"</strong>.
+                Click <strong className="text-gray-800">Save Changes</strong>.
               </li>
             </ol>
           </div>
@@ -2016,7 +2016,7 @@ function Sticky_page() {
               </li>
               <li>
                 Select{" "}
-                <strong className="text-gray-800">"A static page"</strong>.
+                <strong className="text-gray-800">A static page</strong>.
               </li>
               <li>
                 Choose your <strong className="text-gray-800">Homepage</strong>{" "}
@@ -2027,7 +2027,7 @@ function Sticky_page() {
                 (e.g., "Blog").
               </li>
               <li>
-                Click <strong className="text-gray-800">"Publish"</strong>.
+                Click <strong className="text-gray-800">Publish</strong>.
               </li>
             </ol>
           </div>
@@ -2402,7 +2402,7 @@ function WPForms_Contact_Form() {
           </h2>
           <ul className="list-disc list-inside ml-4 text-gray-700">
             <li>
-              <strong>Send To Email Address:</strong>{" "}
+              <strong>Send To Email Address:</strong>
               <span className="text-green-700">naveensainijpr@gmail.com</span>
             </li>
             <li>
@@ -2413,7 +2413,7 @@ function WPForms_Contact_Form() {
             </li>
           </ul>
           <p className="mt-2 text-sm text-gray-500">
-            Ye settings aapko milengi: <strong>Settings > Notifications</strong>{" "}
+            Ye settings aapko milengi: <strong>Settings  Notifications</strong>
             ke andar.
           </p>
         </div>
@@ -2576,7 +2576,7 @@ function Elementor_details() {
           </li>
           <li>
             Elementor me search bar me{" "}
-            <span className="font-medium">"Smart Slider"</span> likhne par
+            <span className="font-medium">Smart Slider</span> likhne par
             widget show ho jata hai.
           </li>
           <li>Drag and drop karke directly page par use kar sakte hain.</li>
@@ -2814,7 +2814,7 @@ function Recapha() {
           </h2>
           <ul className="list-disc list-inside ml-4 text-gray-700 space-y-2">
             <li>
-              Dashboard ➝ <strong>Contact > Integration</strong>
+              Dashboard ➝ <strong>Contact &gt;Integration</strong>
             </li>
             <li>Setup Integration पर क्लिक करें</li>
             <li>Site Key और Secret Key को वहाँ paste करें</li>

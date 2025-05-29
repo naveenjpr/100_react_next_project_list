@@ -16,8 +16,9 @@ export default function MainContext({children}) {
         setuserinfo
     }
     useEffect(()=>{
-        localStorage.setItem("token", JSON.stringify(userinfo));
- 
+        if (typeof window !== "undefined") {
+            localStorage.setItem("token", JSON.stringify(userinfo));
+          } 
     },[userinfo])
     return (
     <LoginContext.Provider value={obj} >

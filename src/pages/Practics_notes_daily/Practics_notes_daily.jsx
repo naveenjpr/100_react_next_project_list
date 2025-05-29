@@ -26,11 +26,6 @@ export default function Practics_notes_daily() {
       </div>
       {/* login register button start */}
       <div className="flex justify-center items-center gap-4 py-4">
-        <Link to="/Register">
-          <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-            Register
-          </button>
-        </Link>
         {userinfo ? (
           <button
             className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300"
@@ -39,69 +34,44 @@ export default function Practics_notes_daily() {
             Log out
           </button>
         ) : (
-          <Link to="/Login">
-            <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
-              Login
-            </button>
-          </Link>
+          <>
+            <Link to="/Register">
+              <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                Register
+              </button>
+            </Link>
+
+            <Link to="/Login">
+              <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
+                Login
+              </button>
+            </Link>
+          </>
         )}
       </div>
       {/* login register button End*/}
 
       {/* tabs start */}
-      <div className="flex space-x-2 bg-gray-100 p-3 rounded-lg shadow-md">
-        <button
-          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
-            activButton === "button1"
-              ? "text-blue-600 border-b-4 border-black"
-              : "text-[#a52a2a] hover:text-gray-800"
-          }`}
-          onClick={() => setactivButton("button1")}
-        >
-          JavaScript
-        </button>
-
-        <button
-          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
-            activButton === "button2"
-              ? "text-blue-600 border-b-4 border-black"
-              : "text-[#a52a2a] hover:text-gray-800"
-          }`}
-          onClick={() => setactivButton("button2")}
-        >
-          React
-        </button>
-
-        <button
-          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
-            activButton === "button3"
-              ? "text-blue-600 border-b-4 border-black"
-              : "text-[#a52a2a] hover:text-gray-800"
-          }`}
-          onClick={() => setactivButton("button3")}
-        >
-          Node.js
-        </button>
-        <button
-          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
-            activButton === "button4"
-              ? "text-blue-600 border-b-4 border-black"
-              : "text-[#a52a2a] hover:text-gray-800"
-          }`}
-          onClick={() => setactivButton("button4")}
-        >
-          Wordpress
-        </button>
-        <button
-          className={`md:px-4 px-2 py-2 text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
-            activButton === "button4"
-              ? "text-blue-600 border-b-4 border-black"
-              : "text-[#a52a2a] hover:text-gray-800"
-          }`}
-          onClick={() => setactivButton("button5")}
-        >
-          HTML or CSS
-        </button>
+      <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-lg shadow-md justify-center md:justify-start">
+        {[
+          { label: "JavaScript", id: "button1" },
+          { label: "React", id: "button2" },
+          { label: "Node.js", id: "button3" },
+          { label: "Wordpress", id: "button4" },
+          { label: "HTML or CSS", id: "button5" },
+        ].map(({ label, id }) => (
+          <button
+            key={id}
+            className={`px-3 py-2 text-base sm:text-lg md:text-xl font-bold rounded-md transition-all duration-300 ${
+              activButton === id
+                ? "text-blue-600 border-b-4 border-black"
+                : "text-[#a52a2a] hover:text-gray-800"
+            }`}
+            onClick={() => setactivButton(id)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
       {/* tabs end */}
