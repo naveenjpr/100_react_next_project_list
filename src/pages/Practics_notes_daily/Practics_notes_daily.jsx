@@ -59,6 +59,7 @@ export default function Practics_notes_daily() {
           { label: "Node.js", id: "button3" },
           { label: "Wordpress", id: "button4" },
           { label: "HTML or CSS", id: "button5" },
+          { label: "English", id: "button6" },
         ].map(({ label, id }) => (
           <button
             key={id}
@@ -87,6 +88,8 @@ export default function Practics_notes_daily() {
           <Wordpress />
         ) : activButton === "button5" ? (
           <HTML_CSS />
+        ) : activButton === "button6" ? (
+          <English />
         ) : null}
       </div>
     </>
@@ -398,6 +401,67 @@ function HTML_CSS() {
                 <p
                   className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
       ${v._id === htmlcssId ? "block opacity-100" : "hidden opacity-0"}
+    `}
+                >
+                  <pre className="whitespace-pre-wrap break-words">
+                    {v.Answers}
+                  </pre>
+                </p>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div className="relative h-screen">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Lodingspinnerwithimageinside />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+function English() {
+  const [EnglishId, setEnglishId] = useState(null); // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
+  const [English, setEnglish] = useState([]); // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
+
+  useEffect(() => {
+    //http://localhost:5000/api/frontend/HTML_CSS/view
+    axios
+      .post("https://rss-feed-node-js.onrender.com/api/frontend/English/view")
+      .then((result) => {
+        setEnglish(result.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  const toggleFAQ = (id) => {
+    setEnglishId(EnglishId === id ? null : id); // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
+  };
+  return (
+    <div>
+      <h2 className="text-3xl font-bold text-blue-600 text-center py-[20px]">
+        English spoken
+      </h2>
+      {English.length > 0 ? (
+        English.map((v, i) => {
+          return (
+            <div key={i}>
+              <div className="border rounded-xl p-4 shadow-md">
+                <button
+                  className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none relative"
+                  onClick={() => toggleFAQ(v._id)}
+                >
+                  <span className="mx-2">{i + 1}</span>
+                  {v.Question}
+                  <span className="absolute right-[10px] top-[10px]">
+                    {v._id ===  EnglishId ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </button>
+                <p
+                  className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
+      ${v._id === EnglishId  ? "block opacity-100" : "hidden opacity-0"}
     `}
                 >
                   <pre className="whitespace-pre-wrap break-words">
