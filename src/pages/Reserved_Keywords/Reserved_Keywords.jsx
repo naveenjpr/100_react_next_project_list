@@ -156,6 +156,9 @@ export default function Reserved_Keywords() {
     {
       title: "React.js Keywords/Components",
       items: [
+        "const dispatch = useDispatch()",
+        "onClick={() => dispatch(decrement())}",
+        "const count = useSelector((state) => state.counter.value)",
         "export const UserContext = createContext()",
         "<UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>",
         " <UserProvider> <App /> </UserProvider>",

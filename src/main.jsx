@@ -41,6 +41,9 @@ import React_pagination from "./pages/React_pagination/React_pagination.jsx"
 import Login from "./pages/Authentication/Login.jsx"
 import Register from "./pages/Authentication/Register.jsx"
 import MainContext from "./pages/context_api/MainContext.jsx"
+import Toolkit from "./pages/toolkit-project/toolkit.jsx"
+import { Provider } from "react-redux"
+import store from "./pages/toolkit-project/store/store.js"
 
 const router = createBrowserRouter([
   {
@@ -234,10 +237,17 @@ const router = createBrowserRouter([
   {
     path:"Register",
     element:<Register/>
+  },
+  {
+    path:"Toolkit",
+    element:<Toolkit/>
   }
 ])
 createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+
   <MainContext>
     <RouterProvider router={router} />
   </MainContext>
+  </Provider>
 )
