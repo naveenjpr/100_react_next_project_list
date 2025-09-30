@@ -130,6 +130,9 @@ export default function Header() {
                 { path: "/Letter_count", label: "Letter-count" },
                 { path: "/Reserved_Keywords", label: "Reserved_Keywords" },
                 { path: "/Toolkit", label: "Toolkit" },
+                { path: "/Editable/navbar", label: "Editable_navbar" },
+                { path: "/Editable/logo", label: "Edit_logo" },
+                { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
 
               
               ].map((item, index) => (

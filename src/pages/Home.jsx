@@ -32,6 +32,9 @@ import Reserved_Keywords from "./Reserved_Keywords/Reserved_Keywords.jsx";
 import Loading from "./Loading/Loading.jsx";
 import React_pagination from "./React_pagination/React_pagination.jsx";
 import UseRef from "./useRef/useRef.jsx";
+import Editable_navbar from "./Editable/Editable_navbar.jsx";
+import Edit_logo from "./Editable/Edit_logo.jsx";
+import Edit_navbar_or_logo_localstorage from "./Editable/Edit_navbar_or_logo_localstorage.jsx";
 
 export default function Home() {
   return (
@@ -69,6 +72,9 @@ export default function Home() {
       <ImageToWebPConverter />
       <Count_Down />
       <To_do_list />
+      <Editable_navbar/>
+      <Edit_logo/>
+      <Edit_navbar_or_logo_localstorage/>
     </div>
   );
 }

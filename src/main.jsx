@@ -44,6 +44,9 @@ import MainContext from "./pages/context_api/MainContext.jsx"
 import Toolkit from "./pages/toolkit-project/toolkit.jsx"
 import { Provider } from "react-redux"
 import store from "./pages/toolkit-project/store/store.js"
+import Editable_navbar from "./pages/Editable/Editable_navbar.jsx"
+import Edit_logo from "./pages/Editable/Edit_logo.jsx"
+import Edit_navbar_or_logo_localstorage from "./pages/Editable/Edit_navbar_or_logo_localstorage.jsx"
 
 const router = createBrowserRouter([
   {
@@ -241,6 +244,18 @@ const router = createBrowserRouter([
   {
     path:"Toolkit",
     element:<Toolkit/>
+  },
+  {
+    path:"Editable/navbar",
+    element:<Editable_navbar/>
+  },
+  {
+    path:"Editable/logo",
+    element:<Edit_logo/>
+  },
+  {
+    path:"Edit_navbar_or_logo_localstorage",
+    element:<Edit_navbar_or_logo_localstorage/>
   }
 ])
 createRoot(document.getElementById("root")).render(
