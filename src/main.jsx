@@ -47,6 +47,7 @@ import store from "./pages/toolkit-project/store/store.js"
 import Editable_navbar from "./pages/Editable/Editable_navbar.jsx"
 import Edit_logo from "./pages/Editable/Edit_logo.jsx"
 import Edit_navbar_or_logo_localstorage from "./pages/Editable/Edit_navbar_or_logo_localstorage.jsx"
+import Editable_navbar_api from "./pages/Editable/Editable_navbar_api.jsx"
 
 const router = createBrowserRouter([
   {
@@ -256,6 +257,10 @@ const router = createBrowserRouter([
   {
     path:"Edit_navbar_or_logo_localstorage",
     element:<Edit_navbar_or_logo_localstorage/>
+  },
+  {
+    path:"Editable_navbar_api",
+    element:<Editable_navbar_api/>
   }
 ])
 createRoot(document.getElementById("root")).render(

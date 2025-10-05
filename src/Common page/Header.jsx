@@ -133,6 +133,7 @@ export default function Header() {
                 { path: "/Editable/navbar", label: "Editable_navbar" },
                 { path: "/Editable/logo", label: "Edit_logo" },
                 { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
+                { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
 
               
               ].map((item, index) => (
