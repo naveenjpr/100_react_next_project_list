@@ -11,7 +11,7 @@ import { toast, ToastContainer } from "react-toastify";
 // मुख्य कंपोनेंट फंक्शन
 export default function Edit_navbar_or_logo_api() {
   // बेस URL डेफाइन करें
-  const baseurl = "http://localhost:5000/";
+  const baseurl = "https://node-j-my-portfolio-mail-send.onrender.com/";
   
   // मेनू आइटम्स की स्टेट
   const [menuItems, setMenuItems] = useState([
@@ -40,7 +40,7 @@ export default function Edit_navbar_or_logo_api() {
   useEffect(() => {
     // API से नेवबार डेटा फ़ेच करें
     axios
-      .get("http://localhost:5000/api/backend/navbar/view")
+      .get("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/view")
       .then((res) => {
         // अगर रेस्पॉन्स सफल है तो डेटा सेट करें
         if (res.data.status && res.data.data) {
@@ -90,7 +90,7 @@ export default function Edit_navbar_or_logo_api() {
 
     // API को POST रिक्वेस्ट भेजें
     axios
-      .post("http://localhost:5000/api/backend/navbar/add", formData)
+      .post("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add", formData)
       .then((res) => {
         // अगर रेस्पॉन्स सफल है
         if (res.data.status) {
@@ -159,7 +159,7 @@ export default function Edit_navbar_or_logo_api() {
 
     // API को POST रिक्वेस्ट भेजें
     axios
-      .post("http://localhost:5000/api/backend/navbar/add", formData)
+      .post("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add", formData)
       .then((res) => {
         // अगर रेस्पॉन्स सफल है
         if (res.data.status) {
