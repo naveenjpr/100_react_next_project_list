@@ -134,6 +134,8 @@ export default function Header() {
                 { path: "/Editable/logo", label: "Edit_logo" },
                 { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
                 { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
+                { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
+                { path: "/Add_new_field_api", label: "Add_new_field_api" },
 
               
               ].map((item, index) => (

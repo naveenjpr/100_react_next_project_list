@@ -8,8 +8,8 @@ export default function Add_new_field_api() {
 
     const API_BASE_URL = 'https://node-j-my-portfolio-mail-send.onrender.com/api/frontend/Addnewfield';
 
-    let viewdat=()=>{
- axios.post(`${API_BASE_URL}/view`)
+    let viewdat = () => {
+        axios.post(`${API_BASE_URL}/view`)
             .then((result) => {
 
                 setimagepath(result.data.imageurlpath)
@@ -26,9 +26,9 @@ export default function Add_new_field_api() {
             })
 
     }
-    
+
     useEffect(() => {
-       viewdat()
+        viewdat()
     }, []);
     const [status, setstatus] = useState(false)
 
@@ -38,7 +38,7 @@ export default function Add_new_field_api() {
         axios.post(`${API_BASE_URL}/add`, formData)
             .then((result) => {
                 setstatus(false)
-               viewdat()
+                viewdat()
 
             })
 
@@ -49,6 +49,17 @@ export default function Add_new_field_api() {
             })
 
     };
+    const [preImagePath, setPreImagePath] = useState('');
+
+
+    let imagePreview = (event) => {
+        try {
+            let currentUrl = URL.createObjectURL(event.target.files[0]);
+            setPreImagePath(currentUrl);
+        } catch {
+            setPreImagePath('');
+        }
+    };
     return (
 
         <>
@@ -57,36 +68,75 @@ export default function Add_new_field_api() {
                 ${status ? "block" : "hidden"}
                 `} >
 
-                <div className='grid grid-cols-1 gap-[10px] '>
-          <form onSubmit={handleSubmit} encType="multipart/form-data">
+               <div className="max-w-[600px] mx-auto bg-white shadow-md rounded-2xl p-6 border border-gray-200">
+  <form onSubmit={handleSubmit} encType="multipart/form-data" className="space-y-6">
+    
+    {/* Image Upload Section */}
+    <div className="flex flex-col items-center gap-3">
+      <label className="text-lg font-semibold text-gray-800">Upload Image</label>
+      <input
+        type="file"
+        name="imageUrl"
+        onChange={imagePreview}
+        accept="image/*"
+        className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      />
+      {preImagePath && (
+        <img
+          src={preImagePath}
+          alt="Preview"
+          className="w-[150px] h-[150px] object-cover rounded-lg border border-gray-300 shadow-sm"
+        />
+      )}
+    </div>
 
+    {/* Article Title */}
+    <div className="flex flex-col">
+      <label className="text-lg font-semibold text-gray-800 mb-1">Article Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter article title"
+        className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      />
+    </div>
 
-                        <div className='relative'>
+    {/* Author Name */}
+    <div className="flex flex-col">
+      <label className="text-lg font-semibold text-gray-800 mb-1">Author Name</label>
+      <input
+        type="text"
+        name="author"
+        placeholder="Enter author name"
+        className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      />
+    </div>
 
+    {/* Date */}
+    <div className="flex flex-col">
+      <label className="text-lg font-semibold text-gray-800 mb-1">Date</label>
+      <input
+        type="date"
+        name="date"
+        className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+      />
+    </div>
 
-                            <input type="file" name='imageUrl' accept="image/*" required />
+    {/* Submit Button */}
+    <button
+      type="submit"
+      className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg shadow transition-all duration-200"
+    >
+      Submit
+    </button>
 
-                        </div>
-                        <div className='flex justify-between items-center'>
-                            <label className='text-[25px] font-bold text-[black]'>Article Title
-                            </label>
-                            <input type="text" name='title' className='w-[100%] border-[2px] border-[red]' />
-                        </div>
-                        <div className='flex justify-between items-center'>
-                            <label className='text-[25px] font-bold text-[black]'>Author name
-                            </label>
-                            <input type="text" name='author' className='w-[100%] border-[2px] border-[red]' />
-                        </div>
-                        <div className='flex justify-between items-center'>
-                            <label className='text-[25px] font-bold text-[black]'>Date</label>
-                            <input type="date" name='date' className='w-[100%] border-[2px] border-[red]' />
-                        </div>
-                        <button type="save" className='bg-green-500 text-white px-4 py-2'>Submit</button>
+  </form>
+</div>
 
-
-                    </form>
-
-                </div>
             </div>
             <div className='w-full bg-slate-400 min-h-screen'>
                 <h1 className="text-center font-bold text-3xl my-4">Create New Field</h1>
@@ -133,7 +183,7 @@ export default function Add_new_field_api() {
                                     <img
                                         alt="Placeholder"
                                         className="block h-[120px] w-full"
-  src={`http://localhost:5000/${imagepath}/${card.imageUrl}`}
+                                        src={`node-j-my-portfolio-mail-send.onrender.com/${imagepath}/${card.imageUrl}`}
                                     />
                                     <div className="flex items-center justify-between leading-tight p-2 md:p-4">
                                         <h1 className="text-lg">
