@@ -48,6 +48,8 @@ import Editable_navbar from "./pages/Editable/Editable_navbar.jsx"
 import Edit_logo from "./pages/Editable/Edit_logo.jsx"
 import Edit_navbar_or_logo_localstorage from "./pages/Editable/Edit_navbar_or_logo_localstorage.jsx"
 import Editable_navbar_api from "./pages/Editable/Editable_navbar_api.jsx"
+import Add_new_field_localStorage from "./pages/Add_new_field/Add_new_field.jsx"
+import Add_new_field_api from "./pages/Add_new_field/Add_new_field_api.jsx"
 
 const router = createBrowserRouter([
   {
@@ -261,6 +263,15 @@ const router = createBrowserRouter([
   {
     path:"Editable_navbar_api",
     element:<Editable_navbar_api/>
+  },
+  {
+    path:"Add_new_field_localStorage",
+    element:<Add_new_field_localStorage/>
+
+  },
+  {
+    path:"Add_new_field_api",
+    element:<Add_new_field_api/>
   }
 ])
 createRoot(document.getElementById("root")).render(
