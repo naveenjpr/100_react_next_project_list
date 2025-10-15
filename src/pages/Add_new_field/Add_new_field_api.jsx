@@ -127,6 +127,22 @@ export default function Add_new_field_api() {
     </div>
 
     {/* Submit Button */}
+
+    <div className="flex justify-between gap-4">
+      <button
+        type="button"
+        onClick={() => setstatus(false)}
+        className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg shadow transition-all duration-200"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg shadow transition-all duration-200"
+      >
+        Submit
+      </button>
+    </div>
     <button
       type="submit"
       className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg shadow transition-all duration-200"
