@@ -183,7 +183,7 @@ export default function Add_new_field_api() {
                                     <img
                                         alt="Placeholder"
                                         className="block h-[120px] w-full"
-                                        src={`node-j-my-portfolio-mail-send.onrender.com/${imagepath}/${card.imageUrl}`}
+src={`https://node-j-my-portfolio-mail-send.onrender.com/${imagepath}/${card.imageUrl}`}
                                     />
                                     <div className="flex items-center justify-between leading-tight p-2 md:p-4">
                                         <h1 className="text-lg">
