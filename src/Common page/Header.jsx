@@ -136,6 +136,7 @@ export default function Header() {
                 { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
                 { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
                 { path: "/Add_new_field_api", label: "Add_new_field_api" },
+                { path: "/multistep-form", label: "MultistepForm" },
 
               
               ].map((item, index) => (

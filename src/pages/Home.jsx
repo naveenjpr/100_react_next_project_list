@@ -73,10 +73,10 @@ export default function Home() {
       <ImageToWebPConverter />
       <Count_Down />
       <To_do_list />
-      <Editable_navbar/>
-      <Edit_logo/>
-      <Edit_navbar_or_logo_localstorage/>
-      <Edit_navbar_or_logo_api/>
+      {/* <Editable_navbar/> */}
+      {/* <Edit_logo/> */}
+      {/* <Edit_navbar_or_logo_localstorage/> */}
+      {/* <Edit_navbar_or_logo_api/> */}
     </div>
   );
 }

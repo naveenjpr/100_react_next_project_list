@@ -50,6 +50,7 @@ import Edit_navbar_or_logo_localstorage from "./pages/Editable/Edit_navbar_or_lo
 import Editable_navbar_api from "./pages/Editable/Editable_navbar_api.jsx"
 import Add_new_field_localStorage from "./pages/Add_new_field/Add_new_field.jsx"
 import Add_new_field_api from "./pages/Add_new_field/Add_new_field_api.jsx"
+import MultistepForm from "./pages/multi-step-form/multi -step-form/MultistepForm.jsx"
 
 const router = createBrowserRouter([
   {
@@ -221,27 +222,27 @@ const router = createBrowserRouter([
     element: <Wordpress/>,
   },
   {
-    path:"Practics_notes_daily",
+    path:"/Practics_notes_daily",
     element:<Practics_notes_daily/>
   },
   {
-    path:"Loading",
+    path:"/Loading",
     element:<Loading/>
   },
   {
-    path:"UseRef",
+    path:"/UseRef",
     element:<UseRef/>
   },
   {
-    path:"React_pagination",
+    path:"/React_pagination",
     element:<React_pagination/>
   },
   {
-    path:"Login",
+    path:"/Login",
     element:<Login/>
   },
   {
-    path:"Register",
+    path:"/Register",
     element:<Register/>
   },
   {
@@ -249,30 +250,34 @@ const router = createBrowserRouter([
     element:<Toolkit/>
   },
   {
-    path:"Editable/navbar",
+    path:"/Editable/navbar",
     element:<Editable_navbar/>
   },
   {
-    path:"Editable/logo",
+    path:"/Editable/logo",
     element:<Edit_logo/>
   },
   {
-    path:"Edit_navbar_or_logo_localstorage",
+    path:"/Edit_navbar_or_logo_localstorage",
     element:<Edit_navbar_or_logo_localstorage/>
   },
   {
-    path:"Editable_navbar_api",
+    path:"/Editable_navbar_api",
     element:<Editable_navbar_api/>
   },
   {
-    path:"Add_new_field_localStorage",
+    path:"/Add_new_field_localStorage",
     element:<Add_new_field_localStorage/>
 
   },
   {
-    path:"Add_new_field_api",
+    path:"/Add_new_field_api",
     element:<Add_new_field_api/>
-  }
+  },
+  {
+  path: "/multistep-form/*",
+  element: <MultistepForm/>,
+},
 ])
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
