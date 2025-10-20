@@ -137,6 +137,7 @@ export default function Header() {
                 { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
                 { path: "/Add_new_field_api", label: "Add_new_field_api" },
                 { path: "/multistep-form", label: "MultistepForm" },
+                { path: "/multistep-form-api", label: "Multi-step-Form-api" },
 
               
               ].map((item, index) => (

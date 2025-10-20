@@ -51,6 +51,7 @@ import Editable_navbar_api from "./pages/Editable/Editable_navbar_api.jsx"
 import Add_new_field_localStorage from "./pages/Add_new_field/Add_new_field.jsx"
 import Add_new_field_api from "./pages/Add_new_field/Add_new_field_api.jsx"
 import MultistepForm from "./pages/multi-step-form/multi -step-form/MultistepForm.jsx"
+import MultistepFormApi from "./pages/multi-step-form/multi-step-form-using-api/MultistepFormApi.jsx"
 
 const router = createBrowserRouter([
   {
@@ -277,6 +278,10 @@ const router = createBrowserRouter([
   {
   path: "/multistep-form/*",
   element: <MultistepForm/>,
+},
+  {
+  path: "/multistep-form-api/*",
+  element: <MultistepFormApi/>,
 },
 ])
 createRoot(document.getElementById("root")).render(

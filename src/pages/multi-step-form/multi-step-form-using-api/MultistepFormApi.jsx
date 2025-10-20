@@ -5,7 +5,7 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import Step5 from './Step5';
 
-export default function MultistepForm() {
+export default function MultistepFormApi() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     // Step 1
@@ -79,7 +79,7 @@ export default function MultistepForm() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
-        <h1 className='text-center text-bold capitalize border-b-2 border-[red] border-t-2 bg-slate-400 '>Multi step Form</h1>
+        <h1 className='text-center text-bold capitalize border-b-2 border-[red] border-t-2 bg-slate-400 '>Multi step Form  api</h1>
       <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         <div className="p-6">
           {/* Progress Bar - Same as before */}
