@@ -31,7 +31,7 @@ export default function Header() {
       </div>
 
       <div className="sticky bg-white top-0 z-50">
-        <header className="w-[100%] justify-between   bg-[#0d0c0d] z-[999] relative  flex">
+        <header className="w-[100%] justify-between   bg-[#facc15] z-[999] relative  flex">
           {/* Logo on the Left */}
           <div className="text-2xl font-bold flex-shrink-0 p-1">
             <Link to="/">
