@@ -48,7 +48,7 @@ export default function Header() {
             {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
           </button>
           <nav
-            className={`bg-[#ed143d] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
+            className={`bg-[#facf21] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
