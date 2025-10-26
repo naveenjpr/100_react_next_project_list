@@ -2,9 +2,6 @@ import React from 'react';
 
 export default function Step1({ formData, nextStep,setFormData }) {
     const handleChange = (event) => {
-
-        
-
          const newItems = {...formData};
     newItems[event.target.name] = event.target.value;
 

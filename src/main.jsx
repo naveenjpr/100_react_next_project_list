@@ -52,6 +52,9 @@ import Add_new_field_localStorage from "./pages/Add_new_field/Add_new_field.jsx"
 import Add_new_field_api from "./pages/Add_new_field/Add_new_field_api.jsx"
 import MultistepForm from "./pages/multi-step-form/multi -step-form/MultistepForm.jsx"
 import MultistepFormApi from "./pages/multi-step-form/multi-step-form-using-api/MultistepFormApi.jsx"
+import multi_step_form_table from "./pages/multi-step-form/multi-step-form-using-api/multi_step_form_table.jsx"
+import { ToastContainer } from "react-toastify"
+import Multi_step_form_table from "./pages/multi-step-form/multi-step-form-using-api/multi_step_form_table.jsx"
 
 const router = createBrowserRouter([
   {
@@ -280,15 +283,22 @@ const router = createBrowserRouter([
   element: <MultistepForm/>,
 },
   {
-  path: "/multistep-form-api/*",
+  path: "/multistep-form-api/:id?*",
   element: <MultistepFormApi/>,
+},
+  {
+  path: "/multi_step_form_table",
+  element: <Multi_step_form_table/>,
 },
 ])
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
 
   <MainContext>
+
     <RouterProvider router={router} />
+            <ToastContainer position="top-right" autoClose={1000} />
+
   </MainContext>
   </Provider>
 )
