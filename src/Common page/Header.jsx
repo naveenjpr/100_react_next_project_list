@@ -38,7 +38,7 @@ export default function Header() {
           </div>
 
           <button
-            className="absolute top-0 right-0 text-[25px] text-white"
+            className="absolute top-0 right-0 text-[45px] text-white"
             aria-label="बंद करें"
             onClick={() => setshowmenu(!showmenu)}
           >
@@ -50,7 +50,7 @@ export default function Header() {
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
-            <ul className="flex flex-col gap-1 text-left w-full py-2">
+            <ul className="flex flex-col gap-1 text-left w-full py-1">
               {/* Navigation Links */}
               {[
                 { path: "/", label: "Home" },
@@ -142,7 +142,7 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
-                    className="w-full block p-3 text-sm"
+                    className="w-full block p-2 text-sm"
                     onClick={() => setshowmenu(false)}
                   >
                     {item.label}
