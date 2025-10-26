@@ -7,14 +7,12 @@ import { FaArrowUp } from "react-icons/fa";
 
 export default function Header() {
   const location = useLocation();
-
   const [showmenu, setshowmenu] = useState(false);
-
-  // Scroll to top function
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <>
       {/* mobile header start */}
@@ -31,13 +29,12 @@ export default function Header() {
       </div>
 
       <div className="sticky bg-white top-0 z-50">
-        <header className="w-[100%] justify-between   bg-[#facf21] z-[999] relative  flex">
+        <header className="w-[100%] justify-between bg-[#facf21] z-[999] relative flex">
           {/* Logo on the Left */}
           <div className="text-2xl font-bold flex-shrink-0 p-1">
             <Link to="/">
               <img src={naveenlogo} className="w-12 h-auto" alt="Logo" />
             </Link>
-
           </div>
 
           <button
@@ -47,12 +44,13 @@ export default function Header() {
           >
             {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
           </button>
+          
           <nav
-            className={`bg-[black] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
+            className={`bg-[black] text-white w-[90%] h-screen overflow-y-auto absolute left-[-100%] transition-all duration-300 ${
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
-            <ul className="flex flex-wrap gap-[2px] text-left text-[13px] w-full">
+            <ul className="flex flex-col gap-1 text-left w-full py-2">
               {/* Navigation Links */}
               {[
                 { path: "/", label: "Home" },
@@ -86,7 +84,6 @@ export default function Header() {
                 { path: "/WeatherApp", label: "Weather-App" },
                 { path: "/Word_counter", label: "Word_counter" },
                 { path: "/Faq", label: "Faq" },
-
                 { path: "/Tooltip", label: "Tooltip" },
                 { path: "/SliderType", label: "All-Type-Slider" },
                 { path: "/BgRemover", label: "Bg-Remover" },
@@ -138,17 +135,15 @@ export default function Header() {
                 { path: "/Add_new_field_api", label: "Add_new_field_api" },
                 { path: "/multistep-form", label: "MultistepForm" },
                 { path: "/multistep-form-api", label: "Multi-step-Form-api" },
-
-              
               ].map((item, index) => (
                 <li
                   key={index}
-                  className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
+                  className="hover:bg-gray-700 cursor-pointer rounded-lg transition-all duration-300"
                 >
                   <Link
                     to={item.path}
-                    
-                    className="w-full block p-[12px]"
+                    className="w-full block p-3 text-sm"
+                    onClick={() => setshowmenu(false)}
                   >
                     {item.label}
                   </Link>
@@ -156,7 +151,7 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-x        </header>
+        </header>
       </div>
 
       {/* mobile header End */}
