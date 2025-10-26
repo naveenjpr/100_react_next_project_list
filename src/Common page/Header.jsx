@@ -50,7 +50,7 @@ export default function Header() {
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
-            <ul className="flex flex-col gap-1 text-left w-full py-1">
+            <ul className="flex flex-wrap gap-1 text-left w-full py-1">
               {/* Navigation Links */}
               {[
                 { path: "/", label: "Home" },
