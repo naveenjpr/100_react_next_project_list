@@ -38,7 +38,7 @@ export default function Header() {
           </div>
 
           <button
-            className="absolute top-0 right-0 text-[45px] text-white"
+            className="absolute top-0 right-0 text-[25px] text-white"
             aria-label="बंद करें"
             onClick={() => setshowmenu(!showmenu)}
           >
