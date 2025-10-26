@@ -37,13 +37,13 @@ export default function Header() {
             </Link>
           </div>
 
-          <button
-            className="absolute top-0 right-0 text-[45px] text-white"
-            aria-label="बंद करें"
-            onClick={() => setshowmenu(!showmenu)}
-          >
-            {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
-          </button>
+       <button
+  className="absolute top-0 right-0 text-[45px] text-black"
+  aria-label="बंद करें"
+  onClick={() => setshowmenu(!showmenu)}
+>
+  {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
+</button>
           
           <nav
             className={`bg-[black] text-white w-[90%] h-screen overflow-y-auto absolute left-[-100%] transition-all duration-300 ${
