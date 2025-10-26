@@ -31,7 +31,7 @@ export default function Header() {
       </div>
 
       <div className="sticky bg-white top-0 z-50">
-        <header className="w-[100%] justify-between   bg-[#facc15] z-[999] relative  flex">
+        <header className="w-[100%] justify-between   bg-[#facf21] z-[999] relative  flex">
           {/* Logo on the Left */}
           <div className="text-2xl font-bold flex-shrink-0 p-1">
             <Link to="/">
@@ -48,7 +48,7 @@ export default function Header() {
             {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
           </button>
           <nav
-            className={`bg-[#facf21] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
+            className={`bg-black text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
               showmenu == true ? "left-[0px]" : ""
             }`}
           >
