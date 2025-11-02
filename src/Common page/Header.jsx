@@ -29,7 +29,7 @@ export default function Header() {
       </div>
 
       <div className="sticky bg-white top-0 z-50">
-        <header className="w-[100%] justify-between bg-[#facf21] z-[999] relative flex">
+        <header className="w-[100%] justify-between   bg-[#c71585] z-[999] relative  flex">
           {/* Logo on the Left */}
           <div className="text-2xl font-bold flex-shrink-0 p-1">
             <Link to="/">
@@ -38,7 +38,7 @@ export default function Header() {
           </div>
 
           <button
-            className="absolute top-0 right-0 text-[45px] text-black"
+            className="absolute top-0 right-0 text-[45px] text-white"
             aria-label="बंद करें"
             onClick={() => setshowmenu(!showmenu)}
           >
@@ -46,10 +46,11 @@ export default function Header() {
           </button>
 
           <nav
-            className={`bg-[black] text-white w-[90%] h-screen overflow-y-auto absolute left-[-100%] transition-all duration-300 ${showmenu == true ? "left-[0px]" : ""
-              }`}
+            className={`bg-[#ed143d] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
+              showmenu == true ? "left-[0px]" : ""
+            }`}
           >
-            <ul className="flex flex-wrap gap-[2px] text-left text-[13px] w-full">
+            <ul className="flex md:flex-wrap flex-col gap-[1px] text-left text-[13px] w-full overflow-y-scroll h-[100vh] pb-[20px]">
               {/* Navigation Links */}
               {[
                 { path: "/", label: "Home" },
