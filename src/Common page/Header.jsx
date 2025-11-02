@@ -130,24 +130,28 @@ export default function Header() {
                 { path: "/Toolkit", label: "Toolkit" },
                 { path: "/Editable/navbar", label: "Editable_navbar" },
                 { path: "/Editable/logo", label: "Edit_logo" },
-                { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
+                {
+                  path: "/Edit_navbar_or_logo_localstorage",
+                  label: "Edit_navbar_or_logo_localstorage",
+                },
                 { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
-                { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
+                {
+                  path: "/Add_new_field_localStorage",
+                  label: "Add_new_field_localStorage",
+                },
                 { path: "/Add_new_field_api", label: "Add_new_field_api" },
                 { path: "/multistep-form", label: "MultistepForm" },
                 { path: "/multistep-form-api", label: "Multi-step-Form-api" },
-
-
+                {
+                  path: "/CharacterLimitedInput",
+                  label: "Character-Limit-Input",
+                },
               ].map((item, index) => (
                 <li
                   key={index}
                   className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
                 >
-                  <Link
-                    to={item.path}
-
-                    className="w-full block p-[12px]"
-                  >
+                  <Link to={item.path} className="w-full block p-[12px]">
                     {item.label}
                   </Link>
                 </li>
