@@ -55,6 +55,7 @@ import MultistepFormApi from "./pages/multi-step-form/multi-step-form-using-api/
 import multi_step_form_table from "./pages/multi-step-form/multi-step-form-using-api/multi_step_form_table.jsx"
 import { ToastContainer } from "react-toastify"
 import Multi_step_form_table from "./pages/multi-step-form/multi-step-form-using-api/multi_step_form_table.jsx"
+import CharacterLimitedInput from "./pages/CharacterLimitedInput/CharacterLimitedInput.jsx"
 
 const router = createBrowserRouter([
   {
@@ -290,6 +291,10 @@ const router = createBrowserRouter([
   path: "/multi_step_form_table",
   element: <Multi_step_form_table/>,
 },
+{
+  path:"/CharacterLimitedInput",
+  element:<CharacterLimitedInput/>
+}
 ])
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>

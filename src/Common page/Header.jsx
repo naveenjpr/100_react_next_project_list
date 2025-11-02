@@ -37,119 +37,121 @@ export default function Header() {
             </Link>
           </div>
 
-       <button
-  className="absolute top-0 right-0 text-[45px] text-black"
-  aria-label="बंद करें"
-  onClick={() => setshowmenu(!showmenu)}
->
-  {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
-</button>
-          
-          <nav
-            className={`bg-[black] text-white w-[90%] h-screen overflow-y-auto absolute left-[-100%] transition-all duration-300 ${
-              showmenu == true ? "left-[0px]" : ""
-            }`}
+          <button
+            className="absolute top-0 right-0 text-[45px] text-black"
+            aria-label="बंद करें"
+            onClick={() => setshowmenu(!showmenu)}
           >
-           <ul className="flex flex-col gap-1 text-left w-full py-1 sm:flex-row sm:flex-wrap">
-  {/* Navigation Links */}
-  {[
-    { path: "/", label: "Home" },
-    {
-      path: "/All_pdf_convert_one_pdf",
-      label: "All-PDF-Convert-One-PDF",
-    },
-    { path: "/Calculator", label: "Calculator" },
-    {
-      path: "/FormDataShowToTable",
-      label: "Form-DataShow-To-Table",
-    },
-    { path: "/Header_Menu_navbar", label: "Header_Menu_navbar" },
-    { path: "/ImageToText", label: "Image-To-Text" },
-    { path: "/LightBox", label: "LightBox" },
-    { path: "/Mega_Menu", label: "Mega-Menu" },
-    { path: "/Movie", label: "Movie" },
-    { path: "/Password", label: "Password" },
-    { path: "/Percentage", label: "Percentage" },
-    { path: "/ProductFilter", label: "Product-Filter" },
-    {
-      path: "/Product_find_price_filter",
-      label: "Product-find-price-filter",
-    },
-    {
-      path: "/PrimeNumber",
-      label: "Prime-Number",
-    },
-    { path: "/Randomcolor", label: "Random-color" },
-    { path: "/Tapinng", label: "Tapinng" },
-    { path: "/WeatherApp", label: "Weather-App" },
-    { path: "/Word_counter", label: "Word_counter" },
-    { path: "/Faq", label: "Faq" },
-    { path: "/Tooltip", label: "Tooltip" },
-    { path: "/SliderType", label: "All-Type-Slider" },
-    { path: "/BgRemover", label: "Bg-Remover" },
-    { path: "/Hash-tag-Generator", label: "Hashtag-Generator" },
-    {
-      path: "/Image-to-WebP-Converte",
-      label: "Image-to-WebP-Converte",
-    },
-    {
-      path: "/Count_Down",
-      label: "Count_Down",
-    },
-    {
-      path: "/To_do_list",
-      label: "To_do_list",
-    },
-    {
-      path: "/QuizApp",
-      label: "QuizApp",
-    },
-    {
-      path: "/Wordpress",
-      label: "Wordpress-Notes",
-    },
-    {
-      path: "/Loading",
-      label: "Loading",
-    },
-    {
-      path: "/UseRef",
-      label: "UseRef",
-    },
-    {
-      path: "/React_pagination",
-      label: "React_pagination",
-    },
-    {
-      path: "/Practics_notes_daily",
-      label: "Practics_notes_daily",
-    },
-    { path: "/Letter_count", label: "Letter-count" },
-    { path: "/Reserved_Keywords", label: "Reserved_Keywords" },
-    { path: "/Toolkit", label: "Toolkit" },
-    { path: "/Editable/navbar", label: "Editable_navbar" },
-    { path: "/Editable/logo", label: "Edit_logo" },
-    { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
-    { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
-    { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
-    { path: "/Add_new_field_api", label: "Add_new_field_api" },
-    { path: "/multistep-form", label: "MultistepForm" },
-    { path: "/multistep-form-api", label: "Multi-step-Form-api" },
-  ].map((item, index) => (
-    <li
-      key={index}
-      className="hover:bg-gray-700 cursor-pointer rounded-lg transition-all duration-300"
-    >
-      <Link
-        to={item.path}
-        className="w-full block p-2 text-sm"
-        onClick={() => setshowmenu(false)}
-      >
-        {item.label}
-      </Link>
-    </li>
-  ))}
-</ul>
+            {showmenu == true ? <RxCross2 /> : <IoReorderThreeOutline />}
+          </button>
+
+          <nav
+            className={`bg-[black] text-white w-[90%] h-screen overflow-y-auto absolute left-[-100%] transition-all duration-300 ${showmenu == true ? "left-[0px]" : ""
+              }`}
+          >
+            <ul className="flex flex-wrap gap-[2px] text-left text-[13px] w-full">
+              {/* Navigation Links */}
+              {[
+                { path: "/", label: "Home" },
+                {
+                  path: "/All_pdf_convert_one_pdf",
+                  label: "All-PDF-Convert-One-PDF",
+                },
+                { path: "/Calculator", label: "Calculator" },
+                {
+                  path: "/FormDataShowToTable",
+                  label: "Form-DataShow-To-Table",
+                },
+                { path: "/Header_Menu_navbar", label: "Header_Menu_navbar" },
+                { path: "/ImageToText", label: "Image-To-Text" },
+                { path: "/LightBox", label: "LightBox" },
+                { path: "/Mega_Menu", label: "Mega-Menu" },
+                { path: "/Movie", label: "Movie" },
+                { path: "/Password", label: "Password" },
+                { path: "/Percentage", label: "Percentage" },
+                { path: "/ProductFilter", label: "Product-Filter" },
+                {
+                  path: "/Product_find_price_filter",
+                  label: "Product-find-price-filter",
+                },
+                {
+                  path: "/PrimeNumber",
+                  label: "Prime-Number",
+                },
+                { path: "/Randomcolor", label: "Random-color" },
+                { path: "/Tapinng", label: "Tapinng" },
+                { path: "/WeatherApp", label: "Weather-App" },
+                { path: "/Word_counter", label: "Word_counter" },
+                { path: "/Faq", label: "Faq" },
+
+                { path: "/Tooltip", label: "Tooltip" },
+                { path: "/SliderType", label: "All-Type-Slider" },
+                { path: "/BgRemover", label: "Bg-Remover" },
+                { path: "/Hash-tag-Generator", label: "Hashtag-Generator" },
+                {
+                  path: "/Image-to-WebP-Converte",
+                  label: "Image-to-WebP-Converte",
+                },
+                {
+                  path: "/Count_Down",
+                  label: "Count_Down",
+                },
+                {
+                  path: "/To_do_list",
+                  label: "To_do_list",
+                },
+                {
+                  path: "/QuizApp",
+                  label: "QuizApp",
+                },
+                {
+                  path: "/Wordpress",
+                  label: "Wordpress-Notes",
+                },
+                {
+                  path: "/Loading",
+                  label: "Loading",
+                },
+                {
+                  path: "/UseRef",
+                  label: "UseRef",
+                },
+                {
+                  path: "/React_pagination",
+                  label: "React_pagination",
+                },
+                {
+                  path: "/Practics_notes_daily",
+                  label: "Practics_notes_daily",
+                },
+                { path: "/Letter_count", label: "Letter-count" },
+                { path: "/Reserved_Keywords", label: "Reserved_Keywords" },
+                { path: "/Toolkit", label: "Toolkit" },
+                { path: "/Editable/navbar", label: "Editable_navbar" },
+                { path: "/Editable/logo", label: "Edit_logo" },
+                { path: "/Edit_navbar_or_logo_localstorage", label: "Edit_navbar_or_logo_localstorage" },
+                { path: "/Editable_navbar_api", label: "Editable_navbar_api" },
+                { path: "/Add_new_field_localStorage", label: "Add_new_field_localStorage" },
+                { path: "/Add_new_field_api", label: "Add_new_field_api" },
+                { path: "/multistep-form", label: "MultistepForm" },
+                { path: "/multistep-form-api", label: "Multi-step-Form-api" },
+
+
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:bg-gray-700 cursor-pointer  rounded-lg transition-all duration-300"
+                >
+                  <Link
+                    to={item.path}
+
+                    className="w-full block p-[12px]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </header>
       </div>
