@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 
 export default function CharacterLimitedInput() {
-
-
   return (
-
     <>
-    <FirstCharacterLimitedInput/>
-    <SecondCharacterLimitedInput/>
-    
+      <FirstCharacterLimitedInput />
+      <SecondCharacterLimitedInput />
     </>
   );
 }
 
-
-
 function FirstCharacterLimitedInput() {
-
-    const [text, setText] = useState("");
+  const [text, setText] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -27,13 +20,15 @@ function FirstCharacterLimitedInput() {
     }
   };
 
-  return(
-        <div>
+  return (
+    <div>
       <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">
-        Character Limited Input
+        characters Limited Input
       </h2>{" "}
       <div className="p-4 max-w-7xl mx-auto">
-        <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Text:</label>
+        <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+          Your Text:
+        </label>
         <textarea
           value={text}
           onChange={handleChange}
@@ -45,7 +40,7 @@ function FirstCharacterLimitedInput() {
           {text.length === 200 ? (
             <div>
               <span className="font-bold text-[15px] text-[red]">
-                You have reached the character limit!
+                You have reached limit!
               </span>
             </div>
           ) : (
@@ -55,35 +50,32 @@ function FirstCharacterLimitedInput() {
         </p>
       </div>
     </div>
-  )
-    
+  );
 }
 
-function SecondCharacterLimitedInput(){
-
+function SecondCharacterLimitedInput() {
   const [maxLengthstate, setMaxLengthstate] = useState({
-
     name: "",
     lastName: "",
     email: "",
     address: "",
-    message: ""
+    message: "",
   });
 
-  return(
+  return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-6">
+      <div className=" max-w-[700px] bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Contact Us form Character Limit
+          Contact Us form Limit
         </h2>
-        
-        <form className="space-y-4">
+
+        <form className="space-y-4 w-full">
           {/* Name and Last Name Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative w-full">
             {/* First Name */}
             <div className="relative">
-              <label 
-                htmlFor="name" 
+              <label
+                htmlFor="name"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
                 First Name
@@ -92,30 +84,29 @@ function SecondCharacterLimitedInput(){
                 type="text"
                 id="name"
                 value={maxLengthstate.name}
-                onChange={(e)=>setMaxLengthstate({...maxLengthstate,name:e.target.value})}
+                onChange={(e) =>
+                  setMaxLengthstate({ ...maxLengthstate, name: e.target.value })
+                }
                 name="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="John"
                 maxLength={30}
               />
-              {
-                maxLengthstate.name.length >= 30 ?(
-                  <span className="text-red-500 absolute top-0 right-0">
-                    {`reached the character limit!  ${maxLengthstate.name.length}/20`}
-                  </span>
-                ):(
-                  <span className="text-red-500 absolute top-0 right-0">
-                    {`remaining character ${30 - maxLengthstate.name.length}`}
-                  </span>
-                )
-              }
-    
+              {maxLengthstate.name.length >= 30 ? (
+                <span className="text-red-500 absolute top-0 right-0 text-[12px]">
+                  {`reached  limit!  ${maxLengthstate.name.length}/30`}
+                </span>
+              ) : (
+                <span className="text-grey-500 absolute top-0 right-0 text-[12px]">
+                  {` ${30 - maxLengthstate.name.length}/30`}
+                </span>
+              )}
             </div>
 
             {/* Last Name */}
             <div className="relative">
-              <label 
-                htmlFor="lastName" 
+              <label
+                htmlFor="lastName"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Last Name
@@ -127,27 +118,30 @@ function SecondCharacterLimitedInput(){
                 value={maxLengthstate.lastName}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Doe"
-                onChange={(e)=>{setMaxLengthstate({...maxLengthstate,lastName:e.target.value})}}
+                onChange={(e) => {
+                  setMaxLengthstate({
+                    ...maxLengthstate,
+                    lastName: e.target.value,
+                  });
+                }}
                 maxLength={20}
               />
-              {
-                maxLengthstate.lastName.length >= 20 ?(
-                  <span className="text-red-500 absolute top-0 right-0">
-                    {`reached the character limit!  ${maxLengthstate.lastName.length}/20`}
-                  </span>
-                ):(
-                  <span className="text-red-500 absolute top-0 right-0">
-                    {`remaining character ${20 - maxLengthstate.lastName.length}`}
-                  </span>
-                )
-              }
+              {maxLengthstate.lastName.length >= 20 ? (
+                <span className="text-red-500 absolute top-0 right-0 text-[12px]">
+                  {`reached  limit!  ${maxLengthstate.lastName.length}/20`}
+                </span>
+              ) : (
+                <span className="text-grey-500 absolute top-0 right-0 text-[12px]">
+                  {` ${20 - maxLengthstate.lastName.length}/20`}
+                </span>
+              )}
             </div>
           </div>
 
           {/* Email */}
           <div className="relative">
-            <label 
-              htmlFor="email" 
+            <label
+              htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Email Address
@@ -155,30 +149,30 @@ function SecondCharacterLimitedInput(){
             <input
               type="email"
               value={maxLengthstate.email}
-              onChange={(e)=>{setMaxLengthstate({...maxLengthstate,email:e.target.value})}}
+              onChange={(e) => {
+                setMaxLengthstate({ ...maxLengthstate, email: e.target.value });
+              }}
               id="email"
               name="email"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="john@example.com"
               maxLength={50}
             />
-            {
-              maxLengthstate.email.length >= 50 ?(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`reached the character limit!  ${maxLengthstate.email.length}/50`}
-                </span>
-              ):(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`remaining character ${50 - maxLengthstate.email.length}`}
-                </span>
-              )
-            }
+            {maxLengthstate.email.length >= 50 ? (
+              <span className="text-red-500 absolute top-0 right-0 text-[12px]">
+                {`reached  limit!  ${maxLengthstate.email.length}/50`}
+              </span>
+            ) : (
+              <span className="text-grey-500 absolute top-0 right-0 text-[12px]">
+                {` ${50 - maxLengthstate.email.length}/50`}
+              </span>
+            )}
           </div>
 
           {/* Address */}
           <div className="relative">
-            <label 
-              htmlFor="address" 
+            <label
+              htmlFor="address"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Address
@@ -190,25 +184,28 @@ function SecondCharacterLimitedInput(){
               value={maxLengthstate.address}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="123 Main Street, City"
-              onChange={(e)=>{setMaxLengthstate({...maxLengthstate,address:e.target.value})}}
+              onChange={(e) => {
+                setMaxLengthstate({
+                  ...maxLengthstate,
+                  address: e.target.value,
+                });
+              }}
             />
-            {
-              maxLengthstate.address.length >= 50 ?(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`reached the character limit!  ${maxLengthstate.address.length}/50`}
-                </span>
-              ):(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`remaining character ${50 - maxLengthstate.address.length}`}
-                </span>
-              )
-            }
+            {maxLengthstate.address.length >= 50 ? (
+              <span className="text-red-500 absolute top-0 right-0 text-[12px]">
+                {`reached  limit!  ${maxLengthstate.address.length}/50`}
+              </span>
+            ) : (
+              <span className="text-grey-500 absolute top-0 right-0 text-[12px]">
+                {` ${50 - maxLengthstate.address.length}/50`}
+              </span>
+            )}
           </div>
 
           {/* Message */}
           <div className="relative">
-            <label 
-              htmlFor="message" 
+            <label
+              htmlFor="message"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Message
@@ -217,23 +214,26 @@ function SecondCharacterLimitedInput(){
               id="message"
               name="message"
               rows="4"
-              onChange={(e)=>{setMaxLengthstate({...maxLengthstate,message:e.target.value})}}
+              onChange={(e) => {
+                setMaxLengthstate({
+                  ...maxLengthstate,
+                  message: e.target.value,
+                });
+              }}
               value={maxLengthstate.message}
               maxLength={200}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Enter your message here..."
             ></textarea>
-            {
-              maxLengthstate.message.length >= 200 ?(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`reached the character limit!  ${maxLengthstate.message.length}/200`}
-                </span>
-              ):(
-                <span className="text-red-500 absolute top-0 right-0">
-                  {`remaining character ${200 - maxLengthstate.message.length}`}
-                </span>
-              )
-            }
+            {maxLengthstate.message.length >= 200 ? (
+              <span className="text-red-500 absolute top-0 right-0 text-[12px]">
+                {`reached  limit!  ${maxLengthstate.message.length}/200`}
+              </span>
+            ) : (
+              <span className="text-grey-500 absolute top-0 right-0 text-[12px]">
+                {` ${200 - maxLengthstate.message.length}/200`}
+              </span>
+            )}
           </div>
 
           {/* Submit Button */}
