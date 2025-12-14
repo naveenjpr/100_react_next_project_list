@@ -46,9 +46,8 @@ export default function Header() {
           </button>
 
           <nav
-            className={`bg-[black] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${
-              showmenu == true ? "left-[0px]" : ""
-            }`}
+            className={`bg-[black] text-white w-[90%] min-h-screen absolute left-[-100%] transition-all duration-300  ${showmenu == true ? "left-[0px]" : ""
+              }`}
           >
             <ul className="flex md:flex-wrap flex-col gap-[1px] text-left text-[13px] w-full overflow-y-scroll h-[100vh] pb-[20px]">
               {/* Navigation Links */}
@@ -149,6 +148,10 @@ export default function Header() {
                 {
                   path: "/ImageCrop",
                   label: "ImageCrop",
+                },
+                {
+                  path: "/Drag_drope",
+                  label: "Drag_drope",
                 },
               ].map((item, index) => (
                 <li

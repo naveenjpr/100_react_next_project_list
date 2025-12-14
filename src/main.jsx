@@ -57,6 +57,7 @@ import { ToastContainer } from "react-toastify";
 import Multi_step_form_table from "./pages/multi-step-form/multi-step-form-using-api/multi_step_form_table.jsx";
 import CharacterLimitedInput from "./pages/CharacterLimitedInput/CharacterLimitedInput.jsx";
 import ImageCrop from "./pages/Image crop/ImageCrop.jsx";
+import Drag_drope from "./pages/image_drag_drope/Drag_drope.jsx";
 
 const router = createBrowserRouter([
   {
@@ -298,6 +299,10 @@ const router = createBrowserRouter([
   {
     path: "/ImageCrop",
     element: <ImageCrop />,
+  },
+  {
+    path: "/Drag_drope",
+    element: <Drag_drope />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
