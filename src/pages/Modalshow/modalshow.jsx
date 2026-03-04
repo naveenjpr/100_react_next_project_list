@@ -1,14 +1,19 @@
-import React, { useState } from "react"
-import clickbutton from "../../assets/clickbutton.jpg"
+import React, { useState } from "react";
+import clickbutton from "../../assets/clickbutton.jpg";
+import SEO from "../../Common page/SEO";
 
 export default function Modalshow() {
-  const [modalshow, setmodalshow] = useState(false)
+  const [modalshow, setmodalshow] = useState(false);
 
   let modalshowbuttonclick = () => {
-    setmodalshow(!modalshow)
-  }
+    setmodalshow(!modalshow);
+  };
   return (
     <>
+      <SEO
+        title="Modal Showcase"
+        description="Interactive modal dialogs and popup demonstrations"
+      />
       <div
         className="w-full h-screen relative my-4"
         style={{ backgroundImage: `url(${clickbutton})` }}
@@ -51,5 +56,5 @@ export default function Modalshow() {
         </div>
       </div>
     </>
-  )
+  );
 }

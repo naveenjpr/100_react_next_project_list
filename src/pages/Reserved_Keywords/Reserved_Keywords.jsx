@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Reserved_Keywords() {
   const location = useLocation();
@@ -232,9 +233,9 @@ export default function Reserved_Keywords() {
         "exports.register = async (request, response) => {}",
         "exports.login = async (request, response) => {}",
         "exports.profile = async (request, response) => {}",
-        "const bcrypt = require()", 
+        "const bcrypt = require()",
         "var jwt = require()",
-        "var secretKey = Gionee " ,
+        "var secretKey = Gionee ",
         "exports.placeOrder = async (request, response) => {}",
         "exports.confirmOrder = async (request, response) => {}",
         "exports.sendMail = async (request, response) => {}",
@@ -295,7 +296,6 @@ export default function Reserved_Keywords() {
         "where()",
         "select('name image order')",
         "$lookup",
-    
       ],
       color: "blue",
       note: "Common MongoDB/ORM methods for querying data",
@@ -476,6 +476,10 @@ export default function Reserved_Keywords() {
   ];
   return (
     <>
+      <SEO
+        title="Reserved Keywords"
+        description="JavaScript reserved keywords and global objects reference"
+      />
       <div>
         {location.pathname === "/Reserved_Keywords" ? <Header /> : null}
       </div>

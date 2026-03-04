@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 export default function SliderType() {
   //npm i react-slick
   //npm install react-slick --save
   //npm install slick-carousel
 
-  const location = useLocation()
+  const location = useLocation();
 
   //SimpleSlider
   const settings = {
@@ -41,7 +42,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   //MultipleItems
   const settingsMultipleItems = {
     dots: true, // नीचे डॉट्स दिखेंगे
@@ -72,7 +73,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Responsive
   const settingsResponsive = {
@@ -109,12 +110,12 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Resizable
 
-  const [display, setDisplay] = useState(true) //display स्टेट स्लाइडर को छुपाने और दिखाने के लिए है।
-  const [width, setWidth] = useState(600) //width स्टेट स्लाइडर की चौड़ाई को बदलने के लिए है।
+  const [display, setDisplay] = useState(true); //display स्टेट स्लाइडर को छुपाने और दिखाने के लिए है।
+  const [width, setWidth] = useState(600); //width स्टेट स्लाइडर की चौड़ाई को बदलने के लिए है।
 
   const settingsResizable = {
     dots: true,
@@ -143,7 +144,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //MultipleRows
   const settingsMultipleRows = {
@@ -184,7 +185,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Center Mode
   const settingsCenterMode = {
@@ -217,7 +218,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Fade
   const settingsFade = {
@@ -231,7 +232,7 @@ export default function SliderType() {
     speed: 2000, //स्लाइड चेंज होने की स्पीड 500ms (0.5 सेकंड) होगी। इससे ट्रांज़िशन स्मूथ होगा।
     autoplaySpeed: 2000,
     cssEase: "linear",
-  }
+  };
   //LazyLoad
 
   const settingsLazyLoad = {
@@ -243,7 +244,7 @@ export default function SliderType() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-  }
+  };
   //VariableWidth
   const settingsVariableWidth = {
     className: "slider variable-width",
@@ -253,7 +254,7 @@ export default function SliderType() {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-  }
+  };
   //AdaptiveHeight
   const settingsAdaptiveHeight = {
     className: "",
@@ -266,7 +267,7 @@ export default function SliderType() {
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "linear",
-  }
+  };
   //AutoPlay
   const settingsAutoPlay = {
     dots: true,
@@ -293,7 +294,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //PauseOnHover
   const settingsPauseOnHover = {
@@ -324,7 +325,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   // AutoPlayMethods
 
@@ -345,19 +346,19 @@ export default function SliderType() {
   //     border-radius: 3px;
   //     background: black;
   // }
-  let sliderRef = useRef(null)
+  let sliderRef = useRef(null);
 
   const play = () => {
     if (sliderRef.current) {
-      sliderRef.current.slickPlay() // ✅ Corrected
+      sliderRef.current.slickPlay(); // ✅ Corrected
     }
-  }
+  };
 
   const pause = () => {
     if (sliderRef.current) {
-      sliderRef.current.slickPause() // ✅ Corrected
+      sliderRef.current.slickPause(); // ✅ Corrected
     }
-  }
+  };
 
   const settingsAutoPlayMethods = {
     dots: true, // नीचे नेविगेशन डॉट्स दिखेंगे
@@ -383,7 +384,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   const images = [
     "https://pikaso.cdnpk.net/public/media/tti-examples/05.jpg",
     "https://pikaso.cdnpk.net/public/production/prompt-templates/119.png",
@@ -391,18 +392,18 @@ export default function SliderType() {
     "https://pikaso.cdnpk.net/public/media/tti-examples/30.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/25.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/43.jpg",
-  ]
+  ];
 
   // AsNavFor
-  const [nav1, setNav1] = useState(null)
-  const [nav2, setNav2] = useState(null)
-  let sliderRef1 = useRef(null)
-  let sliderRef2 = useRef(null)
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  let sliderRef1 = useRef(null);
+  let sliderRef2 = useRef(null);
 
   useEffect(() => {
-    setNav1(sliderRef1)
-    setNav2(sliderRef2)
-  }, [])
+    setNav1(sliderRef1);
+    setNav2(sliderRef2);
+  }, []);
 
   //SwipeToSlide
   const settingsSwipeToSlide = {
@@ -412,7 +413,7 @@ export default function SliderType() {
     slidesToShow: 5,
     swipeToSlide: true,
     afterChange: function (index) {
-      console.log(`Slider Changed to: ${index + 1}`)
+      console.log(`Slider Changed to: ${index + 1}`);
     },
     responsive: [
       {
@@ -437,7 +438,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   //CustomPaging
 
   const imagesCustomPaging = [
@@ -447,7 +448,7 @@ export default function SliderType() {
     "https://pikaso.cdnpk.net/public/media/tti-examples/07.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/02.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/45.jpg",
-  ]
+  ];
   const settingsCustomPaging = {
     customPaging: function (i) {
       return (
@@ -460,7 +461,7 @@ export default function SliderType() {
             alt={`Thumbnail ${i + 1}`}
           />
         </a>
-      )
+      );
     },
     dots: true,
     dotsClass: "slick-dots slick-thumb",
@@ -468,7 +469,7 @@ export default function SliderType() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-  }
+  };
 
   // FocusOnSelect
   const settingsFocusOnSelect = {
@@ -477,7 +478,7 @@ export default function SliderType() {
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
-  }
+  };
   //Right to Left
 
   const settingsRightoLeft = {
@@ -502,11 +503,11 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   //SlickGoTo
-  const [slideIndex, setSlideIndex] = useState(0)
-  const [updateCount, setUpdateCount] = useState(0)
-  let sliderRefSlickGoTo = useRef(null)
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [updateCount, setUpdateCount] = useState(0);
+  let sliderRefSlickGoTo = useRef(null);
   const settingsSlickGoTo = {
     dots: false,
     infinite: true,
@@ -529,7 +530,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   //DynamicSlides
   const [slides, setSlides] = useState([
     "https://pikaso.cdnpk.net/public/media/tti-examples/08.jpg",
@@ -538,7 +539,7 @@ export default function SliderType() {
     "https://pikaso.cdnpk.net/public/media/tti-examples/02.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/08.jpg",
     "https://pikaso.cdnpk.net/public/media/tti-examples/02.jpg",
-  ])
+  ]);
 
   const handleClick = () => {
     setSlides((prevSlides) =>
@@ -549,9 +550,9 @@ export default function SliderType() {
             "https://pikaso.cdnpk.net/public/media/tti-examples/08.jpg",
             "https://pikaso.cdnpk.net/public/media/tti-examples/50.jpg",
           ]
-        : prevSlides.slice(0, 6)
-    )
-  }
+        : prevSlides.slice(0, 6),
+    );
+  };
   const settingsDynamicSlides = {
     dots: true,
     infinite: true,
@@ -574,7 +575,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   // VerticalSwipeToSlide
 
@@ -587,10 +588,10 @@ export default function SliderType() {
     verticalSwiping: true,
     swipeToSlide: true,
     beforeChange: function (currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide)
+      console.log("before change", currentSlide, nextSlide);
     },
     afterChange: function (currentSlide) {
-      console.log("after change", currentSlide)
+      console.log("after change", currentSlide);
     },
     responsive: [
       {
@@ -606,7 +607,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Previous Next Methods
 
@@ -623,17 +624,17 @@ export default function SliderType() {
   //   font-size: 20px;
   //   color: red;
   // }
-  const sliderRefnextprev = useRef(null)
+  const sliderRefnextprev = useRef(null);
   const next = () => {
     if (sliderRefnextprev.current) {
-      sliderRefnextprev.current.slickNext()
+      sliderRefnextprev.current.slickNext();
     }
-  }
+  };
   const previous = () => {
     if (sliderRefnextprev.current) {
-      sliderRefnextprev.current.slickPrev()
+      sliderRefnextprev.current.slickPrev();
     }
-  }
+  };
 
   const settingsnextprev = {
     dots: true,
@@ -659,7 +660,7 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
 
   //Append Dots
   const settingsAppendDots = {
@@ -707,9 +708,13 @@ export default function SliderType() {
         },
       },
     ],
-  }
+  };
   return (
     <>
+      <SEO
+        title="Slider & Carousel"
+        description="Various slider carousel components and animations"
+      />
       <div>{location.pathname === "/SliderType" ? <Header /> : null}</div>
 
       <div
@@ -1629,7 +1634,7 @@ export default function SliderType() {
           />
           <Slider
             ref={(slider) => {
-              sliderRefSlickGoTo = slider
+              sliderRefSlickGoTo = slider;
             }}
             {...settingsSlickGoTo}
           >
@@ -1690,7 +1695,7 @@ export default function SliderType() {
                       />
                     </div>
                   </div>
-                )
+                );
               })}
             </Slider>
           </div>
@@ -1819,5 +1824,5 @@ export default function SliderType() {
         </div>
       </div>
     </>
-  )
+  );
 }

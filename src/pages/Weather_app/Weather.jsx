@@ -1,82 +1,87 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
-import weatherImage from "../../assets/weather.jpg"
-import sunnyImage from "../../assets/what-a-sunny-day.gif"
-import rainyImage from "../../assets/rain-blue-dog.gif"
-import snowyImage from "../../assets/winter-snow.gif"
-import cloudyImage from "../../assets/clouds-storm.gif"
-import defaultImage from "../../assets/sunny-day-sky.gif"
-import windImage from "../../assets/tornado-wind.gif"
-import clearweather from "../../assets/sky-weather.gif"
-import Thunderstorm from "../../assets/storm-lightning.gif"
-import Drizzle from "../../assets/acww-rain.gif"
-import Fog from "../../assets/foggy-fog.gif"
-import Header from "../../Common page/Header"
-import { useLocation } from "react-router-dom"
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import weatherImage from "../../assets/weather.jpg";
+import sunnyImage from "../../assets/what-a-sunny-day.gif";
+import rainyImage from "../../assets/rain-blue-dog.gif";
+import snowyImage from "../../assets/winter-snow.gif";
+import cloudyImage from "../../assets/clouds-storm.gif";
+import defaultImage from "../../assets/sunny-day-sky.gif";
+import windImage from "../../assets/tornado-wind.gif";
+import clearweather from "../../assets/sky-weather.gif";
+import Thunderstorm from "../../assets/storm-lightning.gif";
+import Drizzle from "../../assets/acww-rain.gif";
+import Fog from "../../assets/foggy-fog.gif";
+import Header from "../../Common page/Header";
+import { useLocation } from "react-router-dom";
+import SEO from "../../Common page/SEO";
 // import Haze from "../assets/"
 // import hazeImage from ""
 
 export default function WeatherApp() {
-  const [city, setCity] = useState("jaipur")
-  const [weather, setWeather] = useState(null)
-  const [error, seterror] = useState("")
+  const [city, setCity] = useState("jaipur");
+  const [weather, setWeather] = useState(null);
+  const [error, seterror] = useState("");
 
-  const location = useLocation()
+  const location = useLocation();
 
   let weatherclick = () => {
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4d8fb5b93d4af21d66a2948710284366&units=metric
-    `
+    `,
       )
       .then((result) => {
-        console.log(result.data)
-        setWeather(result.data)
-        seterror("")
+        console.log(result.data);
+        setWeather(result.data);
+        seterror("");
       })
       .catch((error) => {
-        console.log(error.message)
-        seterror(error.message)
-        setWeather(null)
-      })
-  }
+        console.log(error.message);
+        seterror(error.message);
+        setWeather(null);
+      });
+  };
 
   const getBackgroundImage = () => {
-    if (!weather) return weatherImage // Default image
-    const condition = weather.weather[0].main.toLowerCase()
+    if (!weather) return weatherImage; // Default image
+    const condition = weather.weather[0].main.toLowerCase();
     switch (condition) {
       case "clear":
-        return clearweather
+        return clearweather;
       case "rain":
-        return rainyImage // Use the imported rainy image
+        return rainyImage; // Use the imported rainy image
       case "sunny":
-        return sunnyImage
+        return sunnyImage;
       case "snow":
-        return snowyImage
+        return snowyImage;
       case "Windy":
-        return windImage
+        return windImage;
       case "clouds":
-        return cloudyImage
+        return cloudyImage;
       case "Thunderstorm":
-        return Thunderstorm
+        return Thunderstorm;
       case "Drizzle":
-        return Drizzle
+        return Drizzle;
       case "Fog":
-        return Fog
+        return Fog;
       // case "Haze":
       //   return Haze
       default:
-        return defaultImage
+        return defaultImage;
     }
-  }
+  };
   useEffect(() => {
-    getBackgroundImage()
-  }, [city])
+    getBackgroundImage();
+  }, [city]);
 
   return (
     <>
+      {" "}
+      <SEO
+        title="Weather App"
+        description="Get real-time weather information for any city worldwide"
+      />{" "}
       <div>{location.pathname === "/WeatherApp" ? <Header /> : null}</div>
-
       <div
         className="bg-gradient-to-br from-blue-500 to-blue-700 min-h-screen p-4"
         style={{ backgroundImage: `url(${weatherImage})` }}
@@ -176,5 +181,5 @@ export default function WeatherApp() {
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,25 +1,26 @@
-import React, { useState } from "react"
-import marksheetImage from "../../assets/marksheet.jpg"
-import { ToastContainer, toast } from "react-toastify"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import marksheetImage from "../../assets/marksheet.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Percentage() {
-  const location = useLocation()
+  const location = useLocation();
 
   // State variables for subject marks
-  const [Hindi, setHindi] = useState("") // हिंदी के अंक
-  const [English, setEnglish] = useState("") // अंग्रेजी के अंक
-  const [Maths, setMaths] = useState("") // गणित के अंक
-  const [Social, setSocial] = useState("") // सामाजिक विज्ञान के अंक
-  const [Science, setScience] = useState("") // विज्ञान के अंक
-  const [Sanskrit, setSanskrit] = useState("") // संस्कृत के अंक
+  const [Hindi, setHindi] = useState(""); // हिंदी के अंक
+  const [English, setEnglish] = useState(""); // अंग्रेजी के अंक
+  const [Maths, setMaths] = useState(""); // गणित के अंक
+  const [Social, setSocial] = useState(""); // सामाजिक विज्ञान के अंक
+  const [Science, setScience] = useState(""); // विज्ञान के अंक
+  const [Sanskrit, setSanskrit] = useState(""); // संस्कृत के अंक
 
   // State variables for results
-  const [totalMarks, setTotalMarks] = useState(0) // कुल अंक
-  const [percentage, setPercentage] = useState(0) // प्रतिशत
-  const [division, setDivision] = useState("") // डिवीजन (फर्स्ट, सेकंड, थर्ड)
-  const [grade, setGrade] = useState("") // ग्रेड (A+, A, B, C)
+  const [totalMarks, setTotalMarks] = useState(0); // कुल अंक
+  const [percentage, setPercentage] = useState(0); // प्रतिशत
+  const [division, setDivision] = useState(""); // डिवीजन (फर्स्ट, सेकंड, थर्ड)
+  const [grade, setGrade] = useState(""); // ग्रेड (A+, A, B, C)
 
   // कुल अंक, प्रतिशत, डिवीजन और ग्रेड की गणना करने का फ़ंक्शन
   const calculateTotal = () => {
@@ -30,13 +31,13 @@ export default function Percentage() {
       Number(Maths) +
       Number(Social) +
       Number(Science) +
-      Number(Sanskrit)
+      Number(Sanskrit);
 
-    setTotalMarks(total) // कुल अंक सेट करें
+    setTotalMarks(total); // कुल अंक सेट करें
 
     // प्रतिशत की गणना
-    const percent = (total / 600) * 100
-    setPercentage(percent.toFixed(2)) // प्रतिशत को 2 दशमलव स्थानों तक सेट करें
+    const percent = (total / 600) * 100;
+    setPercentage(percent.toFixed(2)); // प्रतिशत को 2 दशमलव स्थानों तक सेट करें
 
     // फेल विषयों की संख्या गिनें (33 से कम अंक वाले विषय)
     const failedSubjects = [
@@ -46,22 +47,22 @@ export default function Percentage() {
       Social,
       Science,
       Sanskrit,
-    ].filter((mark) => Number(mark) < 33).length
+    ].filter((mark) => Number(mark) < 33).length;
 
     // डिवीजन की गणना
     if (failedSubjects <= 2 && failedSubjects !== 0) {
-      setDivision("Supplementary") // 2 या उससे कम फेल विषयों के लिए सप्लीमेंट्री
+      setDivision("Supplementary"); // 2 या उससे कम फेल विषयों के लिए सप्लीमेंट्री
     } else if (failedSubjects === 3) {
-      setDivision("Failed") // 3 फेल विषयों के लिए फेल
+      setDivision("Failed"); // 3 फेल विषयों के लिए फेल
     } else {
       if (percent >= 60) {
-        setDivision("First") // 60% या अधिक के लिए फर्स्ट डिवीजन
+        setDivision("First"); // 60% या अधिक के लिए फर्स्ट डिवीजन
       } else if (percent >= 48 && percent < 60) {
-        setDivision("Second") // 48% से 59.99% के लिए सेकंड डिवीजन
+        setDivision("Second"); // 48% से 59.99% के लिए सेकंड डिवीजन
       } else if (percent >= 33 && percent < 48) {
-        setDivision("Third") // 33% से 47.99% के लिए थर्ड डिवीजन
+        setDivision("Third"); // 33% से 47.99% के लिए थर्ड डिवीजन
       } else {
-        setDivision("Failed") // 33% से कम के लिए फेल
+        setDivision("Failed"); // 33% से कम के लिए फेल
       }
     }
 
@@ -80,19 +81,19 @@ export default function Percentage() {
       Sanskrit > 100 ||
       Sanskrit < 0
     ) {
-      setDivision("invalid") // अमान्य अंकों के लिए डिवीजन और प्रतिशत को "invalid" सेट करें
-      setPercentage("invalid")
+      setDivision("invalid"); // अमान्य अंकों के लिए डिवीजन और प्रतिशत को "invalid" सेट करें
+      setPercentage("invalid");
     }
 
     // ग्रेड की गणना
-    let calculatedGrade = ""
+    let calculatedGrade = "";
     if (percent >= 91) {
       if (failedSubjects !== 1 || failedSubjects !== 2) {
-        calculatedGrade = "A+" // 91% या अधिक के लिए A+
+        calculatedGrade = "A+"; // 91% या अधिक के लिए A+
       }
     } else if (percent >= 76) {
       if (failedSubjects !== 1 && failedSubjects !== 2) {
-        calculatedGrade = "A" // 76% से 90% के लिए A
+        calculatedGrade = "A"; // 76% से 90% के लिए A
       }
     } else if (percent >= 61) {
       if (
@@ -100,7 +101,7 @@ export default function Percentage() {
         failedSubjects !== 2 &&
         failedSubjects !== 3
       ) {
-        calculatedGrade = "B" // 61% से 75% के लिए B
+        calculatedGrade = "B"; // 61% से 75% के लिए B
       }
     } else if (percent >= 41) {
       if (
@@ -108,16 +109,20 @@ export default function Percentage() {
         failedSubjects !== 2 &&
         failedSubjects !== 3
       ) {
-        calculatedGrade = "C" // 41% से 60% के लिए C
+        calculatedGrade = "C"; // 41% से 60% के लिए C
       }
     } else {
-      calculatedGrade = false // 41% से कम के लिए कोई ग्रेड नहीं
+      calculatedGrade = false; // 41% से कम के लिए कोई ग्रेड नहीं
     }
-    setGrade(calculatedGrade) // ग्रेड सेट करें
-  }
+    setGrade(calculatedGrade); // ग्रेड सेट करें
+  };
 
   return (
     <>
+      <SEO
+        title="Percentage Calculator"
+        description="Calculate percentage marks and aggregate scores easily"
+      />
       <div>{location.pathname === "/Percentage" ? <Header /> : null}</div>
 
       <div
@@ -317,5 +322,5 @@ export default function Percentage() {
         <ToastContainer />
       </div>
     </>
-  )
+  );
 }

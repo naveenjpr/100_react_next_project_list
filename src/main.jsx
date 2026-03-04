@@ -58,6 +58,7 @@ import Multi_step_form_table from "./pages/multi-step-form/multi-step-form-using
 import CharacterLimitedInput from "./pages/CharacterLimitedInput/CharacterLimitedInput.jsx";
 import ImageCrop from "./pages/Image crop/ImageCrop.jsx";
 import Drag_drope from "./pages/image_drag_drope/Drag_drope.jsx";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -306,10 +307,12 @@ const router = createBrowserRouter([
   },
 ]);
 createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <MainContext>
-      <RouterProvider router={router} />
-      <ToastContainer position="top-right" autoClose={1000} />
-    </MainContext>
-  </Provider>
+  <HelmetProvider>
+    <Provider store={store}>
+      <MainContext>
+        <RouterProvider router={router} />
+        <ToastContainer position="top-right" autoClose={1000} />
+      </MainContext>
+    </Provider>
+  </HelmetProvider>,
 );

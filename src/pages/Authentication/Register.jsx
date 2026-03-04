@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { LoginContext } from "../context_api/MainContext";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import SEO from "../../Common page/SEO";
 
 export default function Register() {
   const location = useLocation();
@@ -21,39 +22,45 @@ export default function Register() {
       password: event.target.password.value,
     };
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/frontend/users/register", obj)
+      .post(
+        "https://rss-feed-node-js.onrender.com/api/frontend/users/register",
+        obj,
+      )
       .then((result) => {
-
         if (result.data.status) {
           toast.success(result.data.message);
           // setuserinfo(result.data.userData);
 
-          setTimeout(()=>{
-
-            navigate("/Practics_notes_daily")
-          },2000)
+          setTimeout(() => {
+            navigate("/Practics_notes_daily");
+          }, 2000);
         } else {
-          toast.error(result.data.error );
+          toast.error(result.data.error);
         }
       })
       .catch((error) => {
         console.log("AxiosError Details:", error);
 
         // ✅ FRONTEND में error toast से दिखाएं:
-        if (error.response && error.response.data && error.response.data.message) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
           toast.error(error.response.data.message); // जैसे: "Email ID already registered!"
         } else {
           toast.error("कुछ गलत हो गया, कृपया फिर से प्रयास करें।");
         }
-      });     
+      });
   };
 
   return (
     <>
+      <SEO title="Register" description="Create a new user account" />
       <div>{location.pathname === "/Register" ? <Header /> : null}</div>;
       <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-              <ToastContainer position="top-right" autoClose={3000} />
-        
+        <ToastContainer position="top-right" autoClose={3000} />
+
         <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6">
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
             Register

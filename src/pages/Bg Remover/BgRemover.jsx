@@ -1,144 +1,151 @@
-import React, { useState, useRef } from "react"
-import * as bodyPix from "@tensorflow-models/body-pix"
-import "@tensorflow/tfjs"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState, useRef } from "react";
+import * as bodyPix from "@tensorflow-models/body-pix";
+import "@tensorflow/tfjs";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 const BgRemover = () => {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [image, setImage] = useState(null) //यूजर द्वारा अपलोड की गई इमेज को स्टोर करता है।
-  const [bgImage, setBgImage] = useState(null) //यूजर द्वारा अपलोड की गई पृष्ठभूमि (background) इमेज को स्टोर करता है।
-  const [predefinedBg, setPredefinedBg] = useState("none") //यूजर द्वारा चुनी गई पूर्वनिर्धारित पृष्ठभूमि (background) को स्टोर करता है।
-  const [bgColor, setBgColor] = useState("#ffffff") // Default white यदि यूजर ने सॉलिड कलर (solid color) चुना है, तो उस कलर को स्टोर करता है।
-  const [isProcessed, setIsProcessed] = useState(false) //यह बताता है कि इमेज प्रोसेस हो चुकी है या नहीं।
-  const [isProcessing, setIsProcessing] = useState(false) //यह बताता है कि इमेज प्रोसेसिंग चल रही है या नहीं।
+  const [image, setImage] = useState(null); //यूजर द्वारा अपलोड की गई इमेज को स्टोर करता है।
+  const [bgImage, setBgImage] = useState(null); //यूजर द्वारा अपलोड की गई पृष्ठभूमि (background) इमेज को स्टोर करता है।
+  const [predefinedBg, setPredefinedBg] = useState("none"); //यूजर द्वारा चुनी गई पूर्वनिर्धारित पृष्ठभूमि (background) को स्टोर करता है।
+  const [bgColor, setBgColor] = useState("#ffffff"); // Default white यदि यूजर ने सॉलिड कलर (solid color) चुना है, तो उस कलर को स्टोर करता है।
+  const [isProcessed, setIsProcessed] = useState(false); //यह बताता है कि इमेज प्रोसेस हो चुकी है या नहीं।
+  const [isProcessing, setIsProcessing] = useState(false); //यह बताता है कि इमेज प्रोसेसिंग चल रही है या नहीं।
 
-  const canvasRef = useRef(null)
-  const fileInputRef = useRef(null)
-  const bgFileInputRef = useRef(null)
+  const canvasRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const bgFileInputRef = useRef(null);
 
   const resetAll = () => {
     //सभी स्थितियों (states) को रीसेट करता है और कैनवास को साफ करता है।
-    setImage(null)
-    setBgImage(null)
-    setPredefinedBg("none")
-    setBgColor("#ffffff")
-    setIsProcessed(false)
-    setIsProcessing(false)
+    setImage(null);
+    setBgImage(null);
+    setPredefinedBg("none");
+    setBgColor("#ffffff");
+    setIsProcessed(false);
+    setIsProcessing(false);
 
     // Reset file input fields
-    if (fileInputRef.current) fileInputRef.current.value = ""
-    if (bgFileInputRef.current) bgFileInputRef.current.value = ""
+    if (fileInputRef.current) fileInputRef.current.value = "";
+    if (bgFileInputRef.current) bgFileInputRef.current.value = "";
 
     // Clear canvas
-    const canvas = canvasRef.current
+    const canvas = canvasRef.current;
     if (canvas) {
-      const ctx = canvas.getContext("2d")
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
-  }
+  };
 
   // इमेज अपलोड हैंडलर
   const handleImageUpload = (event, setImageFunction) => {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     if (file) {
-      setImageFunction(URL.createObjectURL(file))
-      setIsProcessed(false)
+      setImageFunction(URL.createObjectURL(file));
+      setIsProcessed(false);
     }
-  }
+  };
 
   // इमेज प्रोसेसिंग फंक्शन
 
   const processImage = async () => {
     if (!image) {
-      alert("Please select an image!")
-      return
+      alert("Please select an image!");
+      return;
     }
 
-    setIsProcessing(true)
-    setIsProcessed(false)
+    setIsProcessing(true);
+    setIsProcessed(false);
 
-    const img = new Image()
-    img.src = image
+    const img = new Image();
+    img.src = image;
 
-    let bgImg = null
+    let bgImg = null;
     if (bgImage) {
-      bgImg = new Image()
-      bgImg.src = bgImage
+      bgImg = new Image();
+      bgImg.src = bgImage;
     } else if (predefinedBg !== "none" && predefinedBg !== "color") {
-      bgImg = new Image()
-      bgImg.src = `https://source.unsplash.com/800x600/?${predefinedBg}`
+      bgImg = new Image();
+      bgImg.src = `https://source.unsplash.com/800x600/?${predefinedBg}`;
     }
 
     img.onload = async () => {
       if (bgImg) {
-        bgImg.onload = () => drawCanvas(img, bgImg) //
+        bgImg.onload = () => drawCanvas(img, bgImg); //
       } else {
-        drawCanvas(img, null) // इमेज को कैनवास पर ड्रा करता है और पृष्ठभूमि (background) को हटाता है या बदलता है।
+        drawCanvas(img, null); // इमेज को कैनवास पर ड्रा करता है और पृष्ठभूमि (background) को हटाता है या बदलता है।
       }
-    }
-  }
+    };
+  };
 
   //कैनवास पर इमेज ड्रा करना
   const drawCanvas = async (img, bgImg) => {
-    const canvas = canvasRef.current
-    const ctx = canvas.getContext("2d")
-    canvas.width = img.width
-    canvas.height = img.height
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    canvas.width = img.width;
+    canvas.height = img.height;
 
-    const net = await bodyPix.load()
-    const segmentation = await net.segmentPerson(img)
+    const net = await bodyPix.load();
+    const segmentation = await net.segmentPerson(img);
 
-    const offCanvas = document.createElement("canvas")
-    const offCtx = offCanvas.getContext("2d")
-    offCanvas.width = img.width
-    offCanvas.height = img.height
+    const offCanvas = document.createElement("canvas");
+    const offCtx = offCanvas.getContext("2d");
+    offCanvas.width = img.width;
+    offCanvas.height = img.height;
 
-    offCtx.drawImage(img, 0, 0)
-    const imageData = offCtx.getImageData(0, 0, img.width, img.height)
-    const pixel = imageData.data
+    offCtx.drawImage(img, 0, 0);
+    const imageData = offCtx.getImageData(0, 0, img.width, img.height);
+    const pixel = imageData.data;
 
     for (let i = 0; i < pixel.length; i += 4) {
       if (segmentation.data[i / 4] === 0) {
-        pixel[i + 3] = 0
+        pixel[i + 3] = 0;
       }
     }
 
-    offCtx.putImageData(imageData, 0, 0)
+    offCtx.putImageData(imageData, 0, 0);
 
     // Apply solid color background if selected
     if (predefinedBg === "color") {
-      ctx.fillStyle = bgColor
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
     } else if (bgImg) {
-      ctx.drawImage(bgImg, 0, 0, img.width, img.height)
+      ctx.drawImage(bgImg, 0, 0, img.width, img.height);
     } else {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    ctx.drawImage(offCanvas, 0, 0)
-    setIsProcessed(true)
-    setIsProcessing(false)
-  }
+    ctx.drawImage(offCanvas, 0, 0);
+    setIsProcessed(true);
+    setIsProcessing(false);
+  };
 
   //यह फंक्शन प्रोसेस की गई इमेज को डाउनलोड करने की सुविधा प्रदान करता है।
 
   const downloadImage = () => {
-    const canvas = canvasRef.current
-    const a = document.createElement("a")
-    a.href = canvas.toDataURL("image/png")
-    a.download = "background_removed.png"
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-  }
+    const canvas = canvasRef.current;
+    const a = document.createElement("a");
+    a.href = canvas.toDataURL("image/png");
+    a.download = "background_removed.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
 
   return (
     <>
+      <SEO
+        title="Background Remover"
+        description="Remove and replace image backgrounds with AI"
+      />
       <div>{location.pathname === "/BgRemover" ? <Header /> : null}</div>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        <h1 className="text-2xl font-bold mb-4">AI Background Remover for Image</h1>
+        <h1 className="text-2xl font-bold mb-4">
+          AI Background Remover for Image
+        </h1>
 
         {/* Image Upload */}
         <label className="font-semibold">Upload Image:</label>
@@ -246,7 +253,7 @@ const BgRemover = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default BgRemover
+export default BgRemover;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { FaCamera } from "react-icons/fa";
 import Cropper from "react-easy-crop";
+import SEO from "../../Common page/SEO";
 
 export default function ImageCrop() {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [image, setImage] = useState(
-    "https://user-images.githubusercontent.com/2678610/41561426-365e7a44-734a-11e8-8e0e-1c04251f53e4.gif"
+    "https://user-images.githubusercontent.com/2678610/41561426-365e7a44-734a-11e8-8e0e-1c04251f53e4.gif",
   );
 
   const onCropComplete = (croppedArea, croppedAreaPixels) => {

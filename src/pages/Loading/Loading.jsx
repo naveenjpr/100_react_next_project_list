@@ -1,12 +1,17 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Loading() {
   const location = useLocation();
 
   return (
     <>
+      <SEO
+        title="Loading Animations"
+        description="Beautiful loading spinners and animation examples"
+      />
       {location.pathname === "/Loading" ? <Header /> : null}
       <div className="max-h-screen overflow-auto p-2 sm:p-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 sm:mb-8">
@@ -16,24 +21,43 @@ export default function Loading() {
           {[
             { title: "Defaultspinner", component: <Defaultspinner /> },
             { title: "Colors", component: <Colors /> },
-            { title: "Ovel shaped loading spinner", component: <Ovelshapedloadingspinner /> },
-            { title: "Animated loading dots", component: <Animatedloadingdots /> },
-            { title: "Throbbing loading animation", component: <Throbbingloadinganimation /> },
-            { title: "Loading spinner with image inside", component: <Lodingspinnerwithimageinside /> },
-            { title: "Loading animation using animate-ping", component: <Loadinganimationusinganimateping /> },
+            {
+              title: "Ovel shaped loading spinner",
+              component: <Ovelshapedloadingspinner />,
+            },
+            {
+              title: "Animated loading dots",
+              component: <Animatedloadingdots />,
+            },
+            {
+              title: "Throbbing loading animation",
+              component: <Throbbingloadinganimation />,
+            },
+            {
+              title: "Loading spinner with image inside",
+              component: <Lodingspinnerwithimageinside />,
+            },
+            {
+              title: "Loading animation using animate-ping",
+              component: <Loadinganimationusinganimateping />,
+            },
             { title: "Dashedspinners", component: <Dashedspinners /> },
             { title: "Spinner in Tailwind", component: <Spinnerintailwind /> },
-            { title: "Loader Design spinning", component: <LoaderDesignspinning /> },
-            { title: "Animate-spin spinner", component: <Animatespinspinner /> },
+            {
+              title: "Loader Design spinning",
+              component: <LoaderDesignspinning />,
+            },
+            {
+              title: "Animate-spin spinner",
+              component: <Animatespinspinner />,
+            },
           ].map((item, index) => (
-            <div 
+            <div
               key={index}
               className="w-full border border-blue-500 h-[180px] sm:h-[200px] flex flex-col justify-center items-center text-center p-2"
             >
               <h2 className="text-sm sm:text-base mb-2">{item.title}</h2>
-              <div className="scale-75 sm:scale-100">
-                {item.component}
-              </div>
+              <div className="scale-75 sm:scale-100">{item.component}</div>
             </div>
           ))}
         </div>
@@ -69,7 +93,14 @@ function Defaultspinner() {
 export function Colors() {
   return (
     <div className="grid grid-cols-3 gap-2">
-      {['blue-600', 'gray-600', 'green-500', 'red-600', 'yellow-400', 'pink-600'].map((color) => (
+      {[
+        "blue-600",
+        "gray-600",
+        "green-500",
+        "red-600",
+        "yellow-400",
+        "pink-600",
+      ].map((color) => (
         <div key={color} role="status">
           <svg
             aria-hidden="true"
@@ -107,7 +138,10 @@ function Animatedloadingdots() {
   return (
     <div className="flex gap-2">
       {[1, 2, 3].map((dot) => (
-        <div key={dot} className="w-3 h-3 sm:w-5 sm:h-5 rounded-full animate-pulse bg-blue-600"></div>
+        <div
+          key={dot}
+          className="w-3 h-3 sm:w-5 sm:h-5 rounded-full animate-pulse bg-blue-600"
+        ></div>
       ))}
     </div>
   );
@@ -145,8 +179,8 @@ function Loadinganimationusinganimateping() {
 function Dashedspinners() {
   return (
     <div className="flex flex-row gap-2 sm:gap-4">
-      {['cyan-500', 'indigo-500', 'pink-500', 'green-500'].map((color, i) => (
-        <div 
+      {["cyan-500", "indigo-500", "pink-500", "green-500"].map((color, i) => (
+        <div
           key={color}
           className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full animate-spin border border-dashed border-${color} border-t-transparent`}
           style={{ borderWidth: `${i + 1}px` }}

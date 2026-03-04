@@ -1,19 +1,20 @@
-import React, { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
 
-import Gallery1 from "../../assets/raining-smile-cartoon-vector-.avif"
-import Gallery2 from "../../assets/isolated_138676-6537.avif"
-import Gallery3 from "../../assets/people-silhouettes-gallery_1284-6401.avif"
-import Gallery4 from "../../assets/woman-art-exhibition_53876-14379.avif"
-import Gallery5 from "../../assets/art-gallery-antique-frame-concept_53876-31240.avif"
-import Gallery6 from "../../assets/white-squares_1160-683.avif"
-import Gallery7 from "../../assets/art-lover-concept-illustration_114360-1001.avif"
-import Gallery8 from "../../assets/empty-wall-frame-decoration-background_1017-17386.avif"
+import Gallery1 from "../../assets/raining-smile-cartoon-vector-.avif";
+import Gallery2 from "../../assets/isolated_138676-6537.avif";
+import Gallery3 from "../../assets/people-silhouettes-gallery_1284-6401.avif";
+import Gallery4 from "../../assets/woman-art-exhibition_53876-14379.avif";
+import Gallery5 from "../../assets/art-gallery-antique-frame-concept_53876-31240.avif";
+import Gallery6 from "../../assets/white-squares_1160-683.avif";
+import Gallery7 from "../../assets/art-lover-concept-illustration_114360-1001.avif";
+import Gallery8 from "../../assets/empty-wall-frame-decoration-background_1017-17386.avif";
+import SEO from "../../Common page/SEO";
 
 export default function LightBox() {
-  const [isOpen, setIsOpen] = useState(false) // यह ट्रैक करता है कि लाइटबॉक्स खुला है या बंद।
-  const [photoIndex, setPhotoIndex] = useState(0) // photoIndex: यह ट्रैक करता है कि कौन-सी इमेज अभी प्रदर्शित हो रही है।
+  const [isOpen, setIsOpen] = useState(false); // यह ट्रैक करता है कि लाइटबॉक्स खुला है या बंद।
+  const [photoIndex, setPhotoIndex] = useState(0); // photoIndex: यह ट्रैक करता है कि कौन-सी इमेज अभी प्रदर्शित हो रही है।
 
   const images = [
     Gallery1,
@@ -24,15 +25,19 @@ export default function LightBox() {
     Gallery6,
     Gallery7,
     Gallery8,
-  ]
+  ];
 
   let imageclick = (image, index) => {
-    setPhotoIndex(index) // // क्लिक की गई इमेज का इंडेक्स सेट करें।
-    setIsOpen(true) // Show the lightbox  लाइटबॉक्स को दिखाएं।
-  }
+    setPhotoIndex(index); // // क्लिक की गई इमेज का इंडेक्स सेट करें।
+    setIsOpen(true); // Show the lightbox  लाइटबॉक्स को दिखाएं।
+  };
 
   return (
     <>
+      <SEO
+        title="Lightbox Gallery"
+        description="Interactive lightbox gallery with image preview"
+      />
       <div>{location.pathname === "/LightBox" ? <Header /> : null}</div>
 
       <div className="w-full min-h-screen relative">
@@ -107,11 +112,11 @@ export default function LightBox() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

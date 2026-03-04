@@ -4,12 +4,13 @@ import Header from "../../Common page/Header";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { LoginContext } from "../context_api/MainContext";
+import SEO from "../../Common page/SEO";
 
 export default function Login() {
   const location = useLocation();
-    const { userinfo, setuserinfo } = useContext(LoginContext);
-  
-let navigate=useNavigate()
+  const { userinfo, setuserinfo } = useContext(LoginContext);
+
+  let navigate = useNavigate();
   let loginHandler = (event) => {
     event.preventDefault();
     let obj = {
@@ -18,42 +19,41 @@ let navigate=useNavigate()
     };
     // /javascript/view
     axios
-      .post("https://rss-feed-node-js.onrender.com/api/frontend/users/login", obj)
+      .post(
+        "https://rss-feed-node-js.onrender.com/api/frontend/users/login",
+        obj,
+      )
       .then((result) => {
         if (result.data.status == true) {
           toast.success("Login successful!");
           setuserinfo(result.data.token); // or whatever structure your API returns
 
-          setTimeout(()=>{
-
-            navigate("/Practics_notes_daily")
-          },2000)
+          setTimeout(() => {
+            navigate("/Practics_notes_daily");
+          }, 2000);
         } else {
           toast.error("Login failed: " + result.data.message);
-
         }
 
         console.log(result.data);
       })
       .catch((error) => {
-
         console.error("Login error:", error);
         toast.error("Something went wrong. Please try again.");
       });
   };
   useEffect(() => {
-    if( userinfo){
-
-      navigate('/Practics_notes_daily')
+    if (userinfo) {
+      navigate("/Practics_notes_daily");
     }
-  }, [])
-  
+  }, []);
 
   return (
     <>
+      <SEO title="Login" description="User login page for account access" />
       <div>{location.pathname === "/Login" ? <Header /> : null}</div>
       <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <ToastContainer position="top-right" autoClose={3000} />
+        <ToastContainer position="top-right" autoClose={3000} />
 
         <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6">
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">

@@ -1,41 +1,46 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import backmovie from "../../assets/popcorn-movie-time_23-2148470132.jpg"
-import Header from "../../Common page/Header"
-import { useLocation } from "react-router-dom"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import backmovie from "../../assets/popcorn-movie-time_23-2148470132.jpg";
+import Header from "../../Common page/Header";
+import { useLocation } from "react-router-dom";
+import SEO from "../../Common page/SEO";
 
 export default function Movie() {
-  let [movieList, setMovieList] = useState([]) //  // movieList state को एक खाली array से initialize किया गया है
-  const location = useLocation()
+  let [movieList, setMovieList] = useState([]); //  // movieList state को एक खाली array से initialize किया गया है
+  const location = useLocation();
 
   // getMovie फ़ंक्शन: यह TMDb API से मूवी डेटा प्राप्त करता है
 
   let getMovie = (title = "") => {
-    let apiUrl
+    let apiUrl;
     if (title === "") {
       // यदि कोई टाइटल नहीं दिया गया है, तो पॉपुलर मूवीज़ प्राप्त करें
 
-      apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1`
+      apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1`;
     } else {
       // यदि टाइटल दिया गया है, तो सर्च API का उपयोग करें
 
-      apiUrl = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${title}`
+      apiUrl = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${title}`;
     }
 
     // API से डेटा प्राप्त करें और movieList state को अपडेट करें
 
     axios.get(apiUrl).then((res) => {
-      setMovieList(res.data.results)
-    })
-  }
+      setMovieList(res.data.results);
+    });
+  };
 
   // useEffect: कंपोनेंट के माउंट होने पर getMovie फ़ंक्शन को कॉल करें
 
   useEffect(() => {
-    getMovie()
-  }, [])
+    getMovie();
+  }, []);
   return (
     <>
+      <SEO
+        title="Movie Search"
+        description="Search and discover movies with detailed information"
+      />
       <div>{location.pathname === "/Movie" ? <Header /> : null}</div>
 
       <div
@@ -60,14 +65,14 @@ export default function Movie() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 function MovieData({ data }) {
   // मूवी डाउनलोड करने के लिए Google सर्च URL बनाएं
   const downloadUrl = `https://www.google.com/search?q=${encodeURIComponent(
-    data.title + " movie download"
-  )}`
+    data.title + " movie download",
+  )}`;
 
   return (
     <div className="bg-gray-800 p-2 sm:p-3 rounded-lg shadow-md">
@@ -98,5 +103,5 @@ function MovieData({ data }) {
         Download Movie
       </a>
     </div>
-  )
+  );
 }

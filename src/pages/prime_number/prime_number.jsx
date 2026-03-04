@@ -1,31 +1,36 @@
-import React, { useState } from "react"
-import primeNumber from "../../assets/primeNumber.jpg"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import primeNumber from "../../assets/primeNumber.jpg";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function PrimeNumber() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [Input, setInput] = useState("")
-  const [Prime, setPrime] = useState("")
+  const [Input, setInput] = useState("");
+  const [Prime, setPrime] = useState("");
 
   let handleCheck = () => {
-    var midlevalue = parseInt(Input / 2)
-    let primeNumberstatus = 0
+    var midlevalue = parseInt(Input / 2);
+    let primeNumberstatus = 0;
     for (var i = 2; i <= midlevalue; i++) {
       if (Input % 2 == 0) {
-        primeNumberstatus = 1
+        primeNumberstatus = 1;
       }
     }
 
     if (primeNumberstatus == 0) {
-      setPrime("prime")
+      setPrime("prime");
     } else {
-      setPrime("Not prime number")
+      setPrime("Not prime number");
     }
-  }
+  };
   return (
     <>
+      <SEO
+        title="Prime Number Checker"
+        description="Check if a number is prime using advanced algorithms"
+      />
       <div>{location.pathname === "/PrimeNumber" ? <Header /> : null}</div>
 
       <div
@@ -76,5 +81,5 @@ export default function PrimeNumber() {
         </div>
       </div>
     </>
-  )
+  );
 }

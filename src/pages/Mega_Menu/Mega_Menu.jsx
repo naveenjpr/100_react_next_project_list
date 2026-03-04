@@ -1,9 +1,10 @@
-import React from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Mega_Menu() {
-  const location = useLocation()
+  const location = useLocation();
 
   const Mens_mega_menu_categories = [
     {
@@ -111,7 +112,7 @@ export default function Mega_Menu() {
       heading: "Luggages & Trolleys",
       items: [],
     },
-  ]
+  ];
 
   const women_mega_menu_categories = [
     {
@@ -217,7 +218,7 @@ export default function Mega_Menu() {
       heading: "Sunglasses & Frames",
       items: [],
     },
-  ]
+  ];
 
   const kids_mega_menu_categories = [
     {
@@ -320,7 +321,7 @@ export default function Mega_Menu() {
         "HRX",
       ],
     },
-  ]
+  ];
   const home_mega_menu_Categories = [
     {
       category: "Bed Linen & Furnishing",
@@ -407,7 +408,7 @@ export default function Mega_Menu() {
         "Laundry Bags",
       ],
     },
-  ]
+  ];
 
   const beauty_mega_menu_Categories = [
     {
@@ -504,10 +505,14 @@ export default function Mega_Menu() {
       category: "Wellness & Hygiene",
       items: [],
     },
-  ]
+  ];
 
   return (
     <>
+      <SEO
+        title="Mega Menu"
+        description="Explore mega menu navigation with category wise products"
+      />
       <div>{location.pathname === "/Mega_Menu" ? <Header /> : null}</div>
 
       <header className="w-full shadow-lg py-5 h-screen ">
@@ -677,5 +682,5 @@ export default function Mega_Menu() {
         </div>
       </header>
     </>
-  )
+  );
 }

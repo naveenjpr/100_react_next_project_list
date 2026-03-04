@@ -1,13 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function UseRef() {
   const location = useLocation();
 
   return (
     <>
-      <div>{location.pathname === "/UseRef" ? <Header/> : null}</div>
+      <SEO
+        title="useRef Hook"
+        description="React useRef hook examples and use cases"
+      />
+      <div>{location.pathname === "/UseRef" ? <Header /> : null}</div>
 
       <NumberAdd />
       <FocusInput />

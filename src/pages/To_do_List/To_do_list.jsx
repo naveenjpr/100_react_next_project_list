@@ -1,62 +1,63 @@
-import React, { useState } from "react"
-import { MdDelete } from "react-icons/md"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { MdDelete } from "react-icons/md";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function To_do_list() {
-  const location = useLocation()
+  const location = useLocation();
 
   // Todolist स्टेट क्रिएट किया है, जो इनपुट फ़ील्ड के लिए है (शुरुआती वैल्यू "naveen" दी गई है)
-  const [Todolist, setTodolist] = useState("naveen")
+  const [Todolist, setTodolist] = useState("naveen");
 
   // लोकल स्टोरेज से पुराना डाटा निकाल रहे हैं, अगर कुछ नहीं मिला तो [] (खाली एरे) सेट कर रहे हैं
-  let oldData = JSON.parse(localStorage.getItem("Todolist")) ?? []
+  let oldData = JSON.parse(localStorage.getItem("Todolist")) ?? [];
 
   // सभी टोडो आइटम को स्टेट में स्टोर कर रहे हैं
-  const [allDolist, setallDolist] = useState(oldData)
+  const [allDolist, setallDolist] = useState(oldData);
 
   // यह फंक्शन नया टास्क ऐड करने के लिए है
   let addTodo = (event) => {
-    event.preventDefault() // फॉर्म के डिफ़ॉल्ट रिफ्रेश होने के व्यवहार को रोकने के लिए
+    event.preventDefault(); // फॉर्म के डिफ़ॉल्ट रिफ्रेश होने के व्यवहार को रोकने के लिए
 
     let obj = {
       Todolist, // टोडो का नाम जो यूज़र ने इनपुट में डाला है
       isStatus: false, // टास्क का स्टेटस (कम्प्लीटेड या नॉट कम्प्लीटेड)
-    }
+    };
 
     // पहले से मौजूद टोडो लिस्ट में नया टोडो ऐड कर रहे हैं
-    let copyData = [...allDolist, obj]
+    let copyData = [...allDolist, obj];
 
     // अपडेटेड लिस्ट को लोकल स्टोरेज में सेव कर रहे हैं
-    localStorage.setItem("Todolist", JSON.stringify(copyData))
+    localStorage.setItem("Todolist", JSON.stringify(copyData));
 
     // स्टेट अपडेट कर रहे हैं जिससे UI में तुरंत अपडेट दिखे
-    setallDolist(copyData)
-  }
+    setallDolist(copyData);
+  };
 
   // यह फंक्शन किसी टास्क को डिलीट करने के लिए है
   let deltelistdata = (index) => {
-    let allItems = [...allDolist] // सभी टोडो की कॉपी बना रहे हैं
-    allItems.splice(index, 1) // दिए गए इंडेक्स का टोडो हटाते हैं
+    let allItems = [...allDolist]; // सभी टोडो की कॉपी बना रहे हैं
+    allItems.splice(index, 1); // दिए गए इंडेक्स का टोडो हटाते हैं
 
     // अपडेटेड लिस्ट को लोकल स्टोरेज में सेव कर रहे हैं
-    localStorage.setItem("Todolist", JSON.stringify(allItems))
+    localStorage.setItem("Todolist", JSON.stringify(allItems));
 
     // स्टेट अपडेट कर रहे हैं
-    setallDolist(allItems)
-  }
+    setallDolist(allItems);
+  };
 
   // यह फंक्शन टास्क को कम्प्लीटेड या अन-कम्प्लीटेड करने के लिए है
   let changeStatus = (index) => {
-    let allItems = [...allDolist] // सभी टोडो की कॉपी बना रहे हैं
-    allItems[index]["isStatus"] = !allItems[index]["isStatus"] // स्टेटस को टॉगल कर रहे हैं
+    let allItems = [...allDolist]; // सभी टोडो की कॉपी बना रहे हैं
+    allItems[index]["isStatus"] = !allItems[index]["isStatus"]; // स्टेटस को टॉगल कर रहे हैं
 
     // अपडेटेड लिस्ट को लोकल स्टोरेज में सेव कर रहे हैं
-    localStorage.setItem("Todolist", JSON.stringify(allItems))
+    localStorage.setItem("Todolist", JSON.stringify(allItems));
 
     // स्टेट अपडेट कर रहे हैं
-    setallDolist(allItems)
-  }
+    setallDolist(allItems);
+  };
 
   return (
     <>
@@ -106,11 +107,11 @@ export default function To_do_list() {
                       <MdDelete className="text-[red]" />
                     </button>
                   </div>
-                )
+                );
               })
             : "no data"}
         </div>
       </div>
     </>
-  )
+  );
 }

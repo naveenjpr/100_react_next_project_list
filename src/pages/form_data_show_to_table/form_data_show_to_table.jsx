@@ -1,19 +1,20 @@
-import React, { useEffect, useState, useRef } from "react"
-import { MdDelete } from "react-icons/md"
-import { FaEdit } from "react-icons/fa"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useEffect, useState, useRef } from "react";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 export default function FormDataShowToTable() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [user, setUser] = useState([]) // सभी यूजर्स को स्टोर करता है
-  const [filteredUser, setFilteredUser] = useState([]) // फिल्टर्ड यूजर्स को स्टोर करता है
-  const [searchTerm, setSearchTerm] = useState("") // सर्च टर्म को स्टोर करता है
-  const [editUser, setEditUser] = useState(null) // एडिट हो रहे यूजर को ट्रैक करता है
-  const tableRef = useRef(null) // टेबल बॉडी के लिए रेफरेंस
+  const [user, setUser] = useState([]); // सभी यूजर्स को स्टोर करता है
+  const [filteredUser, setFilteredUser] = useState([]); // फिल्टर्ड यूजर्स को स्टोर करता है
+  const [searchTerm, setSearchTerm] = useState(""); // सर्च टर्म को स्टोर करता है
+  const [editUser, setEditUser] = useState(null); // एडिट हो रहे यूजर को ट्रैक करता है
+  const tableRef = useRef(null); // टेबल बॉडी के लिए रेफरेंस
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const userDetails = {
       first_name: event.target.first_name.value,
@@ -23,61 +24,65 @@ export default function FormDataShowToTable() {
       gender: event.target.gender.value,
       address: event.target.address.value,
       message: event.target.message.value,
-    }
+    };
 
     if (editUser !== null) {
       const updatedUsers = user.map((u, index) =>
-        index === editUser ? userDetails : u
-      )
-      setUser(updatedUsers)
-      setEditUser(null)
+        index === editUser ? userDetails : u,
+      );
+      setUser(updatedUsers);
+      setEditUser(null);
     } else {
-      setUser([userDetails, ...user]) // नई एंट्री को टॉप पर जोड़ता है
+      setUser([userDetails, ...user]); // नई एंट्री को टॉप पर जोड़ता है
 
-      event.target.reset()
+      event.target.reset();
     }
     //Delete User
     const handleDelete = (index) => {
       if (window.confirm("Are you sure you want to delete this?")) {
-        const updatedUsers = user.filter((_, i) => i !== index)
-        setUser(updatedUsers)
+        const updatedUsers = user.filter((_, i) => i !== index);
+        setUser(updatedUsers);
       }
-    }
+    };
     // Edit User
     const handleEdit = (index) => {
-      setEditUser(index)
+      setEditUser(index);
       // window.scrollTo({ top: 0, behavior: "smooth" }) // Scroll to the top of the page smoothly
-    }
+    };
 
     useEffect(() => {
-      const savedUsers = JSON.parse(localStorage.getItem("users")) || []
-      setUser(savedUsers)
-    }, [])
-  }
+      const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
+      setUser(savedUsers);
+    }, []);
+  };
   useEffect(() => {
     if (tableRef.current) {
-      const lastRow = tableRef.current.querySelector("tr:last-child")
+      const lastRow = tableRef.current.querySelector("tr:last-child");
       if (lastRow) {
-        lastRow.scrollIntoView({ behavior: "smooth", block: "start" })
+        lastRow.scrollIntoView({ behavior: "smooth", block: "start" });
 
         // Add a highlight effect
       }
     }
-    localStorage.setItem("users", JSON.stringify(user))
-  }, [user])
+    localStorage.setItem("users", JSON.stringify(user));
+  }, [user]);
 
   //. सर्च टर्म के आधार पर फिल्टर करना
   useEffect(() => {
     const filtered = user.filter((u) =>
       `${u.first_name} ${u.last_name}`
         .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-    )
-    setFilteredUser(filtered)
-  }, [searchTerm, user])
+        .includes(searchTerm.toLowerCase()),
+    );
+    setFilteredUser(filtered);
+  }, [searchTerm, user]);
 
   return (
     <>
+      <SEO
+        title="Form Data Manager"
+        description="Manage and display form data in an interactive table"
+      />
       <div>
         {location.pathname === "/FormDataShowToTable" ? <Header /> : null}
       </div>
@@ -271,5 +276,5 @@ export default function FormDataShowToTable() {
         </div>
       </div>
     </>
-  )
+  );
 }

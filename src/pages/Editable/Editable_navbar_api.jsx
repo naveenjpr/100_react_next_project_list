@@ -7,12 +7,13 @@ import { IoPencilOutline } from "react-icons/io5";
 import { IoIosSave } from "react-icons/io";
 // टोस्ट नोटिफिकेशन के लिए आयात करें
 import { toast, ToastContainer } from "react-toastify";
+import SEO from "../../Common page/SEO";
 
 // मुख्य कंपोनेंट फंक्शन
 export default function Edit_navbar_or_logo_api() {
   // बेस URL डेफाइन करें
   const baseurl = "https://node-j-my-portfolio-mail-send.onrender.com/";
-  
+
   // मेनू आइटम्स की स्टेट
   const [menuItems, setMenuItems] = useState([
     "Our Courses",
@@ -40,7 +41,9 @@ export default function Edit_navbar_or_logo_api() {
   useEffect(() => {
     // API से नेवबार डेटा फ़ेच करें
     axios
-      .get("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/view")
+      .get(
+        "https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/view",
+      )
       .then((res) => {
         // अगर रेस्पॉन्स सफल है तो डेटा सेट करें
         if (res.data.status && res.data.data) {
@@ -50,7 +53,7 @@ export default function Edit_navbar_or_logo_api() {
           setImageUrl(res.data.imagepath);
           // मेनू आइटम्स सेट करें
           setMenuItems(res.data.data.menuItems || []);
-          
+
           // कंसोल में लोगो URL लॉग करें
           console.log("Logo URL:", res.data.data.logoUrl);
           // कंसोल में इमेज पाथ लॉग करें
@@ -80,17 +83,20 @@ export default function Edit_navbar_or_logo_api() {
     // फॉर्म डेटा ऑब्जेक्ट बनाएं
     const formData = new FormData();
     // मेनू आइटम्स को JSON स्ट्रिंग के रूप में ऐड करें
-    formData.append('menuItems', JSON.stringify(menuItems));
-    
+    formData.append("menuItems", JSON.stringify(menuItems));
+
     // अगर लोगो के लिए फाइल चुनी गई है तो इसे ऐड करें
     if (selectedFile) {
       // लोगो फाइल ऐड करें
-      formData.append('logoUrl', selectedFile);
+      formData.append("logoUrl", selectedFile);
     }
 
     // API को POST रिक्वेस्ट भेजें
     axios
-      .post("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add", formData)
+      .post(
+        "https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add",
+        formData,
+      )
       .then((res) => {
         // अगर रेस्पॉन्स सफल है
         if (res.data.status) {
@@ -98,7 +104,7 @@ export default function Edit_navbar_or_logo_api() {
           toast.success("Navbar updated successfully!");
           // एडिटिंग मोड बंद करें
           setIsEditing(false);
-          
+
           // अगर लोगो बदला गया है तो अपडेट करें
           if (res.data.data.logoUrl) {
             // नया लोगो URL सेट करें
@@ -153,13 +159,16 @@ export default function Edit_navbar_or_logo_api() {
     // फॉर्म डेटा ऑब्जेक्ट बनाएं
     const formData = new FormData();
     // मेनू आइटम्स ऐड करें
-    formData.append('menuItems', JSON.stringify(menuItems));
+    formData.append("menuItems", JSON.stringify(menuItems));
     // लोगो फाइल ऐड करें
-    formData.append('logoUrl', selectedFile);
+    formData.append("logoUrl", selectedFile);
 
     // API को POST रिक्वेस्ट भेजें
     axios
-      .post("https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add", formData)
+      .post(
+        "https://node-j-my-portfolio-mail-send.onrender.com/api/backend/navbar/add",
+        formData,
+      )
       .then((res) => {
         // अगर रेस्पॉन्स सफल है
         if (res.data.status) {
@@ -201,132 +210,138 @@ export default function Edit_navbar_or_logo_api() {
 
   // कंपोनेंट रेंडरिंग
   return (
-    // हेडर सेक्शन
-    <header className="w-full h-[80px] bg-slate-400">
-      {/* टोस्ट कंटेनर */}
-      <ToastContainer />
-      {/* नेविगेशन सेक्शन */}
-      <nav className="flex justify-between items-center py-[10px] text-black font-bold gap-5 max-w-[1170px] mx-auto">
-        {/* मेनू लिस्ट */}
-        <ul className="flex gap-5 items-center">
-          {/* लोगो सेक्शन */}
-          <li className="relative">
-            {/* अगर इमेज एडिटिंग मोड में है */}
-            {imageEditing ? (
-              // एडिटिंग इंटरफेस
-              <div className="flex flex-col items-start gap-2">
-                {/* फाइल इनपुट */}
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleLogoChange}
-                  className="border px-2 py-1 rounded w-[200px] text-sm"
-                />
-                {/* अगर प्रिव्यू इमेज है */}
-                {preImagePath && (
-                  // प्रिव्यू सेक्शन
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs">Preview:</span>
-                    {/* प्रिव्यू इमेज */}
+    <>
+      <SEO
+        title="Editable Navbar - API"
+        description="Edit navbar with API integration"
+      />
+      {/* हेडर सेक्शन */}
+      <header className="w-full h-[80px] bg-slate-400">
+        {/* टोस्ट कंटेनर */}
+        <ToastContainer />
+        {/* नेविगेशन सेक्शन */}
+        <nav className="flex justify-between items-center py-[10px] text-black font-bold gap-5 max-w-[1170px] mx-auto">
+          {/* मेनू लिस्ट */}
+          <ul className="flex gap-5 items-center">
+            {/* लोगो सेक्शन */}
+            <li className="relative">
+              {/* अगर इमेज एडिटिंग मोड में है */}
+              {imageEditing ? (
+                // एडिटिंग इंटरफेस
+                <div className="flex flex-col items-start gap-2">
+                  {/* फाइल इनपुट */}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleLogoChange}
+                    className="border px-2 py-1 rounded w-[200px] text-sm"
+                  />
+                  {/* अगर प्रिव्यू इमेज है */}
+                  {preImagePath && (
+                    // प्रिव्यू सेक्शन
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs">Preview:</span>
+                      {/* प्रिव्यू इमेज */}
+                      <img
+                        src={preImagePath}
+                        className="w-[80px] h-[40px] object-contain border"
+                        alt="Preview"
+                      />
+                    </div>
+                  )}
+                  {/* एक्शन बटन्स */}
+                  <div className="flex gap-2 mt-1">
+                    {/* सेव बटन */}
+                    <button
+                      onClick={saveLogoChanges}
+                      className="text-xs bg-green-600 text-white px-2 py-1 rounded flex items-center gap-1"
+                    >
+                      <IoIosSave /> Save
+                    </button>
+                    {/* कैंसल बटन */}
+                    <button
+                      onClick={cancelLogoEdit}
+                      className="text-xs bg-gray-600 text-white px-2 py-1 rounded"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                // नॉर्मल लोगो डिस्प्ले
+                logoUrl && (
+                  <div className="relative flex items-center gap-2">
+                    {/* लोगो इमेज */}
                     <img
-                      src={preImagePath}
-                      className="w-[80px] h-[40px] object-contain border"
-                      alt="Preview"
+                      src={`${baseurl}${imageUrl}${logoUrl}`}
+                      alt="Website Logo"
+                      className="w-[120px] h-[50px] object-contain"
+                    />
+                    {/* एडिट आइकन */}
+                    <IoPencilOutline
+                      className="cursor-pointer absolute right-0 top-0 text-red-600 text-lg"
+                      onClick={() => setImageEditing(true)}
+                      title="Edit Logo"
                     />
                   </div>
-                )}
-                {/* एक्शन बटन्स */}
-                <div className="flex gap-2 mt-1">
-                  {/* सेव बटन */}
-                  <button
-                    onClick={saveLogoChanges}
-                    className="text-xs bg-green-600 text-white px-2 py-1 rounded flex items-center gap-1"
-                  >
-                    <IoIosSave /> Save
-                  </button>
-                  {/* कैंसल बटन */}
-                  <button
-                    onClick={cancelLogoEdit}
-                    className="text-xs bg-gray-600 text-white px-2 py-1 rounded"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            ) : (
-              // नॉर्मल लोगो डिस्प्ले
-              logoUrl && (
-                <div className="relative flex items-center gap-2">
-                  {/* लोगो इमेज */}
-                  <img
-                    src={`${baseurl}${imageUrl}${logoUrl}`}
-                    alt="Website Logo"
-                    className="w-[120px] h-[50px] object-contain"
-                  />
-                  {/* एडिट आइकन */}
-                  <IoPencilOutline
-                    className="cursor-pointer absolute right-0 top-0 text-red-600 text-lg"
-                    onClick={() => setImageEditing(true)}
-                    title="Edit Logo"
-                  />
-                </div>
-              )
-            )}
-          </li>
-
-          {/* मेनू आइटम्स लूप */}
-          {menuItems.map((item, index) => (
-            // प्रत्येक मेनू आइटम
-            <li key={index} className="w-auto min-w-[100px]">
-              {/* अगर एडिटिंग मोड में है */}
-              {isEditing ? (
-                // एडिटेबल इनपुट
-                <input
-                  type="text"
-                  value={item}
-                  onChange={(e) => handleChange(e, index)}
-                  className="w-full border px-2 py-1 rounded text-sm"
-                />
-              ) : (
-                // डिस्प्ले टेक्स्ट
-                <span className="text-sm whitespace-nowrap">{item}</span>
+                )
               )}
             </li>
-          ))}
-        </ul>
 
-        {/* मेनू एडिट/सेव सेक्शन */}
-        <div>
-          {/* अगर एडिटिंग मोड में है */}
-          {isEditing ? (
-            // सेव और कैंसल बटन्स
-            <div className="flex gap-2">
-              {/* सेव बटन */}
+            {/* मेनू आइटम्स लूप */}
+            {menuItems.map((item, index) => (
+              // प्रत्येक मेनू आइटम
+              <li key={index} className="w-auto min-w-[100px]">
+                {/* अगर एडिटिंग मोड में है */}
+                {isEditing ? (
+                  // एडिटेबल इनपुट
+                  <input
+                    type="text"
+                    value={item}
+                    onChange={(e) => handleChange(e, index)}
+                    className="w-full border px-2 py-1 rounded text-sm"
+                  />
+                ) : (
+                  // डिस्प्ले टेक्स्ट
+                  <span className="text-sm whitespace-nowrap">{item}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* मेनू एडिट/सेव सेक्शन */}
+          <div>
+            {/* अगर एडिटिंग मोड में है */}
+            {isEditing ? (
+              // सेव और कैंसल बटन्स
+              <div className="flex gap-2">
+                {/* सेव बटन */}
+                <button
+                  className="text-xs font-bold bg-green-600 text-white px-3 py-2 rounded-md hover:bg-green-700 transition"
+                  onClick={saveMenuToAPI}
+                >
+                  Save Menu
+                </button>
+                {/* कैंसल बटन */}
+                <button
+                  className="text-xs font-bold bg-gray-600 text-white px-3 py-2 rounded-md hover:bg-gray-700 transition"
+                  onClick={() => setIsEditing(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              // एडिट बटन
               <button
-                className="text-xs font-bold bg-green-600 text-white px-3 py-2 rounded-md hover:bg-green-700 transition"
-                onClick={saveMenuToAPI}
+                className="text-xs font-bold bg-red-600 text-white px-3 py-2 rounded-md hover:bg-red-700 transition"
+                onClick={() => setIsEditing(true)}
               >
-                Save Menu
+                Edit Menu
               </button>
-              {/* कैंसल बटन */}
-              <button
-                className="text-xs font-bold bg-gray-600 text-white px-3 py-2 rounded-md hover:bg-gray-700 transition"
-                onClick={() => setIsEditing(false)}
-              >
-                Cancel
-              </button>
-            </div>
-          ) : (
-            // एडिट बटन
-            <button
-              className="text-xs font-bold bg-red-600 text-white px-3 py-2 rounded-md hover:bg-red-700 transition"
-              onClick={() => setIsEditing(true)}
-            >
-              Edit Menu
-            </button>
-          )}
-        </div>
-      </nav>
-    </header>
+            )}
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }

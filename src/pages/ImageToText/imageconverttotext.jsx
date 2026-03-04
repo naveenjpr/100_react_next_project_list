@@ -1,70 +1,75 @@
-import React, { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
 
-import { ToastContainer, toast } from "react-toastify" // ✅ Import toast
-import "react-toastify/dist/ReactToastify.css" // ✅ Import styles
-import Tesseract from "tesseract.js"
+import { ToastContainer, toast } from "react-toastify"; // ✅ Import toast
+import "react-toastify/dist/ReactToastify.css"; // ✅ Import styles
+import Tesseract from "tesseract.js";
+import SEO from "../../Common page/SEO";
 
 export default function ImageToText() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [image, setImage] = useState(null) // इमेज स्टोर करने के लिए
-  const [text, setText] = useState("") // इमेज से निकला हुआ टेक्स्ट स्टोर करने के लिए
-  const [loading, setLoading] = useState(false) // लोडिंग स्टेट को ट्रैक करने के लिए
-  const [language, setLanguage] = useState("eng") // डिफॉल्ट भाषा इंग्लिश सेट की गई है
+  const [image, setImage] = useState(null); // इमेज स्टोर करने के लिए
+  const [text, setText] = useState(""); // इमेज से निकला हुआ टेक्स्ट स्टोर करने के लिए
+  const [loading, setLoading] = useState(false); // लोडिंग स्टेट को ट्रैक करने के लिए
+  const [language, setLanguage] = useState("eng"); // डिफॉल्ट भाषा इंग्लिश सेट की गई है
 
   const handleImageUpload = (event) => {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file) // इमेज का URL बनाना
-      setImage(imageUrl) // स्टेट में सेट करना
+      const imageUrl = URL.createObjectURL(file); // इमेज का URL बनाना
+      setImage(imageUrl); // स्टेट में सेट करना
     }
-  }
+  };
 
   const handleConvert = async () => {
-    if (!image) return // यदि इमेज नहीं है, तो फ़ंक्शन रोक दें
-    setLoading(true) // लोडिंग स्टेट को `true` करें
-    setText("") // पहले से मौजूद टेक्स्ट को क्लियर करें
+    if (!image) return; // यदि इमेज नहीं है, तो फ़ंक्शन रोक दें
+    setLoading(true); // लोडिंग स्टेट को `true` करें
+    setText(""); // पहले से मौजूद टेक्स्ट को क्लियर करें
 
     try {
       const {
         data: { text },
       } = await Tesseract.recognize(image, language, {
         logger: (m) => console.log(m), // प्रोसेस की प्रगति (progress) दिखाने के लिए
-      })
-      setText(text) // टेक्स्ट को स्टेट में सेट करें
+      });
+      setText(text); // टेक्स्ट को स्टेट में सेट करें
     } catch (error) {
-      console.error("Error during OCR:", error)
-      setText("Error in conversion") // यदि कोई एरर आए, तो यूज़र को बताएं
+      console.error("Error during OCR:", error);
+      setText("Error in conversion"); // यदि कोई एरर आए, तो यूज़र को बताएं
     } finally {
-      setLoading(false) // लोडिंग खत्म होने के बाद `false` कर दें
+      setLoading(false); // लोडिंग खत्म होने के बाद `false` कर दें
     }
-  }
+  };
 
   const copypassword = () => {
     if (text.trim() !== "") {
-      navigator.clipboard.writeText(text) // टेक्स्ट क्लिपबोर्ड में कॉपी करें
-      toast.success("✅ Text copied to clipboard!") // सफल होने पर नोटिफिकेशन दिखाएं
+      navigator.clipboard.writeText(text); // टेक्स्ट क्लिपबोर्ड में कॉपी करें
+      toast.success("✅ Text copied to clipboard!"); // सफल होने पर नोटिफिकेशन दिखाएं
     } else {
-      toast.error("❌ No text available to copy.") // यदि कोई टेक्स्ट नहीं है, तो एरर दिखाएं
+      toast.error("❌ No text available to copy."); // यदि कोई टेक्स्ट नहीं है, तो एरर दिखाएं
     }
-  }
+  };
 
   const handleReset = () => {
-    setImage(null)
-    setText("")
-    setLoading(false)
-    setLanguage("eng")
+    setImage(null);
+    setText("");
+    setLoading(false);
+    setLanguage("eng");
 
-    const fileInput = document.getElementById("fileInput")
+    const fileInput = document.getElementById("fileInput");
     if (fileInput) {
-      fileInput.value = "" // फाइल इनपुट को भी रीसेट करें
+      fileInput.value = ""; // फाइल इनपुट को भी रीसेट करें
     }
-  }
+  };
 
   return (
     <>
+      <SEO
+        title="Image to Text Converter"
+        description="Convert images to text using advanced OCR technology"
+      />
       <div>{location.pathname === "/ImageToText" ? <Header /> : null}</div>
 
       <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
@@ -133,5 +138,5 @@ export default function ImageToText() {
         />{" "}
       </div>
     </>
-  )
+  );
 }
