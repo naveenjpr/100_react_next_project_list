@@ -1,14 +1,15 @@
-import { useState, useCallback } from "react"
-import { toast, ToastContainer } from "react-toastify"
-import hastags from "../../assets/building-hashtag-concept-illustration_114360-7213.avif"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import { useState, useCallback } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import hastags from "../../assets/building-hashtag-concept-illustration_114360-7213.avif";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 const HashtagGenerator = () => {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [inputText, setInputText] = useState("")
-  const [generatedHashtag, setGeneratedHashtag] = useState("")
+  const [inputText, setInputText] = useState("");
+  const [generatedHashtag, setGeneratedHashtag] = useState("");
   const [tradingHashtags, setTradingHashtags] = useState([
     "ReactJS",
     "React",
@@ -25,22 +26,24 @@ const HashtagGenerator = () => {
     "MVC",
     "ModelViewController",
     "Tailwind",
-  ])
+  ]);
 
   const generateHashtag = useCallback(() => {
-    const trimmedText = inputText.trim()
+    const trimmedText = inputText.trim();
     if (!trimmedText) {
-      setGeneratedHashtag("Please enter a phrase!")
-      return
+      setGeneratedHashtag("Please enter a phrase!");
+      return;
     }
-    const words = trimmedText.split(/\s+/)
-    const hashtags = words.map((word) => `#${word.replace(/#/g, "")}`).join(" ")
-    setGeneratedHashtag(hashtags)
-  }, [inputText])
+    const words = trimmedText.split(/\s+/);
+    const hashtags = words
+      .map((word) => `#${word.replace(/#/g, "")}`)
+      .join(" ");
+    setGeneratedHashtag(hashtags);
+  }, [inputText]);
 
   const copyHashtag = async () => {
     try {
-      await navigator.clipboard.writeText(generatedHashtag)
+      await navigator.clipboard.writeText(generatedHashtag);
       toast.success("Hashtags copied to clipboard!", {
         position: "top-right",
         autoClose: 1000,
@@ -48,9 +51,9 @@ const HashtagGenerator = () => {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-      })
+      });
     } catch (error) {
-      console.error("Failed to copy hashtags:", error)
+      console.error("Failed to copy hashtags:", error);
       toast.error("Failed to copy hashtags. Please try again.", {
         position: "top-right",
         autoClose: 3000,
@@ -58,12 +61,12 @@ const HashtagGenerator = () => {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-      })
+      });
     }
-  }
+  };
   const resetHashtagsData = () => {
-    setInputText("")
-    setGeneratedHashtag("")
+    setInputText("");
+    setGeneratedHashtag("");
     setTradingHashtags([
       "ReactJS",
       "React",
@@ -79,15 +82,19 @@ const HashtagGenerator = () => {
       "FullStack",
       "MVC",
       "Model-View-Controller",
-    ])
-  }
+    ]);
+  };
 
   return (
     <>
+      {" "}
+      <SEO
+        title="Hashtag Generator"
+        description="Generate trending hashtags for social media posts"
+      />
       <div>
         {location.pathname === "/Hash-tag-Generator" ? <Header /> : null}
       </div>
-
       <div
         className="bg-gray-100 flex items-center justify-center min-h-screen p-4"
         style={{ backgroundImage: `url(${hastags})` }} // बैकग्राउंड इमेज सेट कर रहे हैं
@@ -156,7 +163,7 @@ const HashtagGenerator = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HashtagGenerator
+export default HashtagGenerator;

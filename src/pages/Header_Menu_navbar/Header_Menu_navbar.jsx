@@ -1,16 +1,21 @@
-import React, { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
-import { IoReorderThreeOutline } from "react-icons/io5"
-import { RxCross2 } from "react-icons/rx"
-import logo from "../../assets/Screenshot 2025-02-18 103552.png"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import { IoReorderThreeOutline } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
+import logo from "../../assets/Screenshot 2025-02-18 103552.png";
+import SEO from "../../Common page/SEO";
 
 export default function Header_Menu_navbar() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [showmenu, setshowmenu] = useState(false) //यह स्टेट वेरिएबल मोबाइल मेनू को दिखाने या छिपाने के लिए उपयोग किया जाता है।
+  const [showmenu, setshowmenu] = useState(false); //यह स्टेट वेरिएबल मोबाइल मेनू को दिखाने या छिपाने के लिए उपयोग किया जाता है।
   return (
     <>
+      <SEO
+        title="Header Menu Navbar"
+        description="Responsive navigation menu with desktop and mobile layouts"
+      />
       <div>
         {location.pathname === "/Header_Menu_navbar" ? <Header /> : null}
       </div>
@@ -59,5 +64,5 @@ export default function Header_Menu_navbar() {
       </header>
       {/* mobile navbar End*/}
     </>
-  )
+  );
 }

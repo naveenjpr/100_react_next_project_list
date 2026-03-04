@@ -10,6 +10,7 @@ import note5 from "../../assets/wordpress/Screenshot 2025-05-01 213149.png";
 import note6 from "../../assets/wordpress/Screenshot 2025-05-01 213647.png";
 import note7 from "../../assets/wordpress/Screenshot 2025-05-01 214232.png";
 import { HiH3 } from "react-icons/hi2";
+import SEO from "../../Common page/SEO";
 
 export default function Wordpress() {
   const navItems = [
@@ -1622,125 +1623,125 @@ function Passwordlostpasswordchnage() {
 function Plugin_name() {
   const plugins = [
     {
-      "name": "Smart Slider 3",
-      "author": "Nextendweb",
-      "purpose": "Create modern, responsive sliders with animations"
+      name: "Smart Slider 3",
+      author: "Nextendweb",
+      purpose: "Create modern, responsive sliders with animations",
     },
     {
-      "name": "Smush",
-      "author": "WPMU DEV",
-      "purpose": "Image optimization and compression"
+      name: "Smush",
+      author: "WPMU DEV",
+      purpose: "Image optimization and compression",
     },
     {
-      "name": "Recent Posts Widget With Thumbnails",
-      "author": "Unknown",
-      "purpose": "Display recent posts with thumbnails in sidebar"
+      name: "Recent Posts Widget With Thumbnails",
+      author: "Unknown",
+      purpose: "Display recent posts with thumbnails in sidebar",
     },
     {
-      "name": "WP News and Scrolling Widgets",
-      "author": "Essential Plugins by WP OnlineSupport",
-      "purpose": "Auto-playing news ticker functionality"
+      name: "WP News and Scrolling Widgets",
+      author: "Essential Plugins by WP OnlineSupport",
+      purpose: "Auto-playing news ticker functionality",
     },
     {
-      "name": "Elementor Pro",
-      "author": "Elementor",
-      "purpose": "Advanced page building functionality"
+      name: "Elementor Pro",
+      author: "Elementor",
+      purpose: "Advanced page building functionality",
     },
     {
-      "name": "Under Construction",
-      "author": "WebFactory",
-      "purpose": "Show under construction page during development"
+      name: "Under Construction",
+      author: "WebFactory",
+      purpose: "Show under construction page during development",
     },
     {
-      "name": "Contact Form 7",
-      "author": "Takayuki Miyoshi",
-      "purpose": "Create and manage contact forms for sending emails"
+      name: "Contact Form 7",
+      author: "Takayuki Miyoshi",
+      purpose: "Create and manage contact forms for sending emails",
     },
     {
-      "name": "Advanced Contact form 7 DB",
-      "author": "Vsourz Digital",
-      "purpose": "Store and view contact form submissions in dashboard"
+      name: "Advanced Contact form 7 DB",
+      author: "Vsourz Digital",
+      purpose: "Store and view contact form submissions in dashboard",
     },
     {
-      "name": "Popup Maker",
-      "author": "Daniel Iser",
-      "purpose": "Create popups, lightboxes and popup contact forms"
+      name: "Popup Maker",
+      author: "Daniel Iser",
+      purpose: "Create popups, lightboxes and popup contact forms",
     },
     {
-      "name": "WPForms",
-      "author": "Syed Balkhi",
-      "purpose": "Form builder for contact forms, payments and surveys"
+      name: "WPForms",
+      author: "Syed Balkhi",
+      purpose: "Form builder for contact forms, payments and surveys",
     },
     {
-      "name": "Yoast SEO",
-      "author": "Yoast",
-      "purpose": "Search engine optimization tools"
+      name: "Yoast SEO",
+      author: "Yoast",
+      purpose: "Search engine optimization tools",
     },
     {
-      "name": "Rank Math SEO",
-      "author": "Rank Math",
-      "purpose": "Alternative SEO plugin with AI features"
+      name: "Rank Math SEO",
+      author: "Rank Math",
+      purpose: "Alternative SEO plugin with AI features",
     },
     {
-      "name": "WP Rocket",
-      "author": "WP Media",
-      "purpose": "Premium caching and performance optimization"
+      name: "WP Rocket",
+      author: "WP Media",
+      purpose: "Premium caching and performance optimization",
     },
     {
-      "name": "RSS Feed Widget",
-      "author": "Fahad Mahmood",
-      "purpose": "Display RSS feeds in widgets"
+      name: "RSS Feed Widget",
+      author: "Fahad Mahmood",
+      purpose: "Display RSS feeds in widgets",
     },
     {
-      "name": "Visual Portfolio, Photo Gallery & Post Grid",
-      "author": "Nikita",
-      "purpose": "Create portfolios and galleries"
+      name: "Visual Portfolio, Photo Gallery & Post Grid",
+      author: "Nikita",
+      purpose: "Create portfolios and galleries",
     },
     {
-      "name": "Preloader",
-      "author": "Alobaidi",
-      "purpose": "Add loading animation while page loads"
+      name: "Preloader",
+      author: "Alobaidi",
+      purpose: "Add loading animation while page loads",
     },
     {
-      "name": "Accordion FAQ",
-      "author": "wpshopmart",
-      "purpose": "Create FAQ accordions compatible with page builders"
+      name: "Accordion FAQ",
+      author: "wpshopmart",
+      purpose: "Create FAQ accordions compatible with page builders",
     },
     {
-      "name": "GTranslate",
-      "author": "edo888",
-      "purpose": "Multilingual translation for website"
+      name: "GTranslate",
+      author: "edo888",
+      purpose: "Multilingual translation for website",
     },
     {
-      "name": "Responsive Menu",
-      "author": "ExpressTech Systems",
-      "purpose": "Create mobile-friendly menus"
+      name: "Responsive Menu",
+      author: "ExpressTech Systems",
+      purpose: "Create mobile-friendly menus",
     },
     {
-      "name": "WP User Frontend",
-      "author": "Tareq Hasan",
-      "purpose": "Frontend user profiles, memberships and content restriction"
+      name: "WP User Frontend",
+      author: "Tareq Hasan",
+      purpose: "Frontend user profiles, memberships and content restriction",
     },
     {
-      "name": "WooCommerce",
-      "author": "Automattic",
-      "purpose": "Ecommerce functionality"
+      name: "WooCommerce",
+      author: "Automattic",
+      purpose: "Ecommerce functionality",
     },
     {
-      "name": "YITH Request a Quote for WooCommerce",
-      "author": "YITHEMES",
-      "purpose": "Add quote request functionality to WooCommerce"
+      name: "YITH Request a Quote for WooCommerce",
+      author: "YITHEMES",
+      purpose: "Add quote request functionality to WooCommerce",
     },
     {
-      "name": "Smush Image Optimization",
-      "author": "WPMU DEV",
-      "purpose": "Image optimization, WebP conversion and lazy loading"
+      name: "Smush Image Optimization",
+      author: "WPMU DEV",
+      purpose: "Image optimization, WebP conversion and lazy loading",
     },
     {
-      "name": "Autoptimize",
-      "author": "Optimizing Matters",
-      "purpose": "Optimize JS, CSS, HTML and fonts for performance"
-    }
+      name: "Autoptimize",
+      author: "Optimizing Matters",
+      purpose: "Optimize JS, CSS, HTML and fonts for performance",
+    },
   ];
   return (
     <div className="border-[2px] border-[black] my-[10px]" id="Plugin_name">
@@ -2015,8 +2016,7 @@ function Sticky_page() {
                 .
               </li>
               <li>
-                Select{" "}
-                <strong className="text-gray-800">A static page</strong>.
+                Select <strong className="text-gray-800">A static page</strong>.
               </li>
               <li>
                 Choose your <strong className="text-gray-800">Homepage</strong>{" "}
@@ -2413,7 +2413,7 @@ function WPForms_Contact_Form() {
             </li>
           </ul>
           <p className="mt-2 text-sm text-gray-500">
-            Ye settings aapko milengi: <strong>Settings  Notifications</strong>
+            Ye settings aapko milengi: <strong>Settings Notifications</strong>
             ke andar.
           </p>
         </div>
@@ -2576,8 +2576,8 @@ function Elementor_details() {
           </li>
           <li>
             Elementor me search bar me{" "}
-            <span className="font-medium">Smart Slider</span> likhne par
-            widget show ho jata hai.
+            <span className="font-medium">Smart Slider</span> likhne par widget
+            show ho jata hai.
           </li>
           <li>Drag and drop karke directly page par use kar sakte hain.</li>
         </ul>
@@ -2864,7 +2864,10 @@ function Recapha() {
 }
 function Seo() {
   return (
-    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"id="Seo">
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="Seo"
+    >
       <h1 className="text-2xl font-bold text-green-600 mb-6 text-center">
         Yoast SEO Sitemap Setup Guide
       </h1>
@@ -2940,98 +2943,132 @@ function Seo() {
   );
 }
 
-function Website_role(){
-  return(
-    <div className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]" id="Website_role">
-    <h1 className="text-3xl font-bold text-blue-700 mb-8 text-center">
-      WordPress User Creation & Roles Guide
-    </h1>
+function Website_role() {
+  return (
+    <div
+      className="w-full   p-6 border-2 border-solid border-[black] rounded-lg bg-white shadow-md my-[10px]"
+      id="Website_role"
+    >
+      <h1 className="text-3xl font-bold text-blue-700 mb-8 text-center">
+        WordPress User Creation & Roles Guide
+      </h1>
 
-    {/* User Creation Form Info */}
-    <section className="mb-10">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-        User Creation Steps (Add New User)
-      </h2>
-      <ul className="list-disc list-inside space-y-2 text-gray-700">
-        <li>
-          Left side Dashboard में <strong>User</strong> menu आएगा। वहाँ जाएँ और{" "}
-          <strong>Add New</strong> पर क्लिक करें।
-        </li>
-        <li>
-          फॉर्म भरें:
-          <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-gray-600">
-            <li><strong>Username (required):</strong> जैसे demo</li>
-            <li><strong>Email (required):</strong> जैसे menkasaini1990@gmail.com</li>
-            <li><strong>First Name:</strong> menka</li>
-            <li><strong>Last Name:</strong> saini</li>
-            <li><strong>Website:</strong> (optional)</li>
-            <li><strong>Password:</strong> Generate password या खुद लिखें</li>
-            <li><strong>Confirm Password:</strong> Confirm use of weak password (अगर कमजोर पासवर्ड इस्तेमाल करना हो)</li>
-            <li><strong>Send User Notification:</strong> नई यूजर को ईमेल भेजने के लिए चेक करें</li>
-            <li>
-              <strong>Role:</strong> यहाँ यूजर का रोल चुनें - उदाहरण के लिए Administrator, Contributor आदि
-            </li>
-          </ul>
-        </li>
-        <li>फॉर्म सबमिट करें और नया यूजर बन जाएगा।</li>
-      </ul>
-    </section>
+      {/* User Creation Form Info */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          User Creation Steps (Add New User)
+        </h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
+          <li>
+            Left side Dashboard में <strong>User</strong> menu आएगा। वहाँ जाएँ
+            और <strong>Add New</strong> पर क्लिक करें।
+          </li>
+          <li>
+            फॉर्म भरें:
+            <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-gray-600">
+              <li>
+                <strong>Username (required):</strong> जैसे demo
+              </li>
+              <li>
+                <strong>Email (required):</strong> जैसे menkasaini1990@gmail.com
+              </li>
+              <li>
+                <strong>First Name:</strong> menka
+              </li>
+              <li>
+                <strong>Last Name:</strong> saini
+              </li>
+              <li>
+                <strong>Website:</strong> (optional)
+              </li>
+              <li>
+                <strong>Password:</strong> Generate password या खुद लिखें
+              </li>
+              <li>
+                <strong>Confirm Password:</strong> Confirm use of weak password
+                (अगर कमजोर पासवर्ड इस्तेमाल करना हो)
+              </li>
+              <li>
+                <strong>Send User Notification:</strong> नई यूजर को ईमेल भेजने
+                के लिए चेक करें
+              </li>
+              <li>
+                <strong>Role:</strong> यहाँ यूजर का रोल चुनें - उदाहरण के लिए
+                Administrator, Contributor आदि
+              </li>
+            </ul>
+          </li>
+          <li>फॉर्म सबमिट करें और नया यूजर बन जाएगा।</li>
+        </ul>
+      </section>
 
-    {/* User Roles Explanation */}
-    <section>
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-        WordPress के मुख्य User Roles:
-      </h2>
+      {/* User Roles Explanation */}
+      <section>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          WordPress के मुख्य User Roles:
+        </h2>
 
-      <div className="grid lg:grid-cols-3 grid-cols-1 space-y-6 text-gray-700">
-        <div>
-          <h3 className="text-xl font-semibold text-indigo-600">Administrator</h3>
-          <p>
-            Full control होता है site पर।<br />
-            Themes, plugins install/update/delete कर सकता है।<br />
-            Users को manage कर सकता है।<br />
-            Content लिख, edit, publish और delete कर सकता है (दूसरों का भी)।
-          </p>
+        <div className="grid lg:grid-cols-3 grid-cols-1 space-y-6 text-gray-700">
+          <div>
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Administrator
+            </h3>
+            <p>
+              Full control होता है site पर।
+              <br />
+              Themes, plugins install/update/delete कर सकता है।
+              <br />
+              Users को manage कर सकता है।
+              <br />
+              Content लिख, edit, publish और delete कर सकता है (दूसरों का भी)।
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-indigo-600">Editor</h3>
+            <p>
+              खुद और दूसरे authors के posts को publish, edit, delete कर सकता है।
+              <br />
+              Pages और comments को manage कर सकता है।
+              <br />
+              Users या site settings access नहीं कर सकता।
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-indigo-600">Author</h3>
+            <p>
+              केवल अपने posts लिख, edit, publish और delete कर सकता है।
+              <br />
+              Media files upload कर सकता है।
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Contributor
+            </h3>
+            <p>
+              Posts लिख सकता है लेकिन publish नहीं कर सकता।
+              <br />
+              Media upload नहीं कर सकता।
+              <br />
+              Editor या Administrator के approval के बाद post publish होता है।
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Subscriber
+            </h3>
+            <p>
+              केवल login कर सकता है और अपनी profile manage कर सकता है।
+              <br />
+              आमतौर पर membership या commenting purposes के लिए उपयोग होता है।
+            </p>
+          </div>
         </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-indigo-600">Editor</h3>
-          <p>
-            खुद और दूसरे authors के posts को publish, edit, delete कर सकता है।<br />
-            Pages और comments को manage कर सकता है।<br />
-            Users या site settings access नहीं कर सकता।
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-indigo-600">Author</h3>
-          <p>
-            केवल अपने posts लिख, edit, publish और delete कर सकता है।<br />
-            Media files upload कर सकता है।
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-indigo-600">Contributor</h3>
-          <p>
-            Posts लिख सकता है लेकिन publish नहीं कर सकता।<br />
-            Media upload नहीं कर सकता।<br />
-            Editor या Administrator के approval के बाद post publish होता है।
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-indigo-600">Subscriber</h3>
-          <p>
-            केवल login कर सकता है और अपनी profile manage कर सकता है।<br />
-            आमतौर पर membership या commenting purposes के लिए उपयोग होता है।
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  )
+      </section>
+    </div>
+  );
 }
-
-

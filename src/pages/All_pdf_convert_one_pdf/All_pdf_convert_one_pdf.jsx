@@ -1,21 +1,22 @@
-import React, { useRef, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
-import { PDFDocument } from "pdf-lib"
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import React, { useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import { PDFDocument } from "pdf-lib";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SEO from "../../Common page/SEO";
 
 export default function All_pdf_convert_one_pdf() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [mergedPDF, setMergedPDF] = useState(null) // मर्ज की गई PDF फाइल का URL
-  const [fileCount, setFileCount] = useState(0) // चुनी गई फाइलों की संख्या
+  const [mergedPDF, setMergedPDF] = useState(null); // मर्ज की गई PDF फाइल का URL
+  const [fileCount, setFileCount] = useState(0); // चुनी गई फाइलों की संख्या
 
-  const fileInputRef = useRef(null) // फाइल इनपुट के लिए रेफ
+  const fileInputRef = useRef(null); // फाइल इनपुट के लिए रेफ
 
   const handleMergePDFs = async (event) => {
-    const files = event.target.files // यूजर द्वारा चुनी गई फाइलें
-    setFileCount(files.length) // फाइलों की संख्या अपडेट करें
+    const files = event.target.files; // यूजर द्वारा चुनी गई फाइलें
+    setFileCount(files.length); // फाइलों की संख्या अपडेट करें
 
     if (files.length < 2) {
       toast.error("Please select at least two PDFs.", {
@@ -25,38 +26,42 @@ export default function All_pdf_convert_one_pdf() {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-      })
-      return
+      });
+      return;
     }
 
-    const mergedPdfDoc = await PDFDocument.create() // नया PDF डॉक्यूमेंट बनाएं
+    const mergedPdfDoc = await PDFDocument.create(); // नया PDF डॉक्यूमेंट बनाएं
 
     for (const file of files) {
-      const fileData = await file.arrayBuffer() // फाइल को बाइनरी डेटा में बदलें
-      const pdfDoc = await PDFDocument.load(fileData) // PDF डॉक्यूमेंट लोड करें
+      const fileData = await file.arrayBuffer(); // फाइल को बाइनरी डेटा में बदलें
+      const pdfDoc = await PDFDocument.load(fileData); // PDF डॉक्यूमेंट लोड करें
       const copiedPages = await mergedPdfDoc.copyPages(
         pdfDoc,
-        pdfDoc.getPageIndices()
-      ) // पेज कॉपी करें
-      copiedPages.forEach((page) => mergedPdfDoc.addPage(page)) // पेज को मर्ज किए गए PDF में जोड़ें
+        pdfDoc.getPageIndices(),
+      ); // पेज कॉपी करें
+      copiedPages.forEach((page) => mergedPdfDoc.addPage(page)); // पेज को मर्ज किए गए PDF में जोड़ें
     }
 
-    const mergedPdfBytes = await mergedPdfDoc.save() // मर्ज की गई PDF को बाइट्स में सेव करें
-    const blob = new Blob([mergedPdfBytes], { type: "application/pdf" }) // बाइट्स को ब्लॉब में बदलें
-    setMergedPDF(URL.createObjectURL(blob)) // ब्लॉब का URL बनाएं और स्टेट में सेट करें
-  }
+    const mergedPdfBytes = await mergedPdfDoc.save(); // मर्ज की गई PDF को बाइट्स में सेव करें
+    const blob = new Blob([mergedPdfBytes], { type: "application/pdf" }); // बाइट्स को ब्लॉब में बदलें
+    setMergedPDF(URL.createObjectURL(blob)); // ब्लॉब का URL बनाएं और स्टेट में सेट करें
+  };
 
   const datareset = () => {
-    setMergedPDF(null) // मर्ज की गई PDF को रीसेट करें
-    setFileCount(0) // फाइलों की संख्या रीसेट करें
+    setMergedPDF(null); // मर्ज की गई PDF को रीसेट करें
+    setFileCount(0); // फाइलों की संख्या रीसेट करें
 
     if (fileInputRef.current) {
-      fileInputRef.current.value = "" // फाइल इनपुट को रीसेट करें
+      fileInputRef.current.value = ""; // फाइल इनपुट को रीसेट करें
     }
-  }
+  };
 
   return (
     <>
+      <SEO
+        title="PDF Merger"
+        description="Merge multiple PDF files into a single document"
+      />
       <div>
         {location.pathname === "/All_pdf_convert_one_pdf" ? <Header /> : null}
       </div>
@@ -111,5 +116,5 @@ export default function All_pdf_convert_one_pdf() {
         </div>
       </div>
     </>
-  )
+  );
 }

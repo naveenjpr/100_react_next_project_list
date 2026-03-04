@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://100-react-next-project-list.vercel.app/sitemap.xml

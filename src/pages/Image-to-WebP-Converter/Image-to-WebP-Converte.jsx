@@ -1,85 +1,92 @@
-import { useState, useRef } from "react"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import { useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 function ImageToWebPConverter() {
-  const [quality, setQuality] = useState(0.5)
-  const [previewImages, setPreviewImages] = useState([])
-  const [convertedImages, setConvertedImages] = useState([])
-  const fileInputRef = useRef(null)
-  const location = useLocation()
+  const [quality, setQuality] = useState(0.5);
+  const [previewImages, setPreviewImages] = useState([]);
+  const [convertedImages, setConvertedImages] = useState([]);
+  const fileInputRef = useRef(null);
+  const location = useLocation();
 
   const handleQualityChange = (e) => {
-    setQuality(parseFloat(e.target.value))
-  }
+    setQuality(parseFloat(e.target.value));
+  };
 
   const handleFileChange = (e) => {
-    const files = e.target.files
-    if (files.length === 0) return
+    const files = e.target.files;
+    if (files.length === 0) return;
 
-    const previews = []
+    const previews = [];
     Array.from(files).forEach((file) => {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onload = (event) => {
-        previews.push(event.target.result)
+        previews.push(event.target.result);
         if (previews.length === files.length) {
-          setPreviewImages(previews)
+          setPreviewImages(previews);
         }
-      }
-      reader.readAsDataURL(file)
-    })
-  }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
 
   const handleConvert = () => {
-    const files = fileInputRef.current.files
+    const files = fileInputRef.current.files;
     if (files.length === 0) {
-      alert("Please select at least one image file.")
-      return
+      alert("Please select at least one image file.");
+      return;
     }
 
-    const converted = []
+    const converted = [];
     Array.from(files).forEach((file, index) => {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onload = (event) => {
-        const img = new Image()
+        const img = new Image();
         img.onload = () => {
-          const canvas = document.createElement("canvas")
-          canvas.width = img.width
-          canvas.height = img.height
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
 
-          const ctx = canvas.getContext("2d")
-          ctx.drawImage(img, 0, 0)
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
 
           canvas.toBlob(
             (blob) => {
-              const url = URL.createObjectURL(blob)
+              const url = URL.createObjectURL(blob);
               converted.push({
                 url,
                 name: `converted_${index + 1}.webp`,
-              })
+              });
 
               if (converted.length === files.length) {
-                setConvertedImages(converted)
+                setConvertedImages(converted);
               }
             },
             "image/webp",
-            quality
-          )
-        }
-        img.src = event.target.result
-      }
-      reader.readAsDataURL(file)
-    })
-  }
+            quality,
+          );
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  };
   let resetallvalue = () => {
-    setQuality(0.5)
-    setPreviewImages([])
-    setConvertedImages([])
-  }
+    setQuality(0.5);
+    setPreviewImages([]);
+    setConvertedImages([]);
+  };
 
   return (
     <>
-      <div>{location.pathname === "/Image-to-WebP-Converte" ? <Header /> : null}</div>
+      <SEO
+        title="Image to WebP Converter"
+        description="Convert images to WebP format for better compression"
+      />
+      <div>
+        {location.pathname === "/Image-to-WebP-Converte" ? <Header /> : null}
+      </div>
 
       <div className="bg-gray-100 min-h-screen">
         <div className="container mx-auto p-4">
@@ -170,7 +177,7 @@ function ImageToWebPConverter() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ImageToWebPConverter
+export default ImageToWebPConverter;

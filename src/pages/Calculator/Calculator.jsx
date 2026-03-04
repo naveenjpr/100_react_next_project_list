@@ -1,15 +1,16 @@
-import React, { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 const Calculator = () => {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [Calculator, setCalculator] = useState("")
-  let opr = ["+", "-", "×", "÷", "."]
+  const [Calculator, setCalculator] = useState("");
+  let opr = ["+", "-", "×", "÷", "."];
 
   let handleData = (e) => {
-    let lastChar = Calculator[Calculator.length - 1] // आखिरी अक्षर प्राप्त करें
-    let lastCharRemoveData = Calculator.slice(0, -1) // अंतिम अक्षर हटाने के लिए
+    let lastChar = Calculator[Calculator.length - 1]; // आखिरी अक्षर प्राप्त करें
+    let lastCharRemoveData = Calculator.slice(0, -1); // अंतिम अक्षर हटाने के लिए
 
     if (e.target.tagName === "BUTTON") {
       if (
@@ -20,78 +21,80 @@ const Calculator = () => {
           e.target.innerText === "+" ||
           e.target.innerText === "=")
       ) {
-        console.log("First character cannot be ×,+, ÷, ., or =")
-        return
+        console.log("First character cannot be ×,+, ÷, ., or =");
+        return;
       }
 
       if (
         (Calculator === "0" || Calculator === "00") &&
         ![".", "+", "-", "×", "÷"].includes(e.target.innerText)
       ) {
-        setCalculator(e.target.innerText)
-        return
+        setCalculator(e.target.innerText);
+        return;
       }
 
       if (e.target.innerText === "=") {
         if (opr.includes(lastChar)) {
-          console.log("Cannot evaluate, expression ends with an operator.")
-          return
+          console.log("Cannot evaluate, expression ends with an operator.");
+          return;
         }
-        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/") // गणना योग्य फॉर्मेट में बदलना
+        let data = Calculator.replaceAll("×", "*").replaceAll("÷", "/"); // गणना योग्य फॉर्मेट में बदलना
         try {
-          let result = eval(data)
+          let result = eval(data);
           if (isFinite(result)) {
-            setCalculator(result.toString())
+            setCalculator(result.toString());
           } else {
-            setCalculator("Error")
+            setCalculator("Error");
           }
         } catch (error) {
-          setCalculator("Error")
-          console.error("Invalid expression:", error)
+          setCalculator("Error");
+          console.error("Invalid expression:", error);
         }
-        return
+        return;
       }
 
       if (e.target.innerText === "C") {
-        setCalculator("") // इनपुट क्लियर करना
-        return
+        setCalculator(""); // इनपुट क्लियर करना
+        return;
       }
 
       if (e.target.innerText === "s") {
-        setCalculator(lastCharRemoveData) // एक अंक हटाना
-        return
+        setCalculator(lastCharRemoveData); // एक अंक हटाना
+        return;
       }
 
       if (e.target.innerText === "%") {
         if (!isNaN(parseFloat(Calculator)) && isFinite(Calculator)) {
-          setCalculator((parseFloat(Calculator) / 100).toString())
+          setCalculator((parseFloat(Calculator) / 100).toString());
         } else {
-          console.log("Invalid input for percentage calculation.")
+          console.log("Invalid input for percentage calculation.");
         }
-        return
+        return;
       }
 
       if (opr.includes(e.target.innerText) && opr.includes(lastChar)) {
-        setCalculator(lastCharRemoveData + e.target.innerText)
+        setCalculator(lastCharRemoveData + e.target.innerText);
       } else {
         if (Calculator === "0") {
           if (e.target.innerText !== "0" && e.target.innerText !== ".") {
-            setCalculator(e.target.innerText)
+            setCalculator(e.target.innerText);
           }
         } else {
-          setCalculator(Calculator + e.target.innerText)
+          setCalculator(Calculator + e.target.innerText);
         }
       }
     }
-  }
+  };
 
   return (
     <>
+      <SEO
+        title="Calculator"
+        description="Perform mathematical calculations with ease"
+      />
       <div>{location.pathname === "/Calculator" ? <Header /> : null}</div>
 
-      <div
-        className="w-full min-h-screen bg-slate-400 bg-cover bg-center"
-      >
+      <div className="w-full min-h-screen bg-slate-400 bg-cover bg-center">
         {/* Your content here */}
         <div className="w-full sm:max-w-[100%] md:max-w-md mx-auto">
           <div className="min-h-screen flex items-center justify-center">
@@ -194,7 +197,7 @@ const Calculator = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Calculator
+export default Calculator;

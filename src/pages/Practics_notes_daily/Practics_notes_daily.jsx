@@ -5,6 +5,7 @@ import axios from "axios";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Colors, Lodingspinnerwithimageinside } from "../Loading/Loading";
 import { LoginContext } from "../context_api/MainContext";
+import SEO from "../../Common page/SEO";
 
 export default function Practics_notes_daily() {
   const location = useLocation();
@@ -21,6 +22,10 @@ export default function Practics_notes_daily() {
 
   return (
     <>
+      <SEO
+        title="Practice Notes"
+        description="Daily practice notes and learning materials"
+      />
       <div>
         {location.pathname === "/Practics_notes_daily" ? <Header /> : null}
       </div>
@@ -113,7 +118,7 @@ function Javascript() {
           headers: {
             Authorization: `Bearer ${userinfo}`,
           },
-        }
+        },
       )
       .then((result) => {
         setjavascriptdatashow(result.data.data);
@@ -178,7 +183,7 @@ function Reactnotes() {
   useEffect(() => {
     axios
       .post(
-        "https://rss-feed-node-js.onrender.com/api/frontend/ReactNotes/view"
+        "https://rss-feed-node-js.onrender.com/api/frontend/ReactNotes/view",
       )
       .then((result) => {
         setreactdatashow(result.data.data);
@@ -240,7 +245,7 @@ function Node_js() {
   useEffect(() => {
     axios
       .post(
-        "https://rss-feed-node-js.onrender.com/api/frontend/node-js-Notes/view"
+        "https://rss-feed-node-js.onrender.com/api/frontend/node-js-Notes/view",
       )
       .then((result) => {
         setNode_jsdatashow(result.data.data);
@@ -456,12 +461,12 @@ function English() {
                   <span className="mx-2">{i + 1}</span>
                   {v.Question}
                   <span className="absolute right-[10px] top-[10px]">
-                    {v._id ===  EnglishId ? <FaMinus /> : <FaPlus />}
+                    {v._id === EnglishId ? <FaMinus /> : <FaPlus />}
                   </span>
                 </button>
                 <p
                   className={`p-3 bg-[black] text-white font-medium transition-all duration-1000 ease-in-out 
-      ${v._id === EnglishId  ? "block opacity-100" : "hidden opacity-0"}
+      ${v._id === EnglishId ? "block opacity-100" : "hidden opacity-0"}
     `}
                 >
                   <pre className="whitespace-pre-wrap break-words">

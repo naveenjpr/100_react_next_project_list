@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../Common page/Header";
 import axios from "axios";
+import SEO from "../../Common page/SEO";
 
 const QuizApp = () => {
   const location = useLocation();
@@ -71,15 +72,15 @@ const QuizApp = () => {
   };
 
   const quizTimeUp = () => {
-    const unansweredQuestions = Quizzappdata
-      .slice(userAnswers.length)
-      .map((q) => ({
+    const unansweredQuestions = Quizzappdata.slice(userAnswers.length).map(
+      (q) => ({
         question: q.question,
         userAnswer: null,
         correctAnswer: q.correctAnswer,
         isCorrect: false,
         timeUp: true,
-      }));
+      }),
+    );
 
     setUserAnswers((prev) => [...prev, ...unansweredQuestions]);
     setQuizStatus("results");
@@ -90,7 +91,7 @@ const QuizApp = () => {
     if (!currentQuestion) return; // Guard clause if data isn't loaded yet
 
     const existingAnswerIndex = userAnswers.findIndex(
-      (answer) => answer.question === currentQuestion.question
+      (answer) => answer.question === currentQuestion.question,
     );
 
     const isCorrect = option === currentQuestion.correctAnswer;
@@ -144,15 +145,15 @@ const QuizApp = () => {
 
   // Submit quiz early
   const submitQuiz = () => {
-    const unansweredQuestions = Quizzappdata
-      .slice(userAnswers.length)
-      .map((q) => ({
+    const unansweredQuestions = Quizzappdata.slice(userAnswers.length).map(
+      (q) => ({
         question: q.question,
         userAnswer: null,
         correctAnswer: q.correctAnswer,
         isCorrect: false,
         timeUp: false,
-      }));
+      }),
+    );
 
     setUserAnswers((prev) => [...prev, ...unansweredQuestions]);
     setQuizStatus("results");
@@ -163,7 +164,7 @@ const QuizApp = () => {
   const goToQuestion = (index) => {
     setCurrentQuestionIndex(index);
     const existingAnswer = userAnswers.find(
-      (answer) => answer.question === Quizzappdata[index]?.question
+      (answer) => answer.question === Quizzappdata[index]?.question,
     );
     setSelectedOption(existingAnswer?.userAnswer || null);
   };
@@ -190,7 +191,7 @@ const QuizApp = () => {
   // Set selected option when question changes
   useEffect(() => {
     const existingAnswer = userAnswers.find(
-      (answer) => answer.question === currentQuestion?.question
+      (answer) => answer.question === currentQuestion?.question,
     );
     setSelectedOption(existingAnswer?.userAnswer || null);
   }, [currentQuestionIndex, currentQuestion?.question, userAnswers]);
@@ -199,6 +200,10 @@ const QuizApp = () => {
   if (quizStatus === "start") {
     return (
       <>
+        <SEO
+          title="Quiz App"
+          description="Interactive quiz application with timed questions"
+        />
         <div>{location.pathname === "/QuizApp" ? <Header /> : null}</div>
 
         <div className="w-full mx-auto h-screen overflow-auto bg-white rounded-lg shadow-lg">
@@ -215,7 +220,9 @@ const QuizApp = () => {
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200"
               disabled={Quizzappdata.length === 0}
             >
-              {Quizzappdata.length === 0 ? "Loading Questions..." : "Start Quiz"}
+              {Quizzappdata.length === 0
+                ? "Loading Questions..."
+                : "Start Quiz"}
             </button>
           </div>
         </div>
@@ -234,7 +241,7 @@ const QuizApp = () => {
     }
 
     const existingAnswer = userAnswers.find(
-      (answer) => answer.question === currentQuestion.question
+      (answer) => answer.question === currentQuestion.question,
     );
     const isAnswered = !!existingAnswer;
 
@@ -344,8 +351,8 @@ const QuizApp = () => {
                       answer.timeUp
                         ? "bg-yellow-50"
                         : answer.isCorrect
-                        ? "bg-green-50"
-                        : "bg-red-50"
+                          ? "bg-green-50"
+                          : "bg-red-50"
                     }`}
                   >
                     <div className="font-medium">

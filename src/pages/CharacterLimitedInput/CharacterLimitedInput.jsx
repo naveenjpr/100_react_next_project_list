@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import SEO from "../../Common page/SEO";
 
 export default function CharacterLimitedInput() {
   return (
     <>
+      <SEO
+        title="Character Limited Input"
+        description="Input fields with character limit restrictions"
+      />
       <FirstCharacterLimitedInput />
       <SecondCharacterLimitedInput />
     </>

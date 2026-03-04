@@ -4,6 +4,7 @@ import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/classic-light-dark.css";
 import { useLocation } from "react-router-dom";
 import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function React_pagination() {
   const location = useLocation();
@@ -19,7 +20,7 @@ export default function React_pagination() {
       .get(
         `https://dummyjson.com/products?limit=${limit}&skip=${
           (currentPage - 1) * limit
-        }`
+        }`,
       )
       .then((result) => {
         setproductdata(result.data.products);
@@ -32,13 +33,20 @@ export default function React_pagination() {
 
   return (
     <>
+      <SEO
+        title="React Pagination"
+        description="Responsive pagination component for displaying paginated data"
+      />
       <div>{location.pathname === "/React_pagination" ? <Header /> : null}</div>
 
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-8 px-4">
         <h2 className="text-center text-3xl font-extrabold text-gray-800 dark:text-white mb-8">
           React_pagination responsive
         </h2>
-        <span className=" flex justify-center items-center text-center text-3xl font-extrabold text-blue-800 dark:text-white mb-8"> "total": 194 Entry</span>
+        <span className=" flex justify-center items-center text-center text-3xl font-extrabold text-blue-800 dark:text-white mb-8">
+          {" "}
+          "total": 194 Entry
+        </span>
 
         <div className="max-w-[1170px] mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
           {productdata.map((v, i) => (

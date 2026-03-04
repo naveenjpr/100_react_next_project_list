@@ -1,12 +1,13 @@
-import React, { useState } from "react"
-import { FaMinus, FaPlus } from "react-icons/fa"
-import faq from "../../assets/tiny-people.avif"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import faq from "../../assets/tiny-people.avif";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Faq() {
-  const [currentId, setCurrentId] = useState(null) // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
-  const location = useLocation()
+  const [currentId, setCurrentId] = useState(null); // currentId स्टेट बना रहे हैं, शुरुआत में यह null है
+  const location = useLocation();
 
   const faqs = [
     {
@@ -33,13 +34,18 @@ export default function Faq() {
       answer:
         "Yes, when optimized properly, the final CSS file is much smaller than traditional stylesheets.",
     },
-  ]
+  ];
 
   const toggleFAQ = (id) => {
-    setCurrentId(currentId === id ? null : id) // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
-  }
+    setCurrentId(currentId === id ? null : id); // currentId को अपडेट कर रहे हैं, यदि वही FAQ फिर से क्लिक किया गया है तो इसे बंद करें
+  };
   return (
     <>
+      <SEO
+        title="Frequently Asked Questions"
+        description="Find answers to your questions"
+      />
+
       <div>{location.pathname === "/Faq" ? <Header /> : null}</div>
 
       <div
@@ -78,11 +84,11 @@ export default function Faq() {
                     </div>
                   </div>
                 </>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -36,10 +36,12 @@ import Editable_navbar from "./Editable/Editable_navbar.jsx";
 import Edit_logo from "./Editable/Edit_logo.jsx";
 import Edit_navbar_or_logo_localstorage from "./Editable/Edit_navbar_or_logo_localstorage.jsx";
 import Edit_navbar_or_logo_api from "./Editable/Editable_navbar_api.jsx";
+import SEO from "../Common page/SEO.jsx";
 
 export default function Home() {
   return (
     <div>
+      <SEO title="Home" description="Welcome to our home page" />
       <Header />
       <Loading />
       <React_pagination />

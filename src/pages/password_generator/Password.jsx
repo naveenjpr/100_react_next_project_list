@@ -1,65 +1,70 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
   BigUppercase,
   MathNumbers,
   OtherSpecialChars,
   SmallLowercase,
-} from "../../data.jsx"
-import { ToastContainer, toast } from "react-toastify"
-import passwordimage from "../../assets/passwordimage.jpg"
-import Header from "../../Common page/Header.jsx"
-import { useLocation } from "react-router-dom"
+} from "../../data.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import passwordimage from "../../assets/passwordimage.jpg";
+import Header from "../../Common page/Header.jsx";
+import { useLocation } from "react-router-dom";
+import SEO from "../../Common page/SEO";
 
 export default function Password() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [passwordlenghth, setpasswordlenghth] = useState(10) // पासवर्ड की डिफॉल्ट लंबाई 10 सेट की गई है
-  const [fpas, setfpas] = useState("") // जनरेट किया गया पासवर्ड स्टोर करने के लिए स्टेट
+  const [passwordlenghth, setpasswordlenghth] = useState(10); // पासवर्ड की डिफॉल्ट लंबाई 10 सेट की गई है
+  const [fpas, setfpas] = useState(""); // जनरेट किया गया पासवर्ड स्टोर करने के लिए स्टेट
 
   // अलग-अलग टाइप के कैरेक्टर्स को शामिल करने के लिए स्टेट वेरिएबल्स
-  const [Uppercase, setUppercase] = useState(false) // बड़े अक्षरों को शामिल करना या नहीं
-  const [Lowercase, setLowercase] = useState(false) // छोटे अक्षरों को शामिल करना या नहीं
-  const [Numbers, setNumbers] = useState(false) // संख्याएँ जोड़ना या नहीं
-  const [SpecialChars, setSpecialChars] = useState(false) // स्पेशल कैरेक्टर्स जोड़ना या नहीं
+  const [Uppercase, setUppercase] = useState(false); // बड़े अक्षरों को शामिल करना या नहीं
+  const [Lowercase, setLowercase] = useState(false); // छोटे अक्षरों को शामिल करना या नहीं
+  const [Numbers, setNumbers] = useState(false); // संख्याएँ जोड़ना या नहीं
+  const [SpecialChars, setSpecialChars] = useState(false); // स्पेशल कैरेक्टर्स जोड़ना या नहीं
 
-  let passwordstring = "" // पासवर्ड बनाने के लिए कैरेक्टर का एक स्ट्रिंग
+  let passwordstring = ""; // पासवर्ड बनाने के लिए कैरेक्टर का एक स्ट्रिंग
   let PasswordCreate = () => {
     if (Uppercase) {
-      passwordstring += BigUppercase // अगर यूजर ने Uppercase चुना है तो स्ट्रिंग में जोड़ दो
+      passwordstring += BigUppercase; // अगर यूजर ने Uppercase चुना है तो स्ट्रिंग में जोड़ दो
     }
     if (Lowercase) {
-      passwordstring += SmallLowercase // छोटे अक्षर जोड़ें
+      passwordstring += SmallLowercase; // छोटे अक्षर जोड़ें
     }
     if (Numbers) {
-      passwordstring += MathNumbers // नंबर जोड़ें
+      passwordstring += MathNumbers; // नंबर जोड़ें
     }
     if (SpecialChars) {
-      passwordstring += OtherSpecialChars // उपलब्ध कैरेक्टर सेट की लंबाई
+      passwordstring += OtherSpecialChars; // उपलब्ध कैरेक्टर सेट की लंबाई
     }
 
-    let passwordLen = passwordstring.length
-    let finalpassword = ""
+    let passwordLen = passwordstring.length;
+    let finalpassword = "";
 
     // पासवर्ड जेनरेट करने के लिए लूप
 
     for (let i = 0; i < passwordlenghth; i++) {
-      finalpassword += passwordstring[Math.floor(Math.random() * passwordLen)]
+      finalpassword += passwordstring[Math.floor(Math.random() * passwordLen)];
     }
-    setfpas(finalpassword) // तैयार पासवर्ड स्टेट में सेट करें
-  }
+    setfpas(finalpassword); // तैयार पासवर्ड स्टेट में सेट करें
+  };
 
   // पासवर्ड को क्लिपबोर्ड में कॉपी करने का फंक्शन
   let copypassword = () => {
     if (fpas !== "") {
       // अगर पासवर्ड जनरेट किया गया है तो ही कॉपी करें
-      navigator.clipboard.writeText(fpas) // ब्राउज़र क्लिपबोर्ड पर कॉपी करें
-      toast.success("Copy password") // सक्सेस मैसेज दिखाएँ
+      navigator.clipboard.writeText(fpas); // ब्राउज़र क्लिपबोर्ड पर कॉपी करें
+      toast.success("Copy password"); // सक्सेस मैसेज दिखाएँ
     } else {
-      toast.error("Please choose at least one checkbox") // अगर कोई ऑप्शन सेलेक्ट नहीं किया तो एरर दें
+      toast.error("Please choose at least one checkbox"); // अगर कोई ऑप्शन सेलेक्ट नहीं किया तो एरर दें
     }
-  }
+  };
   return (
     <>
+      <SEO
+        title="Password Generator"
+        description="Generate secure and strong passwords with customizable options"
+      />
       <div>{location.pathname === "/Password" ? <Header /> : null}</div>
 
       <div
@@ -186,5 +191,5 @@ export default function Password() {
         />
       </div>
     </>
-  )
+  );
 }

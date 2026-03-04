@@ -1,14 +1,19 @@
-import React, { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Tooltip() {
-  const [tooltip, setTooltip] = useState(null) //  // State to manage which tooltip is active
+  const [tooltip, setTooltip] = useState(null); //  // State to manage which tooltip is active
 
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <>
+      <SEO
+        title="Tooltip Component"
+        description="Interactive tooltip demonstrations with hover effects"
+      />
       <div>{location.pathname === "/Tooltip" ? <Header /> : null}</div>
 
       <div className="w-full bg-red-700 flex flex-col justify-center items-center h-screen space-y-6 p-4">
@@ -108,5 +113,5 @@ export default function Tooltip() {
         </div>
       </div>
     </>
-  )
+  );
 }

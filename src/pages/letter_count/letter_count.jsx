@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Letter_count() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const [Wordcount, setWordcount] = useState("") //यह स्टेट उपयोगकर्ता द्वारा दर्ज किए गए टेक्स्ट को स्टोर करता है।
-  const [singlwordshow, setsinglwordshow] = useState({}) //यह एक ऑब्जेक्ट है, जो हर अक्षर (letter) की संख्या को स्टोर करता है।
+  const [Wordcount, setWordcount] = useState(""); //यह स्टेट उपयोगकर्ता द्वारा दर्ज किए गए टेक्स्ट को स्टोर करता है।
+  const [singlwordshow, setsinglwordshow] = useState({}); //यह एक ऑब्जेक्ट है, जो हर अक्षर (letter) की संख्या को स्टोर करता है।
 
   let savechanges = () => {
-    let letterobj = {} // एक खाली ऑब्जेक्ट, जिसमें अक्षरों की संख्या स्टोर होगी
-    var txtValue = Wordcount // उपयोगकर्ता द्वारा डाला गया टेक्स्ट
+    let letterobj = {}; // एक खाली ऑब्जेक्ट, जिसमें अक्षरों की संख्या स्टोर होगी
+    var txtValue = Wordcount; // उपयोगकर्ता द्वारा डाला गया टेक्स्ट
 
     for (var v of txtValue) {
       // टेक्स्ट के प्रत्येक अक्षर को लूप में लेना
-      letterobj[v] = (letterobj[v] ?? 0) + 1 // यदि अक्षर पहले से मौजूद है, तो उसकी संख्या बढ़ाएं, वरना 1 सेट करें
+      letterobj[v] = (letterobj[v] ?? 0) + 1; // यदि अक्षर पहले से मौजूद है, तो उसकी संख्या बढ़ाएं, वरना 1 सेट करें
     }
-    setsinglwordshow(letterobj) // स्टेट को अपडेट करें
-  }
+    setsinglwordshow(letterobj); // स्टेट को अपडेट करें
+  };
   useEffect(() => {
-    savechanges() // जब भी `Wordcount` बदले, तो अक्षरों की गिनती अपडेट हो
-  }, [Wordcount])
+    savechanges(); // जब भी `Wordcount` बदले, तो अक्षरों की गिनती अपडेट हो
+  }, [Wordcount]);
 
   return (
     <>
+      <SEO
+        title="Letter Counter"
+        description="Count letters, characters and get detailed text analysis"
+      />
       <div>{location.pathname === "/Letter_count" ? <Header /> : null}</div>
 
       <section className="bg-gray-400 md:p-[20px] p-[5px]">
@@ -52,5 +57,5 @@ export default function Letter_count() {
         </div>
       </section>
     </>
-  )
+  );
 }

@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import { toast } from "react-toastify"
-import ratingImage from "../../assets/colorful-rating-icons-set_.jpg"
-import loadingImg from "../../assets/Spinning line.gif"
-import { useLocation } from "react-router-dom"
-import Header from "../../Common page/Header"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import ratingImage from "../../assets/colorful-rating-icons-set_.jpg";
+import loadingImg from "../../assets/Spinning line.gif";
+import { useLocation } from "react-router-dom";
+import Header from "../../Common page/Header";
+import SEO from "../../Common page/SEO";
 
 export default function Product_find_price_filter() {
+  const location = useLocation();
 
-  const location = useLocation()
-
-  const [productshow, setproductshow] = useState([]) // All products
-  const [filteredProducts, setFilteredProducts] = useState([]) // Filtered products
-  const [minPrice, setMinPrice] = useState(100) // Minimum price filter
-  const [maxPrice, setMaxPrice] = useState(2000) // Maximum price filter
-  const [minRating, setMinRating] = useState(3) // Minimum rating filter
+  const [productshow, setproductshow] = useState([]); // All products
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filtered products
+  const [minPrice, setMinPrice] = useState(100); // Minimum price filter
+  const [maxPrice, setMaxPrice] = useState(2000); // Maximum price filter
+  const [minRating, setMinRating] = useState(3); // Minimum rating filter
 
   // Fetch products from API
   const productList = () => {
     axios
       .get("https://dummyjson.com/products/category/smartphones")
       .then((result) => {
-        setproductshow(result.data.products)
-        setFilteredProducts(result.data.products) // Initialize with all products
+        setproductshow(result.data.products);
+        setFilteredProducts(result.data.products); // Initialize with all products
       })
       .catch((error) => {
-        toast.error(error.message || "Failed to fetch products")
-      })
-  }
+        toast.error(error.message || "Failed to fetch products");
+      });
+  };
 
   // Filter products based on price and rating
   const filterProducts = () => {
@@ -35,32 +35,38 @@ export default function Product_find_price_filter() {
       (product) =>
         product.price >= minPrice &&
         product.price <= maxPrice &&
-        product.rating >= minRating
-    )
-    setFilteredProducts(filtered)
-  }
+        product.rating >= minRating,
+    );
+    setFilteredProducts(filtered);
+  };
 
   let clearData = () => {
-    setMinPrice(100) // Reset minimum price
-    setMaxPrice(2000) // Reset maximum price
-    setMinRating(3) // Reset minimum rating
-    setFilteredProducts(productshow) // Reset filtered products to show all
-  }
+    setMinPrice(100); // Reset minimum price
+    setMaxPrice(2000); // Reset maximum price
+    setMinRating(3); // Reset minimum rating
+    setFilteredProducts(productshow); // Reset filtered products to show all
+  };
 
   // Re-filter whenever price or rating changes
   useEffect(() => {
-    filterProducts()
-  }, [minPrice, maxPrice, minRating])
+    filterProducts();
+  }, [minPrice, maxPrice, minRating]);
 
   // Fetch products on initial render
   useEffect(() => {
-    productList()
-  }, [])
+    productList();
+  }, []);
 
   return (
     <>
-          <div>{location.pathname === "/Product_find_price_filter" ? <Header /> : null}</div>
-    
+      <SEO
+        title="Product Finder"
+        description="Find and filter products by price and rating"
+      />
+      <div>
+        {location.pathname === "/Product_find_price_filter" ? <Header /> : null}
+      </div>
+
       <div
         className="w-full px-4 md:px-8 h-screen overflow-scroll mb-[100px] pb-[20px]"
         style={{ backgroundImage: `url(${ratingImage})` }}
@@ -176,12 +182,16 @@ export default function Product_find_price_filter() {
               ))
             ) : (
               <div className="col-span-4 text-center absolute top-[50%] translate-x-[-50%] left-[50%] translate-y-[50%]">
-                <img src={loadingImg} alt="test" className="w-[100%]  h-[100%]" />
+                <img
+                  src={loadingImg}
+                  alt="test"
+                  className="w-[100%]  h-[100%]"
+                />
               </div>
             )}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoPencilOutline } from "react-icons/io5";
 import { IoIosSave } from "react-icons/io";
+import SEO from "../../Common page/SEO";
 
 export default function Edit_navbar_or_logo_localstorage() {
   // menu items state
@@ -55,73 +56,83 @@ export default function Edit_navbar_or_logo_localstorage() {
   };
 
   return (
-    <header className="w-[100%] h-[80px] bg-slate-400 ">
-      <nav className="flex justify-between items-center py-[10px] text-black font-bold gap-5 max-w-[1170px] mx-auto">
-        <ul className="flex gap-5 items-center">
-          <li className="relative">
-            {imageEditing ? (
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleLogoChange}
-                className="border px-2 py-1 rounded w-[250px]"
-              />
-            ) : (
-              imageUrl && (
-                <img src={imageUrl} className="w-[120px] h-[50px]" alt="logo" />
-              )
-            )}
-
-            <span className="absolute top-[-15px] right-[-10px]">
+    <>
+      <SEO
+        title="Editable Navbar - Local Storage"
+        description="Edit navbar with local storage persistence"
+      />
+      <header className="w-[100%] h-[80px] bg-slate-400 ">
+        <nav className="flex justify-between items-center py-[10px] text-black font-bold gap-5 max-w-[1170px] mx-auto">
+          <ul className="flex gap-5 items-center">
+            <li className="relative">
               {imageEditing ? (
-                <IoIosSave
-                  className="cursor-pointer text-[green]"
-                  onClick={() => setImageEditing(false)}
-                />
-              ) : (
-                <IoPencilOutline
-                  className="cursor-pointer text-[red]  "
-                  onClick={() => setImageEditing(true)}
-                />
-              )}
-            </span>
-          </li>
-
-          {menuItems.map((item, index) => (
-            <li key={index} className="w-auto">
-              {isEditing ? (
                 <input
-                  type="text"
-                  value={item}
-                  onChange={(e) => handleChange(e, index)}
-                  className="w-[100%]"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLogoChange}
+                  className="border px-2 py-1 rounded w-[250px]"
                 />
               ) : (
-                item
+                imageUrl && (
+                  <img
+                    src={imageUrl}
+                    className="w-[120px] h-[50px]"
+                    alt="logo"
+                  />
+                )
               )}
-            </li>
-          ))}
-        </ul>
 
-        {/* Menu Edit/Save */}
-        <div>
-          {isEditing ? (
-            <button
-              className="text-[10px] font-bold bg-green-600 text-white px-1 py-1 rounded-md ml-3 w-auto"
-              onClick={() => setIsEditing(false)}
-            >
-              Save Menu
-            </button>
-          ) : (
-            <button
-              className="text-[10px] font-bold bg-red-600 text-white px-1 py-1 rounded-md ml-3"
-              onClick={() => setIsEditing(true)}
-            >
-              Edit Menu
-            </button>
-          )}
-        </div>
-      </nav>
-    </header>
+              <span className="absolute top-[-15px] right-[-10px]">
+                {imageEditing ? (
+                  <IoIosSave
+                    className="cursor-pointer text-[green]"
+                    onClick={() => setImageEditing(false)}
+                  />
+                ) : (
+                  <IoPencilOutline
+                    className="cursor-pointer text-[red]  "
+                    onClick={() => setImageEditing(true)}
+                  />
+                )}
+              </span>
+            </li>
+
+            {menuItems.map((item, index) => (
+              <li key={index} className="w-auto">
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={item}
+                    onChange={(e) => handleChange(e, index)}
+                    className="w-[100%]"
+                  />
+                ) : (
+                  item
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* Menu Edit/Save */}
+          <div>
+            {isEditing ? (
+              <button
+                className="text-[10px] font-bold bg-green-600 text-white px-1 py-1 rounded-md ml-3 w-auto"
+                onClick={() => setIsEditing(false)}
+              >
+                Save Menu
+              </button>
+            ) : (
+              <button
+                className="text-[10px] font-bold bg-red-600 text-white px-1 py-1 rounded-md ml-3"
+                onClick={() => setIsEditing(true)}
+              >
+                Edit Menu
+              </button>
+            )}
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }
