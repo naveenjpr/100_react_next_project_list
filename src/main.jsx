@@ -59,6 +59,7 @@ import CharacterLimitedInput from "./pages/CharacterLimitedInput/CharacterLimite
 import ImageCrop from "./pages/Image crop/ImageCrop.jsx";
 import Drag_drope from "./pages/image_drag_drope/Drag_drope.jsx";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Insurance from "./Common page/Insurance.jsx";
 
 const router = createBrowserRouter([
   {
@@ -304,6 +305,10 @@ const router = createBrowserRouter([
   {
     path: "/Drag_drope",
     element: <Drag_drope />,
+  },
+  {
+    path: "/Insurance",
+    element: <Insurance />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
