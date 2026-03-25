@@ -77,7 +77,7 @@ export default function Insurance() {
   return (
     <>
       <section className="bg-gray-300 p-5 min-h-screen">
-        <h2 className="text-blue-500 text-xl mb-4">Insurance Vehicle Data</h2>
+        <h2 className="text-blue-500 text-xl mb-4">Insurance Vehicles Data</h2>
 
         <form
           className="bg-white p-6 rounded-lg shadow-md"
