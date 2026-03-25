@@ -17,6 +17,7 @@
     "@tensorflow-models/body-pix": "^2.2.1",
     "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.7.9",
+    "build": "^0.1.4",
     "face-api.js": "^0.22.2",
     "lightbox.js-react": "^1.4.7",
     "pdf-lib": "^1.17.1",
