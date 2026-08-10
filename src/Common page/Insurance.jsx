@@ -1,501 +1,149 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+
+const topAchievers = [
+  {
+    name: "priyanshu sharma",
+    percentage: "98.00%",
+    image: "/YOGESHSCHOOL/three.jpeg",
+  },
+  {
+    name: "lakshita ",
+    percentage: "95%",
+    image: "/YOGESHSCHOOL/eleven.jpeg",
+  },
+  {
+    name: "shiv kumar",
+    percentage: "92%",
+    image: "/YOGESHSCHOOL/one.jpeg",
+  },
+];
+
+const students = [
+  // { name: "JALAJ", percentage: "96.67%", image: "/YOGESHSCHOOL/one.jpeg" },
+  { name: "prince sharma", percentage: "91%", image: "/YOGESHSCHOOL/two.jpeg" },
+  // { name: "JALAJ", percentage: "96.67%", image: "/YOGESHSCHOOL/three.jpeg" },
+  { name: "papri", percentage: "80%", image: "/YOGESHSCHOOL/four.jpeg" },
+  { name: "raghav", percentage: "89%", image: "/YOGESHSCHOOL/five.jpeg" },
+  { name: "dimpy", percentage: "86%", image: "/YOGESHSCHOOL/six.jpeg" },
+  { name: "ragini", percentage: "76%", image: "/YOGESHSCHOOL/seven.jpeg" },
+  { name: "ekta", percentage: "78%", image: "/YOGESHSCHOOL/eight.jpeg" },
+  { name: "jara", percentage: "76%", image: "/YOGESHSCHOOL/nine.jpeg" },
+  { name: "rishika", percentage: "86%", image: "/YOGESHSCHOOL/ten.jpeg" },
+  // { name: "eleven", percentage: "90%", image: "/YOGESHSCHOOL/eleven.jpeg" },
+];
 
 export default function Insurance() {
-  const [data, setData] = useState([]);
-  const [expandedRows, setExpandedRows] = useState(new Set());
-  const [formData, setFormData] = useState({
-    user_id: "amit.test-IT001",
-    designation: "hod",
-    vehicle_type: "GCV",
-    sub_type: "",
-    rate_type: "OUT",
-    date: "2026-03-12",
-    query_type: "STATE",
-    query_value: "RJ",
-    policy_id: "thirdParty,comprehensive",
-    fuel_id: "",
-    seating_capacity: "",
-    cc: "",
-    gvw: "0-3500",
-    make_id: "",
-    model_id: "",
-    insurer:
-      "SBI General Insurance Company Limited,The Oriental Insurance Company Limited,Tata AIG General Insurance Company Limited,Universal Sompo General Insurance Company Limited",
-  });
-
-  const viewapi = async () => {
-    const token =
-      "Tm58bPsHeMZsqBB8JGY2cV4YYs9O2poZvJKBLbISxrfYXPogZad3USgLFOJrrOjGwFDJZ3lIyQ4";
-
-    try {
-      const res = await axios.post(
-        "http://192.168.0.227:10001/api/vehicle-data",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        },
-      );
-
-      console.log(res.data);
-      setData(res.data.data);
-    } catch (err) {
-      console.error("Error fetching data:", err);
-    }
-  };
-
-  useEffect(() => {
-    viewapi();
-  }, []);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    viewapi();
-  };
-
-  const toggleRowExpansion = (index) => {
-    const newExpandedRows = new Set(expandedRows);
-    if (newExpandedRows.has(index)) {
-      newExpandedRows.delete(index);
-    } else {
-      newExpandedRows.add(index);
-    }
-    setExpandedRows(newExpandedRows);
-  };
-
   return (
-    <>
-      <section className="bg-gray-300 p-5 min-h-screen">
-        <h2 className="text-blue-500 text-xl mb-4">Insurance Vehicles Data</h2>
+    <div className="w-full bg-slate-100 min-h-screen py-10 px-2 flex justify-center items-center font-sans">
+      <div className="max-w-[850px] w-full bg-[#fdf200] border-4 border-yellow-500 shadow-2xl relative overflow-hidden flex flex-col ring-8 ring-pink-400">
 
-        <form
-          className="bg-white p-6 rounded-lg shadow-md"
-          onSubmit={handleSubmit}
-        >
-          <h3 className="text-lg font-semibold mb-4">Vehicle Data Form</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                User ID
-              </label>
-              <input
-                type="text"
-                name="user_id"
-                value={formData.user_id}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+        {/* Header Section */}
+        <div className="bg-[#0b1f64] text-white py-5 px-6 mx-2 mt-2 flex flex-col items-center justify-center border-b-2 border-white shadow-xl">
+          <div className="flex items-center gap-4 w-full justify-between">
+            <div className="hidden md:flex w-16 h-16 bg-white rounded-full items-center justify-center shadow-inner border-2 border-yellow-400">
+              <span className="text-blue-900 font-black text-xs text-center leading-tight">GURU<br />LOG</span>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Designation
-              </label>
-              <input
-                type="text"
-                name="designation"
-                value={formData.designation}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+            <div className="flex flex-col items-center text-center flex-1">
+              <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight leading-none drop-shadow-lg text-white uppercase">
+                GURU CLASSES JAIPUR
+              </h1>
+              <h2 className="text-lg md:text-3xl font-bold tracking-widest mt-2 text-yellow-300 drop-shadow-md">
+                10th BOARD RESULT-2026
+              </h2>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Vehicle Type
-              </label>
-              <input
-                type="text"
-                name="vehicle_type"
-                value={formData.vehicle_type}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Sub Type
-              </label>
-              <input
-                type="text"
-                name="sub_type"
-                value={formData.sub_type}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Rate Type
-              </label>
-              <input
-                type="text"
-                name="rate_type"
-                value={formData.rate_type}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Date
-              </label>
-              <input
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Query Type
-              </label>
-              <input
-                type="text"
-                name="query_type"
-                value={formData.query_type}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Query Value
-              </label>
-              <input
-                type="text"
-                name="query_value"
-                value={formData.query_value}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Policy ID
-              </label>
-              <input
-                type="text"
-                name="policy_id"
-                value={formData.policy_id}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Fuel ID
-              </label>
-              <input
-                type="text"
-                name="fuel_id"
-                value={formData.fuel_id}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Seating Capacity
-              </label>
-              <input
-                type="text"
-                name="seating_capacity"
-                value={formData.seating_capacity}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                CC
-              </label>
-              <input
-                type="text"
-                name="cc"
-                value={formData.cc}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                GVW
-              </label>
-              <input
-                type="text"
-                name="gvw"
-                value={formData.gvw}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Make ID
-              </label>
-              <input
-                type="text"
-                name="make_id"
-                value={formData.make_id}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Model ID
-              </label>
-              <input
-                type="text"
-                name="model_id"
-                value={formData.model_id}
-                onChange={handleInputChange}
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Insurer
-              </label>
-              <textarea
-                name="insurer"
-                value={formData.insurer}
-                onChange={handleInputChange}
-                rows="3"
-                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+            <div className="hidden md:flex w-16 h-16 bg-white rounded-full items-center justify-center shadow-inner border-2 border-yellow-400">
+              <span className="text-blue-900 font-black text-xs text-center leading-tight">2026<br />TOP</span>
             </div>
           </div>
-
-          <button
-            type="submit"
-            className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            Fetch Vehicle Data
-          </button>
-        </form>
-
-        {/* {data.length > 0 && (
-        <div className="bg-white p-4 mt-6 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold mb-4">API Response:</h3>
-          <pre className="bg-gray-100 p-4 rounded overflow-x-auto text-sm">{JSON.stringify(data, null, 2)}</pre>
         </div>
-      )} */}
-      </section>
 
-      <section className="bg-gray-100 p-5">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Insurance Data Results
-        </h2>
-
-        {data.length > 0 ? (
-          <div className="overflow-x-auto bg-white rounded-lg shadow-md">
-            <table className="min-w-full table-auto">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Deal ID
-                  </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Company
-                  </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Product
-                  </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Rate
-                  </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {data.map((item, index) => (
-                  <>
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {item.Deal_ID}
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {item.COMPANY}
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {item.PRODUCT_NAME}
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">
-                        {item.OUT_NET}%
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm">
-                        <button
-                          onClick={() => toggleRowExpansion(index)}
-                          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs font-medium transition-colors duration-200"
-                        >
-                          {expandedRows.has(index) ? "Collapse" : "Expand"}
-                        </button>
-                      </td>
-                    </tr>
-                    {expandedRows.has(index) && (
-                      <tr className="bg-gray-50">
-                        <td colSpan="5" className="px-4 py-4">
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Age Range:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.AGE_MIN} - {item.AGE_MAX} years
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                GVW Range:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.GVW_MIN} - {item.GVW_MAX} kg
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Policy Type:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.POLICY_TYPE}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Fuel Type:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.FUEL_TYPE}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Deal Type:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.DEAL_TYPE}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                GCV Type:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.GCV_TYPE}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Branch:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.BRANCH_NAME}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                RTO Category:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.RTO_CATEGORY}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border">
-                              <span className="font-medium text-gray-700">
-                                Updated By:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.Updated_By}
-                              </span>
-                            </div>
-                            <div className="bg-white p-3 rounded border col-span-1 md:col-span-2 lg:col-span-3">
-                              <span className="font-medium text-gray-700">
-                                Remarks:
-                              </span>
-                              <span className="ml-2 text-gray-600">
-                                {item.REMARKS}
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    )}
-                  </>
-                ))}
-              </tbody>
-            </table>
+        {/* Congratulations Banner */}
+        <div className="flex flex-col items-center mt-8 text-center px-4">
+          <h3 className="text-5xl md:text-7xl font-serif italic font-black text-green-700 leading-tight drop-shadow-sm">
+            Congratulations
+          </h3>
+          <div className="flex flex-col items-center mt-3 space-y-1">
+            <span className="text-red-700 text-lg md:text-2xl font-bold italic">To All Parents</span>
+            <span className="text-blue-900 text-xl md:text-3xl font-black tracking-tight">Students, Teachers</span>
+            <span className="text-pink-600 text-lg md:text-2xl font-bold italic">And Staff For</span>
+            <span className="text-red-600 text-xl md:text-3xl font-black uppercase mt-1">Outstanding Results</span>
           </div>
-        ) : (
-          <div className="bg-white p-8 rounded-lg shadow-md text-center">
-            <div className="text-gray-500 text-lg">No data available</div>
-            <p className="text-gray-400 mt-2">
-              Submit the form above to fetch insurance data
-            </p>
-          </div>
-        )}
+        </div>
 
-        {/* Summary Stats */}
-        {data.length > 0 && (
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-2xl font-bold text-blue-600">
-                {data.length}
+        {/* Top Three Achievers */}
+        <div className="flex justify-center items-center mt-10 px-6 gap-4 md:gap-10">
+          {topAchievers.map((topper, idx) => (
+            <div key={idx} className={`flex flex-col items-center group ${idx === 1 ? 'transform -translate-y-4 scale-110 z-10' : ''}`}>
+              <div className=" ">
+                <img
+                  src={topper.image}
+                  alt={topper.name}
+                  className="w-24 h-32 sm:w-32 sm:h-44 md:w-40 md:h-56 object-cover rounded-full"
+                />
               </div>
-              <div className="text-gray-500">Total Deals</div>
+              <div className="mt-2 w-3 h-3 rounded-full  shadow-sm flex flex-col items-center justify-center mt-4 capitalize">
+                <span className="text-blue-900 font-black text-xs text-center leading-tight">{topper.name}</span>
+                <span className="text-blue-900 font-black text-xs text-center leading-tight">{topper.percentage}</span>
+              </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-2xl font-bold text-green-600">
-                {Math.min(...data.map((item) => item.OUT_NET))}% -{" "}
-                {Math.max(...data.map((item) => item.OUT_NET))}%
+          ))}
+        </div>
+
+        {/* Achievers Grid */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-10 gap-x-4 mt-12 px-8 pb-10">
+          {students.map((student, idx) => (
+            <div key={idx} className="flex flex-col items-center text-center">
+              <div className="">
+                <img
+                  src={student.image}
+                  alt={student.name}
+                  className="w-16 h-24 sm:w-20 sm:h-28 md:w-24 md:h-36 object-cover rounded-full"
+                />
               </div>
-              <div className="text-gray-500">Rate Range</div>
+              <div className="mt-2 w-3 h-3 rounded-full  shadow-sm flex flex-col items-center justify-center mt-4 capitalize">
+                <span className="text-blue-900 font-black text-xs text-center leading-tight">{student.name}</span>
+                <span className="text-blue-900 font-black text-xs text-center leading-tight">{student.percentage}</span>
+              </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-2xl font-bold text-purple-600">
-                {new Set(data.map((item) => item.COMPANY)).size}
+          ))}
+        </div>
+
+        {/* Footer Section: Professional Banners */}
+        <div className="mt-auto">
+          {/* Banner 1: Admissions */}
+          {/*  */}
+
+          {/* Banner 2: Foundation Course */}
+
+
+          {/* Banner 3: Contact & Address */}
+          <div className="bg-blue-900 text-white text-xs md:text-sm font-semibold border-t-2 border-yellow-400">
+            <div className="bg-pink-600 px-4 md:px-6 py-3 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-2 md:gap-4 shadow-inner">
+
+              {/* Phone */}
+              <div className="text-sm md:text-lg">
+                HINDI MEDIUM PH.:{" "}
+                <span className="text-yellow-300 font-bold">
+                  7976197158
+                </span>
               </div>
-              <div className="text-gray-500">Insurance Companies</div>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-2xl font-bold text-orange-600">
-                {new Set(data.map((item) => item.PRODUCT_NAME)).size}
+
+              {/* Divider */}
+              <div className="hidden md:block w-px h-6 bg-white/40"></div>
+
+              {/* Address */}
+              <div className="text-sm md:text-lg">
+                ADDRESS:{" "}
+                <span className="text-yellow-300 font-bold">
+                  Govind Rao Ji Ka Rasta, Chandpol Bazaar, Jaipur
+                </span>
               </div>
-              <div className="text-gray-500">Product Types</div>
+
             </div>
           </div>
-        )}
-      </section>
-    </>
+        </div>
+
+      </div >
+    </div >
   );
 }
